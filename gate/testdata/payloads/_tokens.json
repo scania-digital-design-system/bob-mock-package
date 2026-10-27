@@ -1,0 +1,5 @@
+{
+  "variables": [
+    { "name": "color/primary/default", "type": "COLOR", "valuesByMode": { "scania": "#d1001b" } }
+  ]
+}

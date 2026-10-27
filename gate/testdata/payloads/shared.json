@@ -1,0 +1,6 @@
+{
+  "component": "badge",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": { "description": "", "properties": [], "answers": [] }
+}

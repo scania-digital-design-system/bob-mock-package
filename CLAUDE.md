@@ -1,8 +1,13 @@
 # CLAUDE.md — bob-mock-package
 
-A test bed for the brand-orchestration-backbone (BOB) pipeline. Tegel components go in as
-publish payloads, the real pipeline generates React cells, and this repo packages those
-cells and measures them against Tegel. It is for testing, not a product.
+A test bed for the brand-orchestration-backbone (BOB) pipeline. Tegel's components are
+hand-written exactly as the pipeline would deliver them (React target, scania brand),
+checked by the pipeline's real hard gate, packaged as `@umain-mock/bob-mock-package`, and
+measured against Tegel. The pipeline itself is not run. It is for testing, not a product.
+
+Design: `docs/adr/0002-hand-written-cells-in-bob-shape.md`. Reference for every cell:
+`docs/research/bob-pipeline.md` (what the pipeline delivers and enforces) and
+`docs/research/tegel-components.md` (what each Tegel component is).
 
 Terms (cell, bootstrap, blessing, golden reference, ratchet) follow the backbone register:
 
@@ -13,8 +18,9 @@ Terms (cell, bootstrap, blessing, golden reference, ratchet) follow the backbone
 - Brand: `scania` only. Target: `react` only. Angular comes later by adding `"angular"` to
   a payload's `targets`, so keep payloads and packaging target-agnostic.
 - Components, in order: badge, button, link, spinner, card (ADR 0001 D7).
-- Tegel is final. It replaces the Figma step, so there is no design iteration. A
-  difference between a generated cell and Tegel is a **finding** about the pipeline.
+- Light mode only; dark mode, `modeVariant` and `animation` are out (ADR 0002 D8).
+- Tegel is final; there is no design iteration. A difference between a cell and Tegel
+  that BOB's conventions force is a **finding**, recorded in `docs/findings/<component>.md`.
 
 ## Workspace (`~/Desktop/Projects/`)
 
@@ -41,25 +47,24 @@ The source and the compare package are pinned to the same version: **1.66.1**.
   side.
 - When the pin moves, move both together, and confirm the matching tag exists first.
 
-## Pipeline flow
+## Cell flow
 
-1. **Payload.** Write `payloads/<component>.json` in the backbone publish-request shape
+1. **Payload.** Write `payloads/<component>.json` as a valid backbone publish request
    (reference: `../brand-orchestration-backbone/pipeline/testdata/publish_*_request.json`).
    `brands: ["scania"]`, `targets: ["react"]`; Tegel props become `surface.properties`;
-   Tegel's Scania token values become `variables` with a `scania` mode only.
-2. **Run.** The user runs the stack. From the backbone folder, after `make up`:
-   `docker compose run --rm -v ~/Desktop/Projects/bob-mock-package/payloads:/app/mock:ro worker publish mock/<component>.json`.
-   The mount keeps payloads in this repo; the worker only mounts its own `testdata/`.
-3. **Collect.** The cell lands in backbone `pipeline/output/react/<component>/scania/v<n>/`
-   (component source, token source, `metadata.json`). Copy it byte-for-byte to
-   `cells/react/<component>/scania/v<n>/`.
-4. **Compare.** Run the comparison tests and record each finding in
-   `docs/findings/<component>.md`.
+   variables come from `payloads/_tokens.json`.
+2. **Write the bootstrap artifacts.** Hand-write `component.jsx` and `component.css` in
+   `cells/react/<component>/scania/v1/`, as the bootstrap agent would.
+3. **Generate the rest.** The generator writes `metadata.json`, `api.json`, `a11y.json`,
+   `usage.jsx` and `tokens.dtcg.json` from the payload.
+4. **Gate.** The real hard gate (`gate/`) and the prompt-rule tests must pass.
+5. **Compare.** DOM tests against Tegel behaviour; record each departure as a finding.
 
-Package layout and toolchain: `docs/adr/0001-package-skeleton.md`.
+Layout and toolchain: ADR 0001 (D4–D7) and ADR 0002 (D6, D7).
 
-Only `button` has a blessed template (`pipeline/contracts/registry.v1.json`); the other
-four go through **bootstrap**, so their output is an LLM draft.
+Definition of done for any change: `npm run typecheck && npm run lint && npm test &&
+npm run test:gate && npm run gate`. The gate needs Go ≥ 1.26 on `PATH`; in a sandboxed
+session point `GOMODCACHE`, `GOCACHE` and `GOPATH` at `$TMPDIR`.
 
 ## Rules
 
@@ -76,12 +81,15 @@ Borrowed from the backbone repo and adapted. Each names its source.
    for the user rather than reslicing it. The user makes every commit: stage the files
    and draft a Conventional Commits message.
 3. **Testing discipline** (backbone AGENTS.md §4). Every hand-written function (payload
-   builders, compare harness) gets a table-driven test (`it.each`), with network and file
-   access stubbed. Every generated cell gets comparison tests against `@scania/tegel`.
-4. **Generated cells stay as delivered** (backbone ADR 0189 D3, ADR 0055 D6). A copied
-   cell matches the pipeline output byte-for-byte. A defect becomes a finding; when the
-   payload misrepresents Tegel, fix the payload and regenerate. Hand-edits to a cell are
-   out of bounds.
+   generator, compare harness, gate harness) gets a table-driven test (`it.each`, or a Go
+   table test in `gate/`), with network and file access stubbed. Every cell passes the
+   real gate and gets DOM tests against Tegel's behaviour.
+4. **Cells keep the delivered shape** (ADR 0002 D2, D3, D7). `component.jsx` and
+   `component.css` follow `pipeline/prompts/bootstrap_system_react.txt` to the letter: bare
+   function, no import or export, `className` with `tl-` classes, modifiers interpolating
+   a bare prop name, no `style` attribute, every CSS value a `var(--token)`. Generated
+   artifacts are edited only through the payload and the generator. Packaging needs live
+   in the build, never in the cell.
 5. **Minimal diff** (backbone CLAUDE.md "Scope discipline"). Change only what the request
    needs, and propose adjacent improvements separately.
 6. **ASD-STE100 for human-facing writing** (backbone AGENTS.md §6). Applies to `README.md`,
@@ -93,8 +101,8 @@ Borrowed from the backbone repo and adapted. Each names its source.
 
 ## Publishing
 
-- The package uses our own scope, e.g. `@umain-mock/<name>`; confirm the name with the
-  user. Public npm and the `@scania` scope are off-limits.
+- The package is `@umain-mock/bob-mock-package`. Public npm and the `@scania` scope are
+  off-limits.
 - Fast checks: `npm pack` and a tarball install, or a `file:` dependency.
 - Full flow: Verdaccio (`npx verdaccio`, then `npm publish --registry http://localhost:4873`).
 - If npm fails with EPERM on `~/.npm`, use `--cache "$TMPDIR/npmcache"` and ask the user

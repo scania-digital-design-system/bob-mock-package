@@ -1,0 +1,11 @@
+{
+  "component": "badge",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "variables": {
+    "variables": [
+      { "name": "color/on-primary", "type": "COLOR", "valuesByMode": { "scania": "#ffffff" } }
+    ]
+  },
+  "surface": { "description": "", "properties": [], "answers": [] }
+}

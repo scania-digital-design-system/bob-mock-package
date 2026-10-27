@@ -1,0 +1,215 @@
+{
+  "version": 2,
+  "thresholds": [
+    {
+      "id": "contrast-min-traton",
+      "predicate": "contrast-min",
+      "scope": {
+        "brand": "traton"
+      },
+      "value": 4.5
+    },
+    {
+      "id": "contrast-min-scania",
+      "predicate": "contrast-min",
+      "scope": {
+        "brand": "scania"
+      },
+      "value": 4.5
+    },
+    {
+      "id": "corner-radius-max-manufacturing-display",
+      "predicate": "corner-radius-max",
+      "scope": {
+        "target": "manufacturing_display"
+      },
+      "value": 8.0
+    }
+  ],
+  "tokenSets": [
+    {
+      "name": "colors",
+      "validTokens": {
+        "--color-primary-default": true,
+        "--color-primary-hover": true,
+        "--color-primary-active": true,
+        "--color-secondary-default": true,
+        "--color-secondary-hover": true,
+        "--color-secondary-active": true,
+        "--color-on-primary": true,
+        "--color-on-secondary": true,
+        "--color-border-default": true,
+        "--color-border-focus": true,
+        "--color-feedback-error": true,
+        "--color-state-disabled-surface": true,
+        "--color-surface-page": true,
+        "--color-surface-raised": true,
+        "--color-text-primary": true,
+        "--color-text-secondary": true,
+        "--color-text-disabled": true,
+        "--color-primary": true,
+        "--color-secondary": true,
+        "--color-success": true,
+        "--color-danger": true,
+        "--color-feedback-success-subtle": true,
+        "--color-feedback-success-text": true,
+        "--color-feedback-warning-subtle": true,
+        "--color-feedback-warning-text": true,
+        "--color-feedback-error-subtle": true,
+        "--color-feedback-error-text": true
+      }
+    },
+    {
+      "name": "spacing",
+      "validTokens": {
+        "--space-inset-sm": true,
+        "--space-inset-md": true,
+        "--space-inset-lg": true,
+        "--space-stack-sm": true,
+        "--spacing-xs": true,
+        "--spacing-sm": true,
+        "--spacing-md": true,
+        "--spacing-lg": true
+      }
+    },
+    {
+      "name": "typography",
+      "validTokens": {
+        "--font-size-label": true,
+        "--font-size-body": true,
+        "--font-size-base": true,
+        "--font-size-large": true,
+        "--font-weight-bold": true,
+        "--font-body": true,
+        "--font-size-caption": true
+      }
+    },
+    {
+      "name": "radius",
+      "validTokens": {
+        "--radius-control": true,
+        "--radius-sm": true,
+        "--border-control": true
+      }
+    }
+  ],
+  "tokenUsage": [
+    {
+      "id": "color-on-color-properties",
+      "category": "color",
+      "properties": [
+        "color",
+        "background",
+        "background-color",
+        "border",
+        "border-color",
+        "border-top",
+        "border-right",
+        "border-bottom",
+        "border-left",
+        "border-top-color",
+        "border-right-color",
+        "border-bottom-color",
+        "border-left-color",
+        "outline",
+        "outline-color",
+        "box-shadow",
+        "text-shadow",
+        "fill",
+        "stroke",
+        "caret-color",
+        "text-decoration-color",
+        "border-block",
+        "border-inline",
+        "border-block-color",
+        "border-inline-color",
+        "border-block-start-color",
+        "border-block-end-color",
+        "border-inline-start-color",
+        "border-inline-end-color"
+      ],
+      "scope": {
+        "brand": "",
+        "target": ""
+      }
+    },
+    {
+      "id": "space-on-box-metrics",
+      "category": "space",
+      "properties": [
+        "padding",
+        "padding-top",
+        "padding-right",
+        "padding-bottom",
+        "padding-left",
+        "margin",
+        "margin-top",
+        "margin-right",
+        "margin-bottom",
+        "margin-left",
+        "gap",
+        "row-gap",
+        "column-gap",
+        "inset",
+        "padding-block",
+        "padding-inline",
+        "padding-block-start",
+        "padding-block-end",
+        "padding-inline-start",
+        "padding-inline-end",
+        "margin-block",
+        "margin-inline",
+        "margin-block-start",
+        "margin-block-end",
+        "margin-inline-start",
+        "margin-inline-end",
+        "inset-block",
+        "inset-inline",
+        "inset-block-start",
+        "inset-block-end",
+        "inset-inline-start",
+        "inset-inline-end"
+      ],
+      "scope": {
+        "brand": "",
+        "target": ""
+      }
+    },
+    {
+      "id": "radius-on-corner-properties",
+      "category": "radius",
+      "properties": [
+        "border-radius",
+        "border-top-left-radius",
+        "border-top-right-radius",
+        "border-bottom-right-radius",
+        "border-bottom-left-radius",
+        "border-start-start-radius",
+        "border-start-end-radius",
+        "border-end-start-radius",
+        "border-end-end-radius"
+      ],
+      "scope": {
+        "brand": "",
+        "target": ""
+      }
+    },
+    {
+      "id": "font-on-type-properties",
+      "category": "font",
+      "properties": [
+        "font",
+        "font-family",
+        "font-size",
+        "font-weight",
+        "font-style",
+        "line-height",
+        "letter-spacing"
+      ],
+      "scope": {
+        "brand": "",
+        "target": ""
+      }
+    }
+  ]
+}
