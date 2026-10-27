@@ -1,5 +1,3 @@
-import { existsSync, readdirSync, readFileSync } from 'node:fs';
-import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import {
   checkPromptRules,
@@ -9,6 +7,7 @@ import {
   literalIn,
   type PromptRuleInput,
 } from '../rules/prompt-rules';
+import { cellDirs, readCellFile, surfaceProperties } from './support/cells';
 
 const conforming: PromptRuleInput = {
   component: 'badge',
@@ -163,43 +162,12 @@ describe('literalIn', () => {
 });
 
 // Every cell in the repo must pass every prompt rule.
-const CELLS_DIR = join(__dirname, '..', 'cells');
-
-type SurfacePayload = { surface?: { properties?: { name: string; values: string[] }[] } };
-
-function cellDirs(): { id: string; dir: string; component: string }[] {
-  if (!existsSync(CELLS_DIR)) {
-    return [];
-  }
-  const children = (dir: string) =>
-    readdirSync(dir, { withFileTypes: true })
-      .filter((e) => e.isDirectory())
-      .map((e) => e.name);
-  return children(CELLS_DIR).flatMap((target) =>
-    children(join(CELLS_DIR, target)).flatMap((component) =>
-      children(join(CELLS_DIR, target, component)).flatMap((brand) =>
-        children(join(CELLS_DIR, target, component, brand)).map((version) => ({
-          id: [target, component, brand, version].join('/'),
-          dir: join(CELLS_DIR, target, component, brand, version),
-          component,
-        })),
-      ),
-    ),
-  );
-}
-
 function readCell(dir: string, component: string): PromptRuleInput {
-  const payload = JSON.parse(
-    readFileSync(join(__dirname, '..', 'payloads', `${component}.json`), 'utf8'),
-  ) as SurfacePayload;
-  const stylesPath = join(dir, 'component.css');
   return {
     component,
-    markup: readFileSync(join(dir, 'component.jsx'), 'utf8'),
-    styles: existsSync(stylesPath) ? readFileSync(stylesPath, 'utf8') : '',
-    properties: Object.fromEntries(
-      (payload.surface?.properties ?? []).map((p) => [p.name, p.values]),
-    ),
+    markup: readCellFile(dir, 'component.jsx'),
+    styles: readCellFile(dir, 'component.css'),
+    properties: surfaceProperties(component),
   };
 }
 

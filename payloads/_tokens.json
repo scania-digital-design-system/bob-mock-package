@@ -67,6 +67,9 @@
     { "name": "radius/control", "type": "FLOAT", "valuesByMode": { "scania": "4" } },
     { "name": "border/control", "type": "FLOAT", "valuesByMode": { "scania": "1" } },
     { "name": "border/focus", "type": "FLOAT", "valuesByMode": { "scania": "2" } },
-    { "name": "border/focus-offset", "type": "FLOAT", "valuesByMode": { "scania": "1" } }
+    { "name": "border/focus-offset", "type": "FLOAT", "valuesByMode": { "scania": "1" } },
+    { "name": "radius/badge", "type": "FLOAT", "valuesByMode": { "scania": "12" } },
+    { "name": "size/badge/lg", "type": "FLOAT", "valuesByMode": { "scania": "20" } },
+    { "name": "size/badge/sm", "type": "FLOAT", "valuesByMode": { "scania": "8" } }
   ]
 }

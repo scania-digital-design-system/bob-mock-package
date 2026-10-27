@@ -44,8 +44,12 @@ an empty custom property (`--font-detail: ;`).
 
 BOB's stock `ruledata.v2.json` holds 45 names. The foundation set reuses 5 of them where
 the meaning is the same: `color/border/focus`, `color/danger`, `font/size/caption`,
-`radius/control`, `border/control`. Every other name is in the generated `tegel` set:
-31 names after Phase 3.
+`radius/control`, `border/control`. Every other name is in the generated `tegel` set.
+
+| After | `tegel` set |
+|---|---|
+| Foundation | 31 |
+| Badge | 34 |
 
 ## Foundation set
 
@@ -89,9 +93,28 @@ Primitives: `tokens/scss/scania/primitive.scss`; semantic colours:
 
 Font weights: Tegel's `detail-*` are `normal`, `headline-06` and badge text are `bold`.
 
+## Component sets
+
+BOB has no alias (reference) tokens, so Tegel's `--component-*` layer cannot point at a
+semantic token. Where a Tegel component token only resolves to a semantic one, the cell
+uses the semantic token directly; a component token is added only for a value the
+semantic layer does not hold.
+
+### Badge
+
+Source: `packages/core/src/components/badge/badge.scss`.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `radius/badge` | 12 | `.tds-badge` `border-radius: 12px` (hard-coded; `--tds-badge-border-radius` = 24 is unused) |
+| `size/badge/lg` | 20 | `.tds-badge-lg` width, height, line-height |
+| `size/badge/sm` | 8 | `.tds-badge-sm` width, height, line-height |
+
+Reused: `color/danger` (`--component-badge-background-default`), `color/text/inverse-base`
+(`--component-badge-text-default`), `font/size/caption`, `space/element/8`.
+
 ## Not included
 
 - Dark mode and TRATON values (ADR 0002 D8).
 - The Scania Sans web fonts. Tegel loads them from its own CSS; this package does not
   ship them, so text falls back to arial until a consumer loads the fonts.
-- Component tokens. They are added with each component.

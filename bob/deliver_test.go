@@ -80,6 +80,10 @@ func listFiles(t *testing.T, dir string) []string {
 	}
 	names := []string{}
 	for _, e := range entries {
+		// Hidden entries (an editor's or agent's .claude/, .DS_Store) are not cell files.
+		if strings.HasPrefix(e.Name(), ".") {
+			continue
+		}
 		names = append(names, e.Name())
 	}
 	sort.Strings(names)

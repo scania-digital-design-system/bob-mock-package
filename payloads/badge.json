@@ -1,0 +1,18 @@
+{
+  "component": "badge",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-badge at @scania/tegel@1.66.1: a status dot or a count.",
+    "properties": [
+      { "name": "value", "type": "TEXT", "values": [] },
+      { "name": "size", "type": "VARIANT", "values": ["lg", "sm"] },
+      { "name": "isHidden", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "tdsAriaLive", "type": "VARIANT", "values": ["off", "polite", "assertive"] }
+    ],
+    "answers": [
+      { "property": "size", "disposition": "prop" },
+      { "property": "tdsAriaLive", "disposition": "prop" }
+    ]
+  }
+}

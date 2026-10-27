@@ -1,0 +1,32 @@
+.tl-badge {
+  box-sizing: border-box;
+  border-radius: var(--radius-badge);
+  background-color: var(--color-danger);
+  text-align: center;
+}
+.tl-badge--hidden-false {
+  display: block;
+}
+.tl-badge--lg {
+  width: var(--size-badge-lg);
+  height: var(--size-badge-lg);
+  line-height: var(--size-badge-lg);
+}
+.tl-badge--sm {
+  width: var(--size-badge-sm);
+  height: var(--size-badge-sm);
+  line-height: var(--size-badge-sm);
+}
+.tl-badge--pill {
+  display: inline-block;
+  width: auto;
+  padding: 0 var(--space-element-8);
+}
+.tl-badge--hidden-true {
+  display: none;
+}
+.tl-badge__text {
+  color: var(--color-text-inverse-base);
+  font-size: var(--font-size-caption);
+  font-weight: bold;
+}

@@ -1,8 +1,9 @@
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vitest/config';
+import { cellExport } from './build/cell-export';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [cellExport(), react()],
   build: {
     lib: {
       entry: 'src/index.ts',

@@ -1,0 +1,36 @@
+{
+  "componentType": "badge",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "value",
+    "size",
+    "isHidden",
+    "tdsAriaLive"
+  ],
+  "rules": [
+    {
+      "id": "prop-value",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"value\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-size",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"size\" is a component prop: the caller selects one, accepting lg | sm. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-ishidden",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"isHidden\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-tdsarialive",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"tdsAriaLive\" is a component prop: the caller selects one, accepting off | polite | assertive. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}
