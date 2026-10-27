@@ -1,7 +1,3 @@
-// Command gate runs the backbone's real hard gate over every hand-written cell in
-// this repo (ADR 0002 D5). It exits non-zero when any cell has a finding.
-//
-//	go run . -root ..
 package main
 
 import (
@@ -24,24 +20,27 @@ type verdict struct {
 	Result domain.HardGateResult
 }
 
-func main() {
-	root := flag.String("root", "..", "repo root holding cells/, payloads/ and rules/")
-	rulesPath := flag.String("rules", "", "rule data file (default <root>/rules/ruledata.json)")
-	flag.Parse()
+// gateCommand gates every cell and exits 1 on any finding, 2 on an error.
+func gateCommand(args []string) int {
+	flags := flag.NewFlagSet("gate", flag.ExitOnError)
+	root := flags.String("root", "..", "repo root holding cells/, payloads/ and rules/")
+	rulesPath := flags.String("rules", "", "rule data file (default <root>/rules/ruledata.json)")
+	_ = flags.Parse(args)
 	if *rulesPath == "" {
 		*rulesPath = filepath.Join(*root, "rules", "ruledata.json")
 	}
-	verdicts, err := run(*root, *rulesPath)
+	verdicts, err := runGate(*root, *rulesPath)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
-		os.Exit(2)
+		return 2
 	}
 	if !report(os.Stdout, verdicts) {
-		os.Exit(1)
+		return 1
 	}
+	return 0
 }
 
-func run(root, rulesPath string) ([]verdict, error) {
+func runGate(root, rulesPath string) ([]verdict, error) {
 	rules, err := hardgate.LoadRuleDataSetFrom(rulesPath)
 	if err != nil {
 		return nil, err

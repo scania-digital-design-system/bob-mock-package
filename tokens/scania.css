@@ -1,0 +1,38 @@
+:root {
+  --color-background-base: #ffffff;
+  --color-background-layer-01: #f6f7f9;
+  --color-background-layer-02: #ffffff;
+  --color-background-layer-03: #f6f7f9;
+  --color-border-focus: #2a6ecf;
+  --color-border-focus-discrete: #ffffff;
+  --color-border-soft: #0a2850a3;
+  --color-border-strong: #0e1013;
+  --color-border-subtle: #07275880;
+  --color-danger: #d1001b;
+  --color-system-info: #2a6ecf;
+  --color-text-base: #000000;
+  --color-text-defined: #041530b8;
+  --color-text-inverse-base: #ffffff;
+  --color-text-soft: #0a2850a3;
+  --color-text-strong: #0e1013;
+  --opacity-disabled: 0.25;
+  --border-control: 1px;
+  --border-focus: 2px;
+  --border-focus-offset: 1px;
+  --font-letter-spacing-detail: -0.14px;
+  --font-letter-spacing-headline: -0.28px;
+  --font-line-height-detail-02: 16px;
+  --font-line-height-detail-03: 20px;
+  --font-line-height-headline-06: 16px;
+  --font-size-caption: 12px;
+  --font-size-detail: 14px;
+  --radius-control: 4px;
+  --space-element-12: 12px;
+  --space-element-16: 16px;
+  --space-element-2: 2px;
+  --space-element-20: 20px;
+  --space-element-4: 4px;
+  --space-element-8: 8px;
+  --font-family-detail: 'Scania Sans Semi Condensed', arial, 'Helvetica Neue';
+  --font-family-headline: 'Scania Sans', arial, 'Helvetica Neue';
+}

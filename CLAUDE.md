@@ -53,19 +53,24 @@ The source and the compare package are pinned to the same version: **1.66.1**.
    (reference: `../brand-orchestration-backbone/pipeline/testdata/publish_*_request.json`).
    `brands: ["scania"]`, `targets: ["react"]`; Tegel props become `surface.properties`;
    variables come from `payloads/_tokens.json`.
-2. **Write the bootstrap artifacts.** Hand-write `component.jsx` and `component.css` in
+2. **Tokens.** Add any component tokens to `payloads/_tokens.json` (types and naming:
+   `docs/tokens.md`), then `npm run tokens`. It regenerates `tokens/scania.css` and
+   `rules/ruledata.json` with BOB's own code; both are generated, never hand-edited.
+3. **Write the bootstrap artifacts.** Hand-write `component.jsx` and `component.css` in
    `cells/react/<component>/scania/v1/`, as the bootstrap agent would.
-3. **Generate the rest.** The generator writes `metadata.json`, `api.json`, `a11y.json`,
-   `usage.jsx` and `tokens.dtcg.json` from the payload.
-4. **Gate.** The real hard gate (`gate/`) and the prompt-rule tests
+4. **Generate the rest.** BOB's own writers produce `metadata.json`, `api.json`,
+   `a11y.json`, `usage.jsx` and `tokens.dtcg.json` from the payload (ADR 0003).
+5. **Gate.** The real hard gate (`npm run gate`) and the prompt-rule tests
    (`rules/prompt-rules.ts`, run by `tests/prompt-rules.test.ts`) must pass.
-5. **Compare.** DOM tests against Tegel behaviour; record each departure as a finding.
+6. **Compare.** DOM tests against Tegel behaviour; record each departure as a finding.
 
-Layout and toolchain: ADR 0001 (D4–D7) and ADR 0002 (D6, D7).
+Layout and toolchain: ADR 0001 (D4–D7), ADR 0002 (D6, D7), ADR 0003. The Go module `bob/`
+wraps the backbone's exported code; it never runs the pipeline.
 
 Definition of done for any change: `npm run typecheck && npm run lint && npm test &&
-npm run test:gate && npm run gate`. The gate needs Go ≥ 1.26 on `PATH`; in a sandboxed
-session point `GOMODCACHE`, `GOCACHE` and `GOPATH` at `$TMPDIR`.
+npm run test:bob && npm run gate`. `test:bob` fails when a generated file is stale. Go
+≥ 1.26 must be on `PATH`; in a sandboxed session point `GOMODCACHE`, `GOCACHE` and
+`GOPATH` at `$TMPDIR`.
 
 ## Rules
 
@@ -83,7 +88,7 @@ Borrowed from the backbone repo and adapted. Each names its source.
    and draft a Conventional Commits message.
 3. **Testing discipline** (backbone AGENTS.md §4). Every hand-written function (payload
    generator, compare harness, gate harness) gets a table-driven test (`it.each`, or a Go
-   table test in `gate/`), with network and file access stubbed. Every cell passes the
+   table test in `bob/`), with network and file access stubbed. Every cell passes the
    real gate and gets DOM tests against Tegel's behaviour.
 4. **Cells keep the delivered shape** (ADR 0002 D2, D3, D7). `component.jsx` and
    `component.css` follow `pipeline/prompts/bootstrap_system_react.txt` to the letter: bare

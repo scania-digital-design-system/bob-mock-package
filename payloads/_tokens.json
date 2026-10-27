@@ -1,0 +1,72 @@
+{
+  "variables": [
+    { "name": "color/text/strong", "type": "COLOR", "valuesByMode": { "scania": "#0e1013" } },
+    { "name": "color/text/defined", "type": "COLOR", "valuesByMode": { "scania": "#041530b8" } },
+    { "name": "color/text/soft", "type": "COLOR", "valuesByMode": { "scania": "#0a2850a3" } },
+    { "name": "color/text/base", "type": "COLOR", "valuesByMode": { "scania": "#000000" } },
+    { "name": "color/text/inverse-base", "type": "COLOR", "valuesByMode": { "scania": "#ffffff" } },
+    { "name": "color/background/base", "type": "COLOR", "valuesByMode": { "scania": "#ffffff" } },
+    {
+      "name": "color/background/layer-01",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "#f6f7f9" }
+    },
+    {
+      "name": "color/background/layer-02",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "#ffffff" }
+    },
+    {
+      "name": "color/background/layer-03",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "#f6f7f9" }
+    },
+    { "name": "color/border/soft", "type": "COLOR", "valuesByMode": { "scania": "#0a2850a3" } },
+    { "name": "color/border/subtle", "type": "COLOR", "valuesByMode": { "scania": "#07275880" } },
+    { "name": "color/border/strong", "type": "COLOR", "valuesByMode": { "scania": "#0e1013" } },
+    { "name": "color/border/focus", "type": "COLOR", "valuesByMode": { "scania": "#2a6ecf" } },
+    {
+      "name": "color/border/focus-discrete",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "#ffffff" }
+    },
+    { "name": "color/system/info", "type": "COLOR", "valuesByMode": { "scania": "#2a6ecf" } },
+    { "name": "color/danger", "type": "COLOR", "valuesByMode": { "scania": "#d1001b" } },
+    { "name": "opacity/disabled", "type": "COLOR", "valuesByMode": { "scania": "0.25" } },
+    {
+      "name": "font/family/detail.fontFamily",
+      "type": "STRING",
+      "valuesByMode": { "scania": "'Scania Sans Semi Condensed', arial, 'Helvetica Neue'" }
+    },
+    {
+      "name": "font/family/headline.fontFamily",
+      "type": "STRING",
+      "valuesByMode": { "scania": "'Scania Sans', arial, 'Helvetica Neue'" }
+    },
+    { "name": "font/size/detail", "type": "FLOAT", "valuesByMode": { "scania": "14" } },
+    { "name": "font/size/caption", "type": "FLOAT", "valuesByMode": { "scania": "12" } },
+    { "name": "font/line-height/detail-02", "type": "FLOAT", "valuesByMode": { "scania": "16" } },
+    { "name": "font/line-height/detail-03", "type": "FLOAT", "valuesByMode": { "scania": "20" } },
+    { "name": "font/line-height/headline-06", "type": "FLOAT", "valuesByMode": { "scania": "16" } },
+    {
+      "name": "font/letter-spacing/detail",
+      "type": "FLOAT",
+      "valuesByMode": { "scania": "-0.14" }
+    },
+    {
+      "name": "font/letter-spacing/headline",
+      "type": "FLOAT",
+      "valuesByMode": { "scania": "-0.28" }
+    },
+    { "name": "space/element/2", "type": "FLOAT", "valuesByMode": { "scania": "2" } },
+    { "name": "space/element/4", "type": "FLOAT", "valuesByMode": { "scania": "4" } },
+    { "name": "space/element/8", "type": "FLOAT", "valuesByMode": { "scania": "8" } },
+    { "name": "space/element/12", "type": "FLOAT", "valuesByMode": { "scania": "12" } },
+    { "name": "space/element/16", "type": "FLOAT", "valuesByMode": { "scania": "16" } },
+    { "name": "space/element/20", "type": "FLOAT", "valuesByMode": { "scania": "20" } },
+    { "name": "radius/control", "type": "FLOAT", "valuesByMode": { "scania": "4" } },
+    { "name": "border/control", "type": "FLOAT", "valuesByMode": { "scania": "1" } },
+    { "name": "border/focus", "type": "FLOAT", "valuesByMode": { "scania": "2" } },
+    { "name": "border/focus-offset", "type": "FLOAT", "valuesByMode": { "scania": "1" } }
+  ]
+}

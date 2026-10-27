@@ -27,8 +27,9 @@
     "lint": "biome check .",
     "format": "biome format --write .",
     "test": "vitest run",
-    "gate": "cd gate && go run . -root ..",
-    "test:gate": "cd gate && go vet ./... && go test ./..."
+    "gate": "cd bob && go run . gate -root ..",
+    "tokens": "cd bob && go run . tokens -root ..",
+    "test:bob": "cd bob && go vet ./... && go test ./..."
   },
   "peerDependencies": {
     "react": "^18 || ^19",
