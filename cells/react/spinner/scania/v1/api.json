@@ -1,0 +1,22 @@
+{
+  "componentType": "spinner",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "size",
+    "variant"
+  ],
+  "rules": [
+    {
+      "id": "prop-size",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"size\" is a component prop: the caller selects one, accepting xs | sm | md | lg. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-variant",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"variant\" is a component prop: the caller selects one, accepting standard | inverted. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

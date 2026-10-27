@@ -77,6 +77,8 @@ func TestRealGateOverCell(t *testing.T) {
 			fixtureStyles + ".tl-badge { outline-color: var(--color-invented); }\n", []string{"tone"}, []string{"token-set", "token-set"}},
 		{"vocabulary token the brand does not define fails closure only", fixtureMarkup,
 			fixtureStyles + ".tl-badge { outline-color: var(--color-danger); }\n", []string{"tone"}, []string{"token-set"}},
+		{"a local custom property fails membership and closure", fixtureMarkup,
+			fixtureStyles + ".tl-badge--loud { --tone: var(--color-on-primary); color: var(--tone); }\n", []string{"tone"}, []string{"token-set", "token-set"}},
 		{"space token on width fails token usage", fixtureMarkup,
 			fixtureStyles + ".tl-badge { width: var(--space-inset-sm); }\n", []string{"tone"}, []string{"token-usage"}},
 		{"interpolating an undeclared name fails class closure",

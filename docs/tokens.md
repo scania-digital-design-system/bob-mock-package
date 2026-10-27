@@ -52,6 +52,7 @@ the meaning is the same: `color/border/focus`, `color/danger`, `font/size/captio
 | Badge | 34 |
 | Button | 53 |
 | Link | 56 |
+| Spinner | 66 |
 
 ## Foundation set
 
@@ -158,6 +159,22 @@ light block of `tokens/scss/component/link.scss`.
 Reused: `color/system/info` (`--tds-link-focus`), `color/border/focus-discrete` (the white
 inner ring, Tegel's `--tds-white`), `border/control` (inner ring 1px), `opacity/disabled`,
 and the `detail-02` typography tokens for `standalone`.
+
+### Spinner
+
+Source: `packages/core/src/components/spinner/spinner.scss`, `spinner-vars.scss`, and the
+Scania light block of `tokens/scss/component/spinner.scss`.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `size/spinner/{xs,sm,md,lg}` | 16, 24, 52, 84 | `--component-spinner-size-{extra-small,small,medium,large}` (diameters) |
+| `size/spinner/stroke-{xs,sm,md,lg}` | 3, 4, 6, 8 | `--component-spinner-stroke-*` |
+| `motion/spinner/duration` (carrier) | `1.8s` | `--spinner-speed` (literal in Tegel) |
+| `motion/spinner/duration-lg` (carrier) | `2s` | `--spinner-speed-lg` (literal in Tegel) |
+
+Reused: `color/system/info` (`--component-spinner-background-default`) and
+`color/text/inverse-base` (inverted stroke, Tegel's `grey-00`). The radius and the dash
+length are `calc()` on the diameter; π and the easing curve stay literal, as in Tegel.
 
 ## Not included
 

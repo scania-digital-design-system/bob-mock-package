@@ -24,6 +24,8 @@
   --color-text-inverse-base: #ffffff;
   --color-text-soft: #0a2850a3;
   --color-text-strong: #0e1013;
+  --motion-spinner-duration: 1.8s;
+  --motion-spinner-duration-lg: 2s;
   --opacity-disabled: 0.25;
   --border-control: 1px;
   --border-focus: 2px;
@@ -46,6 +48,14 @@
   --size-button-md: 48px;
   --size-button-sm: 40px;
   --size-button-xs: 24px;
+  --size-spinner-lg: 84px;
+  --size-spinner-md: 52px;
+  --size-spinner-sm: 24px;
+  --size-spinner-stroke-lg: 8px;
+  --size-spinner-stroke-md: 6px;
+  --size-spinner-stroke-sm: 4px;
+  --size-spinner-stroke-xs: 3px;
+  --size-spinner-xs: 16px;
   --space-button-icon-lg: 18px;
   --space-button-icon-md: 14px;
   --space-button-icon-sm: 10px;

@@ -116,6 +116,16 @@
     { "name": "space/button/only-icon-sm", "type": "FLOAT", "valuesByMode": { "scania": "11" } },
     { "name": "color/link/default", "type": "COLOR", "valuesByMode": { "scania": "#2a6ecf" } },
     { "name": "color/link/visited", "type": "COLOR", "valuesByMode": { "scania": "#16417f" } },
-    { "name": "border/link-focus", "type": "FLOAT", "valuesByMode": { "scania": "3" } }
+    { "name": "border/link-focus", "type": "FLOAT", "valuesByMode": { "scania": "3" } },
+    { "name": "size/spinner/xs", "type": "FLOAT", "valuesByMode": { "scania": "16" } },
+    { "name": "size/spinner/sm", "type": "FLOAT", "valuesByMode": { "scania": "24" } },
+    { "name": "size/spinner/md", "type": "FLOAT", "valuesByMode": { "scania": "52" } },
+    { "name": "size/spinner/lg", "type": "FLOAT", "valuesByMode": { "scania": "84" } },
+    { "name": "size/spinner/stroke-xs", "type": "FLOAT", "valuesByMode": { "scania": "3" } },
+    { "name": "size/spinner/stroke-sm", "type": "FLOAT", "valuesByMode": { "scania": "4" } },
+    { "name": "size/spinner/stroke-md", "type": "FLOAT", "valuesByMode": { "scania": "6" } },
+    { "name": "size/spinner/stroke-lg", "type": "FLOAT", "valuesByMode": { "scania": "8" } },
+    { "name": "motion/spinner/duration", "type": "COLOR", "valuesByMode": { "scania": "1.8s" } },
+    { "name": "motion/spinner/duration-lg", "type": "COLOR", "valuesByMode": { "scania": "2s" } }
   ]
 }

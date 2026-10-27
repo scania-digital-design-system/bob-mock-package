@@ -1,6 +1,7 @@
 // The cases both preview pages render: one section per component, one row per case.
-// They follow the component's tests. `icon: true` asks each page for its own icon.
-export type DemoCase = { label: string; props: Record<string, unknown> };
+// They follow the component's tests. `icon: true` asks each page for its own icon;
+// `dark` puts the row on a dark background (for inverted variants).
+export type DemoCase = { label: string; props: Record<string, unknown>; dark?: boolean };
 export type DemoSection = { component: string; tag: string; cases: DemoCase[] };
 
 export const SECTIONS: DemoSection[] = [
@@ -51,6 +52,18 @@ export const SECTIONS: DemoSection[] = [
       { label: 'standalone', props: { href: '#link', children: 'Link text', standalone: true } },
       { label: 'disabled', props: { href: '#link', children: 'Link text', disabled: true } },
       { label: 'visited (same page)', props: { href: '', children: 'Link text' } },
+    ],
+  },
+  {
+    component: 'spinner',
+    tag: 'tds-spinner',
+    cases: [
+      { label: 'lg standard', props: {} },
+      { label: 'md standard', props: { size: 'md' } },
+      { label: 'sm standard', props: { size: 'sm' } },
+      { label: 'xs standard', props: { size: 'xs' } },
+      { label: 'lg inverted', props: { variant: 'inverted' }, dark: true },
+      { label: 'sm inverted', props: { size: 'sm', variant: 'inverted' }, dark: true },
     ],
   },
 ];

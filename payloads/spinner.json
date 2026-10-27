@@ -1,0 +1,16 @@
+{
+  "component": "spinner",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-spinner at @scania/tegel@1.66.1.",
+    "properties": [
+      { "name": "size", "type": "VARIANT", "values": ["xs", "sm", "md", "lg"] },
+      { "name": "variant", "type": "VARIANT", "values": ["standard", "inverted"] }
+    ],
+    "answers": [
+      { "property": "size", "disposition": "prop" },
+      { "property": "variant", "disposition": "prop" }
+    ]
+  }
+}

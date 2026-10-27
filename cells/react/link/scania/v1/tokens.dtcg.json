@@ -189,6 +189,18 @@
       }
     }
   },
+  "motion": {
+    "spinner": {
+      "duration": {
+        "$type": "color",
+        "$value": "1.8s"
+      },
+      "duration-lg": {
+        "$type": "color",
+        "$value": "2s"
+      }
+    }
+  },
   "opacity": {
     "disabled": {
       "$type": "color",
@@ -240,6 +252,40 @@
       "xs": {
         "$type": "number",
         "$value": 24
+      }
+    },
+    "spinner": {
+      "lg": {
+        "$type": "number",
+        "$value": 84
+      },
+      "md": {
+        "$type": "number",
+        "$value": 52
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 24
+      },
+      "stroke-lg": {
+        "$type": "number",
+        "$value": 8
+      },
+      "stroke-md": {
+        "$type": "number",
+        "$value": 6
+      },
+      "stroke-sm": {
+        "$type": "number",
+        "$value": 4
+      },
+      "stroke-xs": {
+        "$type": "number",
+        "$value": 3
+      },
+      "xs": {
+        "$type": "number",
+        "$value": 16
       }
     }
   },

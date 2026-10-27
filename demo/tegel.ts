@@ -55,6 +55,9 @@ async function preview(root: HTMLElement) {
       const term = document.createElement('dt');
       term.textContent = demoCase.label;
       const detail = document.createElement('dd');
+      if (demoCase.dark) {
+        detail.className = 'dark';
+      }
       detail.append(element(tag, demoCase));
       row.append(term, detail);
       list.append(row);
