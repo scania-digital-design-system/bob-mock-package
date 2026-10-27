@@ -53,6 +53,7 @@ the meaning is the same: `color/border/focus`, `color/danger`, `font/size/captio
 | Button | 53 |
 | Link | 56 |
 | Spinner | 66 |
+| Card | 80 |
 
 ## Foundation set
 
@@ -175,6 +176,32 @@ Scania light block of `tokens/scss/component/spinner.scss`.
 Reused: `color/system/info` (`--component-spinner-background-default`) and
 `color/text/inverse-base` (inverted stroke, Tegel's `grey-00`). The radius and the dash
 length are `calc()` on the diameter; π and the easing curve stay literal, as in Tegel.
+
+### Card
+
+Source: `packages/core/src/components/card/card.scss`, `card-vars.scss`, the Scania light
+blocks of `tokens/scss/component/card.scss` and `divider.scss`.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `color/shadow/{1,5,15,20}` | `#00000003`, `#0000000d`, `#00000026`, `#00000033` | `rgb(0 0 0 / 1%, 5%, 15%, 20%)` in `--tds-card-box*` |
+| `size/shadow/{1,3}`, `size/shadow/minus-1` | 1, 3, -1 | shadow offsets and blurs in `--tds-card-box*` |
+| `size/card/thumbnail` | 36 | thumbnail `width`/`height` |
+| `size/card/body-max` | 336 | body `max-width` |
+| `size/card/chevron` | 16 | expand icon `size="16px"` |
+| `border/focus-inset` | -2 | clickable `:focus-visible` `outline-offset: -2px` |
+| `color/divider/discrete` | `#d1d7e0` | `--component-divider-border-discrete-default` = grey-200 |
+| `motion/card/rotate` (carrier) | `160ms` | chevron `transform` transition |
+| `motion/card/fade` (carrier) | `120ms` | chevron `opacity` transition |
+
+Reused: `color/background/base` (card background, Tegel's `base-white`),
+`color/background/layer-03`, `color/text/{strong,soft,defined,base}`, `radius/control`,
+`border/focus`, `color/border/focus`, `space/element/{4,16}`, `space/button/only-icon-sm`
+(the toggle's padding, as in Tegel's `sm` ghost button), and the `headline-06` and
+`detail-03` typography tokens.
+
+Shadows are composed from `size` and `color` tokens: BOB has no shadow type, and the
+gate's `color` category is allowed on `box-shadow`.
 
 ## Not included
 

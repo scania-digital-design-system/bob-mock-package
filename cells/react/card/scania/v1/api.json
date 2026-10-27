@@ -1,0 +1,114 @@
+{
+  "componentType": "card",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "header",
+    "subheader",
+    "thumbnail",
+    "bodyImg",
+    "bodyImgAlt",
+    "bodyImage",
+    "bodyDivider",
+    "body",
+    "actions",
+    "imagePlacement",
+    "clickable",
+    "stretch",
+    "expandable",
+    "expanded",
+    "cardId",
+    "onTdsClick"
+  ],
+  "rules": [
+    {
+      "id": "prop-header",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"header\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-subheader",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"subheader\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-thumbnail",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"thumbnail\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-bodyimg",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"bodyImg\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-bodyimgalt",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"bodyImgAlt\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-bodyimage",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"bodyImage\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-bodydivider",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"bodyDivider\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-body",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"body\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-actions",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"actions\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-imageplacement",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"imagePlacement\" is a component prop: the caller selects one, accepting above-header | below-header. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-clickable",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"clickable\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-stretch",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"stretch\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-expandable",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"expandable\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-expanded",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"expanded\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-cardid",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"cardId\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

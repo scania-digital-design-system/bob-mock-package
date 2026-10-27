@@ -126,6 +126,20 @@
     { "name": "size/spinner/stroke-md", "type": "FLOAT", "valuesByMode": { "scania": "6" } },
     { "name": "size/spinner/stroke-lg", "type": "FLOAT", "valuesByMode": { "scania": "8" } },
     { "name": "motion/spinner/duration", "type": "COLOR", "valuesByMode": { "scania": "1.8s" } },
-    { "name": "motion/spinner/duration-lg", "type": "COLOR", "valuesByMode": { "scania": "2s" } }
+    { "name": "motion/spinner/duration-lg", "type": "COLOR", "valuesByMode": { "scania": "2s" } },
+    { "name": "color/shadow/1", "type": "COLOR", "valuesByMode": { "scania": "#00000003" } },
+    { "name": "color/shadow/5", "type": "COLOR", "valuesByMode": { "scania": "#0000000d" } },
+    { "name": "color/shadow/15", "type": "COLOR", "valuesByMode": { "scania": "#00000026" } },
+    { "name": "color/shadow/20", "type": "COLOR", "valuesByMode": { "scania": "#00000033" } },
+    { "name": "size/shadow/1", "type": "FLOAT", "valuesByMode": { "scania": "1" } },
+    { "name": "size/shadow/3", "type": "FLOAT", "valuesByMode": { "scania": "3" } },
+    { "name": "size/shadow/minus-1", "type": "FLOAT", "valuesByMode": { "scania": "-1" } },
+    { "name": "size/card/thumbnail", "type": "FLOAT", "valuesByMode": { "scania": "36" } },
+    { "name": "size/card/body-max", "type": "FLOAT", "valuesByMode": { "scania": "336" } },
+    { "name": "size/card/chevron", "type": "FLOAT", "valuesByMode": { "scania": "16" } },
+    { "name": "border/focus-inset", "type": "FLOAT", "valuesByMode": { "scania": "-2" } },
+    { "name": "color/divider/discrete", "type": "COLOR", "valuesByMode": { "scania": "#d1d7e0" } },
+    { "name": "motion/card/rotate", "type": "COLOR", "valuesByMode": { "scania": "160ms" } },
+    { "name": "motion/card/fade", "type": "COLOR", "valuesByMode": { "scania": "120ms" } }
   ]
 }

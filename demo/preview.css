@@ -32,6 +32,13 @@ h2 {
 .case dd {
   margin: 0;
 }
+section[data-component="card"] .case dd {
+  max-width: 360px;
+}
+.actions {
+  display: flex;
+  gap: 16px;
+}
 .case dd.dark {
   padding: 8px;
   background: #0e1013;

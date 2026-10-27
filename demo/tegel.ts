@@ -1,6 +1,6 @@
 import '@scania/tegel/dist/tegel/tegel.css';
 import { defineCustomElements } from '@scania/tegel/loader';
-import { type DemoCase, ICON_PATH, SECTIONS } from './cases';
+import { type DemoCase, ICON_PATH, SECTIONS, THUMBNAIL_SRC } from './cases';
 
 // The reference: Tegel's own web components, rendered with Tegel's CSS.
 
@@ -28,14 +28,47 @@ function slottedAnchor(href: unknown, target: unknown, children: unknown): HTMLA
   return anchor;
 }
 
+// Tegel's card takes thumbnail, body and actions through named slots.
+function cardSlots(thumbnail: unknown, body: unknown, actions: unknown): HTMLElement[] {
+  const slots: HTMLElement[] = [];
+  if (thumbnail) {
+    const img = Object.assign(document.createElement('img'), { src: THUMBNAIL_SRC, alt: '' });
+    img.slot = 'thumbnail';
+    slots.push(img);
+  }
+  if (typeof body === 'string') {
+    const div = Object.assign(document.createElement('div'), { textContent: body });
+    div.slot = 'body';
+    slots.push(div);
+  }
+  if (actions) {
+    const div = document.createElement('div');
+    div.slot = 'actions';
+    div.className = 'actions';
+    div.append(
+      Object.assign(document.createElement('tds-button'), { size: 'sm', text: 'Primary' }),
+      Object.assign(document.createElement('tds-button'), {
+        size: 'sm',
+        text: 'Secondary',
+        variant: 'secondary',
+      }),
+    );
+    slots.push(div);
+  }
+  return slots;
+}
+
 function element(tag: string, { props }: DemoCase): HTMLElement {
-  const { icon, href, target, children, ...rest } = props;
+  const { icon, href, target, children, thumbnail, body, actions, ...rest } = props;
   const el = Object.assign(document.createElement(tag), rest);
   if (icon) {
     el.append(slottedIcon());
   }
   if (tag === 'tds-link') {
     el.append(slottedAnchor(href, target, children));
+  }
+  if (tag === 'tds-card') {
+    el.append(...cardSlots(thumbnail, body, actions));
   }
   return el;
 }
@@ -45,6 +78,7 @@ async function preview(root: HTMLElement) {
   for (const { component, tag, cases } of SECTIONS) {
     await customElements.whenDefined(tag);
     const section = document.createElement('section');
+    section.dataset.component = component;
     const heading = document.createElement('h2');
     heading.textContent = component;
     const list = document.createElement('dl');

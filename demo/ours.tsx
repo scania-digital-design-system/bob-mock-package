@@ -5,17 +5,20 @@ import '../cells/react/badge/scania/v1/component.css';
 import '../cells/react/button/scania/v1/component.css';
 import '../cells/react/link/scania/v1/component.css';
 import '../cells/react/spinner/scania/v1/component.css';
+import '../cells/react/card/scania/v1/component.css';
 import Badge from '../cells/react/badge/scania/v1/component.jsx';
 import Button from '../cells/react/button/scania/v1/component.jsx';
+import Card from '../cells/react/card/scania/v1/component.jsx';
 import Link from '../cells/react/link/scania/v1/component.jsx';
 import Spinner from '../cells/react/spinner/scania/v1/component.jsx';
-import { ICON_PATH, SECTIONS } from './cases';
+import { ICON_PATH, SECTIONS, THUMBNAIL_SRC } from './cases';
 
 const COMPONENTS: Record<string, FC<Record<string, unknown>>> = {
   badge: Badge,
   button: Button,
   link: Link,
   spinner: Spinner,
+  card: Card,
 };
 
 const icon = (
@@ -24,18 +27,37 @@ const icon = (
   </svg>
 );
 
+const thumbnail = <img src={THUMBNAIL_SRC} alt="" width="100%" height="100%" />;
+
+const actions = (
+  <div className="actions">
+    <Button size="sm" text="Primary" />
+    <Button size="sm" text="Secondary" variant="secondary" />
+  </div>
+);
+
+// Turns the shared case flags into the nodes our cells take as props.
+function nodeProps(props: Record<string, unknown>): Record<string, unknown> {
+  return {
+    ...props,
+    icon: props.icon ? icon : undefined,
+    thumbnail: props.thumbnail ? thumbnail : undefined,
+    actions: props.actions ? actions : undefined,
+  };
+}
+
 function Preview() {
   return SECTIONS.map(({ component, cases }) => {
     const Component = COMPONENTS[component];
     return (
-      <section key={component}>
+      <section key={component} data-component={component}>
         <h2>{component}</h2>
         <dl className="cases">
           {cases.map(({ label, props, dark }) => (
             <div className="case" key={label}>
               <dt>{label}</dt>
               <dd className={dark ? 'dark' : undefined}>
-                {Component && <Component {...props} icon={props.icon ? icon : undefined} />}
+                {Component && <Component {...nodeProps(props)} />}
               </dd>
             </div>
           ))}

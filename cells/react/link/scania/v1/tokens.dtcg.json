@@ -8,6 +8,10 @@
       "$type": "number",
       "$value": 2
     },
+    "focus-inset": {
+      "$type": "number",
+      "$value": -2
+    },
     "focus-offset": {
       "$type": "number",
       "$value": 1
@@ -96,6 +100,12 @@
       "$type": "color",
       "$value": "#d1001b"
     },
+    "divider": {
+      "discrete": {
+        "$type": "color",
+        "$value": "#d1d7e0"
+      }
+    },
     "link": {
       "default": {
         "$type": "color",
@@ -104,6 +114,24 @@
       "visited": {
         "$type": "color",
         "$value": "#16417f"
+      }
+    },
+    "shadow": {
+      "1": {
+        "$type": "color",
+        "$value": "#00000003"
+      },
+      "15": {
+        "$type": "color",
+        "$value": "#00000026"
+      },
+      "20": {
+        "$type": "color",
+        "$value": "#00000033"
+      },
+      "5": {
+        "$type": "color",
+        "$value": "#0000000d"
       }
     },
     "system": {
@@ -190,6 +218,16 @@
     }
   },
   "motion": {
+    "card": {
+      "fade": {
+        "$type": "color",
+        "$value": "120ms"
+      },
+      "rotate": {
+        "$type": "color",
+        "$value": "160ms"
+      }
+    },
     "spinner": {
       "duration": {
         "$type": "color",
@@ -252,6 +290,34 @@
       "xs": {
         "$type": "number",
         "$value": 24
+      }
+    },
+    "card": {
+      "body-max": {
+        "$type": "number",
+        "$value": 336
+      },
+      "chevron": {
+        "$type": "number",
+        "$value": 16
+      },
+      "thumbnail": {
+        "$type": "number",
+        "$value": 36
+      }
+    },
+    "shadow": {
+      "1": {
+        "$type": "number",
+        "$value": 1
+      },
+      "3": {
+        "$type": "number",
+        "$value": 3
+      },
+      "minus-1": {
+        "$type": "number",
+        "$value": -1
       }
     },
     "spinner": {

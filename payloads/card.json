@@ -1,0 +1,26 @@
+{
+  "component": "card",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-card at @scania/tegel@1.66.1. Slots become instance-swap props.",
+    "properties": [
+      { "name": "header", "type": "TEXT", "values": [] },
+      { "name": "subheader", "type": "TEXT", "values": [] },
+      { "name": "thumbnail", "type": "INSTANCE_SWAP", "values": [] },
+      { "name": "bodyImg", "type": "TEXT", "values": [] },
+      { "name": "bodyImgAlt", "type": "TEXT", "values": [] },
+      { "name": "bodyImage", "type": "INSTANCE_SWAP", "values": [] },
+      { "name": "bodyDivider", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "body", "type": "INSTANCE_SWAP", "values": [] },
+      { "name": "actions", "type": "INSTANCE_SWAP", "values": [] },
+      { "name": "imagePlacement", "type": "VARIANT", "values": ["above-header", "below-header"] },
+      { "name": "clickable", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "stretch", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "expandable", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "expanded", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "cardId", "type": "TEXT", "values": [] }
+    ],
+    "answers": [{ "property": "imagePlacement", "disposition": "prop" }]
+  }
+}

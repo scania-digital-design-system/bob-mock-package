@@ -16,6 +16,8 @@ const DEPARTURES: Record<string, { dropped?: string[]; added?: string[] }> = {
   button: { added: ['icon', 'onClick'] },
   // The slotted <a> is rendered by the cell, so its attributes and content are props.
   link: { added: ['href', 'target', 'children'] },
+  // Tegel's named slots become props.
+  card: { added: ['thumbnail', 'bodyImage', 'body', 'actions'] },
 };
 
 // Read by path: the package's "exports" map does not expose this file.
