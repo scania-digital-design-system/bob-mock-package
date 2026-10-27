@@ -12,7 +12,7 @@ Terms (cell, bootstrap, blessing, golden reference, ratchet) follow the backbone
 
 - Brand: `scania` only. Target: `react` only. Angular comes later by adding `"angular"` to
   a payload's `targets`, so keep payloads and packaging target-agnostic.
-- Components, in order: button, badge, link, spinner, card.
+- Components, in order: badge, button, link, spinner, card (ADR 0001 D7).
 - Tegel is final. It replaces the Figma step, so there is no design iteration. A
   difference between a generated cell and Tegel is a **finding** about the pipeline.
 
@@ -51,8 +51,12 @@ The source and the compare package are pinned to the same version: **1.66.1**.
    `docker compose run --rm -v ~/Desktop/Projects/bob-mock-package/payloads:/app/mock:ro worker publish mock/<component>.json`.
    The mount keeps payloads in this repo; the worker only mounts its own `testdata/`.
 3. **Collect.** The cell lands in backbone `pipeline/output/react/<component>/scania/v<n>/`
-   (component source, token source, `metadata.json`). Copy it into this repo byte-for-byte.
-4. **Compare.** Run the comparison tests and record each finding.
+   (component source, token source, `metadata.json`). Copy it byte-for-byte to
+   `cells/react/<component>/scania/v<n>/`.
+4. **Compare.** Run the comparison tests and record each finding in
+   `docs/findings/<component>.md`.
+
+Package layout and toolchain: `docs/adr/0001-package-skeleton.md`.
 
 Only `button` has a blessed template (`pipeline/contracts/registry.v1.json`); the other
 four go through **bootstrap**, so their output is an LLM draft.
