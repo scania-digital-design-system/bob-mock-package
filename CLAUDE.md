@@ -2,7 +2,7 @@
 
 A test bed for the brand-orchestration-backbone (BOB) pipeline. Tegel's components are
 hand-written exactly as the pipeline would deliver them (React target, scania brand),
-checked by the pipeline's real hard gate, packaged as `@umain-mock/bob-mock-package`, and
+checked by the pipeline's real hard gate, packaged as `@umain-mock/bob-mock-react`, and
 measured against Tegel. The pipeline itself is not run. It is for testing, not a product.
 
 Design: `docs/adr/0002-hand-written-cells-in-bob-shape.md`. Reference for every cell:
@@ -16,7 +16,8 @@ Terms (cell, bootstrap, blessing, golden reference, ratchet) follow the backbone
 ## Scope
 
 - Brand: `scania` only. Target: `react` only. Angular comes later by adding `"angular"` to
-  a payload's `targets`, so keep payloads and packaging target-agnostic.
+  a payload's `targets`, so keep payloads target-agnostic. Each target ships as its own
+  package (ADR 0005 D1).
 - Components, in order: badge, button, link, spinner, card (ADR 0001 D7).
 - Light mode only; dark mode, `modeVariant` and `animation` are out (ADR 0002 D8).
 - Tegel is final; there is no design iteration. A difference between a cell and Tegel
@@ -67,7 +68,7 @@ The source and the compare package are pinned to the same version: **1.66.1**.
    (`rules/prompt-rules.ts`, run by `tests/prompt-rules.test.ts`) must pass.
 6. **Compare.** DOM tests against Tegel behaviour; record each departure as a finding.
 
-Layout and toolchain: ADR 0001 (D4–D7), ADR 0002 (D6, D7), ADR 0003. The Go module `bob/`
+Layout and toolchain: ADR 0001 (D4–D7), ADR 0002 (D6), ADR 0003, ADR 0005. The Go module `bob/`
 wraps the backbone's exported code; it never runs the pipeline.
 
 Definition of done for any change: `npm run typecheck && npm run lint && npm test &&
@@ -93,7 +94,7 @@ Borrowed from the backbone repo and adapted. Each names its source.
    generator, compare harness, gate harness) gets a table-driven test (`it.each`, or a Go
    table test in `bob/`), with network and file access stubbed. Every cell passes the
    real gate and gets DOM tests against Tegel's behaviour.
-4. **Cells keep the delivered shape** (ADR 0002 D2, D3, D7). `component.jsx` and
+4. **Cells keep the delivered shape** (ADR 0002 D2, D3; ADR 0005 D2). `component.jsx` and
    `component.css` follow `pipeline/prompts/bootstrap_system_react.txt` to the letter: bare
    function, no import or export, `className` with `tl-` classes, modifiers interpolating
    a bare prop name, no `style` attribute, every CSS value a `var(--token)`. Generated
@@ -110,8 +111,8 @@ Borrowed from the backbone repo and adapted. Each names its source.
 
 ## Publishing
 
-- The package is `@umain-mock/bob-mock-package`. Public npm and the `@scania` scope are
-  off-limits.
+- The package is `@umain-mock/bob-mock-react` (ADR 0005). Public npm and the `@scania`
+  scope are off-limits. How the team gets the package is not decided yet.
 - Fast checks: `npm pack` and a tarball install, or a `file:` dependency.
 - Full flow: Verdaccio (`npx verdaccio`, then `npm publish --registry http://localhost:4873`).
 - If npm fails with EPERM on `~/.npm`, use `--cache "$TMPDIR/npmcache"` and ask the user
