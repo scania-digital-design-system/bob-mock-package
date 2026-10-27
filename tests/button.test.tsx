@@ -1,11 +1,11 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import Button from '../cells/react/button/scania/v1/component.jsx';
+import { Button, type ButtonProps } from '../src';
 
 // Expected behaviour is Tegel's tds-button at @scania/tegel@1.66.1
 // (packages/core/src/components/button/button.tsx, render).
 
-function renderButton(props: Record<string, unknown>) {
+function renderButton(props: ButtonProps) {
   render(<Button {...props} />);
   return screen.getByRole('button');
 }
@@ -13,7 +13,7 @@ function renderButton(props: Record<string, unknown>) {
 const icon = <svg data-testid="icon" />;
 
 describe('Button matches tds-button', () => {
-  it.each([
+  it.each<[string, ButtonProps, string[]]>([
     ['primary lg by default', {}, ['tl-button--primary', 'tl-button--lg']],
     ['each variant', { variant: 'ghost' }, ['tl-button--ghost']],
     ['each size', { size: 'xs' }, ['tl-button--xs']],
@@ -23,7 +23,7 @@ describe('Button matches tds-button', () => {
     expect(renderButton({ text: 'Go', ...props })).toHaveClass('tl-button', ...wantClasses);
   });
 
-  it.each([
+  it.each<[string, ButtonProps, string]>([
     ['button by default', {}, 'button'],
     ['submit when asked', { type: 'submit' }, 'submit'],
     ['reset when asked', { type: 'reset' }, 'reset'],

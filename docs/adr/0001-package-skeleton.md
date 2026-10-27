@@ -1,6 +1,7 @@
 # ADR 0001: Package Skeleton
 
-**Status:** Accepted. **D1, D2 and D3 superseded by ADR 0002**; D4–D7 stand.
+**Status:** Accepted. **D1, D2 and D3 superseded by ADR 0002**; **D7 superseded by ADR
+0006**; D4–D6 stand.
 **Scope:** package
 
 ## Context

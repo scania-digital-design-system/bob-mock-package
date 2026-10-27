@@ -1,11 +1,11 @@
 import { fireEvent, render } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import Card from '../cells/react/card/scania/v1/component.jsx';
+import { Card, type CardProps } from '../src';
 
 // Expected behaviour is Tegel's tds-card at @scania/tegel@1.66.1
 // (packages/core/src/components/card/card.tsx), with slots as props.
 
-function renderCard(props: Record<string, unknown>) {
+function renderCard(props: CardProps) {
   const { container } = render(<Card header="Header" {...props} />);
   const card = container.firstElementChild as HTMLElement;
   return { card, find: (selector: string) => card.querySelector(selector) };
@@ -68,7 +68,7 @@ describe('Card matches tds-card', () => {
     expect(img).toHaveAttribute('alt', 'Truck');
   });
 
-  it.each([
+  it.each<[string, CardProps['imagePlacement'], boolean]>([
     ['below-header puts the header first', 'below-header', true],
     ['above-header puts the image first', 'above-header', false],
   ])('%s', (_name, imagePlacement, headerFirst) => {

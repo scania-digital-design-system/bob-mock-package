@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import Link from '../cells/react/link/scania/v1/component.jsx';
+import { Link, type LinkProps } from '../src';
 
 // Expected behaviour is Tegel's tds-link at @scania/tegel@1.66.1
 // (packages/core/src/components/link/link.tsx), with the slotted <a> rendered by the cell.
 
-function renderLink(props: Record<string, unknown>) {
+function renderLink(props: LinkProps) {
   render(<Link href="/next" {...props} />);
   return screen.getByText('Next page');
 }

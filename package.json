@@ -32,6 +32,7 @@
     "lint": "biome check .",
     "format": "biome format --write .",
     "test": "vitest run",
+    "types": "vitest run tests/prop-types.test.ts --update",
     "gate": "cd bob && go run . gate -root ..",
     "tokens": "cd bob && go run . tokens -root ..",
     "cell": "cd bob && go run . cell -root ..",

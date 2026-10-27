@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import Spinner from '../cells/react/spinner/scania/v1/component.jsx';
+import { Spinner, type SpinnerProps } from '../src';
 
 // Expected behaviour is Tegel's tds-spinner at @scania/tegel@1.66.1
 // (packages/core/src/components/spinner/spinner.tsx, render).
 
-function renderSpinner(props: Record<string, unknown>) {
+function renderSpinner(props: SpinnerProps) {
   render(<Spinner {...props} />);
   const status = screen.getByRole('status');
   return {
@@ -26,7 +26,7 @@ describe('Spinner matches tds-spinner', () => {
     expect(renderSpinner({}).svg).toHaveAttribute('aria-hidden', 'true');
   });
 
-  it.each([
+  it.each<[string, SpinnerProps, string, string]>([
     ['lg and standard by default', {}, 'tl-spinner__svg--lg', 'tl-spinner__circle--standard'],
     ['each size', { size: 'xs' }, 'tl-spinner__svg--xs', 'tl-spinner__circle--standard'],
     ['inverted', { variant: 'inverted' }, 'tl-spinner__svg--lg', 'tl-spinner__circle--inverted'],

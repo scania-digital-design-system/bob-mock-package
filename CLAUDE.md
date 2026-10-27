@@ -18,7 +18,8 @@ Terms (cell, bootstrap, blessing, golden reference, ratchet) follow the backbone
 - Brand: `scania` only. Target: `react` only. Angular comes later by adding `"angular"` to
   a payload's `targets`, so keep payloads target-agnostic. Each target ships as its own
   package (ADR 0005 D1).
-- Components, in order: badge, button, link, spinner, card (ADR 0001 D7).
+- Components: every Tegel 1.66.1 component folder, the 33 components plus the navigation
+  pattern (`header`, `side-menu`) (ADR 0006 D1). Done: badge, button, link, spinner, card.
 - Light mode only; dark mode, `modeVariant` and `animation` are out (ADR 0002 D8).
 - Tegel is final; there is no design iteration. A difference between a cell and Tegel
   that BOB's conventions force is a **finding**, recorded in `docs/findings/<component>.md`.
@@ -58,12 +59,16 @@ The source and the compare package are pinned to the same version: **1.66.1**.
    `docs/tokens.md`), then `npm run tokens`. It regenerates `tokens/scania.css` and
    `rules/ruledata.json` with BOB's own code; both are generated, never hand-edited.
 3. **Write the bootstrap artifacts.** Hand-write `component.jsx` and `component.css` in
-   `cells/react/<component>/scania/v1/`, as the bootstrap agent would.
+   `cells/react/<component>/scania/v1/`, as the bootstrap agent would. Use a conforming
+   pattern first (`docs/findings/README.md`). Only when none works, register a
+   relaxation in `rules/relaxations.json` and opt the cell in (ADR 0006 D2–D4).
 4. **Generate the rest.** `npm run cell`: BOB's own writers (`DraftContract`,
    `BuildAPIReferenceJSON`, `layout.WriteCell`) produce `metadata.json`, `api.json`,
    `a11y.json`, `usage.jsx` and `tokens.dtcg.json` (ADR 0003). The public API surface is
    the component's destructured props (ADR 0004). Every VARIANT axis in the payload needs
-   an `answers` entry, or the command stops as BOB's intake would.
+   an `answers` entry, or the command stops as BOB's intake would. Then `npm run types`
+   regenerates the package's prop types in `src/props.gen.ts` (ADR 0005 D4). A new
+   component also goes into `COMPONENTS` (`build/css-bundle.ts`) and `src/index.ts`.
 5. **Gate.** The real hard gate (`npm run gate`) and the prompt-rule tests
    (`rules/prompt-rules.ts`, run by `tests/prompt-rules.test.ts`) must pass.
 6. **Compare.** DOM tests against Tegel behaviour; record each departure as a finding.
@@ -99,7 +104,8 @@ Borrowed from the backbone repo and adapted. Each names its source.
    function, no import or export, `className` with `tl-` classes, modifiers interpolating
    a bare prop name, no `style` attribute, every CSS value a `var(--token)`. Generated
    artifacts are edited only through the payload and the generator. Packaging needs live
-   in the build, never in the cell.
+   in the build, never in the cell. The only exceptions are relaxations registered in
+   `rules/relaxations.json`, each with an entry in `docs/findings/README.md` (ADR 0006).
 5. **Minimal diff** (backbone CLAUDE.md "Scope discipline"). Change only what the request
    needs, and propose adjacent improvements separately.
 6. **ASD-STE100 for human-facing writing** (backbone AGENTS.md §6). Applies to `README.md`,

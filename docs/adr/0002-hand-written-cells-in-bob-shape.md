@@ -2,7 +2,8 @@
 
 **Status:** Accepted. **Supersedes ADR 0001 D1 (name), D2 (layout) and D3 (build transform
 left open)**. ADR 0001 D4, D5, D6 and D7 stand. **D3 superseded by ADR 0003**, which also
-moves D5's harness from `gate/` to `bob/`. **D1 and D7 superseded by ADR 0005.**
+moves D5's harness from `gate/` to `bob/`. **D1 and D7 superseded by ADR 0005.** **D2 amended by ADR 0006** (registered
+relaxations).
 **Scope:** package
 
 ## Context

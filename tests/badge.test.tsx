@@ -1,18 +1,18 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import Badge from '../cells/react/badge/scania/v1/component.jsx';
+import { Badge, type BadgeProps } from '../src';
 
 // Expected behaviour is Tegel's tds-badge at @scania/tegel@1.66.1
 // (packages/core/src/components/badge/badge.tsx, checkProps and render).
 
-function renderBadge(props: Record<string, unknown>) {
+function renderBadge(props: BadgeProps) {
   render(<Badge {...props} />);
   const badge = screen.getByRole('status');
   return { badge, text: badge.querySelector('.tl-badge__text') };
 }
 
 describe('Badge matches tds-badge', () => {
-  it.each([
+  it.each<[string, BadgeProps, string, boolean]>([
     ['a single digit shows the number', { value: '5' }, '5', false],
     ['two digits become a pill', { value: '42' }, '42', true],
     ['three digits show 99+', { value: '123' }, '99+', true],
@@ -28,7 +28,7 @@ describe('Badge matches tds-badge', () => {
     expect(badge.classList.contains('tl-badge--pill')).toBe(wantPill);
   });
 
-  it.each([
+  it.each<[string, BadgeProps, string]>([
     ['lg by default', {}, 'tl-badge--lg'],
     ['sm when asked', { size: 'sm' }, 'tl-badge--sm'],
     ['visible by default', {}, 'tl-badge--hidden-false'],
@@ -37,7 +37,7 @@ describe('Badge matches tds-badge', () => {
     expect(renderBadge(props).badge).toHaveClass('tl-badge', wantClass);
   });
 
-  it.each([
+  it.each<[string, BadgeProps, string]>([
     ['polite by default', {}, 'polite'],
     ['assertive when asked', { tdsAriaLive: 'assertive' }, 'assertive'],
     ['off when asked', { tdsAriaLive: 'off' }, 'off'],
