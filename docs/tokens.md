@@ -50,6 +50,7 @@ the meaning is the same: `color/border/focus`, `color/danger`, `font/size/captio
 |---|---|
 | Foundation | 31 |
 | Badge | 34 |
+| Button | 53 |
 
 ## Foundation set
 
@@ -112,6 +113,35 @@ Source: `packages/core/src/components/badge/badge.scss`.
 
 Reused: `color/danger` (`--component-badge-background-default`), `color/text/inverse-base`
 (`--component-badge-text-default`), `font/size/caption`, `space/element/8`.
+
+### Button
+
+Source: `packages/core/src/components/button/button.scss`, `button-vars.scss`, and the
+Scania light block of `tokens/scss/component/button.scss`.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `color/background/none` (foundation) | `transparent` | `--color-background-none` |
+| `color/border/none` (foundation) | `transparent` | `--color-border-none` |
+| `color/button/primary/default` | `#16417f` | `…-background-standard-primary-default` = blue-600 |
+| `color/button/primary/hover` | `#0f3263` | `…-standard-primary-hover` = blue-700 |
+| `color/button/primary/active` | `#041e42` | `…-standard-primary-active` = blue-800 |
+| `color/button/danger/hover` | `#b20018` | `…-danger-primary-hover` = red-500 |
+| `color/button/danger/active` | `#8a0012` | `…-danger-primary-active` = red-600 |
+| `size/button/{lg,md,sm,xs}` | 56, 48, 40, 24 | `$btn-*-height` |
+| `size/button/icon` | 20 | icon `width`/`height` (`--tds-spacing-element-20`) |
+| `size/button/icon-sm` | 16 | `sm` icon `width`/`height` (`--tds-spacing-element-16`) |
+| `space/button/icon-{lg,md,sm}` | 18, 14, 10 | `.icon` vertical padding (hard-coded) |
+| `space/button/only-icon-{lg,md,sm}` | 17, 13, 11 | `$btn-*-only-icon-padding` |
+
+Reused: `color/danger` (danger default), `color/text/inverse-base` (white text and icon),
+`color/text/base` (black text and icon), `color/border/{soft,subtle,strong}`, focus ring
+tokens, `radius/control`, `border/control`, `opacity/disabled`, `space/element/*`, and the
+`detail-02` typography tokens. Tegel's white and black come from primitives
+(`base-white`, `base-black`); the cell uses the semantic tokens with the same light value.
+
+Tegel sizes the icon with spacing tokens. BOB's `token-usage` forbids a `space` token on
+`width` and `height`, so the icon box uses `size/button/icon*` with the same values.
 
 ## Not included
 

@@ -70,6 +70,49 @@
     { "name": "border/focus-offset", "type": "FLOAT", "valuesByMode": { "scania": "1" } },
     { "name": "radius/badge", "type": "FLOAT", "valuesByMode": { "scania": "12" } },
     { "name": "size/badge/lg", "type": "FLOAT", "valuesByMode": { "scania": "20" } },
-    { "name": "size/badge/sm", "type": "FLOAT", "valuesByMode": { "scania": "8" } }
+    { "name": "size/badge/sm", "type": "FLOAT", "valuesByMode": { "scania": "8" } },
+    {
+      "name": "color/background/none",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "transparent" }
+    },
+    { "name": "color/border/none", "type": "COLOR", "valuesByMode": { "scania": "transparent" } },
+    {
+      "name": "color/button/primary/default",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "#16417f" }
+    },
+    {
+      "name": "color/button/primary/hover",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "#0f3263" }
+    },
+    {
+      "name": "color/button/primary/active",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "#041e42" }
+    },
+    {
+      "name": "color/button/danger/hover",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "#b20018" }
+    },
+    {
+      "name": "color/button/danger/active",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "#8a0012" }
+    },
+    { "name": "size/button/lg", "type": "FLOAT", "valuesByMode": { "scania": "56" } },
+    { "name": "size/button/md", "type": "FLOAT", "valuesByMode": { "scania": "48" } },
+    { "name": "size/button/sm", "type": "FLOAT", "valuesByMode": { "scania": "40" } },
+    { "name": "size/button/xs", "type": "FLOAT", "valuesByMode": { "scania": "24" } },
+    { "name": "size/button/icon", "type": "FLOAT", "valuesByMode": { "scania": "20" } },
+    { "name": "size/button/icon-sm", "type": "FLOAT", "valuesByMode": { "scania": "16" } },
+    { "name": "space/button/icon-lg", "type": "FLOAT", "valuesByMode": { "scania": "18" } },
+    { "name": "space/button/icon-md", "type": "FLOAT", "valuesByMode": { "scania": "14" } },
+    { "name": "space/button/icon-sm", "type": "FLOAT", "valuesByMode": { "scania": "10" } },
+    { "name": "space/button/only-icon-lg", "type": "FLOAT", "valuesByMode": { "scania": "17" } },
+    { "name": "space/button/only-icon-md", "type": "FLOAT", "valuesByMode": { "scania": "13" } },
+    { "name": "space/button/only-icon-sm", "type": "FLOAT", "valuesByMode": { "scania": "11" } }
   ]
 }

@@ -1,25 +1,53 @@
 import '@scania/tegel/dist/tegel/tegel.css';
 import { defineCustomElements } from '@scania/tegel/loader';
-import { BADGE_CASES } from './cases';
+import { type DemoCase, ICON_PATH, SECTIONS } from './cases';
 
-// The reference: Tegel's own <tds-badge> web component, rendered with Tegel's CSS.
+// The reference: Tegel's own web components, rendered with Tegel's CSS.
+
+const SVG_NS = 'http://www.w3.org/2000/svg';
+
+// Tegel takes the icon through its "icon" slot, so the prop becomes a slotted child.
+function slottedIcon(): SVGSVGElement {
+  const svg = document.createElementNS(SVG_NS, 'svg');
+  svg.setAttribute('slot', 'icon');
+  svg.setAttribute('viewBox', '0 0 20 20');
+  const path = document.createElementNS(SVG_NS, 'path');
+  path.setAttribute('d', ICON_PATH);
+  svg.append(path);
+  return svg;
+}
+
+function element(tag: string, { props }: DemoCase): HTMLElement {
+  const { icon, ...rest } = props;
+  const el = Object.assign(document.createElement(tag), rest);
+  if (icon) {
+    el.append(slottedIcon());
+  }
+  return el;
+}
+
 async function preview(root: HTMLElement) {
   await defineCustomElements();
-  await customElements.whenDefined('tds-badge');
-  const list = document.createElement('dl');
-  list.className = 'cases';
-  for (const { label, props } of BADGE_CASES) {
-    const row = document.createElement('div');
-    row.className = 'case';
-    const term = document.createElement('dt');
-    term.textContent = label;
-    const badge = Object.assign(document.createElement('tds-badge'), props);
-    const detail = document.createElement('dd');
-    detail.append(badge);
-    row.append(term, detail);
-    list.append(row);
+  for (const { component, tag, cases } of SECTIONS) {
+    await customElements.whenDefined(tag);
+    const section = document.createElement('section');
+    const heading = document.createElement('h2');
+    heading.textContent = component;
+    const list = document.createElement('dl');
+    list.className = 'cases';
+    for (const demoCase of cases) {
+      const row = document.createElement('div');
+      row.className = 'case';
+      const term = document.createElement('dt');
+      term.textContent = demoCase.label;
+      const detail = document.createElement('dd');
+      detail.append(element(tag, demoCase));
+      row.append(term, detail);
+      list.append(row);
+    }
+    section.append(heading, list);
+    root.append(section);
   }
-  root.append(list);
 }
 
 const root = document.getElementById('root');

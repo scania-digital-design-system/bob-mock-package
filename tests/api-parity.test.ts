@@ -11,7 +11,10 @@ import { tegelEvents, tegelInterfaceName, tegelProps } from './support/tegel-typ
 // Out of scope for every component (ADR 0002 D8).
 const OUT_OF_SCOPE = ['modeVariant', 'animation'];
 
-const DEPARTURES: Record<string, { dropped?: string[]; added?: string[] }> = {};
+const DEPARTURES: Record<string, { dropped?: string[]; added?: string[] }> = {
+  // The icon slot becomes a prop; onClick is the native event Tegel's types omit.
+  button: { added: ['icon', 'onClick'] },
+};
 
 // Read by path: the package's "exports" map does not expose this file.
 const dts = readFileSync(

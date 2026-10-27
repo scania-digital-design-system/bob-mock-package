@@ -1,22 +1,37 @@
+import type { FC } from 'react';
 import { createRoot } from 'react-dom/client';
 import '../tokens/scania.css';
 import '../cells/react/badge/scania/v1/component.css';
+import '../cells/react/button/scania/v1/component.css';
 import Badge from '../cells/react/badge/scania/v1/component.jsx';
-import { BADGE_CASES } from './cases';
+import Button from '../cells/react/button/scania/v1/component.jsx';
+import { ICON_PATH, SECTIONS } from './cases';
+
+const COMPONENTS: Record<string, FC<Record<string, unknown>>> = { badge: Badge, button: Button };
+
+const icon = (
+  <svg viewBox="0 0 20 20" width="100%" height="100%" aria-hidden="true">
+    <path d={ICON_PATH} />
+  </svg>
+);
 
 function Preview() {
-  return (
-    <dl className="cases">
-      {BADGE_CASES.map(({ label, props }) => (
-        <div className="case" key={label}>
-          <dt>{label}</dt>
-          <dd>
-            <Badge {...props} />
-          </dd>
-        </div>
-      ))}
-    </dl>
-  );
+  return SECTIONS.map(({ component, cases }) => {
+    const Component = COMPONENTS[component];
+    return (
+      <section key={component}>
+        <h2>{component}</h2>
+        <dl className="cases">
+          {cases.map(({ label, props }) => (
+            <div className="case" key={label}>
+              <dt>{label}</dt>
+              <dd>{Component && <Component {...props} icon={props.icon ? icon : undefined} />}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    );
+  });
 }
 
 const root = document.getElementById('root');

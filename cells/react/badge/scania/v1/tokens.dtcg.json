@@ -30,6 +30,10 @@
       "layer-03": {
         "$type": "color",
         "$value": "#f6f7f9"
+      },
+      "none": {
+        "$type": "color",
+        "$value": "transparent"
       }
     },
     "border": {
@@ -40,6 +44,10 @@
       "focus-discrete": {
         "$type": "color",
         "$value": "#ffffff"
+      },
+      "none": {
+        "$type": "color",
+        "$value": "transparent"
       },
       "soft": {
         "$type": "color",
@@ -52,6 +60,32 @@
       "subtle": {
         "$type": "color",
         "$value": "#07275880"
+      }
+    },
+    "button": {
+      "danger": {
+        "active": {
+          "$type": "color",
+          "$value": "#8a0012"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "#b20018"
+        }
+      },
+      "primary": {
+        "active": {
+          "$type": "color",
+          "$value": "#041e42"
+        },
+        "default": {
+          "$type": "color",
+          "$value": "#16417f"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "#0f3263"
+        }
       }
     },
     "danger": {
@@ -167,9 +201,61 @@
         "$type": "number",
         "$value": 8
       }
+    },
+    "button": {
+      "icon": {
+        "$type": "number",
+        "$value": 20
+      },
+      "icon-sm": {
+        "$type": "number",
+        "$value": 16
+      },
+      "lg": {
+        "$type": "number",
+        "$value": 56
+      },
+      "md": {
+        "$type": "number",
+        "$value": 48
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 40
+      },
+      "xs": {
+        "$type": "number",
+        "$value": 24
+      }
     }
   },
   "space": {
+    "button": {
+      "icon-lg": {
+        "$type": "number",
+        "$value": 18
+      },
+      "icon-md": {
+        "$type": "number",
+        "$value": 14
+      },
+      "icon-sm": {
+        "$type": "number",
+        "$value": 10
+      },
+      "only-icon-lg": {
+        "$type": "number",
+        "$value": 17
+      },
+      "only-icon-md": {
+        "$type": "number",
+        "$value": 13
+      },
+      "only-icon-sm": {
+        "$type": "number",
+        "$value": 11
+      }
+    },
     "element": {
       "12": {
         "$type": "number",

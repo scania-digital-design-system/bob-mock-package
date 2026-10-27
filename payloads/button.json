@@ -1,0 +1,29 @@
+{
+  "component": "button",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-button at @scania/tegel@1.66.1.",
+    "properties": [
+      { "name": "text", "type": "TEXT", "values": [] },
+      { "name": "type", "type": "VARIANT", "values": ["button", "submit", "reset"] },
+      {
+        "name": "variant",
+        "type": "VARIANT",
+        "values": ["primary", "secondary", "ghost", "danger"]
+      },
+      { "name": "size", "type": "VARIANT", "values": ["xs", "sm", "md", "lg"] },
+      { "name": "disabled", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "fullbleed", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "tdsAriaLabel", "type": "TEXT", "values": [] },
+      { "name": "name", "type": "TEXT", "values": [] },
+      { "name": "value", "type": "TEXT", "values": [] },
+      { "name": "icon", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": [
+      { "property": "type", "disposition": "prop" },
+      { "property": "variant", "disposition": "prop" },
+      { "property": "size", "disposition": "prop" }
+    ]
+  }
+}
