@@ -1,0 +1,19 @@
+{
+  "component": "badge",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "variables": {
+    "variables": [
+      { "name": "color/primary/default", "type": "COLOR", "valuesByMode": { "scania": "#d1001b" } },
+      { "name": "space/inset/sm", "type": "FLOAT", "valuesByMode": { "scania": "8" } }
+    ]
+  },
+  "surface": {
+    "description": "",
+    "properties": [
+      { "name": "value", "type": "TEXT", "values": [] },
+      { "name": "size", "type": "VARIANT", "values": ["lg", "sm"] }
+    ],
+    "answers": [{ "property": "size", "disposition": "prop" }]
+  }
+}

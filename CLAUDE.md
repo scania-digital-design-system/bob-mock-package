@@ -58,8 +58,11 @@ The source and the compare package are pinned to the same version: **1.66.1**.
    `rules/ruledata.json` with BOB's own code; both are generated, never hand-edited.
 3. **Write the bootstrap artifacts.** Hand-write `component.jsx` and `component.css` in
    `cells/react/<component>/scania/v1/`, as the bootstrap agent would.
-4. **Generate the rest.** BOB's own writers produce `metadata.json`, `api.json`,
-   `a11y.json`, `usage.jsx` and `tokens.dtcg.json` from the payload (ADR 0003).
+4. **Generate the rest.** `npm run cell`: BOB's own writers (`DraftContract`,
+   `BuildAPIReferenceJSON`, `layout.WriteCell`) produce `metadata.json`, `api.json`,
+   `a11y.json`, `usage.jsx` and `tokens.dtcg.json` (ADR 0003). The public API surface is
+   the component's destructured props (ADR 0004). Every VARIANT axis in the payload needs
+   an `answers` entry, or the command stops as BOB's intake would.
 5. **Gate.** The real hard gate (`npm run gate`) and the prompt-rule tests
    (`rules/prompt-rules.ts`, run by `tests/prompt-rules.test.ts`) must pass.
 6. **Compare.** DOM tests against Tegel behaviour; record each departure as a finding.

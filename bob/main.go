@@ -2,6 +2,7 @@
 //
 //	go run . gate   -root ..   run the real hard gate over every cell
 //	go run . tokens -root ..   emit tokens/scania.css and rules/ruledata.json
+//	go run . cell   -root ..   write every cell's generated files around its jsx and css
 //
 // It never runs the pipeline: no Temporal, no LLM, no network.
 package main
@@ -11,7 +12,7 @@ import (
 	"os"
 )
 
-const usage = "usage: bob <gate|tokens> [-root dir]"
+const usage = "usage: bob <gate|tokens|cell> [-root dir]"
 
 func main() {
 	if len(os.Args) < 2 {
@@ -21,6 +22,7 @@ func main() {
 	commands := map[string]func([]string) int{
 		"gate":   gateCommand,
 		"tokens": tokensCommand,
+		"cell":   cellCommand,
 	}
 	command, ok := commands[os.Args[1]]
 	if !ok {

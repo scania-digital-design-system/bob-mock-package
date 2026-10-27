@@ -29,6 +29,7 @@
     "test": "vitest run",
     "gate": "cd bob && go run . gate -root ..",
     "tokens": "cd bob && go run . tokens -root ..",
+    "cell": "cd bob && go run . cell -root ..",
     "test:bob": "cd bob && go vet ./... && go test ./..."
   },
   "peerDependencies": {
