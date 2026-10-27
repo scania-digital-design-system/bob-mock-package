@@ -1,7 +1,8 @@
 # ADR 0002: Hand-Written Cells in BOB Delivery Shape
 
 **Status:** Accepted. **Supersedes ADR 0001 D1 (name), D2 (layout) and D3 (build transform
-left open)**. ADR 0001 D4, D5, D6 and D7 stand.
+left open)**. ADR 0001 D4, D5, D6 and D7 stand. **D3 superseded by ADR 0003**, which also
+moves D5's harness from `gate/` to `bob/`.
 **Scope:** package
 
 ## Context
