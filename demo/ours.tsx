@@ -3,11 +3,17 @@ import { createRoot } from 'react-dom/client';
 import '../tokens/scania.css';
 import '../cells/react/badge/scania/v1/component.css';
 import '../cells/react/button/scania/v1/component.css';
+import '../cells/react/link/scania/v1/component.css';
 import Badge from '../cells/react/badge/scania/v1/component.jsx';
 import Button from '../cells/react/button/scania/v1/component.jsx';
+import Link from '../cells/react/link/scania/v1/component.jsx';
 import { ICON_PATH, SECTIONS } from './cases';
 
-const COMPONENTS: Record<string, FC<Record<string, unknown>>> = { badge: Badge, button: Button };
+const COMPONENTS: Record<string, FC<Record<string, unknown>>> = {
+  badge: Badge,
+  button: Button,
+  link: Link,
+};
 
 const icon = (
   <svg viewBox="0 0 20 20" width="100%" height="100%" aria-hidden="true">

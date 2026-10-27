@@ -11,6 +11,10 @@
     "focus-offset": {
       "$type": "number",
       "$value": 1
+    },
+    "link-focus": {
+      "$type": "number",
+      "$value": 3
     }
   },
   "color": {
@@ -91,6 +95,16 @@
     "danger": {
       "$type": "color",
       "$value": "#d1001b"
+    },
+    "link": {
+      "default": {
+        "$type": "color",
+        "$value": "#2a6ecf"
+      },
+      "visited": {
+        "$type": "color",
+        "$value": "#16417f"
+      }
     },
     "system": {
       "info": {

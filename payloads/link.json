@@ -1,0 +1,17 @@
+{
+  "component": "link",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-link at @scania/tegel@1.66.1. The slotted <a> becomes href, target and children.",
+    "properties": [
+      { "name": "href", "type": "TEXT", "values": [] },
+      { "name": "target", "type": "TEXT", "values": [] },
+      { "name": "children", "type": "TEXT", "values": [] },
+      { "name": "disabled", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "underline", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "standalone", "type": "BOOLEAN", "values": ["true", "false"] }
+    ],
+    "answers": []
+  }
+}

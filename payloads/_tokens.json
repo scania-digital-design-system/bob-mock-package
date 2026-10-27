@@ -113,6 +113,9 @@
     { "name": "space/button/icon-sm", "type": "FLOAT", "valuesByMode": { "scania": "10" } },
     { "name": "space/button/only-icon-lg", "type": "FLOAT", "valuesByMode": { "scania": "17" } },
     { "name": "space/button/only-icon-md", "type": "FLOAT", "valuesByMode": { "scania": "13" } },
-    { "name": "space/button/only-icon-sm", "type": "FLOAT", "valuesByMode": { "scania": "11" } }
+    { "name": "space/button/only-icon-sm", "type": "FLOAT", "valuesByMode": { "scania": "11" } },
+    { "name": "color/link/default", "type": "COLOR", "valuesByMode": { "scania": "#2a6ecf" } },
+    { "name": "color/link/visited", "type": "COLOR", "valuesByMode": { "scania": "#16417f" } },
+    { "name": "border/link-focus", "type": "FLOAT", "valuesByMode": { "scania": "3" } }
   ]
 }

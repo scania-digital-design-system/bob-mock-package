@@ -14,6 +14,8 @@ const OUT_OF_SCOPE = ['modeVariant', 'animation'];
 const DEPARTURES: Record<string, { dropped?: string[]; added?: string[] }> = {
   // The icon slot becomes a prop; onClick is the native event Tegel's types omit.
   button: { added: ['icon', 'onClick'] },
+  // The slotted <a> is rendered by the cell, so its attributes and content are props.
+  link: { added: ['href', 'target', 'children'] },
 };
 
 // Read by path: the package's "exports" map does not expose this file.

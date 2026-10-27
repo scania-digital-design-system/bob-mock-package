@@ -51,6 +51,7 @@ the meaning is the same: `color/border/focus`, `color/danger`, `font/size/captio
 | Foundation | 31 |
 | Badge | 34 |
 | Button | 53 |
+| Link | 56 |
 
 ## Foundation set
 
@@ -142,6 +143,21 @@ tokens, `radius/control`, `border/control`, `opacity/disabled`, `space/element/*
 
 Tegel sizes the icon with spacing tokens. BOB's `token-usage` forbids a `space` token on
 `width` and `height`, so the icon box uses `size/button/icon*` with the same values.
+
+### Link
+
+Source: `packages/core/src/components/link/link.scss`, `link-vars.scss`, and the Scania
+light block of `tokens/scss/component/link.scss`.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `color/link/default` | `#2a6ecf` | `--component-link-text-accent-default` and `-hover` = blue-400 |
+| `color/link/visited` | `#16417f` | `--component-link-text-accent-visited` = blue-600 |
+| `border/link-focus` | 3 | focus `box-shadow` outer ring `0 0 0 3px` |
+
+Reused: `color/system/info` (`--tds-link-focus`), `color/border/focus-discrete` (the white
+inner ring, Tegel's `--tds-white`), `border/control` (inner ring 1px), `opacity/disabled`,
+and the `detail-02` typography tokens for `standalone`.
 
 ## Not included
 

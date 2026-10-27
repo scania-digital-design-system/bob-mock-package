@@ -97,6 +97,7 @@
       "validTokens": {
         "--border-focus": true,
         "--border-focus-offset": true,
+        "--border-link-focus": true,
         "--color-background-base": true,
         "--color-background-layer-01": true,
         "--color-background-layer-02": true,
@@ -112,6 +113,8 @@
         "--color-button-primary-active": true,
         "--color-button-primary-default": true,
         "--color-button-primary-hover": true,
+        "--color-link-default": true,
+        "--color-link-visited": true,
         "--color-system-info": true,
         "--color-text-base": true,
         "--color-text-defined": true,

@@ -16,6 +16,8 @@
   --color-button-primary-default: #16417f;
   --color-button-primary-hover: #0f3263;
   --color-danger: #d1001b;
+  --color-link-default: #2a6ecf;
+  --color-link-visited: #16417f;
   --color-system-info: #2a6ecf;
   --color-text-base: #000000;
   --color-text-defined: #041530b8;
@@ -26,6 +28,7 @@
   --border-control: 1px;
   --border-focus: 2px;
   --border-focus-offset: 1px;
+  --border-link-focus: 3px;
   --font-letter-spacing-detail: -0.14px;
   --font-letter-spacing-headline: -0.28px;
   --font-line-height-detail-02: 16px;

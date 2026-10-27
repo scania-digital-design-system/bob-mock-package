@@ -42,6 +42,17 @@ export const SECTIONS: DemoSection[] = [
       { label: 'fullbleed', props: { text: 'Button', fullbleed: true } },
     ],
   },
+  {
+    component: 'link',
+    tag: 'tds-link',
+    cases: [
+      { label: 'default', props: { href: '#link', children: 'Link text' } },
+      { label: 'no underline', props: { href: '#link', children: 'Link text', underline: false } },
+      { label: 'standalone', props: { href: '#link', children: 'Link text', standalone: true } },
+      { label: 'disabled', props: { href: '#link', children: 'Link text', disabled: true } },
+      { label: 'visited (same page)', props: { href: '', children: 'Link text' } },
+    ],
+  },
 ];
 
 // The same plus icon on both pages, so only the component differs.

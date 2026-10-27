@@ -17,11 +17,25 @@ function slottedIcon(): SVGSVGElement {
   return svg;
 }
 
+// Tegel's link takes a slotted <a>; our cell renders it from href, target and children.
+function slottedAnchor(href: unknown, target: unknown, children: unknown): HTMLAnchorElement {
+  const anchor = document.createElement('a');
+  anchor.href = String(href ?? '');
+  if (typeof target === 'string') {
+    anchor.target = target;
+  }
+  anchor.textContent = String(children ?? '');
+  return anchor;
+}
+
 function element(tag: string, { props }: DemoCase): HTMLElement {
-  const { icon, ...rest } = props;
+  const { icon, href, target, children, ...rest } = props;
   const el = Object.assign(document.createElement(tag), rest);
   if (icon) {
     el.append(slottedIcon());
+  }
+  if (tag === 'tds-link') {
+    el.append(slottedAnchor(href, target, children));
   }
   return el;
 }
