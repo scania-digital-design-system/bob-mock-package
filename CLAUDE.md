@@ -57,7 +57,8 @@ The source and the compare package are pinned to the same version: **1.66.1**.
    `cells/react/<component>/scania/v1/`, as the bootstrap agent would.
 3. **Generate the rest.** The generator writes `metadata.json`, `api.json`, `a11y.json`,
    `usage.jsx` and `tokens.dtcg.json` from the payload.
-4. **Gate.** The real hard gate (`gate/`) and the prompt-rule tests must pass.
+4. **Gate.** The real hard gate (`gate/`) and the prompt-rule tests
+   (`rules/prompt-rules.ts`, run by `tests/prompt-rules.test.ts`) must pass.
 5. **Compare.** DOM tests against Tegel behaviour; record each departure as a finding.
 
 Layout and toolchain: ADR 0001 (D4–D7) and ADR 0002 (D6, D7).
