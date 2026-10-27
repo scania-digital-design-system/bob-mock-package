@@ -1,0 +1,27 @@
+/* Layout for the preview pages only. Not part of the package. */
+body {
+  margin: 16px;
+  font-family: arial, sans-serif;
+  background: #ffffff;
+}
+h1 {
+  margin: 0 0 16px;
+  font-size: 16px;
+}
+.cases {
+  margin: 0;
+}
+.case {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: center;
+  min-height: 40px;
+  border-bottom: 1px solid #e5e7eb;
+}
+.case dt {
+  font-size: 13px;
+  color: #4b5563;
+}
+.case dd {
+  margin: 0;
+}

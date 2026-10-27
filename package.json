@@ -22,6 +22,7 @@
     "registry": "http://localhost:4873"
   },
   "scripts": {
+    "dev": "vite serve demo --config vite.config.ts",
     "build": "vite build && tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit",
     "lint": "biome check .",

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Badge: bob-mock-package vs Tegel</title>
+    <style>
+      body {
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 100vh;
+      }
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        border-right: 1px solid #e5e7eb;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Separate frames, so Tegel's global CSS (which defines some of the same custom
+         property names as ours) cannot fill in for a token we forgot. -->
+    <iframe src="./ours.html" title="bob-mock-package"></iframe>
+    <iframe src="./tegel.html" title="@scania/tegel"></iframe>
+  </body>
+</html>
