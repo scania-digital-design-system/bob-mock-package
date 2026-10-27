@@ -1,9 +1,13 @@
+import { fileURLToPath } from 'node:url';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vitest/config';
 import { cellExport } from './build/cell-export';
+import { cssBundle } from './build/css-bundle';
+
+const ROOT = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
-  plugins: [cellExport(), react()],
+  plugins: [cellExport(), react(), cssBundle(ROOT)],
   build: {
     lib: {
       entry: 'src/index.ts',

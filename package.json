@@ -13,7 +13,11 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
-    }
+    },
+    "./scania.css": "./dist/scania.css"
+  },
+  "engines": {
+    "node": ">=22.12"
   },
   "sideEffects": [
     "**/*.css"
