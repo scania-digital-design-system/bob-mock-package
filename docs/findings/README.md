@@ -107,6 +107,14 @@ cells share `side-menu.md`; the eighteen header cells share `header.md`. The fou
 set adds 31 tokens. The `tegel` set has 698 names in total, 263 of them icon paths.
 BOB's stock set has 45.
 
+**Visual comparison (Phase 7).** A person compared every component by eye in the demo
+(`npm run dev`), with our cells and Tegel's components side by side. The cells match
+Tegel closely. Small misalignments remain, and they are not fixed on purpose: the
+package is a mock for testing BOB, and the departures above already record the
+differences that BOB's rules cause. The "Visual checks for Phase 7" and "Open for visual
+comparison" lists in each `<component>.md` stay as the record of what to look at. No
+automated comparison exists yet; ADR 0001 names Playwright as the tool for one.
+
 ## Findings about BOB
 
 Ordered by effect. The first three change behaviour or the API. The rest change metadata,
