@@ -1,5 +1,3 @@
-import { useId, useState } from 'react';
-
 function AccordionItem({
   header,
   expandIconPosition = 'end',
@@ -10,24 +8,33 @@ function AccordionItem({
   children,
   onTdsToggle,
 }) {
-  const id = useId();
-  const [open, setOpen] = useState(expanded);
-  const toggle = () => {
-    const event = new CustomEvent('tdsToggle', { cancelable: true, detail: { expanded: !open } });
-    if (onTdsToggle) onTdsToggle(event);
-    if (!event.defaultPrevented) setOpen(!open);
+  const toggle = (event) => {
+    const button = event.currentTarget;
+    const open = button.getAttribute('aria-expanded') === 'true';
+    const tdsToggle = new CustomEvent('tdsToggle', { cancelable: true, detail: { expanded: !open } });
+    if (onTdsToggle) onTdsToggle(tdsToggle);
+    if (!tdsToggle.defaultPrevented) button.setAttribute('aria-expanded', String(!open));
   };
   return (
     <div
+      ref={(item) => {
+        // Link the button and the panel once, with generated ids as Tegel does.
+        const button = item && item.querySelector('.tl-accordion-item__header');
+        const panel = item && item.querySelector('.tl-accordion-item__panel');
+        if (!button || !panel || button.id) return;
+        const id = `tl-accordion-item-${crypto.randomUUID()}`;
+        button.id = `${id}-header`;
+        panel.id = `${id}-panel`;
+        button.setAttribute('aria-controls', panel.id);
+        panel.setAttribute('aria-labelledby', button.id);
+      }}
       className={`tl-accordion-item tl-accordion-item--${expandIconPosition} tl-accordion-item--disabled-${disabled} tl-accordion-item--padding-reset-${paddingReset}`}
     >
       <div role="heading" aria-level={ariaLevelValue}>
         <button
-          id={`${id}-header`}
           type="button"
           className="tl-accordion-item__header"
-          aria-controls={`${id}-panel`}
-          aria-expanded={open}
+          aria-expanded={expanded}
           aria-disabled={disabled}
           disabled={disabled}
           onClick={toggle}
@@ -40,13 +47,7 @@ function AccordionItem({
           </div>
         </button>
       </div>
-      <div
-        id={`${id}-panel`}
-        role="region"
-        aria-live="polite"
-        aria-labelledby={`${id}-header`}
-        className="tl-accordion-item__panel"
-      >
+      <div role="region" aria-live="polite" className="tl-accordion-item__panel">
         {children}
       </div>
     </div>

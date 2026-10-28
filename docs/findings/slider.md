@@ -28,7 +28,9 @@ Reference: Tegel `tds-slider` at `@scania/tegel@1.66.1`
    the thumb at every value; it does not end exactly at the thumb centre. A form reset
    does not move it.
 3. **The tooltip is a fixed value readout.** Tegel's tooltip floats over the thumb,
-   positioned by script. The cell shows the same bubble at the end of the label row.
+   positioned by script. The cell shows the same bubble at the end of the label row. A
+   relaxation that sets the position from script was considered and rejected: it breaks
+   the rule against styles for a visual detail only.
 4. **The tooltip, the number field, the fill and `aria-valuetext` follow the range
    through the DOM.** The input handler writes them. A form reset moves the range only.
 5. **The controls are buttons.** Tegel uses `<div role="button">`. Tegel's `+` and `-`

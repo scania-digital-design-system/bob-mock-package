@@ -39,8 +39,8 @@ Each `<component>.md` keeps the full detail. Prompt line numbers (L11, L12) refe
 | textarea | PASS | Relaxed | 1 method dropped | 7 | 4 | 20 |
 | accordion | PASS | PASS | 1 added | 8 (family) | 2 (family) | 6 (family) |
 | accordion-item | PASS | Relaxed | 1 added, 4 methods dropped | — | — | — |
-| banner | PASS | Relaxed | 1 added, 2 methods dropped | 6 | 1 | 3 |
-| toast | PASS | Relaxed | 1 added, 2 methods dropped | 7 | 1 | 11 |
+| banner | PASS | PASS | 1 added, 2 methods dropped | 6 | 1 | 3 |
+| toast | PASS | PASS | 1 added, 2 methods dropped | 7 | 1 | 11 |
 | text-field | PASS | Relaxed | 2 added, 1 method dropped | 4 (plus the textarea's) | 2 | 19 |
 | folder-tabs | PASS | PASS | 1 added, 2 methods dropped | 15 (tabs) | 3 (tabs) | 14 (tabs) |
 | folder-tab | PASS | PASS | 1 added, 2 methods dropped | — | — | — |
@@ -321,15 +321,17 @@ Choose between a `return` branch and `:has()` like this:
 | A listener on an element outside the cell (`selector`, `referenceEl`) | No effects (L12) | Add it in a callback ref. Remove it when React calls that ref with `null`. | The listener is replaced on every render. | modal, popovers, tooltip |
 | A floating element placed by script (Popper.js) | No `style` attribute; no imports (L12) | A native popover. `showPopover({ source })` sets the reference as anchor; a `position-area` rule per placement places it. | Needs anchor positioning; free offsets are dropped; `auto` opens below and flips. | popovers, tooltip |
 | A setting that applies once (`defaultShow`) | No hooks (L12) | Apply it on the first attach of the ref, and mark the element with a `data-` attribute. | React does not own the attribute. | popovers, tooltip |
-| Mutable state that no native element can hold | No hooks (L12) | Relaxation `react-hooks`: `useState`. Expose the state as an ARIA attribute (`aria-expanded`) or `hidden`, and style it with an attribute selector. | Breaks L12. Class closure does not see the state. | footer-group mobile toggle, accordion-item, banner, toast |
+| Mutable state that no native element can hold | No hooks (L12) | Keep the state in an ARIA attribute (`aria-expanded`) or `hidden`. Render it from the prop, so React applies a prop change; change it in the DOM from the handler. Style it with an attribute selector. | React does not see the change. Class closure does not see the state. | accordion-item, banner, toast |
+| State that changes rendered text or several parts | No hooks (L12) | Relaxation `react-hooks`: `useState`. | Breaks L12. | footer-group mobile toggle; textarea, text-field, datetime, dropdown |
 | A mutable prop that a class shows (`state` after validation) | Bare prop name only (L11) | With `react-hooks`: rename the prop (`state: initialState`) and give the state variable the prop's name. It holds only the prop's declared values. | The checks cannot tell the variable from the prop. A later prop change is ignored. | datetime |
-| A cancelable event (`tdsToggle`, `tdsClose`) | No event emitter | Build a `CustomEvent` with `cancelable: true`, pass it to the callback, then change state only if `!event.defaultPrevented`. | Needs `react-hooks` for the state. | accordion-item, banner, toast |
+| A cancelable event (`tdsToggle`, `tdsClose`) | No event emitter | Build a `CustomEvent` with `cancelable: true`, pass it to the callback, then change state only if `!event.defaultPrevented`. | None beyond the state's own cost. | accordion-item, banner, toast; side menu collapse button |
 | A slot and a prop with the same name (`header`) | — | One `ReactNode` prop takes both text and markup. | The prop type is wider than Tegel's `string`. | accordion-item, banner, toast |
 | An open set of named icons | No imports, so no icon set | Copy the few icons the component needs. Render nothing for other names. | Other icon names show no icon. | banner `icon` |
 | State with no native element | No hooks (L12) | Drop it. Record a departure. | Behaviour is lost. | button keyboard `.active` |
 | A custom event (`tdsClick`) | No event emitter | A callback prop that receives a real `CustomEvent` with the same `detail`. | The event does not bubble through the DOM. | card `onTdsClick` |
 | Logic that runs once (`componentWillLoad`, one-way flags) | The cell renders from props only | Derive on every render. Do not copy the stale-state bug. | None. A behaviour departure to record. | badge, button `onlyIcon`, link disabled |
 | A generated id | No hooks for a stable id | Set ids only when the id prop is given. With no id prop, drop the id and what points at it. | No id by default. The message loses `aria-describedby`. | card `cardId`; message |
+| Ids that only link two parts of the cell (`aria-controls`) | No `useId` (L12) | Generate them once in a callback ref with `crypto.randomUUID()`, and set the links there. Skip when the element already has an id. | Server-rendered markup has no ids until the page runs. | accordion-item |
 | A geometry that follows a value (a fill width, a tooltip over the thumb) | No `style` attribute; every `var()` is a token | Use a native control that takes the value as an attribute (`<progress>` for a fill), and set it through the DOM. Otherwise drop it and show the value elsewhere. | The fill ends under the thumb, not at its centre; the tooltip does not move. | slider |
 | Viewport state (resize listener) | No hooks or listeners (L12) | Render both variants. A media query shows one. | Content is rendered twice; the hidden copy is `display: none`. | footer-group title and toggle |
 | A parent that sets state on its children (`setSelected`) | No context, refs or `cloneElement` (L12) | The parent sets an ARIA attribute on its children's elements, from a callback ref and a click handler. The child's stylesheet reads it with `:has([aria-…])`. | The contract between the cells is recorded nowhere. React does not own the attribute. | folder, inline and navigation tabs; table (`aria-sort`, `data-text-align`, `data-hover`) |
@@ -431,11 +433,6 @@ no entry here.
   `aria-describedby` need ids that are stable and unique on the page (`useId`); wrapping
   the field in its `<label>` does not work, because the inside label is positioned over
   the field and the helper is outside it.
-- **Why (accordion item, banner, toast):** each keeps a state a click changes and that
-  a listener can veto: Tegel's `tdsToggle` and `tdsClose` are cancelable. The cell sends
-  a cancelable `CustomEvent` to the callback first and changes its state only when the
-  event is not prevented, as Tegel does. The accordion item also needs `useId` for
-  `aria-controls` and `aria-labelledby`.
 - **Why (text-field):** the same as the textarea: a live counter and stable ids.
 - **Why (datetime):** the field validates on input and on blur, and the result changes
   the state class and which helper text shows. The labels need stable ids (`useId`).
@@ -443,8 +440,9 @@ no entry here.
   clear button, the no-result text and the selection actions. The DOM pattern of the
   tabs cannot hold them: the selected labels are text that React renders. The labels
   and helper need stable ids (`useId`).
-- **Cells:** footer-group, banner, toast (`useState`); textarea, text-field,
-  accordion-item, datetime, dropdown (`useState`, `useId`).
+- **Cells:** footer-group (`useState`); textarea, text-field, datetime, dropdown
+  (`useState`, `useId`). The accordion item, banner and toast used it before; they now
+  keep their state in an ARIA attribute or `hidden` (see the state table above).
 - **Gate:** PASS. No gate check reads imports.
 - **Source:** structural. Every stateful Tegel component needs it.
 - **BOB change that removes it:** allow a fixed list of React hooks in the bootstrap

@@ -3,8 +3,8 @@ import { describe, expect, it, vi } from 'vitest';
 import { Toast, type ToastProps } from '../src';
 
 // Expected behaviour is Tegel's tds-toast at @scania/tegel@1.66.1
-// (packages/core/src/components/toast/toast.tsx). The hidden state uses useState
-// (relaxation react-hooks, docs/findings/README.md).
+// (packages/core/src/components/toast/toast.tsx). The hidden state is the hidden
+// attribute: isHidden sets it, and the close button sets it in the DOM.
 
 function renderToast(props: ToastProps) {
   const { container } = render(
@@ -56,5 +56,15 @@ describe('Toast matches tds-toast', () => {
     const { toast } = renderToast({ onTdsClose: (event) => event.preventDefault() });
     fireEvent.click(screen.getByRole('button', { name: 'Close message' }));
     expect(toast).not.toHaveAttribute('hidden');
+  });
+
+  it('shows again when isHidden changes after a close', () => {
+    const props = { header: 'Saved', tdsCloseAriaLabel: 'Close message' };
+    const { container, rerender } = render(<Toast {...props} />);
+    fireEvent.click(screen.getByRole('button', { name: 'Close message' }));
+    expect(container.firstElementChild).toHaveAttribute('hidden');
+    rerender(<Toast {...props} isHidden />);
+    rerender(<Toast {...props} isHidden={false} />);
+    expect(container.firstElementChild).not.toHaveAttribute('hidden');
   });
 });

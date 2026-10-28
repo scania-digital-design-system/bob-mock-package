@@ -8,9 +8,9 @@ Reference: Tegel `tds-toast` at `@scania/tegel@1.66.1`
 | Check | Result |
 |---|---|
 | BOB hard gate (real, `npm run gate`) | PASS |
-| Bootstrap prompt rules | Relaxed: `react-hooks` |
+| Bootstrap prompt rules | PASS |
 | Public API vs `@scania/tegel` types | All props and `onTdsClose`; `actions` added; `hideToast`, `showToast` dropped |
-| Behaviour (DOM tests) | Role, `aria-live`, variant class and icon, closable, close with cancelable `tdsClose` |
+| Behaviour (DOM tests) | Role, `aria-live`, variant class and icon, closable, close with cancelable `tdsClose`, `isHidden` after a close |
 | Tokens added | 11 |
 
 ## Departures from Tegel
@@ -19,7 +19,7 @@ Reference: Tegel `tds-toast` at `@scania/tegel@1.66.1`
    as `<div>`s.
 2. **`toastRole` sets `role`.** Tegel writes it to a `toastrole` attribute, so the toast
    has no ARIA role. The cell sets the `role` it describes.
-3. **The hidden state uses `useState`**, as the banner does (`banner.md` departure 2).
+3. **The hidden state is the `hidden` attribute**, as in the banner (`banner.md` departure 2).
 4. **`header` and `subheader` are `ReactNode` props** (`accordion.md` departure 2). Their
    content takes the header and body type, as Tegel forces with `!important`.
 5. **The close button has no padding.** Tegel leaves the browser's padding on a 20px

@@ -3,8 +3,8 @@ import { describe, expect, it, vi } from 'vitest';
 import { Banner, type BannerProps } from '../src';
 
 // Expected behaviour is Tegel's tds-banner at @scania/tegel@1.66.1
-// (packages/core/src/components/banner/banner.tsx). The hidden state uses useState
-// (relaxation react-hooks, docs/findings/README.md).
+// (packages/core/src/components/banner/banner.tsx). The hidden state is the hidden
+// attribute: isHidden sets it, and the close button sets it in the DOM.
 
 function renderBanner(props: BannerProps) {
   const { container } = render(<Banner header="Maintenance" {...props} />);
@@ -58,5 +58,13 @@ describe('Banner matches tds-banner', () => {
 
   it('starts hidden with isHidden', () => {
     expect(renderBanner({ isHidden: true }).banner).toHaveAttribute('hidden');
+  });
+
+  it('shows again when isHidden changes after a close', () => {
+    const { container, rerender } = render(<Banner header="Maintenance" />);
+    fireEvent.click(screen.getByRole('button', { name: 'Close banner' }));
+    rerender(<Banner header="Maintenance" isHidden />);
+    rerender(<Banner header="Maintenance" isHidden={false} />);
+    expect(container.firstElementChild).not.toHaveAttribute('hidden');
   });
 });

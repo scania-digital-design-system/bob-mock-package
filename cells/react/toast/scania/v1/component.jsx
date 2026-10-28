@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 function Toast({
   toastId,
   header,
@@ -13,7 +11,6 @@ function Toast({
   actions,
   onTdsClose,
 }) {
-  const [hidden, setHidden] = useState(isHidden);
   const icons = {
     information:
       'M16.013 4.004c-6.642 0-12.026 5.384-12.026 12.025 0 6.642 5.384 12.026 12.026 12.026 6.641 0 12.025-5.384 12.025-12.026 0-6.641-5.384-12.025-12.025-12.025ZM1.987 16.029c0-7.746 6.28-14.025 14.026-14.025 7.746 0 14.025 6.28 14.025 14.025 0 7.746-6.28 14.026-14.025 14.026-7.746 0-14.026-6.28-14.026-14.026ZM16.025 14.126a1 1 0 0 1 1 1v5.616a1 1 0 0 1-2 0v-5.616a1 1 0 0 1 1-1Zm0-3.809a1 1 0 0 1 1 1v.217a1 1 0 1 1-2 0v-.217a1 1 0 0 1 1-1Z',
@@ -24,16 +21,16 @@ function Toast({
     success:
       'M27.7 8.5c.4.4.4 1 0 1.4L19 18.6l-1.2 1.2-4.8 4.8c-.2.2-.4.3-.7.3-.3 0-.5-.1-.7-.3l-7.4-7.4c-.4-.4-.4-1 0-1.4.4-.4 1-.4 1.4 0l6.6 6.7 4.1-4.1 1.2-1.2c2.4-2.4 5.2-5.1 8.6-8.7.6-.4 1.3-.4 1.6 0z',
   };
-  const close = () => {
-    const event = new CustomEvent('tdsClose', { cancelable: true, detail: { toastId } });
-    if (onTdsClose) onTdsClose(event);
-    if (!event.defaultPrevented) setHidden(true);
+  const close = (event) => {
+    const tdsClose = new CustomEvent('tdsClose', { cancelable: true, detail: { toastId } });
+    if (onTdsClose) onTdsClose(tdsClose);
+    if (!tdsClose.defaultPrevented) event.currentTarget.closest('.tl-toast').hidden = true;
   };
   return (
     <div
       role={toastRole}
       aria-live={tdsAriaLive}
-      hidden={hidden}
+      hidden={isHidden}
       className={`tl-toast tl-toast--${variant}`}
     >
       <div className="tl-toast__wrapper">

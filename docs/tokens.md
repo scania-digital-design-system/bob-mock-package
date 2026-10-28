@@ -542,6 +542,11 @@ Each path is a `COLOR` carrier: BOB has no string type. The category `icon` is
 unconstrained. Tegel's `--tds-icon-<name>-fill-rule` and `-clip-rule` are all `evenodd`;
 the stylesheet writes the keyword. The paths are about 280 KB of `tokens/scania.css`.
 
+`build/icons.ts` makes these tokens and the icon cell's stylesheet from the pinned Tegel
+source; `tests/icons.test.ts` fails when either is out of date. To regenerate them, run
+`npm run icons`, then `npm run tokens` and `npm run cell`. The icon tokens stay the last
+variables in `payloads/_tokens.json`, so add other tokens before them.
+
 ### Popover and tooltip
 
 Source: `packages/core/src/components/popover-canvas/popover-canvas-vars.scss`,

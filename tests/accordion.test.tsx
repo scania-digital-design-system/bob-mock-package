@@ -4,7 +4,8 @@ import { Accordion, AccordionItem, type AccordionItemProps } from '../src';
 
 // Expected behaviour is Tegel's tds-accordion and tds-accordion-item at
 // @scania/tegel@1.66.1 (packages/core/src/components/accordion/). The item keeps its
-// expanded state with useState (relaxation react-hooks, docs/findings/README.md).
+// expanded state in the button's aria-expanded: the expanded prop sets it, and a click
+// sets it in the DOM.
 
 function renderItem(props: AccordionItemProps) {
   const { container } = render(
@@ -89,5 +90,23 @@ describe('AccordionItem matches tds-accordion-item', () => {
     expect(button).toBeDisabled();
     fireEvent.click(button);
     expect(button).toHaveAttribute('aria-expanded', 'false');
+  });
+
+  it('follows a change of expanded after a click', () => {
+    const { rerender } = render(<AccordionItem header="Details" />);
+    const button = screen.getByRole('button', { name: 'Details' });
+    fireEvent.click(button);
+    rerender(<AccordionItem header="Details" expanded />);
+    rerender(<AccordionItem header="Details" expanded={false} />);
+    expect(button).toHaveAttribute('aria-expanded', 'false');
+  });
+
+  it('keeps its generated ids across renders', () => {
+    const { rerender } = render(<AccordionItem header="Details" />);
+    const button = screen.getByRole('button', { name: 'Details' });
+    const id = button.id;
+    rerender(<AccordionItem header="Details" disabled={false} />);
+    expect(button.id).toBe(id);
+    expect(id).toMatch(/^tl-accordion-item-.+-header$/);
   });
 });
