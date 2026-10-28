@@ -15,8 +15,9 @@ Scania brand, light mode only.
 - Navigation: `Breadcrumbs` with `Breadcrumb`, `Stepper` with `Step`, `Footer` with
   `FooterGroup` and `FooterItem`, `FolderTabs` with `FolderTab`, `InlineTabs` with
   `InlineTab`, `NavigationTabs` with `NavigationTab`
-- Forms: `Checkbox`, `RadioButton`, `TextField`, `Textarea`, `Toggle`
-- Disclosure and feedback: `Accordion` with `AccordionItem`, `Banner`, `Toast`
+- Forms: `Checkbox`, `Datetime`, `Dropdown` with `DropdownOption`, `RadioButton`, `Slider`,
+  `TextField`, `Textarea`, `Toggle`
+- Disclosure and feedback: `Accordion` with `AccordionItem`, `Banner`, `Modal`, `Toast`
 
 ## Install
 

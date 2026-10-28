@@ -1,0 +1,160 @@
+{
+  "componentType": "dropdown",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "name",
+    "disabled",
+    "helper",
+    "label",
+    "labelPosition",
+    "openDirection",
+    "placeholder",
+    "size",
+    "error",
+    "multiselect",
+    "filter",
+    "normalizeText",
+    "noResultText",
+    "defaultValue",
+    "value",
+    "tdsAriaLabel",
+    "showSelectionActions",
+    "selectAllText",
+    "selectFilteredText",
+    "clearAllText",
+    "children",
+    "onTdsChange",
+    "onTdsFocus",
+    "onTdsBlur",
+    "onTdsInput",
+    "onTdsClear"
+  ],
+  "rules": [
+    {
+      "id": "prop-name",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"name\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-disabled",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"disabled\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-helper",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"helper\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-label",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"label\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-labelposition",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"labelPosition\" is a component prop: the caller selects one, accepting inside | outside. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-opendirection",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"openDirection\" is a component prop: the caller selects one, accepting up | down | auto. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-placeholder",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"placeholder\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-size",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"size\" is a component prop: the caller selects one, accepting xs | sm | md | lg. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-error",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"error\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-multiselect",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"multiselect\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-filter",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"filter\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-normalizetext",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"normalizeText\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-noresulttext",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"noResultText\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-defaultvalue",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"defaultValue\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-value",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"value\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-tdsarialabel",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"tdsAriaLabel\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-showselectionactions",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"showSelectionActions\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-selectalltext",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"selectAllText\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-selectfilteredtext",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"selectFilteredText\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-clearalltext",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"clearAllText\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-children",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"children\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

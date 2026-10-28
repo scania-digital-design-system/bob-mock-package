@@ -54,6 +54,26 @@ const DEPARTURES: Record<string, { dropped?: string[]; added?: string[] }> = {
   'inline-tab': { added: ['children'], dropped: ['setSelected'] },
   'navigation-tabs': { added: ['children'], dropped: ['selectTab', 'reinitialize'] },
   'navigation-tab': { added: ['children'], dropped: ['setSelected'] },
+  datetime: { dropped: ['reset', 'setValue', 'focusElement'] },
+  slider: { dropped: ['reset'] },
+  dropdown: {
+    added: ['children'],
+    dropped: [
+      'setValue',
+      'reset',
+      'removeValue',
+      'focusElement',
+      'close',
+      'updateDisplay',
+      'appendValue',
+    ],
+  },
+  // Tegel's option sends tdsFocus and tdsBlur only outside a dropdown.
+  'dropdown-option': { added: ['children'], dropped: ['setSelected', 'onTdsFocus', 'onTdsBlur'] },
+  modal: {
+    added: ['body', 'actions'],
+    dropped: ['showModal', 'closeModal', 'isOpen', 'initializeModal', 'cleanupModal'],
+  },
 };
 
 // Read by path: the package's "exports" map does not expose this file.

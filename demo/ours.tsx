@@ -34,6 +34,11 @@ import '../cells/react/inline-tabs/scania/v1/component.css';
 import '../cells/react/inline-tab/scania/v1/component.css';
 import '../cells/react/navigation-tabs/scania/v1/component.css';
 import '../cells/react/navigation-tab/scania/v1/component.css';
+import '../cells/react/datetime/scania/v1/component.css';
+import '../cells/react/modal/scania/v1/component.css';
+import '../cells/react/slider/scania/v1/component.css';
+import '../cells/react/dropdown/scania/v1/component.css';
+import '../cells/react/dropdown-option/scania/v1/component.css';
 import Accordion from '../cells/react/accordion/scania/v1/component.jsx';
 import AccordionItem from '../cells/react/accordion-item/scania/v1/component.jsx';
 import Badge from '../cells/react/badge/scania/v1/component.jsx';
@@ -45,7 +50,10 @@ import Button from '../cells/react/button/scania/v1/component.jsx';
 import Card from '../cells/react/card/scania/v1/component.jsx';
 import Checkbox from '../cells/react/checkbox/scania/v1/component.jsx';
 import Chip from '../cells/react/chip/scania/v1/component.jsx';
+import Datetime from '../cells/react/datetime/scania/v1/component.jsx';
 import Divider from '../cells/react/divider/scania/v1/component.jsx';
+import Dropdown from '../cells/react/dropdown/scania/v1/component.jsx';
+import DropdownOption from '../cells/react/dropdown-option/scania/v1/component.jsx';
 import FolderTab from '../cells/react/folder-tab/scania/v1/component.jsx';
 import FolderTabs from '../cells/react/folder-tabs/scania/v1/component.jsx';
 import Footer from '../cells/react/footer/scania/v1/component.jsx';
@@ -55,9 +63,11 @@ import InlineTab from '../cells/react/inline-tab/scania/v1/component.jsx';
 import InlineTabs from '../cells/react/inline-tabs/scania/v1/component.jsx';
 import Link from '../cells/react/link/scania/v1/component.jsx';
 import Message from '../cells/react/message/scania/v1/component.jsx';
+import Modal from '../cells/react/modal/scania/v1/component.jsx';
 import NavigationTab from '../cells/react/navigation-tab/scania/v1/component.jsx';
 import NavigationTabs from '../cells/react/navigation-tabs/scania/v1/component.jsx';
 import RadioButton from '../cells/react/radio-button/scania/v1/component.jsx';
+import Slider from '../cells/react/slider/scania/v1/component.jsx';
 import Spinner from '../cells/react/spinner/scania/v1/component.jsx';
 import Step from '../cells/react/step/scania/v1/component.jsx';
 import Stepper from '../cells/react/stepper/scania/v1/component.jsx';
@@ -69,6 +79,7 @@ import Toggle from '../cells/react/toggle/scania/v1/component.jsx';
 import {
   ACCORDION,
   CRUMBS,
+  DROPDOWN_OPTIONS,
   FOOTER_END,
   FOOTER_START,
   FOOTER_TOP,
@@ -105,6 +116,10 @@ const COMPONENTS: Record<string, FC<Record<string, unknown>>> = {
   'folder-tabs': FolderTabs,
   'inline-tabs': InlineTabs,
   'navigation-tabs': NavigationTabs,
+  datetime: Datetime,
+  modal: Modal,
+  slider: Slider,
+  dropdown: Dropdown,
 };
 
 const TAB_CELLS: Record<string, FC<Record<string, unknown>>> = {
@@ -186,6 +201,12 @@ const accordionItems = ACCORDION.map(({ header, text, expanded }) => (
   </AccordionItem>
 ));
 
+const dropdownOptions = DROPDOWN_OPTIONS.map(({ value, label, disabled }) => (
+  <DropdownOption key={value} value={value} disabled={disabled}>
+    {label}
+  </DropdownOption>
+));
+
 const actionLink = <a href="#actions">Read more</a>;
 
 // Turns the shared case flags into the nodes our cells take as props.
@@ -208,6 +229,8 @@ function nodeProps(props: Record<string, unknown>): Record<string, unknown> {
       steps
     ) : props.items ? (
       accordionItems
+    ) : props.options ? (
+      dropdownOptions
     ) : typeof props.tabs === 'string' ? (
       tabs(props.tabs)
     ) : (
@@ -227,6 +250,11 @@ function Preview() {
             <div className="case" key={label}>
               <dt>{label}</dt>
               <dd className={dark ? 'dark' : undefined}>
+                {typeof props.selector === 'string' && (
+                  <button type="button" id={props.selector.slice(1)}>
+                    Open
+                  </button>
+                )}
                 {Component && <Component {...nodeProps(props)} />}
               </dd>
             </div>

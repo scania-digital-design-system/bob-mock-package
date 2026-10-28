@@ -413,5 +413,127 @@ SECTIONS.push(
   },
 );
 
+SECTIONS.push({
+  component: 'datetime',
+  tag: 'tds-datetime',
+  cases: [
+    { label: 'datetime-local, lg', props: {} },
+    {
+      label: 'date, label outside, helper',
+      props: { type: 'date', label: 'Label', labelPosition: 'outside', helper: 'Helper' },
+    },
+    {
+      label: 'time, md, label inside',
+      props: { type: 'time', size: 'md', label: 'Label', labelPosition: 'inside' },
+    },
+    {
+      label: 'date with value, error',
+      props: { type: 'date', defaultValue: '2023-01-31', state: 'error', helperError: 'Error' },
+    },
+    { label: 'month, sm, disabled', props: { type: 'month', size: 'sm', disabled: true } },
+  ],
+});
+
+SECTIONS.push({
+  component: 'slider',
+  tag: 'tds-slider',
+  cases: [
+    { label: 'lg, value 40', props: { label: 'Label', value: '40' } },
+    {
+      label: 'tooltip, 3 ticks with numbers',
+      props: { label: 'Label', value: '50', tooltip: true, ticks: '3', showTickNumbers: true },
+    },
+    {
+      label: 'sm, controls',
+      props: { label: 'Label', value: '20', thumbSize: 'sm', controls: true },
+    },
+    { label: 'number field', props: { label: 'Label', value: '60', input: true } },
+    { label: 'disabled', props: { label: 'Label', value: '30', disabled: true } },
+  ],
+});
+
+// `options: true` builds the dropdown options on both pages.
+export const DROPDOWN_OPTIONS: { value: string; label: string; disabled?: boolean }[] = [
+  { value: 'truck', label: 'Truck' },
+  { value: 'bus', label: 'Bus' },
+  { value: 'engine', label: 'Engine' },
+  { value: 'boat', label: 'Boat', disabled: true },
+];
+
+SECTIONS.push({
+  component: 'dropdown',
+  tag: 'tds-dropdown',
+  cases: [
+    {
+      label: 'lg, label outside, helper',
+      props: {
+        options: true,
+        label: 'Label',
+        labelPosition: 'outside',
+        placeholder: 'Placeholder',
+        helper: 'Helper',
+      },
+    },
+    {
+      label: 'md, label inside, default value',
+      props: {
+        options: true,
+        size: 'md',
+        label: 'Label',
+        labelPosition: 'inside',
+        defaultValue: 'bus',
+      },
+    },
+    {
+      label: 'sm, multiselect, selection actions',
+      props: {
+        options: true,
+        size: 'sm',
+        placeholder: 'Placeholder',
+        multiselect: true,
+        showSelectionActions: true,
+      },
+    },
+    { label: 'filter', props: { options: true, placeholder: 'Placeholder', filter: true } },
+    {
+      label: 'xs, error',
+      props: {
+        options: true,
+        size: 'xs',
+        placeholder: 'Placeholder',
+        error: true,
+        helper: 'Error',
+      },
+    },
+  ],
+});
+
+// A modal case opens from the "Open" button its `selector` names.
+SECTIONS.push({
+  component: 'modal',
+  tag: 'tds-modal',
+  cases: [
+    {
+      label: 'md, static actions',
+      props: { selector: '#modal-md', header: 'Header', body: BODY, actionLink: true },
+    },
+    {
+      label: 'xs, prevent (close with the button only)',
+      props: { selector: '#modal-xs', size: 'xs', header: 'Header', body: BODY, prevent: true },
+    },
+    {
+      label: 'lg, sticky actions',
+      props: {
+        selector: '#modal-lg',
+        size: 'lg',
+        header: 'Header',
+        body: BODY.repeat(30),
+        actionsPosition: 'sticky',
+        actionLink: true,
+      },
+    },
+  ],
+});
+
 // The same plus icon on both pages, so only the component differs.
 export const ICON_PATH = 'M9 3h2v6h6v2h-6v6H9v-6H3V9h6z';

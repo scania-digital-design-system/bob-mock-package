@@ -61,6 +61,10 @@ name is in the generated `tegel` set.
 | Checkbox, radio button, toggle, chip, textarea | 210 |
 | Accordion, banner, toast, text field | 249 |
 | Folder, inline and navigation tabs | 263 |
+| Datetime | 275 |
+| Modal | 285 |
+| Slider | 316 |
+| Dropdown | 342 |
 
 ## Foundation set
 
@@ -429,3 +433,94 @@ Reused: `color/background/{base,layer-01,none}`, `color/border/{discrete,none}`,
 `color/icon/strong`, `color/text/{strong,soft}`, `opacity/disabled`, `border/control`,
 `space/element/{8,16,20,24,32,40,48}`, the focus ring tokens and the `headline-07` and
 detail tokens (Tegel's `title-01`).
+
+### Datetime
+
+Source: `packages/core/src/components/datetime/datetime.scss`, `datetime-vars.scss`, and
+the Scania light block of `tokens/scss/component/-input.scss`.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `size/datetime/{lg,md,sm}` | 56, 48, 40 | container heights |
+| `size/datetime/{min-width,icon,helper-icon}` | 208, 20, 16 | minimum width, calendar and clock icon, error icon |
+| `size/datetime/icon-right` | 18 | icon `right` |
+| `size/datetime/label-left`, `size/datetime/label-top-lg`, `size/datetime/label-top` | 16, 12, 8 | inside label position |
+| `space/datetime/inside-bottom-lg`, `space/datetime/inside-bottom` | 15, 11 | inside-label input padding |
+
+Reused: `color/background/layer-01`, `color/border/{soft,strong}`, `color/danger`,
+`color/text/{strong,soft,defined}`, `radius/input`, `border/input`, `opacity/disabled`,
+`space/element/{4,8,16,20,24}`, the focus ring tokens and the `detail-02`, `detail-05` and
+`detail-07` tokens (Tegel's `body-01`, `label-01` and `label-02`).
+
+### Modal
+
+Source: `packages/core/src/components/modal/modal.scss`, `modal-vars.scss`,
+`packages/core/src/mixins/_scrollbar.scss`, and the Scania light blocks of
+`tokens/scss/component/{modal,overlay}.scss`.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `color/modal/backdrop` | `#00000099` | `--component-overlay-background-default` (black) at `--component-overlay-opacity-default` (60%) |
+| `color/shadow/10` | `#0000001a` | `--component-shadow-base-modifier` = transparent-shadow-100 |
+| `radius/modal` | 4 | `--component-modal-border-radius-default` |
+| `size/modal/max-height` (carrier) | `85vh` | `$modal-max-height` |
+| `size/modal/actions`, `size/modal/close` | 36, 20 | `$modal-actions-height`, close icon |
+| `size/scrollbar/width`, `border/scrollbar-thumb`, `border/scrollbar-thumb-hover`, `radius/scrollbar` | 10, 3, 2, 8 | `tds-scrollbar` mixin variables |
+
+Reused: `color/background/{layer-02,none}`, `color/border/{subtle,none}`,
+`color/icon/strong`, `color/text/strong`, `color/shadow/15`, `size/shadow/{1,3,minus-1}`,
+`space/element/{16,24,48}`, the focus ring tokens, the `body` tokens (Tegel's `body-01`)
+and `font/family/headline` with the `body` size, line height and letter spacing (Tegel's
+`headline-05` has the same values).
+
+### Slider
+
+Source: `packages/core/src/components/slider/slider.scss` and `slider-vars.scss`. The
+slider reads Tegel's older `--tds-grey-*` variables, so its values come from those
+(`--tds-grey-950` is `#0b0c0f`, not the newer `#0e1013`).
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `color/slider/thumb` | `#0b0c0f` | thumb, fill, label and values (grey-950) |
+| `color/slider/track` | `#7e90a9` | track and dividers (grey-350) |
+| `color/slider/disabled`, `color/slider/text-disabled` | `#d1d7e0`, `#b4becd` | disabled thumb, track and dividers (grey-200); disabled text (grey-250) |
+| `color/slider/secondary` | `#475467` | tick numbers and controls (grey-650) |
+| `color/slider/tooltip`, `color/slider/tooltip-text` | `#3a4554`, `#f6f7f9` | tooltip (grey-700, grey-50) |
+| `color/slider/hover`, `color/slider/pressed` | `#303c612b`, `#3a517c59` | thumb halo (transparent-200, transparent-250) |
+| `size/slider/thumb-{lg,sm}`, `size/slider/thumb-pressed-{lg,sm}` | 20, 16, 24, 20 | thumb sizes |
+| `size/slider/halo-{lg,sm}`, `size/slider/halo-pressed-{lg,sm}` | 14, 12, 12, 10 | halo spread: (48 or 40 − thumb) / 2 |
+| `size/slider/track`, `size/slider/fill` | 2, 4 | track and fill height |
+| `size/slider/divider`, `size/slider/divider-width` | 16, 1 | tick dividers |
+| `size/slider/tick-label`, `size/slider/tick-top` | 50, -7 | tick number width and offset |
+| `size/slider/control-icon`, `size/slider/field` | 16, 40 | control icon; number field height (`tds-text-field` sm) |
+| `radius/slider/track`, `radius/slider/fill`, `radius/slider/tooltip` | 1, 2, 4 | track, fill and tooltip radius |
+| `space/slider/control`, `space/slider/label-offset`, `space/slider/tooltip-inline` | 18, 34, 11 | control and value padding; label padding with tick numbers; tooltip padding |
+
+Reused: `color/background/{base,layer-01}`, `color/border/{soft,strong}`, `radius/input`,
+`border/input`, `space/element/{8,12,16}`, the focus ring tokens and the `detail-02`,
+`detail-05` and `body` tokens (Tegel's `detail-01` is 16/24).
+
+### Dropdown
+
+Source: `packages/core/src/components/dropdown/` (`dropdown.scss`, `dropdown-button.scss`,
+`dropdown-filter.scss`, `dropdown-vars.scss`, `dropdown-option/dropdown-option.scss`), and
+the Scania light block of `tokens/scss/component/dropdown.scss`.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `color/dropdown/item-hover`, `color/dropdown/item-selected` | `#edeff3`, `#e0e5eb` | `--component-dropdown-background-item-{hover,selected-default}` = grey-100, grey-150 |
+| `radius/dropdown` | 4 | `--component-dropdown-border-radius-default` |
+| `size/dropdown/{lg,md,sm,xs}` | 56, 48, 40, 30 | select heights (`sm` also the `xs` no-result height) |
+| `size/dropdown/list-lg`, `size/dropdown/list-sm` | 312, 260 | the default list heights |
+| `size/dropdown/icon`, `size/dropdown/shadow-y` | 16, 2 | icons; list `box-shadow: 0 2px 3px` |
+| `size/dropdown/label-top`, `size/dropdown/label-float-lg`, `size/dropdown/label-float-md`, `size/dropdown/label-left` | 20, 12, 8, 16 | inside label position |
+| `size/dropdown/actions`, `size/dropdown/action-button` | 12, 24 | selection actions bar and button height |
+| `space/dropdown/{7,11,15,19}`, `space/dropdown/up-gap` | 7, 11, 15, 19, 1 | option paddings, named by value; gap above an upward list |
+| `font/line-height/dropdown-value`, `font/line-height/dropdown-xs` | 18.2, 14 | `line-height: 1.3` and `1` at 14px |
+| `motion/dropdown/fast`, `motion/dropdown/label` (carriers) | `150ms`, `200ms` | `--tds-motion-duration-fast-02`, label `transition: 0.2s` |
+
+Reused: `color/background/{layer-01,none}`, `color/border/{soft,strong,subtle,discrete,none}`,
+`color/danger`, `color/icon/strong`, `color/text/{strong,soft,defined}`, `color/shadow/10`,
+`size/shadow/3`, `radius/input`, `border/input`, `opacity/disabled`, `motion/easing/scania`,
+`space/element/{2,4,8,12,16,20}`, the scrollbar tokens, the checkbox tokens, the focus ring
+tokens and the `detail-02`, `detail-05` and `detail-07` tokens.

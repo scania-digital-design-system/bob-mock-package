@@ -10,7 +10,10 @@ import ButtonCell from '../cells/react/button/scania/v1/component.jsx';
 import CardCell from '../cells/react/card/scania/v1/component.jsx';
 import CheckboxCell from '../cells/react/checkbox/scania/v1/component.jsx';
 import ChipCell from '../cells/react/chip/scania/v1/component.jsx';
+import DatetimeCell from '../cells/react/datetime/scania/v1/component.jsx';
 import DividerCell from '../cells/react/divider/scania/v1/component.jsx';
+import DropdownCell from '../cells/react/dropdown/scania/v1/component.jsx';
+import DropdownOptionCell from '../cells/react/dropdown-option/scania/v1/component.jsx';
 import FolderTabCell from '../cells/react/folder-tab/scania/v1/component.jsx';
 import FolderTabsCell from '../cells/react/folder-tabs/scania/v1/component.jsx';
 import FooterCell from '../cells/react/footer/scania/v1/component.jsx';
@@ -20,9 +23,11 @@ import InlineTabCell from '../cells/react/inline-tab/scania/v1/component.jsx';
 import InlineTabsCell from '../cells/react/inline-tabs/scania/v1/component.jsx';
 import LinkCell from '../cells/react/link/scania/v1/component.jsx';
 import MessageCell from '../cells/react/message/scania/v1/component.jsx';
+import ModalCell from '../cells/react/modal/scania/v1/component.jsx';
 import NavigationTabCell from '../cells/react/navigation-tab/scania/v1/component.jsx';
 import NavigationTabsCell from '../cells/react/navigation-tabs/scania/v1/component.jsx';
 import RadioButtonCell from '../cells/react/radio-button/scania/v1/component.jsx';
+import SliderCell from '../cells/react/slider/scania/v1/component.jsx';
 import SpinnerCell from '../cells/react/spinner/scania/v1/component.jsx';
 import StepCell from '../cells/react/step/scania/v1/component.jsx';
 import StepperCell from '../cells/react/stepper/scania/v1/component.jsx';
@@ -43,7 +48,10 @@ import type {
   CardProps,
   CheckboxProps,
   ChipProps,
+  DatetimeProps,
   DividerProps,
+  DropdownOptionProps,
+  DropdownProps,
   FolderTabProps,
   FolderTabsProps,
   FooterGroupProps,
@@ -53,9 +61,11 @@ import type {
   InlineTabsProps,
   LinkProps,
   MessageProps,
+  ModalProps,
   NavigationTabProps,
   NavigationTabsProps,
   RadioButtonProps,
+  SliderProps,
   SpinnerProps,
   StepProps,
   StepperProps,
@@ -78,7 +88,10 @@ export type {
   CardProps,
   CheckboxProps,
   ChipProps,
+  DatetimeProps,
   DividerProps,
+  DropdownOptionProps,
+  DropdownProps,
   FolderTabProps,
   FolderTabsProps,
   FooterGroupProps,
@@ -88,9 +101,11 @@ export type {
   InlineTabsProps,
   LinkProps,
   MessageProps,
+  ModalProps,
   NavigationTabProps,
   NavigationTabsProps,
   RadioButtonProps,
+  SliderProps,
   SpinnerProps,
   StepProps,
   StepperProps,
@@ -137,3 +152,8 @@ export const InlineTabs: FC<InlineTabsProps> = InlineTabsCell;
 export const InlineTab: FC<InlineTabProps> = InlineTabCell;
 export const NavigationTabs: FC<NavigationTabsProps> = NavigationTabsCell;
 export const NavigationTab: FC<NavigationTabProps> = NavigationTabCell;
+export const Datetime: FC<DatetimeProps> = DatetimeCell;
+export const Modal: FC<ModalProps> = ModalCell;
+export const Slider: FC<SliderProps> = SliderCell;
+export const Dropdown: FC<DropdownProps> = DropdownCell;
+export const DropdownOption: FC<DropdownOptionProps> = DropdownOptionCell;

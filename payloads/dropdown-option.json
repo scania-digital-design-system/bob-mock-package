@@ -1,0 +1,15 @@
+{
+  "component": "dropdown-option",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-dropdown-option at @scania/tegel@1.66.1: one option in a dropdown list, a button for single selection or a checkbox for multiselect.",
+    "properties": [
+      { "name": "value", "type": "TEXT", "values": [] },
+      { "name": "disabled", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "tdsAriaLabel", "type": "TEXT", "values": [] },
+      { "name": "children", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": []
+  }
+}

@@ -48,10 +48,15 @@ Each `<component>.md` keeps the full detail. Prompt line numbers (L11, L12) refe
 | inline-tab | PASS | PASS | 1 added, 1 method dropped | — | — | — |
 | navigation-tabs | PASS | PASS | 1 added, 2 methods dropped | — | — | — |
 | navigation-tab | PASS | PASS | 1 added, 1 method dropped | — | — | — |
+| datetime | PASS | Relaxed | 3 methods dropped | 9 | 3 | 12 |
+| modal | PASS | PASS | 2 added, 5 methods dropped | 10 | 4 | 10 |
+| slider | PASS | PASS | 1 method dropped | 11 | 3 | 31 |
+| dropdown | PASS | Relaxed | 1 added, 7 methods dropped | 14 (family) | 3 (family) | 26 (family) |
+| dropdown-option | PASS | Relaxed | 1 added, 1 method and 2 events dropped | — | — | — |
 
 A family (a parent and its children) shares one findings file, so its departures and
 findings are counted once. The three tabs families share `tabs.md`. The foundation set
-adds 31 tokens. The `tegel` set has 263 names in total. BOB's stock set has 45.
+adds 31 tokens. The `tegel` set has 342 names in total. BOB's stock set has 45.
 
 ## Findings about BOB
 
@@ -89,6 +94,8 @@ cells are out of reach.
   `useId`, it drops the generated id behind `aria-describedby`.
 - **block:** the nesting level needs the DOM or a context, so it moves into CSS
   (finding 2).
+- **dropdown-option:** Tegel's option renders a button or a checkbox by its parent's
+  `multiselect`. The cell renders both, and the parent's class shows one.
 - **step, footer-group, footer-item:** a child cannot read its parent's props or place.
   This needs the first relaxation, `parent-modifier-selectors` (see
   [Relaxations](#relaxations)).
@@ -117,6 +124,9 @@ A modifier class cannot come from logic.
   with case, so a missing casing fails it.
 - **stepper:** modifiers that change only the children (`--lg`, `--below`,
   `--hide-labels-*`) need filler rules in the parent's stylesheet.
+- **datetime:** the validation state must show in a class. The cell renames the `state`
+  prop and gives its state variable the prop's name and values. The checks cannot tell
+  the two apart, so `tl-datetime--${state}` passes.
 
 ### 3. The gate treats every `var()` as a design token
 
@@ -133,6 +143,7 @@ A modifier class cannot come from logic.
 - **footer:** the wordmark URL is carried as `COLOR`. BOB has no image or asset type.
 - **stepper:** Tegel's literal line geometry becomes 13 tokens named by value.
 - **card:** shadows are composed from `size` offsets and 8-digit hex `color` tokens.
+- **modal:** `85vh` is carried as `COLOR`, because a `FLOAT` token is always pixels.
 - **badge:** the font weight is the keyword `bold`.
 - `tokens.dtcg.json` labels every carried value `$type: "color"`. A typography
   `.fontSize` emits an empty declaration. Details: `docs/tokens.md`.
@@ -143,6 +154,10 @@ A modifier class cannot come from logic.
   `height`, so the cell adds `size/button/icon*` tokens with the same values.
 - **spinner:** `token-usage` has no rule for SVG geometry (`cx`, `r`, `stroke-width`). Any
   category passes.
+- **modal:** `token-usage` does not list `scrollbar-color` as a colour property. The gate
+  fails a colour token there, so the Firefox scrollbar colour is dropped.
+- **slider:** nor `border-image` or `accent-color`, the two CSS-only ways to colour a
+  native range's fill. The cell draws the fill with a `<progress>` instead.
 
 ### 6. The stock vocabulary covers little of Tegel
 
@@ -170,6 +185,8 @@ generated `tegel` set. The button alone needs 17 component tokens, and the tag 1
   class, so no check reads them.
 - **footer:** the 992px breakpoint is a literal in a media query. No check reads at-rule
   preludes, and CSS cannot put `var()` there.
+- **slider:** the gate's `markup-inline-style` check matches only a quoted `style="…"`. A
+  JSX `style={{ … }}` passes it. Our `no-style-attribute` prompt rule catches both.
 
 ### 9. The resolve path gives a different button
 
@@ -192,6 +209,8 @@ Figma component properties.
   a place in the contract.
 - **tabs:** `leftPadding` is a free number in Tegel that sets a custom property. With no
   number type and no `style` attribute, it becomes a `VARIANT` with seven values.
+- **datetime:** `customValidator` is a function prop. It is typed through the override
+  map, as events are.
 
 ## Conflicts and resolutions
 
@@ -221,7 +240,8 @@ Each row is one kind of conflict. "Cost" is what the resolution gives up.
 | A class with no visual effect in our markup | Every class in the markup needs a rule | Express it with element order. Drop the class. | None. | card image placement |
 | A class derived from DOM ancestors (nesting level) | Bare prop name only (L11), no refs or context (L12) | Descendant selectors, one rule per level, to a fixed depth. | Deeper levels repeat the last rule. | block nesting |
 | A value mapped to another class (alias, case folding) | Bare prop name only (L11) | One modifier per value. Share the rule with a selector list. | More selectors. | divider `dark-blue`; tag capitalised variants |
-| A child that reads its parent's props or place | No context or refs (L12); style only your own classes (L7) | Relaxation `parent-modifier-selectors`: the child's stylesheet styles its own classes under the parent's classes. | Breaks L7. The parent needs filler rules for modifiers only its children use. | step; footer-group, footer-item |
+| A child whose markup depends on the parent's props (button or checkbox) | No context or `cloneElement` (L12) | Render every form. With `parent-modifier-selectors`, the child's stylesheet shows one under the parent's class. | The child's content is in the DOM once per form. | dropdown-option |
+| A child that reads its parent's props or place | No context or refs (L12); style only your own classes (L7) | Relaxation `parent-modifier-selectors`: the child's stylesheet styles its own classes under the parent's classes. | Breaks L7. The parent needs filler rules for modifiers only its children use. | step; footer-group, footer-item; dropdown-option |
 
 Choose between a `return` branch and `:has()` like this:
 
@@ -235,7 +255,10 @@ Choose between a `return` branch and `:has()` like this:
 | Tegel has | BOB rule | Resolution | Cost | Where |
 |---|---|---|---|---|
 | Mutable internal state | No hooks (L12) | Use a native element that holds state (`<details>`). The prop sets the initial state. | Different toggle area and name. A prop change after a user toggle is ignored. | card `expanded` |
+| Open state, focus trap and Escape (a modal) | No hooks or listeners (L12) | A native `<dialog>`: `showModal()` and `close()` from a callback ref and handlers; `cancel` for Escape. | Tab can reach the browser's controls. | modal |
+| A listener on an element outside the cell (`selector`, `referenceEl`) | No effects (L12) | Add it in a callback ref. Remove it when React calls that ref with `null`. | The listener is replaced on every render. | modal |
 | Mutable state that no native element can hold | No hooks (L12) | Relaxation `react-hooks`: `useState`. Expose the state as an ARIA attribute (`aria-expanded`) or `hidden`, and style it with an attribute selector. | Breaks L12. Class closure does not see the state. | footer-group mobile toggle, accordion-item, banner, toast |
+| A mutable prop that a class shows (`state` after validation) | Bare prop name only (L11) | With `react-hooks`: rename the prop (`state: initialState`) and give the state variable the prop's name. It holds only the prop's declared values. | The checks cannot tell the variable from the prop. A later prop change is ignored. | datetime |
 | A cancelable event (`tdsToggle`, `tdsClose`) | No event emitter | Build a `CustomEvent` with `cancelable: true`, pass it to the callback, then change state only if `!event.defaultPrevented`. | Needs `react-hooks` for the state. | accordion-item, banner, toast |
 | A slot and a prop with the same name (`header`) | — | One `ReactNode` prop takes both text and markup. | The prop type is wider than Tegel's `string`. | accordion-item, banner, toast |
 | An open set of named icons | No imports, so no icon set | Copy the few icons the component needs. Render nothing for other names. | Other icon names show no icon. | banner `icon` |
@@ -243,6 +266,7 @@ Choose between a `return` branch and `:has()` like this:
 | A custom event (`tdsClick`) | No event emitter | A callback prop that receives a real `CustomEvent` with the same `detail`. | The event does not bubble through the DOM. | card `onTdsClick` |
 | Logic that runs once (`componentWillLoad`, one-way flags) | The cell renders from props only | Derive on every render. Do not copy the stale-state bug. | None. A behaviour departure to record. | badge, button `onlyIcon`, link disabled |
 | A generated id | No hooks for a stable id | Set ids only when the id prop is given. With no id prop, drop the id and what points at it. | No id by default. The message loses `aria-describedby`. | card `cardId`; message |
+| A geometry that follows a value (a fill width, a tooltip over the thumb) | No `style` attribute; every `var()` is a token | Use a native control that takes the value as an attribute (`<progress>` for a fill), and set it through the DOM. Otherwise drop it and show the value elsewhere. | The fill ends under the thumb, not at its centre; the tooltip does not move. | slider |
 | Viewport state (resize listener) | No hooks or listeners (L12) | Render both variants. A media query shows one. | Content is rendered twice; the hidden copy is `display: none`. | footer-group title and toggle |
 | A parent that sets state on its children (`setSelected`) | No context, refs or `cloneElement` (L12) | The parent sets an ARIA attribute on its children's elements, from a callback ref and a click handler. The child's stylesheet reads it with `:has([aria-…])`. | The contract between the cells is recorded nowhere. React does not own the attribute. | folder, inline and navigation tabs |
 | Overflow state (scroll buttons, `ResizeObserver`) | No hooks or effects (L12) | Measure in a callback ref and in `onScroll`. Set `disabled` on the buttons directly, and hide a disabled button with CSS. | A resize alone does not update the buttons. | folder, inline and navigation tabs |
@@ -300,7 +324,8 @@ no entry here.
   repeats the parent's props. Data attributes were rejected: they pass the checks only
   because neither check reads attribute selectors.
 - **Cells:** step, footer-group, footer-item, accordion-item (Tegel's
-  `:host(:active)` on the accordion shades every item header).
+  `:host(:active)` on the accordion shades every item header), dropdown-option (the
+  dropdown's `multiselect` picks a button or a checkbox, and its size sets the padding).
 - **Gate:** PASS. Class closure does not object to rules for classes the markup does not
   render.
 - **Source:** structural. Any compound component has the same problem, whatever its
@@ -333,8 +358,14 @@ no entry here.
   event is not prevented, as Tegel does. The accordion item also needs `useId` for
   `aria-controls` and `aria-labelledby`.
 - **Why (text-field):** the same as the textarea: a live counter and stable ids.
+- **Why (datetime):** the field validates on input and on blur, and the result changes
+  the state class and which helper text shows. The labels need stable ids (`useId`).
+- **Why (dropdown):** open, selection and filter text change the trigger's text, the
+  clear button, the no-result text and the selection actions. The DOM pattern of the
+  tabs cannot hold them: the selected labels are text that React renders. The labels
+  and helper need stable ids (`useId`).
 - **Cells:** footer-group, banner, toast (`useState`); textarea, text-field,
-  accordion-item (`useState`, `useId`).
+  accordion-item, datetime, dropdown (`useState`, `useId`).
 - **Gate:** PASS. No gate check reads imports.
 - **Source:** structural. Every stateful Tegel component needs it.
 - **BOB change that removes it:** allow a fixed list of React hooks in the bootstrap

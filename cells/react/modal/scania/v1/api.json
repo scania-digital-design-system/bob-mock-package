@@ -1,0 +1,81 @@
+{
+  "componentType": "modal",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "header",
+    "prevent",
+    "size",
+    "actionsPosition",
+    "selector",
+    "referenceEl",
+    "show",
+    "closable",
+    "tdsAlertDialog",
+    "body",
+    "actions",
+    "onTdsClose",
+    "onTdsOpen"
+  ],
+  "rules": [
+    {
+      "id": "prop-header",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"header\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-prevent",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"prevent\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-size",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"size\" is a component prop: the caller selects one, accepting xs | sm | md | lg. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-actionsposition",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"actionsPosition\" is a component prop: the caller selects one, accepting sticky | static. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-selector",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"selector\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-show",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"show\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-closable",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"closable\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-tdsalertdialog",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"tdsAlertDialog\" is a component prop: the caller selects one, accepting alertdialog | dialog. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-body",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"body\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-actions",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"actions\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

@@ -6,5 +6,8 @@
   "react/accordion-item/scania/v1": ["parent-modifier-selectors", "react-hooks"],
   "react/banner/scania/v1": ["react-hooks"],
   "react/toast/scania/v1": ["react-hooks"],
-  "react/text-field/scania/v1": ["react-hooks"]
+  "react/text-field/scania/v1": ["react-hooks"],
+  "react/datetime/scania/v1": ["react-hooks"],
+  "react/dropdown/scania/v1": ["react-hooks"],
+  "react/dropdown-option/scania/v1": ["parent-modifier-selectors"]
 }

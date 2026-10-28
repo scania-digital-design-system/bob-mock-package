@@ -32,6 +32,14 @@
       "$type": "number",
       "$value": 4
     },
+    "scrollbar-thumb": {
+      "$type": "number",
+      "$value": 3
+    },
+    "scrollbar-thumb-hover": {
+      "$type": "number",
+      "$value": 2
+    },
     "tabs-indicator": {
       "$type": "number",
       "$value": 2
@@ -180,6 +188,16 @@
         "$value": "#7e90a9"
       }
     },
+    "dropdown": {
+      "item-hover": {
+        "$type": "color",
+        "$value": "#edeff3"
+      },
+      "item-selected": {
+        "$type": "color",
+        "$value": "#e0e5eb"
+      }
+    },
     "footer": {
       "divider": {
         "$type": "color",
@@ -224,10 +242,20 @@
         "$value": "#16417f"
       }
     },
+    "modal": {
+      "backdrop": {
+        "$type": "color",
+        "$value": "#00000099"
+      }
+    },
     "shadow": {
       "1": {
         "$type": "color",
         "$value": "#00000003"
+      },
+      "10": {
+        "$type": "color",
+        "$value": "#0000001a"
       },
       "15": {
         "$type": "color",
@@ -240,6 +268,44 @@
       "5": {
         "$type": "color",
         "$value": "#0000000d"
+      }
+    },
+    "slider": {
+      "disabled": {
+        "$type": "color",
+        "$value": "#d1d7e0"
+      },
+      "hover": {
+        "$type": "color",
+        "$value": "#303c612b"
+      },
+      "pressed": {
+        "$type": "color",
+        "$value": "#3a517c59"
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": "#475467"
+      },
+      "text-disabled": {
+        "$type": "color",
+        "$value": "#b4becd"
+      },
+      "thumb": {
+        "$type": "color",
+        "$value": "#0b0c0f"
+      },
+      "tooltip": {
+        "$type": "color",
+        "$value": "#3a4554"
+      },
+      "tooltip-text": {
+        "$type": "color",
+        "$value": "#f6f7f9"
+      },
+      "track": {
+        "$type": "color",
+        "$value": "#7e90a9"
       }
     },
     "stepper": {
@@ -487,6 +553,14 @@
         "$type": "number",
         "$value": 8
       },
+      "dropdown-value": {
+        "$type": "number",
+        "$value": 18.2
+      },
+      "dropdown-xs": {
+        "$type": "number",
+        "$value": 14
+      },
       "headline-06": {
         "$type": "number",
         "$value": 16
@@ -548,6 +622,16 @@
       "rotate": {
         "$type": "color",
         "$value": "160ms"
+      }
+    },
+    "dropdown": {
+      "fast": {
+        "$type": "color",
+        "$value": "150ms"
+      },
+      "label": {
+        "$type": "color",
+        "$value": "200ms"
       }
     },
     "easing": {
@@ -650,6 +734,10 @@
       "$type": "number",
       "$value": 4
     },
+    "dropdown": {
+      "$type": "number",
+      "$value": 4
+    },
     "focus-medium": {
       "$type": "number",
       "$value": 3
@@ -665,6 +753,28 @@
     "message": {
       "$type": "number",
       "$value": 4
+    },
+    "modal": {
+      "$type": "number",
+      "$value": 4
+    },
+    "scrollbar": {
+      "$type": "number",
+      "$value": 8
+    },
+    "slider": {
+      "fill": {
+        "$type": "number",
+        "$value": 2
+      },
+      "tooltip": {
+        "$type": "number",
+        "$value": 4
+      },
+      "track": {
+        "$type": "number",
+        "$value": 1
+      }
     },
     "stepper": {
       "$type": "number",
@@ -768,9 +878,109 @@
         "$value": 16
       }
     },
+    "datetime": {
+      "helper-icon": {
+        "$type": "number",
+        "$value": 16
+      },
+      "icon": {
+        "$type": "number",
+        "$value": 20
+      },
+      "icon-right": {
+        "$type": "number",
+        "$value": 18
+      },
+      "label-left": {
+        "$type": "number",
+        "$value": 16
+      },
+      "label-top": {
+        "$type": "number",
+        "$value": 8
+      },
+      "label-top-lg": {
+        "$type": "number",
+        "$value": 12
+      },
+      "lg": {
+        "$type": "number",
+        "$value": 56
+      },
+      "md": {
+        "$type": "number",
+        "$value": 48
+      },
+      "min-width": {
+        "$type": "number",
+        "$value": 208
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 40
+      }
+    },
     "divider": {
       "$type": "number",
       "$value": 1
+    },
+    "dropdown": {
+      "action-button": {
+        "$type": "number",
+        "$value": 24
+      },
+      "actions": {
+        "$type": "number",
+        "$value": 12
+      },
+      "icon": {
+        "$type": "number",
+        "$value": 16
+      },
+      "label-float-lg": {
+        "$type": "number",
+        "$value": 12
+      },
+      "label-float-md": {
+        "$type": "number",
+        "$value": 8
+      },
+      "label-left": {
+        "$type": "number",
+        "$value": 16
+      },
+      "label-top": {
+        "$type": "number",
+        "$value": 20
+      },
+      "lg": {
+        "$type": "number",
+        "$value": 56
+      },
+      "list-lg": {
+        "$type": "number",
+        "$value": 312
+      },
+      "list-sm": {
+        "$type": "number",
+        "$value": 260
+      },
+      "md": {
+        "$type": "number",
+        "$value": 48
+      },
+      "shadow-y": {
+        "$type": "number",
+        "$value": 2
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 40
+      },
+      "xs": {
+        "$type": "number",
+        "$value": 30
+      }
     },
     "footer": {
       "chevron": {
@@ -802,6 +1012,20 @@
         "$value": 20
       }
     },
+    "modal": {
+      "actions": {
+        "$type": "number",
+        "$value": 36
+      },
+      "close": {
+        "$type": "number",
+        "$value": 20
+      },
+      "max-height": {
+        "$type": "color",
+        "$value": "85vh"
+      }
+    },
     "radio-button": {
       "dot": {
         "$type": "number",
@@ -810,6 +1034,12 @@
       "width": {
         "$type": "number",
         "$value": 20
+      }
+    },
+    "scrollbar": {
+      "width": {
+        "$type": "number",
+        "$value": 10
       }
     },
     "shadow": {
@@ -824,6 +1054,72 @@
       "minus-1": {
         "$type": "number",
         "$value": -1
+      }
+    },
+    "slider": {
+      "control-icon": {
+        "$type": "number",
+        "$value": 16
+      },
+      "divider": {
+        "$type": "number",
+        "$value": 16
+      },
+      "divider-width": {
+        "$type": "number",
+        "$value": 1
+      },
+      "field": {
+        "$type": "number",
+        "$value": 40
+      },
+      "fill": {
+        "$type": "number",
+        "$value": 4
+      },
+      "halo-lg": {
+        "$type": "number",
+        "$value": 14
+      },
+      "halo-pressed-lg": {
+        "$type": "number",
+        "$value": 12
+      },
+      "halo-pressed-sm": {
+        "$type": "number",
+        "$value": 10
+      },
+      "halo-sm": {
+        "$type": "number",
+        "$value": 12
+      },
+      "thumb-lg": {
+        "$type": "number",
+        "$value": 20
+      },
+      "thumb-pressed-lg": {
+        "$type": "number",
+        "$value": 24
+      },
+      "thumb-pressed-sm": {
+        "$type": "number",
+        "$value": 20
+      },
+      "thumb-sm": {
+        "$type": "number",
+        "$value": 16
+      },
+      "tick-label": {
+        "$type": "number",
+        "$value": 50
+      },
+      "tick-top": {
+        "$type": "number",
+        "$value": -7
+      },
+      "track": {
+        "$type": "number",
+        "$value": 2
       }
     },
     "spinner": {
@@ -1124,6 +1420,38 @@
         "$value": 6
       }
     },
+    "datetime": {
+      "inside-bottom": {
+        "$type": "number",
+        "$value": 11
+      },
+      "inside-bottom-lg": {
+        "$type": "number",
+        "$value": 15
+      }
+    },
+    "dropdown": {
+      "11": {
+        "$type": "number",
+        "$value": 11
+      },
+      "15": {
+        "$type": "number",
+        "$value": 15
+      },
+      "19": {
+        "$type": "number",
+        "$value": 19
+      },
+      "7": {
+        "$type": "number",
+        "$value": 7
+      },
+      "up-gap": {
+        "$type": "number",
+        "$value": 1
+      }
+    },
     "element": {
       "12": {
         "$type": "number",
@@ -1188,6 +1516,20 @@
       "label": {
         "$type": "number",
         "$value": 6
+      }
+    },
+    "slider": {
+      "control": {
+        "$type": "number",
+        "$value": 18
+      },
+      "label-offset": {
+        "$type": "number",
+        "$value": 34
+      },
+      "tooltip-inline": {
+        "$type": "number",
+        "$value": 11
       }
     },
     "stepper": {

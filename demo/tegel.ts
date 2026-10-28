@@ -4,6 +4,7 @@ import {
   ACCORDION,
   CRUMBS,
   type DemoCase,
+  DROPDOWN_OPTIONS,
   FOOTER_END,
   FOOTER_START,
   FOOTER_TOP,
@@ -132,6 +133,11 @@ function compoundChildren(props: Record<string, unknown>): HTMLElement[] {
       child('tds-accordion-item', { header, expanded: Boolean(expanded) }, text),
     );
   }
+  if (props.options) {
+    return DROPDOWN_OPTIONS.map(({ value, label, disabled }) =>
+      child('tds-dropdown-option', { value, disabled: Boolean(disabled) }, label),
+    );
+  }
   if (props.tabs) {
     return TABS.map(({ label, disabled }) =>
       child(
@@ -184,13 +190,26 @@ function element(tag: string, { props }: DemoCase): HTMLElement {
     items,
     actionLink,
     tabs,
+    options,
     ...rest
   } = props;
   // Form controls take their label through a "label" slot; the textarea's label is a prop.
   const { label, ...attributes } = rest;
   const slotsLabel = LABEL_SLOT_TAGS.includes(tag);
   const el = Object.assign(document.createElement(tag), slotsLabel ? attributes : rest);
-  el.append(...compoundChildren({ crumbs, steps, top, start, end, items, actionLink, tabs }));
+  el.append(
+    ...compoundChildren({
+      crumbs,
+      steps,
+      top,
+      start,
+      end,
+      items,
+      actionLink,
+      tabs,
+      options,
+    }),
+  );
   if (icon) {
     el.append(slottedIcon());
   }
@@ -210,7 +229,7 @@ function element(tag: string, { props }: DemoCase): HTMLElement {
   } else if (typeof children === 'string') {
     el.append(children);
   }
-  if (tag === 'tds-card') {
+  if (tag === 'tds-card' || tag === 'tds-modal') {
     el.append(...cardSlots(thumbnail, body, actions));
   }
   return el;
@@ -234,6 +253,11 @@ async function preview(root: HTMLElement) {
       const detail = document.createElement('dd');
       if (demoCase.dark) {
         detail.className = 'dark';
+      }
+      // A modal opens from a button that its selector names.
+      const { selector } = demoCase.props;
+      if (typeof selector === 'string') {
+        detail.append(child('button', { id: selector.slice(1) }, 'Open'));
       }
       detail.append(element(tag, demoCase));
       row.append(term, detail);

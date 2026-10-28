@@ -435,3 +435,152 @@ export type NavigationTabProps = {
   disabled?: boolean;
   children?: ReactNode;
 };
+
+export type DatetimeProps = {
+  /** @default 'datetime-local' */
+  type?: 'datetime-local' | 'date' | 'month' | 'week' | 'time';
+  /** @default '' */
+  value?: string;
+  min?: string;
+  max?: string;
+  /** @default 'none' */
+  defaultValue?: string;
+  /** @default false */
+  disabled?: boolean;
+  /** @default 'lg' */
+  size?: 'sm' | 'md' | 'lg';
+  /** @default false */
+  noMinWidth?: boolean;
+  name?: string;
+  /** @default 'none' */
+  state?: 'none' | 'success' | 'error';
+  /** @default false */
+  autofocus?: boolean;
+  /** @default '' */
+  label?: string;
+  /** @default 'no-label' */
+  labelPosition?: 'inside' | 'outside' | 'no-label';
+  /** @default '' */
+  helper?: string;
+  helperError?: string;
+  /** @default 'Invalid input' */
+  helperErrorInvalid?: string;
+  tdsAriaLabel?: string;
+  customValidator?: (value: string) => boolean;
+  onTdsChange?: (event: CustomEvent<Event>) => void;
+  onTdsBlur?: (event: CustomEvent<FocusEvent>) => void;
+  onTdsFocus?: (event: CustomEvent<MouseEvent>) => void;
+  onTdsInput?: (event: CustomEvent<InputEvent>) => void;
+};
+
+export type ModalProps = {
+  header?: ReactNode;
+  /** @default false */
+  prevent?: boolean;
+  /** @default 'md' */
+  size?: 'xs' | 'sm' | 'md' | 'lg';
+  /** @default 'static' */
+  actionsPosition?: 'sticky' | 'static';
+  selector?: string;
+  referenceEl?: HTMLElement | null;
+  show?: boolean;
+  /** @default true */
+  closable?: boolean;
+  /** @default 'dialog' */
+  tdsAlertDialog?: 'alertdialog' | 'dialog';
+  body?: ReactNode;
+  actions?: ReactNode;
+  onTdsClose?: (event: CustomEvent<Event>) => void;
+  onTdsOpen?: (event: CustomEvent<void>) => void;
+};
+
+export type SliderProps = {
+  /** @default '' */
+  label?: string;
+  /** @default '0' */
+  value?: string;
+  /** @default '0' */
+  min?: string;
+  /** @default '100' */
+  max?: string;
+  /** @default '0' */
+  ticks?: string;
+  /** @default false */
+  showTickNumbers?: boolean;
+  /** @default false */
+  tooltip?: boolean;
+  /** @default false */
+  disabled?: boolean;
+  /** @default false */
+  readOnly?: boolean;
+  /** @default false */
+  controls?: boolean;
+  /** @default false */
+  input?: boolean;
+  /** @default '1' */
+  step?: string;
+  /** @default '' */
+  name?: string;
+  /** @default 'lg' */
+  thumbSize?: 'sm' | 'lg';
+  /** @default false */
+  snap?: boolean;
+  /** @default '' */
+  tdsAriaLabel?: string;
+  sliderId?: string;
+  /** @default '' */
+  tdsReadOnlyAriaLabel?: string;
+  onTdsChange?: (event: CustomEvent<{ value: string }>) => void;
+  onTdsInput?: (event: CustomEvent<{ value: string }>) => void;
+};
+
+export type DropdownProps = {
+  name?: string;
+  /** @default false */
+  disabled?: boolean;
+  helper?: string;
+  label?: string;
+  labelPosition?: 'inside' | 'outside';
+  /** @default 'auto' */
+  openDirection?: 'up' | 'down' | 'auto';
+  /** @default '' */
+  placeholder?: string;
+  /** @default 'lg' */
+  size?: 'xs' | 'sm' | 'md' | 'lg';
+  /** @default false */
+  error?: boolean;
+  /** @default false */
+  multiselect?: boolean;
+  /** @default false */
+  filter?: boolean;
+  /** @default true */
+  normalizeText?: boolean;
+  /** @default 'No result' */
+  noResultText?: string;
+  defaultValue?: string;
+  value?: string;
+  tdsAriaLabel?: string;
+  /** @default false */
+  showSelectionActions?: boolean;
+  /** @default 'Select all' */
+  selectAllText?: string;
+  /** @default 'Select filtered' */
+  selectFilteredText?: string;
+  /** @default 'Clear all' */
+  clearAllText?: string;
+  children?: ReactNode;
+  onTdsChange?: (event: CustomEvent<{ name: string | undefined; value: string | null }>) => void;
+  onTdsFocus?: (event: CustomEvent<FocusEvent>) => void;
+  onTdsBlur?: (event: CustomEvent<FocusEvent>) => void;
+  onTdsInput?: (event: CustomEvent<InputEvent>) => void;
+  onTdsClear?: (event: CustomEvent<{ clearedValue: string }>) => void;
+};
+
+export type DropdownOptionProps = {
+  value?: string;
+  /** @default false */
+  disabled?: boolean;
+  tdsAriaLabel?: string;
+  children?: ReactNode;
+  onTdsSelect?: (event: CustomEvent<{ selected: boolean; value: string }>) => void;
+};

@@ -1,0 +1,37 @@
+{
+  "component": "datetime",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-datetime at @scania/tegel@1.66.1: a native date, time, month or week input with label, helper and validation states.",
+    "properties": [
+      {
+        "name": "type",
+        "type": "VARIANT",
+        "values": ["datetime-local", "date", "month", "week", "time"]
+      },
+      { "name": "value", "type": "TEXT", "values": [] },
+      { "name": "min", "type": "TEXT", "values": [] },
+      { "name": "max", "type": "TEXT", "values": [] },
+      { "name": "defaultValue", "type": "TEXT", "values": [] },
+      { "name": "disabled", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "size", "type": "VARIANT", "values": ["sm", "md", "lg"] },
+      { "name": "noMinWidth", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "name", "type": "TEXT", "values": [] },
+      { "name": "state", "type": "VARIANT", "values": ["none", "success", "error"] },
+      { "name": "autofocus", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "label", "type": "TEXT", "values": [] },
+      { "name": "labelPosition", "type": "VARIANT", "values": ["inside", "outside", "no-label"] },
+      { "name": "helper", "type": "TEXT", "values": [] },
+      { "name": "helperError", "type": "TEXT", "values": [] },
+      { "name": "helperErrorInvalid", "type": "TEXT", "values": [] },
+      { "name": "tdsAriaLabel", "type": "TEXT", "values": [] }
+    ],
+    "answers": [
+      { "property": "type", "disposition": "prop" },
+      { "property": "size", "disposition": "prop" },
+      { "property": "state", "disposition": "prop" },
+      { "property": "labelPosition", "disposition": "prop" }
+    ]
+  }
+}

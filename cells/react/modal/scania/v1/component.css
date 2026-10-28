@@ -1,0 +1,214 @@
+.tl-modal {
+  box-sizing: border-box;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 0 var(--space-element-16);
+  border: 0;
+  background: none;
+  overflow: visible;
+}
+.tl-modal[open] {
+  display: flex;
+}
+.tl-modal::backdrop {
+  background: none;
+}
+.tl-modal__backdrop {
+  box-sizing: border-box;
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-modal-backdrop);
+}
+.tl-modal__box {
+  box-sizing: border-box;
+  position: relative;
+  max-height: var(--size-modal-max-height);
+  margin: auto;
+  overflow-y: auto;
+  border-radius: var(--radius-modal);
+  background-color: var(--color-background-layer-02);
+  box-shadow:
+    0 var(--size-shadow-3) var(--size-shadow-3) 0 var(--color-shadow-15),
+    0 var(--size-shadow-minus-1) var(--size-shadow-1) 0 var(--color-shadow-10);
+}
+.tl-modal--actions-static .tl-modal__box {
+  overflow-y: auto;
+}
+.tl-modal--actions-sticky .tl-modal__box {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.tl-modal--actions-sticky .tl-modal__body {
+  max-height: calc(var(--size-modal-max-height) - var(--size-modal-actions));
+  overflow-y: auto;
+}
+
+/* Scrollbar (Tegel's tds-scrollbar mixin) */
+.tl-modal__box::-webkit-scrollbar,
+.tl-modal__body::-webkit-scrollbar {
+  width: var(--size-scrollbar-width);
+}
+.tl-modal__box::-webkit-scrollbar-track,
+.tl-modal__body::-webkit-scrollbar-track {
+  background: var(--color-background-none);
+}
+.tl-modal__box::-webkit-scrollbar-thumb,
+.tl-modal__body::-webkit-scrollbar-thumb {
+  border: var(--border-scrollbar-thumb) solid var(--color-border-none);
+  border-radius: var(--radius-scrollbar);
+  background: var(--color-border-subtle);
+  background-clip: padding-box;
+}
+.tl-modal__box:hover::-webkit-scrollbar-thumb,
+.tl-modal__body:hover::-webkit-scrollbar-thumb {
+  border: var(--border-scrollbar-thumb-hover) solid var(--color-border-none);
+}
+.tl-modal__box::-webkit-scrollbar-button,
+.tl-modal__body::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+@supports not selector(::-webkit-scrollbar) {
+  .tl-modal__box,
+  .tl-modal__body {
+    scrollbar-width: thin;
+  }
+}
+
+/* Widths per breakpoint */
+@media (min-width: 320px) {
+  .tl-modal--xs .tl-modal__box,
+  .tl-modal--sm .tl-modal__box,
+  .tl-modal--md .tl-modal__box,
+  .tl-modal--lg .tl-modal__box {
+    width: 100%;
+  }
+}
+@media (min-width: 672px) {
+  .tl-modal--xs .tl-modal__box {
+    width: 50%;
+  }
+  .tl-modal--sm .tl-modal__box {
+    width: 62.5%;
+  }
+  .tl-modal--md .tl-modal__box {
+    width: 75%;
+  }
+  .tl-modal--lg .tl-modal__box {
+    width: 100%;
+  }
+}
+@media (min-width: 1056px) {
+  .tl-modal--xs .tl-modal__box {
+    width: 31.25%;
+  }
+  .tl-modal--sm .tl-modal__box {
+    width: 43.75%;
+  }
+  .tl-modal--md .tl-modal__box {
+    width: 62.5%;
+  }
+  .tl-modal--lg .tl-modal__box {
+    width: 75%;
+  }
+}
+@media (min-width: 1312px) {
+  .tl-modal--sm .tl-modal__box {
+    width: 37.5%;
+  }
+}
+@media (min-width: 1584px) {
+  .tl-modal--xs .tl-modal__box {
+    width: 25%;
+  }
+  .tl-modal--md .tl-modal__box {
+    width: 50%;
+  }
+}
+@media (max-width: 320px) {
+  .tl-modal {
+    padding: 0;
+  }
+  .tl-modal--sm .tl-modal__box,
+  .tl-modal--md .tl-modal__box,
+  .tl-modal--lg .tl-modal__box {
+    height: 100%;
+  }
+}
+
+/* Header */
+.tl-modal__header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  padding: var(--space-element-16);
+  background-color: var(--color-background-layer-02);
+}
+.tl-modal__title {
+  flex: 1;
+  margin: 0;
+  color: var(--color-text-strong);
+  font-family: var(--font-family-headline);
+  font-size: var(--font-size-body);
+  font-weight: bold;
+  line-height: var(--font-line-height-body-01);
+  letter-spacing: var(--font-letter-spacing-body);
+}
+.tl-modal__close {
+  display: inline-block;
+  height: auto;
+  margin: 0 0 auto auto;
+  padding: 0;
+  border: 0;
+  appearance: none;
+  background-color: var(--color-background-none);
+  color: var(--color-icon-strong);
+  cursor: pointer;
+}
+.tl-modal__close:focus {
+  z-index: 1;
+  outline: var(--border-focus) solid var(--color-border-focus);
+  outline-offset: var(--border-focus-offset);
+  box-shadow: 0 0 0 var(--border-control) var(--color-border-focus-discrete);
+}
+.tl-modal__close svg {
+  display: block;
+  width: var(--size-modal-close);
+  height: var(--size-modal-close);
+  fill: currentColor;
+}
+@media (min-width: 320px) {
+  .tl-modal__close {
+    margin-left: var(--space-element-16);
+  }
+}
+@media (min-width: 1056px) {
+  .tl-modal__close {
+    margin-left: var(--space-element-48);
+  }
+}
+
+/* Body and actions */
+.tl-modal__body {
+  padding: 0 var(--space-element-16) var(--space-element-16);
+  overflow-y: visible;
+  color: var(--color-text-strong);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body);
+  font-weight: normal;
+  line-height: var(--font-line-height-body-01);
+  letter-spacing: var(--font-letter-spacing-body);
+}
+.tl-modal__actions {
+  display: flex;
+  gap: var(--space-element-16);
+  padding: var(--space-element-24) var(--space-element-16) var(--space-element-16);
+  background-color: var(--color-background-layer-02);
+}

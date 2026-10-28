@@ -49,6 +49,32 @@ export const OVERRIDES: Record<string, Record<string, string>> = {
     onTdsInput: '(event: CustomEvent<InputEvent>) => void',
     onTdsFocus: '(event: CustomEvent<FocusEvent>) => void',
   },
+  datetime: {
+    customValidator: '(value: string) => boolean',
+    onTdsChange: '(event: CustomEvent<Event>) => void',
+    onTdsBlur: '(event: CustomEvent<FocusEvent>) => void',
+    onTdsFocus: '(event: CustomEvent<MouseEvent>) => void',
+    onTdsInput: '(event: CustomEvent<InputEvent>) => void',
+  },
+  dropdown: {
+    onTdsChange: '(event: CustomEvent<{ name: string | undefined; value: string | null }>) => void',
+    onTdsFocus: '(event: CustomEvent<FocusEvent>) => void',
+    onTdsBlur: '(event: CustomEvent<FocusEvent>) => void',
+    onTdsInput: '(event: CustomEvent<InputEvent>) => void',
+    onTdsClear: '(event: CustomEvent<{ clearedValue: string }>) => void',
+  },
+  'dropdown-option': {
+    onTdsSelect: '(event: CustomEvent<{ selected: boolean; value: string }>) => void',
+  },
+  slider: {
+    onTdsChange: '(event: CustomEvent<{ value: string }>) => void',
+    onTdsInput: '(event: CustomEvent<{ value: string }>) => void',
+  },
+  modal: {
+    referenceEl: 'HTMLElement | null',
+    onTdsClose: '(event: CustomEvent<Event>) => void',
+    onTdsOpen: '(event: CustomEvent<void>) => void',
+  },
   'folder-tabs': { onTdsChange: '(event: CustomEvent<{ selectedTabIndex: number }>) => void' },
   'inline-tabs': { onTdsChange: '(event: CustomEvent<{ selectedTabIndex: number }>) => void' },
   'navigation-tabs': {
@@ -94,7 +120,8 @@ export function propType(
 // Found on the first line that starts with the function, after any relaxed imports.
 const PARAMETER = /^function\s+\w+\s*\(\s*\{([^}]*)\}\s*\)/m;
 
-// Prop name → default value as written in the cell, e.g. size → 'lg'.
+// Prop name → default value as written in the cell, e.g. size → 'lg'. A renamed prop
+// (`state: initialState = 'none'`) keeps its key, as the surface does.
 export function cellDefaults(jsx: string): Record<string, string> {
   const pattern = PARAMETER.exec(jsx)?.[1];
   if (pattern === undefined) {
@@ -105,7 +132,7 @@ export function cellDefaults(jsx: string): Record<string, string> {
       .split(',')
       .map((entry) => entry.split('='))
       .filter((parts) => parts.length > 1)
-      .map(([name = '', ...value]) => [name.trim(), value.join('=').trim()]),
+      .map(([name = '', ...value]) => [name.split(':')[0]?.trim(), value.join('=').trim()]),
   );
 }
 

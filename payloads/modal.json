@@ -1,0 +1,25 @@
+{
+  "component": "modal",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-modal at @scania/tegel@1.66.1: a dialog over a backdrop with a header, a body, actions and a close button.",
+    "properties": [
+      { "name": "header", "type": "INSTANCE_SWAP", "values": [] },
+      { "name": "prevent", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "size", "type": "VARIANT", "values": ["xs", "sm", "md", "lg"] },
+      { "name": "actionsPosition", "type": "VARIANT", "values": ["sticky", "static"] },
+      { "name": "selector", "type": "TEXT", "values": [] },
+      { "name": "show", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "closable", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "tdsAlertDialog", "type": "VARIANT", "values": ["alertdialog", "dialog"] },
+      { "name": "body", "type": "INSTANCE_SWAP", "values": [] },
+      { "name": "actions", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": [
+      { "property": "size", "disposition": "prop" },
+      { "property": "actionsPosition", "disposition": "prop" },
+      { "property": "tdsAlertDialog", "disposition": "prop" }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "component": "dropdown",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-dropdown at @scania/tegel@1.66.1: a select with a list of options, single or multiple selection, an optional filter and selection actions.",
+    "properties": [
+      { "name": "name", "type": "TEXT", "values": [] },
+      { "name": "disabled", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "helper", "type": "TEXT", "values": [] },
+      { "name": "label", "type": "TEXT", "values": [] },
+      { "name": "labelPosition", "type": "VARIANT", "values": ["inside", "outside"] },
+      { "name": "openDirection", "type": "VARIANT", "values": ["up", "down", "auto"] },
+      { "name": "placeholder", "type": "TEXT", "values": [] },
+      { "name": "size", "type": "VARIANT", "values": ["xs", "sm", "md", "lg"] },
+      { "name": "error", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "multiselect", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "filter", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "normalizeText", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "noResultText", "type": "TEXT", "values": [] },
+      { "name": "defaultValue", "type": "TEXT", "values": [] },
+      { "name": "value", "type": "TEXT", "values": [] },
+      { "name": "tdsAriaLabel", "type": "TEXT", "values": [] },
+      { "name": "showSelectionActions", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "selectAllText", "type": "TEXT", "values": [] },
+      { "name": "selectFilteredText", "type": "TEXT", "values": [] },
+      { "name": "clearAllText", "type": "TEXT", "values": [] },
+      { "name": "children", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": [
+      { "property": "labelPosition", "disposition": "prop" },
+      { "property": "openDirection", "disposition": "prop" },
+      { "property": "size", "disposition": "prop" }
+    ]
+  }
+}

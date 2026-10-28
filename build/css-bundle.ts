@@ -39,6 +39,11 @@ export const COMPONENTS = [
   'inline-tab',
   'navigation-tabs',
   'navigation-tab',
+  'datetime',
+  'modal',
+  'slider',
+  'dropdown',
+  'dropdown-option',
 ] as const;
 
 export function cssSources(components: readonly string[]): string[] {

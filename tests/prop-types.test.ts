@@ -76,6 +76,11 @@ describe('cellDefaults', () => {
       "import { useState } from 'react';\n\nfunction Tabs({ size = 'lg' }) {",
       { size: "'lg'" },
     ],
+    [
+      'a renamed prop',
+      "function Datetime({ state: initialState = 'none' }) {",
+      { state: "'none'" },
+    ],
   ])('reads %s', (_name, jsx, want) => {
     expect(cellDefaults(jsx)).toEqual(want);
   });
