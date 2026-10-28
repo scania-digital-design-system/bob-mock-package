@@ -46,6 +46,20 @@ export function surfaceProperties(component: string): Record<string, string[]> {
   return Object.fromEntries((payload.surface?.properties ?? []).map((p) => [p.name, p.values]));
 }
 
+// Cell ID → the relaxation IDs it uses, from rules/relaxations.json (ADR 0006 D3).
+export function relaxedCells(): Record<string, string[]> {
+  return JSON.parse(readFileSync(join(ROOT, 'rules', 'relaxations.json'), 'utf8')) as Record<
+    string,
+    string[]
+  >;
+}
+
+// Relaxation IDs with a "### `<id>`" entry in docs/findings/README.md.
+export function documentedRelaxations(): string[] {
+  const readme = readFileSync(join(ROOT, 'docs', 'findings', 'README.md'), 'utf8');
+  return [...readme.matchAll(/^### `([a-z0-9-]+)`$/gm)].map((m) => m[1] ?? '');
+}
+
 export function publicApiSurface(dir: string): string[] {
   const api = JSON.parse(readCellFile(dir, 'api.json') || '{}') as { publicApiSurface?: string[] };
   return api.publicApiSurface ?? [];

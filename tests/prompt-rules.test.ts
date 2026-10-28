@@ -7,7 +7,13 @@ import {
   literalIn,
   type PromptRuleInput,
 } from '../rules/prompt-rules';
-import { cellDirs, readCellFile, surfaceProperties } from './support/cells';
+import {
+  cellDirs,
+  documentedRelaxations,
+  readCellFile,
+  relaxedCells,
+  surfaceProperties,
+} from './support/cells';
 
 const conforming: PromptRuleInput = {
   component: 'badge',
@@ -171,13 +177,33 @@ function readCell(dir: string, component: string): PromptRuleInput {
   };
 }
 
+// A cell listed in rules/relaxations.json breaks a rule on purpose and is not checked
+// here (ADR 0006 D4); its entry in docs/findings/README.md says which rule and why.
 describe('cells follow the bootstrap prompt', () => {
-  const cells = cellDirs();
+  const relaxed = relaxedCells();
+  const cells = cellDirs().filter(({ id }) => relaxed[id] === undefined);
   if (cells.length === 0) {
-    it.todo('no cells under cells/ yet');
+    it.todo('no strict cells under cells/ yet');
     return;
   }
   it.each(cells)('$id', ({ dir, component }) => {
     expect(checkPromptRules(readCell(dir, component))).toEqual([]);
+  });
+});
+
+describe('rules/relaxations.json', () => {
+  const cellIds = cellDirs().map(({ id }) => id);
+  const documented = documentedRelaxations();
+  const entries = Object.entries(relaxedCells());
+  if (entries.length === 0) {
+    it.todo('no relaxations yet');
+    return;
+  }
+  it.each(entries)('%s names a cell and documented relaxations', (cellId, ids) => {
+    expect(cellIds).toContain(cellId);
+    expect(ids.length).toBeGreaterThan(0);
+    for (const id of ids) {
+      expect(documented).toContain(id);
+    }
   });
 });

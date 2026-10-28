@@ -60,8 +60,8 @@ The source and the compare package are pinned to the same version: **1.66.1**.
    `rules/ruledata.json` with BOB's own code; both are generated, never hand-edited.
 3. **Write the bootstrap artifacts.** Hand-write `component.jsx` and `component.css` in
    `cells/react/<component>/scania/v1/`, as the bootstrap agent would. Use a conforming
-   pattern first (`docs/findings/README.md`). Only when none works, register a
-   relaxation in `rules/relaxations.json` and opt the cell in (ADR 0006 D2–D4).
+   pattern first (`docs/findings/README.md`). Only when none works, write a relaxation
+   entry in that README and list the cell in `rules/relaxations.json` (ADR 0006 D2–D4).
 4. **Generate the rest.** `npm run cell`: BOB's own writers (`DraftContract`,
    `BuildAPIReferenceJSON`, `layout.WriteCell`) produce `metadata.json`, `api.json`,
    `a11y.json`, `usage.jsx` and `tokens.dtcg.json` (ADR 0003). The public API surface is
@@ -104,8 +104,8 @@ Borrowed from the backbone repo and adapted. Each names its source.
    function, no import or export, `className` with `tl-` classes, modifiers interpolating
    a bare prop name, no `style` attribute, every CSS value a `var(--token)`. Generated
    artifacts are edited only through the payload and the generator. Packaging needs live
-   in the build, never in the cell. The only exceptions are relaxations registered in
-   `rules/relaxations.json`, each with an entry in `docs/findings/README.md` (ADR 0006).
+   in the build, never in the cell. The only exceptions are relaxations, each with an entry
+   in `docs/findings/README.md` and its cells listed in `rules/relaxations.json` (ADR 0006).
 5. **Minimal diff** (backbone CLAUDE.md "Scope discipline"). Change only what the request
    needs, and propose adjacent improvements separately.
 6. **ASD-STE100 for human-facing writing** (backbone AGENTS.md §6). Applies to `README.md`,

@@ -1,10 +1,12 @@
 # Findings across the five cells
 
-This page collects what the five cells show about BOB. It has three parts:
+This page collects what the cells show about BOB. It has four parts:
 
 - [Findings about BOB](#findings-about-bob), grouped by the rule that causes them.
 - [Conflicts and resolutions](#conflicts-and-resolutions): each place where Tegel and a
-  BOB rule disagree, and how the cell resolves it.
+  BOB rule disagree, and how the cell resolves it inside the rules.
+- [Relaxations](#relaxations): rules a cell breaks on purpose, because no resolution
+  inside the rules exists.
 - [Steps for a new conflict](#steps-for-a-new-conflict).
 
 Each `<component>.md` keeps the full detail. Prompt line numbers (L11, L12) refer to
@@ -28,6 +30,23 @@ has 45.
 
 Ordered by effect. The first three change behaviour or the API. The rest change metadata,
 length or token fidelity.
+
+The source tells whether a finding stays true when the pipeline runs from Figma (ADR 0006
+D5). **Structural** findings come from the prompt, the gate or the token model; use these
+to tune BOB. **Tegel-specific** findings come from Tegel's names or markup; a Figma run
+takes names from Figma properties and variables, so these may not apply.
+
+| # | Finding | Source |
+|---|---|---|
+| 1 | A cell imports nothing | Structural |
+| 2 | `className` takes only a bare prop name | Structural |
+| 3 | The gate treats every `var()` as a design token | Structural |
+| 4 | No number, duration, shadow or font-weight token type | Structural (Figma variables have the same types) |
+| 5 | `token-usage` categories differ from Tegel's use | Structural rule, Tegel-specific trigger |
+| 6 | The stock vocabulary covers little of Tegel | Tegel-specific |
+| 7 | The drafted contract leaves metadata empty or wrong | Structural |
+| 8 | The gate does not see some states | Structural |
+| 9 | The resolve path gives a different button | Structural |
 
 ### 1. A cell imports nothing (L12)
 
@@ -160,16 +179,39 @@ Choose between a `return` branch and `:has()` like this:
 | A variant axis | `DraftContract` needs an `answers` entry | Add the entry to the payload. | None. | every cell with a variant axis |
 | `modeVariant`, `animation` | — | Out of scope (ADR 0002 D8). | Dark mode and animation are absent. | button, card |
 
+## Relaxations
+
+A relaxation breaks one BOB rule on purpose, for a cell where no resolution in the tables
+above works (ADR 0006). `rules/relaxations.json` maps each cell ID to the relaxations it
+uses. The prompt-rule check skips those cells. A test fails when a listed relaxation has
+no entry here.
+
+None yet. Each entry uses this form:
+
+```md
+### `<relaxation-id>`
+
+- **Breaks:** the prompt rule and line, for example `no-module` (L12).
+- **Allows:** the exact construct, for example `import { useState } from 'react'`.
+- **Why:** the resolutions tried, and why each fails.
+- **Cells:** the cells that use it.
+- **Gate:** PASS, or the real-gate rules it makes fail.
+- **Source:** structural or tegel-specific.
+- **BOB change that removes it:** for example, let a cell import React hooks.
+```
+
 ## Steps for a new conflict
 
 1. Keep Tegel's API and visual result. Change the markup or CSS before you change the API.
 2. Find the conflict in the tables above. Use its resolution.
 3. If the conflict is new, choose the resolution with the smallest cost. Add a row here.
-4. Run `npm run gate` and `npm test`. Both must pass.
-5. Record a departure in `docs/findings/<component>.md`.
-6. If a BOB rule forces the departure, also record a finding about BOB.
-7. If the API changes, add the prop to `DEPARTURES` in `tests/api-parity.test.ts`.
-8. If you add a token, record it in `docs/tokens.md`.
+4. If no resolution inside the rules works, add a relaxation. Write its entry under
+   [Relaxations](#relaxations). Add the cell to `rules/relaxations.json`.
+5. Run `npm run gate` and `npm test`. Both must pass.
+6. Record a departure in `docs/findings/<component>.md`.
+7. If a BOB rule forces the departure, also record a finding about BOB.
+8. If the API changes, add the prop to `DEPARTURES` in `tests/api-parity.test.ts`.
+9. If you add a token, record it in `docs/tokens.md`.
 
 ## Changes in BOB that would remove conflicts
 

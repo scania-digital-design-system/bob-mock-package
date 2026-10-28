@@ -43,40 +43,32 @@ brand and the `react` target stay as before (ADR 0002 D8).
 one, the cell's findings name the conforming patterns tried and why each fails. A
 relaxation is narrow: it allows one named construct, not a whole rule switched off.
 
-**D3 — The register.** `rules/relaxations.json` is the machine record:
+**D3 — The register is light.** The record of a relaxation is its entry in the
+"Relaxations" section of `docs/findings/README.md`: what it breaks, what it allows, why,
+which cells use it, its gate result, its **source** (D5) and the BOB change that would make
+it unnecessary. `rules/relaxations.json` only maps a cell ID to the relaxation IDs it
+uses:
 
 ```json
-{
-  "relaxations": {
-    "react-hooks": {
-      "relaxes": "no-module",
-      "allows": "import { useState, useEffect, useRef, useId } from 'react'"
-    }
-  },
-  "cells": { "react/tabs/scania/v1": ["react-hooks"] },
-  "expectedGateFailures": {}
-}
+{ "react/tabs/scania/v1": ["react-hooks"] }
 ```
 
-- `relaxations` names each relaxation, the rule it relaxes and the exact construct it
-  allows. The first cell that needs a relaxation adds it, in the same change.
-- `cells` opts a cell in, by ID. A cell that is not listed gets the full strict check.
-- `expectedGateFailures` lists, per cell, the real-gate rule IDs that a relaxation makes
-  fail. It starts empty. We prefer relaxations that keep it empty.
+A test fails when the JSON names an unknown cell or a relaxation with no README entry.
+The first cell that needs a relaxation writes its entry, in the same change.
 
-`docs/findings/README.md` gets a "Relaxations" section with one entry per ID: what it
-allows, why, which cells use it, its **source** (D5) and the BOB change that would make
-it unnecessary. A test fails when an ID in the JSON has no entry there.
+A machine-checked register (each relaxation widening one rule by one construct, and a
+ratchet of expected gate failures) was considered and rejected. It is tooling for this
+test bed only: in the pipeline, a rule change is made in BOB's prompt and gate, not as a
+per-cell exception, so the README entries are what carries over.
 
-**D4 — Checks honour the register.**
+**D4 — Checks.**
 
-- `checkPromptRules` takes the cell's relaxation IDs and widens only the named rule, by
-  only the named construct. Every other import, every export and every other rule still
-  fail.
-- `npm run gate` still runs BOB's checks unchanged. A failure listed in
-  `expectedGateFailures` reports `KNOWN`, not `FAIL`. A failure not listed fails the run,
-  and so does a listed failure that no longer occurs, so the list can only shrink (a
-  ratchet).
+- The prompt-rule check skips every cell listed in `rules/relaxations.json`. Every other
+  cell is checked strictly.
+- `npm run gate` runs BOB's checks unchanged on every cell, relaxed or not. We prefer
+  relaxations that keep the real gate green. "No imports" is not a gate check, so
+  allowing React hooks does. A relaxation that would make the gate fail needs a decision
+  from the user before it is added.
 
 **D5 — Every finding and relaxation has a source.**
 
@@ -96,15 +88,13 @@ for tooltip and popover) also needs its own ADR, under CLAUDE.md Rule 1.
 
 ## Consequences
 
-- Positive: the register becomes the list of what BOB must change, with each entry
-  backed by the components that need it.
-- Positive: a cell that needs no relaxation is still checked strictly, so relaxations
-  cannot spread silently.
-- Positive: the real gate stays authoritative; expected failures are explicit and can
-  only shrink.
+- Positive: the Relaxations section becomes the list of what BOB must change, with each
+  entry backed by the components that need it.
+- Positive: a cell that needs no relaxation is still checked strictly.
+- Positive: the real gate stays authoritative for every cell.
+- Negative: a relaxed cell skips every prompt rule, not only the one it breaks, so it
+  can break another rule without a test failing.
 - Negative: cells with relaxations are not what BOB would deliver today. Each one is a
   departure from the pipeline, not only from Tegel.
 - Negative: 35 folders and about 60 cells is a long run. Header, side menu and table are
   each larger than the first five components together.
-- Negative: `prompt-rules.ts` grows a mechanism for allowances, which is more of our
-  logic around BOB's rules.
