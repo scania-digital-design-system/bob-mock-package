@@ -1,0 +1,21 @@
+{
+  "component": "side-menu-user-label",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-side-menu-user-label at @scania/tegel@1.66.1: a user heading and subheading for the side menu.",
+    "properties": [
+      {
+        "name": "heading",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "subheading",
+        "type": "TEXT",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

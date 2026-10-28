@@ -659,5 +659,47 @@ SECTIONS.push({
   ],
 });
 
+// `sideMenuParts` builds the side menu's items, dropdowns, end user and collapse button on
+// both pages. Below 992px a persistent menu is a closed drawer, so widen the window.
+export type SideMenuParts = { dropdownOpen?: boolean; collapsible?: boolean };
+export const SIDE_MENU_ITEMS: {
+  label: string;
+  icon: string;
+  items?: string[];
+  selected?: boolean;
+}[] = [
+  { label: 'About us', icon: 'timer' },
+  {
+    label: 'Wheel types',
+    icon: 'profile',
+    items: ['Hub-centric wheel', 'Spoke wheel', 'Disc wheel'],
+    selected: true,
+  },
+  { label: 'Home', icon: 'home' },
+  { label: 'Truck types', icon: 'truck', items: ['Big truck', 'Bigger truck', 'Ginormous truck'] },
+  { label: 'Values', icon: 'star' },
+];
+export const SIDE_MENU_USER = {
+  heading: 'Name Namesson',
+  subheading: 'Company name',
+  items: ['My Instructions', 'Task List'],
+};
+
+SECTIONS.push({
+  component: 'side-menu',
+  tag: 'tds-side-menu',
+  cases: [
+    { label: 'persistent', props: { persistent: true, sideMenuParts: {} } },
+    {
+      label: 'persistent, collapsible, a dropdown open',
+      props: { persistent: true, sideMenuParts: { collapsible: true, dropdownOpen: true } },
+    },
+    {
+      label: 'collapsed (hover a dropdown)',
+      props: { persistent: true, collapsed: true, sideMenuParts: { collapsible: true } },
+    },
+  ],
+});
+
 // The same plus icon on both pages, so only the component differs.
 export const ICON_PATH = 'M9 3h2v6h6v2h-6v6H9v-6H3V9h6z';

@@ -1,0 +1,8 @@
+{
+  "componentType": "side-menu-close-button",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "onClick"
+  ],
+  "rules": []
+}

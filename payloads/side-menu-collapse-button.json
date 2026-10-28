@@ -1,0 +1,16 @@
+{
+  "component": "side-menu-collapse-button",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-side-menu-collapse-button at @scania/tegel@1.66.1: the button at the bottom of a persistent desktop side menu that collapses and expands it.",
+    "properties": [
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

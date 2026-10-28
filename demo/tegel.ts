@@ -12,6 +12,9 @@ import {
   MENU_ITEMS,
   NESTED_BLOCKS,
   SECTIONS,
+  SIDE_MENU_ITEMS,
+  SIDE_MENU_USER,
+  type SideMenuParts,
   STEPS,
   TABLE_COLUMNS,
   TABLE_ROWS,
@@ -173,6 +176,57 @@ function compoundChildren(props: Record<string, unknown>): HTMLElement[] {
       ...(footer ? [child('tds-table-footer', { pagination: true, pages: 4 })] : []),
     ];
   }
+  if (props.sideMenuParts) {
+    const { dropdownOpen, collapsible } = props.sideMenuParts as SideMenuParts;
+    const icon = (name: string, slot?: string) =>
+      child('tds-icon', { name, size: '24px', ...(slot ? { slot } : {}) });
+    const listItems = (items: string[], selected?: boolean) =>
+      child(
+        'tds-side-menu-dropdown-list',
+        {},
+        ...items.map((item, i) =>
+          child(
+            'tds-side-menu-dropdown-list-item',
+            { selected: Boolean(selected && i === 0) },
+            anchor(item, '#side-menu'),
+          ),
+        ),
+      );
+    const items = SIDE_MENU_ITEMS.map(({ label, icon: name, items: subItems, selected }) =>
+      subItems
+        ? child(
+            'tds-side-menu-dropdown',
+            {
+              buttonLabel: label,
+              selected: Boolean(selected),
+              defaultOpen: Boolean(dropdownOpen && selected),
+            },
+            icon(name, 'icon'),
+            listItems(subItems, selected),
+          )
+        : child('tds-side-menu-item', {}, child('button', {}, icon(name), label)),
+    );
+    const end = child(
+      'tds-side-menu-dropdown',
+      { slot: 'end' },
+      child('tds-side-menu-user-image', { slot: 'icon', src: THUMBNAIL_SRC, alt: '' }),
+      child('tds-side-menu-user-label', {
+        slot: 'label',
+        heading: SIDE_MENU_USER.heading,
+        subheading: SIDE_MENU_USER.subheading,
+      }),
+      listItems(SIDE_MENU_USER.items),
+    );
+    return [
+      child('tds-side-menu-overlay', { slot: 'overlay' }),
+      child('tds-side-menu-close-button', { slot: 'close-button' }),
+      ...items,
+      end,
+      ...(collapsible
+        ? [child('tds-side-menu-collapse-button', { slot: 'sticky-end' }, 'Collapse')]
+        : []),
+    ];
+  }
   if (props.menuItems) {
     return MENU_ITEMS.map(({ label, disabled }) =>
       child('tds-popover-menu-item', { disabled: Boolean(disabled) }, anchor(label, '#menu')),
@@ -233,6 +287,7 @@ function element(tag: string, { props }: DemoCase): HTMLElement {
     options,
     menuItems,
     tableParts,
+    sideMenuParts,
     ...rest
   } = props;
   // Form controls take their label through a "label" slot; the textarea's label is a prop.
@@ -252,6 +307,7 @@ function element(tag: string, { props }: DemoCase): HTMLElement {
       options,
       menuItems,
       tableParts,
+      sideMenuParts,
     }),
   );
   if (icon) {

@@ -101,6 +101,18 @@ const DEPARTURES: Record<string, { dropped?: string[]; added?: string[] }> = {
   },
   'body-cell': { added: ['children'] },
   'table-body-input-wrapper': { added: ['children'] },
+  // Tegel's side menu slots become props. The close button and the overlay take the click
+  // listener that Tegel's consumers add to the host element.
+  'side-menu': { added: ['children', 'overlay', 'closeButton', 'end', 'stickyEnd'] },
+  'side-menu-item': { added: ['children'] },
+  'side-menu-dropdown': { added: ['children', 'icon', 'label'] },
+  'side-menu-dropdown-list': { added: ['children'] },
+  'side-menu-dropdown-list-item': { added: ['children'] },
+  'side-menu-collapse-button': { added: ['children'] },
+  'side-menu-close-button': { added: ['onClick'] },
+  'side-menu-overlay': { added: ['onClick'] },
+  'side-menu-user': { added: ['icon'] },
+  'side-menu-user-image': { added: ['children'] },
 };
 
 // Read by path: the package's "exports" map does not expose this file.

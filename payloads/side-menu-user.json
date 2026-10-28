@@ -1,0 +1,36 @@
+{
+  "component": "side-menu-user",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-side-menu-user at @scania/tegel@1.66.1: a user image with a heading and a subheading, for a side menu item.",
+    "properties": [
+      {
+        "name": "heading",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "subheading",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "imgSrc",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "imgAlt",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "icon",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

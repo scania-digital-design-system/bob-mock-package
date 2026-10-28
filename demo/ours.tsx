@@ -54,6 +54,17 @@ import '../cells/react/table-body-row/scania/v1/component.css';
 import '../cells/react/table-body-row-expandable/scania/v1/component.css';
 import '../cells/react/body-cell/scania/v1/component.css';
 import '../cells/react/table-footer/scania/v1/component.css';
+import '../cells/react/side-menu/scania/v1/component.css';
+import '../cells/react/side-menu-overlay/scania/v1/component.css';
+import '../cells/react/side-menu-close-button/scania/v1/component.css';
+import '../cells/react/side-menu-item/scania/v1/component.css';
+import '../cells/react/side-menu-dropdown/scania/v1/component.css';
+import '../cells/react/side-menu-dropdown-list/scania/v1/component.css';
+import '../cells/react/side-menu-dropdown-list-item/scania/v1/component.css';
+import '../cells/react/side-menu-collapse-button/scania/v1/component.css';
+import '../cells/react/side-menu-user/scania/v1/component.css';
+import '../cells/react/side-menu-user-image/scania/v1/component.css';
+import '../cells/react/side-menu-user-label/scania/v1/component.css';
 import Accordion from '../cells/react/accordion/scania/v1/component.jsx';
 import AccordionItem from '../cells/react/accordion-item/scania/v1/component.jsx';
 import Badge from '../cells/react/badge/scania/v1/component.jsx';
@@ -89,6 +100,16 @@ import PopoverCore from '../cells/react/popover-core/scania/v1/component.jsx';
 import PopoverMenu from '../cells/react/popover-menu/scania/v1/component.jsx';
 import PopoverMenuItem from '../cells/react/popover-menu-item/scania/v1/component.jsx';
 import RadioButton from '../cells/react/radio-button/scania/v1/component.jsx';
+import SideMenu from '../cells/react/side-menu/scania/v1/component.jsx';
+import SideMenuCloseButton from '../cells/react/side-menu-close-button/scania/v1/component.jsx';
+import SideMenuCollapseButton from '../cells/react/side-menu-collapse-button/scania/v1/component.jsx';
+import SideMenuDropdown from '../cells/react/side-menu-dropdown/scania/v1/component.jsx';
+import SideMenuDropdownList from '../cells/react/side-menu-dropdown-list/scania/v1/component.jsx';
+import SideMenuDropdownListItem from '../cells/react/side-menu-dropdown-list-item/scania/v1/component.jsx';
+import SideMenuItem from '../cells/react/side-menu-item/scania/v1/component.jsx';
+import SideMenuOverlay from '../cells/react/side-menu-overlay/scania/v1/component.jsx';
+import SideMenuUserImage from '../cells/react/side-menu-user-image/scania/v1/component.jsx';
+import SideMenuUserLabel from '../cells/react/side-menu-user-label/scania/v1/component.jsx';
 import Slider from '../cells/react/slider/scania/v1/component.jsx';
 import Spinner from '../cells/react/spinner/scania/v1/component.jsx';
 import Step from '../cells/react/step/scania/v1/component.jsx';
@@ -117,6 +138,9 @@ import {
   MENU_ITEMS,
   NESTED_BLOCKS,
   SECTIONS,
+  SIDE_MENU_ITEMS,
+  SIDE_MENU_USER,
+  type SideMenuParts,
   STEPS,
   TABLE_COLUMNS,
   TABLE_ROWS,
@@ -160,7 +184,61 @@ const COMPONENTS: Record<string, FC<Record<string, unknown>>> = {
   'popover-menu': PopoverMenu,
   tooltip: Tooltip,
   table: Table,
+  'side-menu': SideMenu,
 };
+
+function sideMenuSlots({ dropdownOpen, collapsible }: SideMenuParts) {
+  return {
+    overlay: <SideMenuOverlay />,
+    closeButton: <SideMenuCloseButton />,
+    children: SIDE_MENU_ITEMS.map(({ label, icon, items, selected }) =>
+      items ? (
+        <SideMenuDropdown
+          key={label}
+          buttonLabel={label}
+          selected={selected}
+          defaultOpen={dropdownOpen && selected}
+          icon={<Icon name={icon} size="24px" />}
+        >
+          <SideMenuDropdownList>
+            {items.map((item, i) => (
+              <SideMenuDropdownListItem key={item} selected={selected && i === 0}>
+                <a href="#side-menu">{item}</a>
+              </SideMenuDropdownListItem>
+            ))}
+          </SideMenuDropdownList>
+        </SideMenuDropdown>
+      ) : (
+        <SideMenuItem key={label}>
+          <button type="button">
+            <Icon name={icon} size="24px" />
+            {label}
+          </button>
+        </SideMenuItem>
+      ),
+    ),
+    end: (
+      <SideMenuDropdown
+        icon={<SideMenuUserImage src={THUMBNAIL_SRC} alt="" />}
+        label={
+          <SideMenuUserLabel
+            heading={SIDE_MENU_USER.heading}
+            subheading={SIDE_MENU_USER.subheading}
+          />
+        }
+      >
+        <SideMenuDropdownList>
+          {SIDE_MENU_USER.items.map((item) => (
+            <SideMenuDropdownListItem key={item}>
+              <a href="#side-menu">{item}</a>
+            </SideMenuDropdownListItem>
+          ))}
+        </SideMenuDropdownList>
+      </SideMenuDropdown>
+    ),
+    stickyEnd: collapsible && <SideMenuCollapseButton>Collapse</SideMenuCollapseButton>,
+  };
+}
 
 function tableChildren({ toolbar, footer, expandable, sortable }: TableParts) {
   const Row = expandable ? TableBodyRowExpandable : TableBodyRow;
@@ -281,6 +359,10 @@ const actionLink = <a href="#actions">Read more</a>;
 
 // Turns the shared case flags into the nodes our cells take as props.
 function nodeProps(props: Record<string, unknown>): Record<string, unknown> {
+  if (props.sideMenuParts) {
+    const { sideMenuParts, ...rest } = props;
+    return { ...rest, ...sideMenuSlots(sideMenuParts as SideMenuParts) };
+  }
   return {
     ...props,
     icon: props.icon ? icon : undefined,

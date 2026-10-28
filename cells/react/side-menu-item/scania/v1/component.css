@@ -1,0 +1,91 @@
+.tl-side-menu-item {
+  display: block;
+}
+.tl-side-menu-item > a,
+.tl-side-menu-item > button {
+  all: unset;
+  box-sizing: border-box;
+  height: var(--size-side-menu-item);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-side-menu-gap);
+  padding: 0 var(--space-side-menu-item);
+  border: none;
+  border-radius: var(--radius-side-menu);
+  background-color: var(--color-background-base);
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: bold;
+  line-height: var(--font-line-height-detail-02);
+  letter-spacing: var(--font-letter-spacing-detail);
+  color: var(--color-text-strong);
+  cursor: pointer;
+}
+.tl-side-menu-item > a:focus-visible,
+.tl-side-menu-item > button:focus-visible {
+  outline: var(--border-focus) solid var(--color-border-focus);
+  box-shadow: inset 0 0 0 var(--size-shadow-3) var(--color-border-focus-discrete);
+  outline-offset: var(--border-focus-inset);
+  z-index: 1;
+}
+.tl-side-menu-item:hover > a,
+.tl-side-menu-item:hover > button {
+  background-color: var(--color-background-layer-01);
+  position: relative;
+}
+.tl-side-menu-item:active > a,
+.tl-side-menu-item:active > button {
+  background-color: var(--color-side-menu-item-active);
+  position: relative;
+}
+.tl-side-menu-item--active-true,
+.tl-side-menu-item--active-false,
+.tl-side-menu-item--selected-false {
+  box-sizing: content-box;
+}
+
+/* Selected and not active: a tinted background and an indicator on the left */
+.tl-side-menu-item--selected-true.tl-side-menu-item--active-false > a,
+.tl-side-menu-item--selected-true.tl-side-menu-item--active-false > button {
+  background-color: var(--color-background-layer-01);
+  position: relative;
+}
+.tl-side-menu-item--selected-true.tl-side-menu-item--active-false > a::before,
+.tl-side-menu-item--selected-true.tl-side-menu-item--active-false > button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--size-side-menu-indicator);
+  height: 100%;
+  border-top-left-radius: var(--radius-side-menu);
+  border-bottom-left-radius: var(--radius-side-menu);
+  background-color: var(--color-side-menu-indicator);
+}
+.tl-side-menu-item--selected-true.tl-side-menu-item--active-false > a:focus-visible::before,
+.tl-side-menu-item--selected-true.tl-side-menu-item--active-false > button:focus-visible::before {
+  inset: var(--space-side-menu-indicator-focus) auto var(--space-side-menu-indicator-focus)
+    var(--space-side-menu-indicator-focus);
+  height: auto;
+}
+
+/* A collapsed desktop menu shows the icon only, in the centre */
+@media (min-width: 992px) {
+  .tl-side-menu[data-collapsed='true'] .tl-side-menu-item > a,
+  .tl-side-menu[data-collapsed='true'] .tl-side-menu-item > button {
+    padding: 0;
+    justify-content: center;
+    position: relative;
+    color: transparent;
+    overflow: hidden;
+  }
+  .tl-side-menu[data-collapsed='true'] .tl-side-menu-item > a > svg,
+  .tl-side-menu[data-collapsed='true'] .tl-side-menu-item > button > svg {
+    color: var(--color-icon-strong);
+    margin-left: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

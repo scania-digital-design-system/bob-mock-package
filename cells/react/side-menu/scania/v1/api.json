@@ -1,0 +1,65 @@
+{
+  "componentType": "side-menu",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "open",
+    "persistent",
+    "collapsed",
+    "children",
+    "overlay",
+    "closeButton",
+    "end",
+    "stickyEnd",
+    "onTdsCollapse"
+  ],
+  "rules": [
+    {
+      "id": "prop-open",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"open\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-persistent",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"persistent\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-collapsed",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"collapsed\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-children",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"children\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-overlay",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"overlay\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-closebutton",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"closeButton\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-end",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"end\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-stickyend",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"stickyEnd\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

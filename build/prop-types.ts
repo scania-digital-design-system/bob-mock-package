@@ -111,6 +111,12 @@ export const OVERRIDES: Record<string, Record<string, string>> = {
   'navigation-tabs': {
     onTdsChange: '(event: CustomEvent<{ selectedTabIndex: number }>) => void',
   },
+  'side-menu': { onTdsCollapse: '(event: CustomEvent<{ collapsed: boolean }>) => void' },
+  'side-menu-collapse-button': {
+    onTdsCollapse: '(event: CustomEvent<{ collapsed: boolean }>) => void',
+  },
+  'side-menu-close-button': { onClick: 'MouseEventHandler<HTMLButtonElement>' },
+  'side-menu-overlay': { onClick: 'MouseEventHandler<HTMLDivElement>' },
 };
 
 const REACT_TYPES = ['MouseEventHandler', 'ReactNode'];

@@ -276,6 +276,20 @@
         "$value": "#0000000d"
       }
     },
+    "side-menu": {
+      "indicator": {
+        "$type": "color",
+        "$value": "#2a6ecf"
+      },
+      "item-active": {
+        "$type": "color",
+        "$value": "#e0e5eb"
+      },
+      "overlay": {
+        "$type": "color",
+        "$value": "#000000"
+      }
+    },
     "slider": {
       "disabled": {
         "$type": "color",
@@ -2272,6 +2286,16 @@
         "$value": "150ms"
       }
     },
+    "side-menu": {
+      "hover-delay": {
+        "$type": "color",
+        "$value": "150ms"
+      },
+      "rotate": {
+        "$type": "color",
+        "$value": "200ms"
+      }
+    },
     "spinner": {
       "duration": {
         "$type": "color",
@@ -2341,6 +2365,12 @@
     "full": {
       "$type": "color",
       "$value": "1"
+    },
+    "side-menu": {
+      "overlay": {
+        "$type": "color",
+        "$value": "0.4"
+      }
     }
   },
   "radius": {
@@ -2395,6 +2425,10 @@
     "scrollbar": {
       "$type": "number",
       "$value": 8
+    },
+    "side-menu": {
+      "$type": "number",
+      "$value": 0
     },
     "slider": {
       "fill": {
@@ -2706,6 +2740,48 @@
       "minus-1": {
         "$type": "number",
         "$value": -1
+      }
+    },
+    "side-menu": {
+      "chevron": {
+        "$type": "number",
+        "$value": 16
+      },
+      "close": {
+        "$type": "number",
+        "$value": 64
+      },
+      "collapsed": {
+        "$type": "number",
+        "$value": 68
+      },
+      "flyout": {
+        "$type": "number",
+        "$value": 190
+      },
+      "icon": {
+        "$type": "number",
+        "$value": 20
+      },
+      "indicator": {
+        "$type": "number",
+        "$value": 4
+      },
+      "item": {
+        "$type": "number",
+        "$value": 68
+      },
+      "sub-item": {
+        "$type": "number",
+        "$value": 48
+      },
+      "user-image": {
+        "$type": "number",
+        "$value": 34
+      },
+      "width": {
+        "$type": "number",
+        "$value": 272
       }
     },
     "slider": {
@@ -3264,6 +3340,32 @@
       "label": {
         "$type": "number",
         "$value": 6
+      }
+    },
+    "side-menu": {
+      "gap": {
+        "$type": "number",
+        "$value": 10
+      },
+      "heading-bottom": {
+        "$type": "number",
+        "$value": 15
+      },
+      "indicator-focus": {
+        "$type": "number",
+        "$value": 3
+      },
+      "item": {
+        "$type": "number",
+        "$value": 22
+      },
+      "sub-item-icon": {
+        "$type": "number",
+        "$value": 58
+      },
+      "sub-item-user": {
+        "$type": "number",
+        "$value": 64
       }
     },
     "slider": {

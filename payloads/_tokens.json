@@ -615,6 +615,57 @@
     { "name": "motion/table/hover", "type": "COLOR", "valuesByMode": { "scania": "200ms" } },
     { "name": "motion/table/search", "type": "COLOR", "valuesByMode": { "scania": "250ms" } },
     {
+      "name": "color/side-menu/item-active",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "#e0e5eb" }
+    },
+    {
+      "name": "color/side-menu/indicator",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "#2a6ecf" }
+    },
+    { "name": "color/side-menu/overlay", "type": "COLOR", "valuesByMode": { "scania": "#000000" } },
+    { "name": "opacity/side-menu/overlay", "type": "COLOR", "valuesByMode": { "scania": "0.4" } },
+    { "name": "radius/side-menu", "type": "FLOAT", "valuesByMode": { "scania": "0" } },
+    { "name": "size/side-menu/item", "type": "FLOAT", "valuesByMode": { "scania": "68" } },
+    { "name": "size/side-menu/sub-item", "type": "FLOAT", "valuesByMode": { "scania": "48" } },
+    { "name": "size/side-menu/width", "type": "FLOAT", "valuesByMode": { "scania": "272" } },
+    { "name": "size/side-menu/collapsed", "type": "FLOAT", "valuesByMode": { "scania": "68" } },
+    { "name": "size/side-menu/close", "type": "FLOAT", "valuesByMode": { "scania": "64" } },
+    { "name": "size/side-menu/user-image", "type": "FLOAT", "valuesByMode": { "scania": "34" } },
+    { "name": "size/side-menu/indicator", "type": "FLOAT", "valuesByMode": { "scania": "4" } },
+    { "name": "size/side-menu/flyout", "type": "FLOAT", "valuesByMode": { "scania": "190" } },
+    { "name": "size/side-menu/icon", "type": "FLOAT", "valuesByMode": { "scania": "20" } },
+    { "name": "size/side-menu/chevron", "type": "FLOAT", "valuesByMode": { "scania": "16" } },
+    { "name": "space/side-menu/item", "type": "FLOAT", "valuesByMode": { "scania": "22" } },
+    { "name": "space/side-menu/gap", "type": "FLOAT", "valuesByMode": { "scania": "10" } },
+    {
+      "name": "space/side-menu/sub-item-icon",
+      "type": "FLOAT",
+      "valuesByMode": { "scania": "58" }
+    },
+    {
+      "name": "space/side-menu/sub-item-user",
+      "type": "FLOAT",
+      "valuesByMode": { "scania": "64" }
+    },
+    {
+      "name": "space/side-menu/heading-bottom",
+      "type": "FLOAT",
+      "valuesByMode": { "scania": "15" }
+    },
+    {
+      "name": "space/side-menu/indicator-focus",
+      "type": "FLOAT",
+      "valuesByMode": { "scania": "3" }
+    },
+    { "name": "motion/side-menu/rotate", "type": "COLOR", "valuesByMode": { "scania": "200ms" } },
+    {
+      "name": "motion/side-menu/hover-delay",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "150ms" }
+    },
+    {
       "name": "icon/24v_battery/d",
       "type": "COLOR",
       "valuesByMode": {

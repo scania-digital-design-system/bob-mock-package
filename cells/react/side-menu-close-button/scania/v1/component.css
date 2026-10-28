@@ -1,0 +1,37 @@
+.tl-side-menu-close-button {
+  height: var(--size-side-menu-close);
+  width: 100%;
+  text-align: left;
+  padding: 0 var(--space-side-menu-item);
+  margin: 0;
+  border: none;
+  border-radius: var(--radius-side-menu);
+  background-color: var(--color-background-base);
+  color: var(--color-icon-strong);
+  display: flex;
+  align-items: center;
+  border-bottom: var(--border-control) solid var(--color-border-discrete);
+}
+.tl-side-menu-close-button:hover {
+  cursor: pointer;
+  background-color: var(--color-background-layer-01);
+}
+.tl-side-menu-close-button:focus-visible {
+  outline: var(--border-focus) solid var(--color-border-focus);
+  box-shadow: 0 0 0 var(--border-control) var(--color-border-focus-discrete);
+  outline-offset: var(--border-focus-offset);
+  z-index: 1;
+  cursor: pointer;
+}
+.tl-side-menu-close-button:active {
+  cursor: pointer;
+  background-color: var(--color-side-menu-item-active);
+}
+.tl-side-menu-close-button__icon {
+  width: var(--size-side-menu-icon);
+  height: var(--size-side-menu-icon);
+  fill: currentColor;
+}
+.tl-side-menu-close-button__cross {
+  d: var(--icon-cross-d);
+}

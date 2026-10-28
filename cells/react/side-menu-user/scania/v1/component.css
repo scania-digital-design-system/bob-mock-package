@@ -1,0 +1,67 @@
+.tl-side-menu-user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-element-16);
+  height: var(--size-side-menu-item);
+}
+.tl-side-menu-user__image {
+  display: flex;
+}
+.tl-side-menu-user__img,
+.tl-side-menu-user__image > * {
+  width: var(--size-side-menu-user-image);
+  height: var(--size-side-menu-user-image);
+  border-radius: 50%;
+}
+.tl-side-menu-user__label {
+  display: block;
+  min-width: 0;
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: bold;
+  line-height: var(--font-line-height-detail-02);
+  letter-spacing: var(--font-letter-spacing-detail);
+  color: var(--color-text-strong);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tl-side-menu-user__subheading {
+  display: block;
+  color: var(--color-text-soft);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Inside a side menu item, the user takes the item's size and states */
+.tl-side-menu-item > .tl-side-menu-user {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 var(--space-side-menu-item);
+  background-color: var(--color-background-base);
+  cursor: pointer;
+}
+.tl-side-menu-item:hover > .tl-side-menu-user {
+  background-color: var(--color-background-layer-01);
+  position: relative;
+}
+.tl-side-menu-item:active > .tl-side-menu-user {
+  background-color: var(--color-side-menu-item-active);
+  position: relative;
+}
+.tl-side-menu-item--selected-true.tl-side-menu-item--active-false > .tl-side-menu-user {
+  background-color: var(--color-background-layer-01);
+  position: relative;
+}
+.tl-side-menu-item--selected-true.tl-side-menu-item--active-false > .tl-side-menu-user::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--size-side-menu-indicator);
+  height: 100%;
+  border-top-left-radius: var(--radius-side-menu);
+  border-bottom-left-radius: var(--radius-side-menu);
+  background-color: var(--color-side-menu-indicator);
+}

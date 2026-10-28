@@ -810,3 +810,81 @@ export type TableFooterProps = {
   rowsPerPageValue?: string;
   onTdsPagination?: (event: CustomEvent<{ tableId: string | undefined; paginationValue: number; rowsPerPage?: number }>) => void;
 };
+
+export type SideMenuProps = {
+  /** @default false */
+  open?: boolean;
+  /** @default false */
+  persistent?: boolean;
+  /** @default false */
+  collapsed?: boolean;
+  children?: ReactNode;
+  overlay?: ReactNode;
+  closeButton?: ReactNode;
+  end?: ReactNode;
+  stickyEnd?: ReactNode;
+  onTdsCollapse?: (event: CustomEvent<{ collapsed: boolean }>) => void;
+};
+
+export type SideMenuOverlayProps = {
+  onClick?: MouseEventHandler<HTMLDivElement>;
+};
+
+export type SideMenuCloseButtonProps = {
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+};
+
+export type SideMenuItemProps = {
+  /** @default false */
+  selected?: boolean;
+  /** @default false */
+  active?: boolean;
+  children?: ReactNode;
+};
+
+export type SideMenuDropdownProps = {
+  /** @default false */
+  defaultOpen?: boolean;
+  buttonLabel?: string;
+  /** @default false */
+  selected?: boolean;
+  /** @default false */
+  open?: boolean;
+  children?: ReactNode;
+  icon?: ReactNode;
+  label?: ReactNode;
+};
+
+export type SideMenuDropdownListProps = {
+  children?: ReactNode;
+};
+
+export type SideMenuDropdownListItemProps = {
+  /** @default false */
+  selected?: boolean;
+  children?: ReactNode;
+};
+
+export type SideMenuCollapseButtonProps = {
+  children?: ReactNode;
+  onTdsCollapse?: (event: CustomEvent<{ collapsed: boolean }>) => void;
+};
+
+export type SideMenuUserProps = {
+  heading?: string;
+  subheading?: string;
+  imgSrc?: string;
+  imgAlt?: string;
+  icon?: ReactNode;
+};
+
+export type SideMenuUserImageProps = {
+  src?: string;
+  alt?: string;
+  children?: ReactNode;
+};
+
+export type SideMenuUserLabelProps = {
+  heading?: string;
+  subheading?: string;
+};

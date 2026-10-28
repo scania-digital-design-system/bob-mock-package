@@ -68,6 +68,7 @@ name is in the generated `tegel` set.
 | Icon | 605 |
 | Popover core, canvas, menu, menu item; tooltip | 617 |
 | Table family | 648 |
+| Side menu family | 671 |
 
 ## Foundation set
 
@@ -596,3 +597,36 @@ Reused: `color/background/{layer-01,layer-02,base,none}`, `color/border/{discret
 `radius/{input,control,checkbox,focus-medium}`, `border/{control,input,focus}`, `opacity/{disabled,full}`,
 `space/element/{8,16,24,40}`, `size/shadow/3`, the checkbox tokens, the focus ring tokens,
 the icon path tokens and the detail tokens (Tegel's `title-01` and `type-system-body-01`).
+
+### Side menu
+
+Source: `packages/core/src/components/side-menu/` (`side-menu-vars.scss` and each part's
+`.scss`), the Scania light block of `tokens/scss/component/side-menu.scss`, and the
+`title-01` and `body-02` type styles.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `color/side-menu/item-active` | `#e0e5eb` | `--component-side-menu-background-item-link-active` = grey-150 |
+| `color/side-menu/indicator` | `#2a6ecf` | `--component-side-menu-border-item-indicator-default` = blue-400 |
+| `color/side-menu/overlay` | `#000000` | `tds-side-menu-overlay` `background-color: black` |
+| `opacity/side-menu/overlay` (carrier) | `0.4` | open state, `opacity: 0.4` on the slotted overlay |
+| `radius/side-menu` | 0 | `--component-side-menu-border-radius-default` |
+| `size/side-menu/item`, `size/side-menu/sub-item` | 68, 48 | `--tds-side-menu-item-height`, `--tds-side-menu-sub-item-height` |
+| `size/side-menu/width`, `size/side-menu/collapsed` | 272, 68 | persistent width; `--tds-side-menu-width-collapsed` |
+| `size/side-menu/close` | 64 | `--tds-side-menu-close-button-height` |
+| `size/side-menu/user-image` | 34 | `--tds-side-menu-user-image-size` |
+| `size/side-menu/indicator` | 4 | selected indicator width |
+| `size/side-menu/flyout` | 190 | dropdown list and collapsed heading width |
+| `size/side-menu/icon`, `size/side-menu/chevron` | 20, 16 | collapse and close icons; dropdown chevron |
+| `space/side-menu/item` | 22 | `--tds-side-menu-item-horizontal-padding` |
+| `space/side-menu/gap` | 10 | `--tds-side-menu-item-horizontal-gap` |
+| `space/side-menu/sub-item-icon`, `space/side-menu/sub-item-user` | 58, 64 | left padding of `--tds-side-menu-sub-item-padding-{icon,user-image}` |
+| `space/side-menu/heading-bottom` | 15 | collapsed heading `padding-bottom` |
+| `space/side-menu/indicator-focus` | 3 | selected indicator inset while focused |
+| `motion/side-menu/rotate`, `motion/side-menu/hover-delay` (carriers) | `200ms`, `150ms` | icon `transition`; the collapsed dropdown's hover tolerance |
+
+Reused: `color/background/{base,layer-01,none}`, `color/border/{discrete,subtle,none,focus,focus-discrete}`,
+`color/icon/strong`, `color/text/{strong,soft}`, `color/shadow/{1,15}`, `size/shadow/{1,3,minus-1}`,
+`border/{control,focus,focus-offset,focus-inset}`, `space/element/{16,24,48}`, the scrollbar
+tokens, the icon path tokens, the detail tokens (Tegel's `title-01`) and the body tokens
+(`body-02`: `font/family/body`, `font/size/detail`, `font/line-height/detail-03`).

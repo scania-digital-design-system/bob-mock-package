@@ -61,6 +61,17 @@ export const COMPONENTS = [
   'body-cell',
   'table-body-input-wrapper',
   'table-footer',
+  'side-menu',
+  'side-menu-overlay',
+  'side-menu-close-button',
+  'side-menu-item',
+  'side-menu-dropdown',
+  'side-menu-dropdown-list',
+  'side-menu-dropdown-list-item',
+  'side-menu-collapse-button',
+  'side-menu-user',
+  'side-menu-user-image',
+  'side-menu-user-label',
 ] as const;
 
 export function cssSources(components: readonly string[]): string[] {

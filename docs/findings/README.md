@@ -70,11 +70,22 @@ Each `<component>.md` keeps the full detail. Prompt line numbers (L11, L12) refe
 | body-cell | PASS | Relaxed | 1 added | — | — | — |
 | table-body-input-wrapper | PASS | Relaxed | 1 added | — | — | — |
 | table-footer | PASS | PASS | exact | — | — | — |
+| side-menu | PASS | PASS | 5 added | 21 (side menu) | 3 (side menu) | 23 (side menu) |
+| side-menu-item | PASS | Relaxed | 1 added | — | — | — |
+| side-menu-dropdown | PASS | Relaxed | 3 added | — | — | — |
+| side-menu-dropdown-list | PASS | Relaxed | 1 added | — | — | — |
+| side-menu-dropdown-list-item | PASS | Relaxed | 1 added | — | — | — |
+| side-menu-collapse-button | PASS | Relaxed | 1 added | — | — | — |
+| side-menu-close-button | PASS | PASS | 1 added | — | — | — |
+| side-menu-overlay | PASS | PASS | 1 added | — | — | — |
+| side-menu-user | PASS | Relaxed | 1 added | — | — | — |
+| side-menu-user-image | PASS | PASS | 1 added | — | — | — |
+| side-menu-user-label | PASS | PASS | exact | — | — | — |
 
 A family (a parent and its children) shares one findings file, so its departures and
 findings are counted once. The three tabs families share `tabs.md`; the four popover
-cells share `popover.md`; the eleven table cells share `table.md`. The foundation set
-adds 31 tokens. The `tegel` set has 648
+cells share `popover.md`; the eleven table cells share `table.md`; the eleven side menu
+cells share `side-menu.md`. The foundation set adds 31 tokens. The `tegel` set has 671
 names in total, 263 of them icon paths. BOB's stock set has 45.
 
 ## Findings about BOB
@@ -297,6 +308,8 @@ Choose between a `return` branch and `:has()` like this:
 | A parent that sets state on its children (`setSelected`) | No context, refs or `cloneElement` (L12) | The parent sets an ARIA attribute on its children's elements, from a callback ref and a click handler. The child's stylesheet reads it with `:has([aria-…])`. | The contract between the cells is recorded nowhere. React does not own the attribute. | folder, inline and navigation tabs; table (`aria-sort`, `data-text-align`, `data-hover`) |
 | A prop that both the consumer and the user change (`selected`) | No hooks (L12) | Apply the prop in a callback ref only when it differs from the last applied value, kept in a `data-` attribute. | React does not own the attribute. | table rows and header |
 | A child that adds columns by the parent's props (multiselect, expand) | No context (L12) | Render the column always. With `parent-modifier-selectors`, the parent's class hides it. Count columns from the header row in a ref. | Hidden cells in every row. | table |
+| A parent state that one child changes and every child shows (`collapsed`) | No context (L12); a modifier reads only a prop (L11) | Render the prop as a `data-` attribute on the parent's root, so React applies a prop change. The child's click changes the attribute. The other children read it with `parent-modifier-selectors`. | React does not see the click. Neither check reads the attribute. | side menu |
+| A listener that consumers add to a host element (`onclick` on the overlay) | The destructured props are the whole API | Add an `onClick` prop. List it in `DEPARTURES`. | The API is wider than Tegel's. No other host attribute passes through. | side menu close button, overlay |
 | Overflow state (scroll buttons, `ResizeObserver`) | No hooks or effects (L12) | Measure in a callback ref and in `onScroll`. Set `disabled` on the buttons directly, and hide a disabled button with CSS. | A resize alone does not update the buttons. | folder, inline and navigation tabs |
 
 ### CSS and tokens
@@ -359,7 +372,10 @@ no entry here.
   table-toolbar, table-header, header-cell, table-header-input-wrapper, table-body-row,
   table-body-row-expandable, body-cell and table-body-input-wrapper (the table's
   `multiselect`, `expandableRows`, `compactDesign`, `verticalDividers`, `noMinWidth` and
-  `zebraMode`).
+  `zebraMode`), side-menu-item, side-menu-dropdown, side-menu-dropdown-list,
+  side-menu-dropdown-list-item and side-menu-collapse-button (the menu's collapsed state
+  and its `end` part; the list item also reads the dropdown's icon), and side-menu-user
+  (the item's hover and selected states).
 - **Gate:** PASS. Class closure does not object to rules for classes the markup does not
   render.
 - **Source:** structural. Any compound component has the same problem, whatever its

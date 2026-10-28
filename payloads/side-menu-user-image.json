@@ -1,0 +1,26 @@
+{
+  "component": "side-menu-user-image",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-side-menu-user-image at @scania/tegel@1.66.1: a round user image for the side menu.",
+    "properties": [
+      {
+        "name": "src",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "alt",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

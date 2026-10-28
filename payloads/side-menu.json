@@ -1,0 +1,51 @@
+{
+  "component": "side-menu",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-side-menu at @scania/tegel@1.66.1: the navigation menu at the side of the page: a drawer on mobile, persistent and collapsible on desktop.",
+    "properties": [
+      {
+        "name": "open",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "persistent",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "collapsed",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      },
+      {
+        "name": "overlay",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      },
+      {
+        "name": "closeButton",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      },
+      {
+        "name": "end",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      },
+      {
+        "name": "stickyEnd",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

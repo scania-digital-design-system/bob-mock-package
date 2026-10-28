@@ -14,7 +14,10 @@ Scania brand, light mode only.
 - Actions: `Button`, `Chip`
 - Navigation: `Breadcrumbs` with `Breadcrumb`, `Stepper` with `Step`, `Footer` with
   `FooterGroup` and `FooterItem`, `FolderTabs` with `FolderTab`, `InlineTabs` with
-  `InlineTab`, `NavigationTabs` with `NavigationTab`
+  `InlineTab`, `NavigationTabs` with `NavigationTab`, `SideMenu` with `SideMenuItem`,
+  `SideMenuDropdown`, `SideMenuDropdownList`, `SideMenuDropdownListItem`,
+  `SideMenuCollapseButton`, `SideMenuCloseButton`, `SideMenuOverlay`, `SideMenuUser`,
+  `SideMenuUserImage`, `SideMenuUserLabel`
 - Forms: `Checkbox`, `Datetime`, `Dropdown` with `DropdownOption`, `RadioButton`, `Slider`,
   `TextField`, `Textarea`, `Toggle`
 - Disclosure and feedback: `Accordion` with `AccordionItem`, `Banner`, `Modal`, `Toast`

@@ -1,0 +1,16 @@
+{
+  "component": "side-menu-dropdown-list",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-side-menu-dropdown-list at @scania/tegel@1.66.1: the list of sub-items in a side menu dropdown.",
+    "properties": [
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

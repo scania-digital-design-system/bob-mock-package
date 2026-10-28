@@ -1,0 +1,8 @@
+{
+  "componentType": "side-menu-overlay",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "onClick"
+  ],
+  "rules": []
+}

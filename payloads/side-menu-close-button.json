@@ -1,0 +1,10 @@
+{
+  "component": "side-menu-close-button",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-side-menu-close-button at @scania/tegel@1.66.1: the button at the top of the mobile side menu that closes it.",
+    "properties": [],
+    "answers": []
+  }
+}

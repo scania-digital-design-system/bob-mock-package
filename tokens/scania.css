@@ -47,6 +47,9 @@
   --color-shadow-15: #00000026;
   --color-shadow-20: #00000033;
   --color-shadow-5: #0000000d;
+  --color-side-menu-indicator: #2a6ecf;
+  --color-side-menu-item-active: #e0e5eb;
+  --color-side-menu-overlay: #000000;
   --color-slider-disabled: #d1d7e0;
   --color-slider-hover: #303c612b;
   --color-slider-pressed: #3a517c59;
@@ -378,6 +381,8 @@
   --motion-footer-rotate: 200ms;
   --motion-input-indicator: 200ms;
   --motion-popover-menu-hover: 150ms;
+  --motion-side-menu-hover-delay: 150ms;
+  --motion-side-menu-rotate: 200ms;
   --motion-spinner-duration: 1.8s;
   --motion-spinner-duration-lg: 2s;
   --motion-table-hover: 200ms;
@@ -392,6 +397,7 @@
   --motion-toggle-duration: 200ms;
   --opacity-disabled: 0.25;
   --opacity-full: 1;
+  --opacity-side-menu-overlay: 0.4;
   --size-modal-max-height: 85vh;
   --border-control: 1px;
   --border-focus: 2px;
@@ -435,6 +441,7 @@
   --radius-modal: 4px;
   --radius-popover: 4px;
   --radius-scrollbar: 8px;
+  --radius-side-menu: 0px;
   --radius-slider-fill: 2px;
   --radius-slider-tooltip: 4px;
   --radius-slider-track: 1px;
@@ -502,6 +509,16 @@
   --size-shadow-2: 2px;
   --size-shadow-3: 3px;
   --size-shadow-minus-1: -1px;
+  --size-side-menu-chevron: 16px;
+  --size-side-menu-close: 64px;
+  --size-side-menu-collapsed: 68px;
+  --size-side-menu-flyout: 190px;
+  --size-side-menu-icon: 20px;
+  --size-side-menu-indicator: 4px;
+  --size-side-menu-item: 68px;
+  --size-side-menu-sub-item: 48px;
+  --size-side-menu-user-image: 34px;
+  --size-side-menu-width: 272px;
   --size-slider-control-icon: 16px;
   --size-slider-divider: 16px;
   --size-slider-divider-width: 1px;
@@ -630,6 +647,12 @@
   --space-popover-menu-item: 10px;
   --space-popover-offset: 8px;
   --space-radio-button-label: 6px;
+  --space-side-menu-gap: 10px;
+  --space-side-menu-heading-bottom: 15px;
+  --space-side-menu-indicator-focus: 3px;
+  --space-side-menu-item: 22px;
+  --space-side-menu-sub-item-icon: 58px;
+  --space-side-menu-sub-item-user: 64px;
   --space-slider-control: 18px;
   --space-slider-label-offset: 34px;
   --space-slider-tooltip-inline: 11px;

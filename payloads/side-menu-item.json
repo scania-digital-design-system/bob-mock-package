@@ -1,0 +1,26 @@
+{
+  "component": "side-menu-item",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-side-menu-item at @scania/tegel@1.66.1: one item of the side menu, around a button or a link.",
+    "properties": [
+      {
+        "name": "selected",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "active",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

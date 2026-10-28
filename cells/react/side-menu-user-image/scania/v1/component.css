@@ -1,0 +1,9 @@
+.tl-side-menu-user-image {
+  display: flex;
+}
+.tl-side-menu-user-image__img,
+.tl-side-menu-user-image > * {
+  width: var(--size-side-menu-user-image);
+  height: var(--size-side-menu-user-image);
+  border-radius: 50%;
+}

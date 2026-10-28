@@ -1,0 +1,10 @@
+{
+  "component": "side-menu-overlay",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-side-menu-overlay at @scania/tegel@1.66.1: the dark layer behind the open mobile side menu.",
+    "properties": [],
+    "answers": []
+  }
+}

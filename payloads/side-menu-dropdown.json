@@ -1,0 +1,46 @@
+{
+  "component": "side-menu-dropdown",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-side-menu-dropdown at @scania/tegel@1.66.1: a side menu item that opens a list of sub-items.",
+    "properties": [
+      {
+        "name": "defaultOpen",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "buttonLabel",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "selected",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "open",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      },
+      {
+        "name": "icon",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      },
+      {
+        "name": "label",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

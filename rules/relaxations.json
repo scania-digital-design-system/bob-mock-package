@@ -17,5 +17,11 @@
   "react/body-cell/scania/v1": ["parent-modifier-selectors"],
   "react/table-body-input-wrapper/scania/v1": ["parent-modifier-selectors"],
   "react/table-header-input-wrapper/scania/v1": ["parent-modifier-selectors"],
-  "react/table-toolbar/scania/v1": ["parent-modifier-selectors"]
+  "react/table-toolbar/scania/v1": ["parent-modifier-selectors"],
+  "react/side-menu-item/scania/v1": ["parent-modifier-selectors"],
+  "react/side-menu-dropdown/scania/v1": ["parent-modifier-selectors"],
+  "react/side-menu-dropdown-list/scania/v1": ["parent-modifier-selectors"],
+  "react/side-menu-dropdown-list-item/scania/v1": ["parent-modifier-selectors"],
+  "react/side-menu-collapse-button/scania/v1": ["parent-modifier-selectors"],
+  "react/side-menu-user/scania/v1": ["parent-modifier-selectors"]
 }

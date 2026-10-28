@@ -1,0 +1,20 @@
+.tl-side-menu-dropdown-list {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background-color: var(--color-background-base);
+}
+
+/* A collapsed desktop menu shows the list beside it, with a line under each item */
+@media (min-width: 992px) {
+  .tl-side-menu[data-collapsed='true'] .tl-side-menu-dropdown-list {
+    width: var(--size-side-menu-flyout);
+  }
+  .tl-side-menu[data-collapsed='true'] .tl-side-menu-dropdown-list > * {
+    border-bottom: var(--border-control) solid var(--color-border-discrete);
+  }
+}

@@ -34,6 +34,17 @@ import PopoverCoreCell from '../cells/react/popover-core/scania/v1/component.jsx
 import PopoverMenuCell from '../cells/react/popover-menu/scania/v1/component.jsx';
 import PopoverMenuItemCell from '../cells/react/popover-menu-item/scania/v1/component.jsx';
 import RadioButtonCell from '../cells/react/radio-button/scania/v1/component.jsx';
+import SideMenuCell from '../cells/react/side-menu/scania/v1/component.jsx';
+import SideMenuCloseButtonCell from '../cells/react/side-menu-close-button/scania/v1/component.jsx';
+import SideMenuCollapseButtonCell from '../cells/react/side-menu-collapse-button/scania/v1/component.jsx';
+import SideMenuDropdownCell from '../cells/react/side-menu-dropdown/scania/v1/component.jsx';
+import SideMenuDropdownListCell from '../cells/react/side-menu-dropdown-list/scania/v1/component.jsx';
+import SideMenuDropdownListItemCell from '../cells/react/side-menu-dropdown-list-item/scania/v1/component.jsx';
+import SideMenuItemCell from '../cells/react/side-menu-item/scania/v1/component.jsx';
+import SideMenuOverlayCell from '../cells/react/side-menu-overlay/scania/v1/component.jsx';
+import SideMenuUserCell from '../cells/react/side-menu-user/scania/v1/component.jsx';
+import SideMenuUserImageCell from '../cells/react/side-menu-user-image/scania/v1/component.jsx';
+import SideMenuUserLabelCell from '../cells/react/side-menu-user-label/scania/v1/component.jsx';
 import SliderCell from '../cells/react/slider/scania/v1/component.jsx';
 import SpinnerCell from '../cells/react/spinner/scania/v1/component.jsx';
 import StepCell from '../cells/react/step/scania/v1/component.jsx';
@@ -89,6 +100,17 @@ import type {
   PopoverMenuItemProps,
   PopoverMenuProps,
   RadioButtonProps,
+  SideMenuCloseButtonProps,
+  SideMenuCollapseButtonProps,
+  SideMenuDropdownListItemProps,
+  SideMenuDropdownListProps,
+  SideMenuDropdownProps,
+  SideMenuItemProps,
+  SideMenuOverlayProps,
+  SideMenuProps,
+  SideMenuUserImageProps,
+  SideMenuUserLabelProps,
+  SideMenuUserProps,
   SliderProps,
   SpinnerProps,
   StepProps,
@@ -146,6 +168,17 @@ export type {
   PopoverMenuItemProps,
   PopoverMenuProps,
   RadioButtonProps,
+  SideMenuCloseButtonProps,
+  SideMenuCollapseButtonProps,
+  SideMenuDropdownListItemProps,
+  SideMenuDropdownListProps,
+  SideMenuDropdownProps,
+  SideMenuItemProps,
+  SideMenuOverlayProps,
+  SideMenuProps,
+  SideMenuUserImageProps,
+  SideMenuUserLabelProps,
+  SideMenuUserProps,
   SliderProps,
   SpinnerProps,
   StepProps,
@@ -226,3 +259,15 @@ export const TableBodyRowExpandable: FC<TableBodyRowExpandableProps> = TableBody
 export const BodyCell: FC<BodyCellProps> = BodyCellCell;
 export const TableBodyInputWrapper: FC<TableBodyInputWrapperProps> = TableBodyInputWrapperCell;
 export const TableFooter: FC<TableFooterProps> = TableFooterCell;
+export const SideMenu: FC<SideMenuProps> = SideMenuCell;
+export const SideMenuOverlay: FC<SideMenuOverlayProps> = SideMenuOverlayCell;
+export const SideMenuCloseButton: FC<SideMenuCloseButtonProps> = SideMenuCloseButtonCell;
+export const SideMenuItem: FC<SideMenuItemProps> = SideMenuItemCell;
+export const SideMenuDropdown: FC<SideMenuDropdownProps> = SideMenuDropdownCell;
+export const SideMenuDropdownList: FC<SideMenuDropdownListProps> = SideMenuDropdownListCell;
+export const SideMenuDropdownListItem: FC<SideMenuDropdownListItemProps> =
+  SideMenuDropdownListItemCell;
+export const SideMenuCollapseButton: FC<SideMenuCollapseButtonProps> = SideMenuCollapseButtonCell;
+export const SideMenuUser: FC<SideMenuUserProps> = SideMenuUserCell;
+export const SideMenuUserImage: FC<SideMenuUserImageProps> = SideMenuUserImageCell;
+export const SideMenuUserLabel: FC<SideMenuUserLabelProps> = SideMenuUserLabelCell;

@@ -1,0 +1,43 @@
+{
+  "componentType": "side-menu-user",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "heading",
+    "subheading",
+    "imgSrc",
+    "imgAlt",
+    "icon"
+  ],
+  "rules": [
+    {
+      "id": "prop-heading",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"heading\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-subheading",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"subheading\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-imgsrc",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"imgSrc\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-imgalt",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"imgAlt\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-icon",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"icon\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

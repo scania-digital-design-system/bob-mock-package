@@ -1,0 +1,20 @@
+.tl-side-menu-user-label {
+  display: block;
+  min-width: 0;
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: bold;
+  line-height: var(--font-line-height-detail-02);
+  letter-spacing: var(--font-letter-spacing-detail);
+  color: var(--color-text-strong);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tl-side-menu-user-label__subheading {
+  display: block;
+  color: var(--color-text-soft);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
