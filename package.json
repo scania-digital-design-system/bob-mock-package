@@ -1,6 +1,6 @@
 {
   "name": "@umain-mock/bob-mock-react",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Tegel components hand-written in brand-orchestration-backbone cell shape. For testing only.",
   "license": "MIT",
   "type": "module",
@@ -28,6 +28,7 @@
   "scripts": {
     "dev": "vite serve demo --config vite.config.ts",
     "build": "vite build && tsc -p tsconfig.build.json",
+    "prepack": "npm run build",
     "typecheck": "tsc --noEmit",
     "lint": "biome check .",
     "format": "biome format --write .",
