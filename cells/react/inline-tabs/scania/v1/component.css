@@ -1,0 +1,94 @@
+.tl-inline-tabs {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+}
+.tl-inline-tabs::after {
+  content: ' ';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  border-bottom: var(--border-control) solid var(--color-border-discrete);
+}
+.tl-inline-tabs__wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  white-space: nowrap;
+}
+.tl-inline-tabs__wrapper::-webkit-scrollbar {
+  display: none;
+}
+.tl-inline-tabs__tabs {
+  display: flex;
+}
+.tl-inline-tabs--left-padding-0 .tl-inline-tabs__tabs {
+  padding-left: 0;
+}
+.tl-inline-tabs--left-padding-8 .tl-inline-tabs__tabs {
+  padding-left: var(--space-element-8);
+}
+.tl-inline-tabs--left-padding-16 .tl-inline-tabs__tabs {
+  padding-left: var(--space-element-16);
+}
+.tl-inline-tabs--left-padding-24 .tl-inline-tabs__tabs {
+  padding-left: var(--space-element-24);
+}
+.tl-inline-tabs--left-padding-32 .tl-inline-tabs__tabs {
+  padding-left: var(--space-element-32);
+}
+.tl-inline-tabs--left-padding-40 .tl-inline-tabs__tabs {
+  padding-left: var(--space-element-40);
+}
+.tl-inline-tabs--left-padding-48 .tl-inline-tabs__tabs {
+  padding-left: var(--space-element-48);
+}
+.tl-inline-tabs__scroll-left,
+.tl-inline-tabs__scroll-right {
+  position: sticky;
+  z-index: 1;
+  display: none;
+  width: 0;
+  border: 0;
+  border-bottom: var(--border-control) solid var(--color-border-discrete);
+  color: var(--color-icon-strong);
+  background-color: var(--color-background-base);
+  cursor: pointer;
+}
+.tl-inline-tabs__scroll-left {
+  left: 0;
+}
+.tl-inline-tabs__scroll-right {
+  right: 0;
+}
+.tl-inline-tabs__scroll-left:not(:disabled),
+.tl-inline-tabs__scroll-right:not(:disabled) {
+  display: block;
+  min-width: var(--size-tabs-scroll);
+}
+.tl-inline-tabs__scroll-left:focus-visible,
+.tl-inline-tabs__scroll-right:focus-visible {
+  outline: 0;
+}
+.tl-inline-tabs__scroll-left:focus-visible::before,
+.tl-inline-tabs__scroll-right:focus-visible::before {
+  content: '';
+  position: absolute;
+  inset: var(--space-tabs-focus-inset);
+  z-index: 1;
+  outline: var(--border-focus) solid var(--color-border-focus);
+  outline-offset: var(--border-focus-offset);
+  box-shadow: 0 0 0 var(--border-control) var(--color-border-focus-discrete);
+}
+.tl-inline-tabs__scroll-left svg,
+.tl-inline-tabs__scroll-right svg {
+  display: block;
+  width: var(--size-tabs-scroll-icon);
+  height: var(--size-tabs-scroll-icon);
+  margin: 0 auto;
+  fill: currentColor;
+}

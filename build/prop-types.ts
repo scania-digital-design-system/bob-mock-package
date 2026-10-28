@@ -49,6 +49,11 @@ export const OVERRIDES: Record<string, Record<string, string>> = {
     onTdsInput: '(event: CustomEvent<InputEvent>) => void',
     onTdsFocus: '(event: CustomEvent<FocusEvent>) => void',
   },
+  'folder-tabs': { onTdsChange: '(event: CustomEvent<{ selectedTabIndex: number }>) => void' },
+  'inline-tabs': { onTdsChange: '(event: CustomEvent<{ selectedTabIndex: number }>) => void' },
+  'navigation-tabs': {
+    onTdsChange: '(event: CustomEvent<{ selectedTabIndex: number }>) => void',
+  },
 };
 
 const REACT_TYPES = ['MouseEventHandler', 'ReactNode'];

@@ -28,6 +28,12 @@ import '../cells/react/accordion-item/scania/v1/component.css';
 import '../cells/react/banner/scania/v1/component.css';
 import '../cells/react/toast/scania/v1/component.css';
 import '../cells/react/text-field/scania/v1/component.css';
+import '../cells/react/folder-tabs/scania/v1/component.css';
+import '../cells/react/folder-tab/scania/v1/component.css';
+import '../cells/react/inline-tabs/scania/v1/component.css';
+import '../cells/react/inline-tab/scania/v1/component.css';
+import '../cells/react/navigation-tabs/scania/v1/component.css';
+import '../cells/react/navigation-tab/scania/v1/component.css';
 import Accordion from '../cells/react/accordion/scania/v1/component.jsx';
 import AccordionItem from '../cells/react/accordion-item/scania/v1/component.jsx';
 import Badge from '../cells/react/badge/scania/v1/component.jsx';
@@ -40,11 +46,17 @@ import Card from '../cells/react/card/scania/v1/component.jsx';
 import Checkbox from '../cells/react/checkbox/scania/v1/component.jsx';
 import Chip from '../cells/react/chip/scania/v1/component.jsx';
 import Divider from '../cells/react/divider/scania/v1/component.jsx';
+import FolderTab from '../cells/react/folder-tab/scania/v1/component.jsx';
+import FolderTabs from '../cells/react/folder-tabs/scania/v1/component.jsx';
 import Footer from '../cells/react/footer/scania/v1/component.jsx';
 import FooterGroup from '../cells/react/footer-group/scania/v1/component.jsx';
 import FooterItem from '../cells/react/footer-item/scania/v1/component.jsx';
+import InlineTab from '../cells/react/inline-tab/scania/v1/component.jsx';
+import InlineTabs from '../cells/react/inline-tabs/scania/v1/component.jsx';
 import Link from '../cells/react/link/scania/v1/component.jsx';
 import Message from '../cells/react/message/scania/v1/component.jsx';
+import NavigationTab from '../cells/react/navigation-tab/scania/v1/component.jsx';
+import NavigationTabs from '../cells/react/navigation-tabs/scania/v1/component.jsx';
 import RadioButton from '../cells/react/radio-button/scania/v1/component.jsx';
 import Spinner from '../cells/react/spinner/scania/v1/component.jsx';
 import Step from '../cells/react/step/scania/v1/component.jsx';
@@ -64,6 +76,7 @@ import {
   NESTED_BLOCKS,
   SECTIONS,
   STEPS,
+  TABS,
   THUMBNAIL_SRC,
 } from './cases';
 
@@ -89,7 +102,30 @@ const COMPONENTS: Record<string, FC<Record<string, unknown>>> = {
   banner: Banner,
   toast: Toast,
   'text-field': TextField,
+  'folder-tabs': FolderTabs,
+  'inline-tabs': InlineTabs,
+  'navigation-tabs': NavigationTabs,
 };
+
+const TAB_CELLS: Record<string, FC<Record<string, unknown>>> = {
+  folder: FolderTab,
+  inline: InlineTab,
+  navigation: NavigationTab,
+};
+
+function tabs(family: string) {
+  const Tab = TAB_CELLS[family];
+  return (
+    Tab &&
+    TABS.map(({ label, disabled }) => (
+      <Tab key={label} disabled={disabled}>
+        <button type="button" role="tab">
+          {label}
+        </button>
+      </Tab>
+    ))
+  );
+}
 
 const crumbs = CRUMBS.map((name, i) => (
   <Breadcrumb key={name} current={i === CRUMBS.length - 1}>
@@ -172,6 +208,8 @@ function nodeProps(props: Record<string, unknown>): Record<string, unknown> {
       steps
     ) : props.items ? (
       accordionItems
+    ) : typeof props.tabs === 'string' ? (
+      tabs(props.tabs)
     ) : (
       props.children
     ),

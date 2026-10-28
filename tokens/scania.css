@@ -49,6 +49,11 @@
   --color-system-success: #009e7e;
   --color-system-warning: #b87c14;
   --color-system-warning-subtle: #eaad06;
+  --color-tabs-indicator: #2a6ecf;
+  --color-tabs-indicator-hover: #1c222b;
+  --color-tabs-item: #edeff3;
+  --color-tabs-item-hover: #d1d7e0;
+  --color-tabs-scroll: #d1d7e0;
   --color-tag-error: #ffb9b8;
   --color-tag-information: #87afe8;
   --color-tag-neutral: #e0e5eb;
@@ -89,6 +94,7 @@
   --motion-input-indicator: 200ms;
   --motion-spinner-duration: 1.8s;
   --motion-spinner-duration-lg: 2s;
+  --motion-tabs-indicator: 150ms;
   --motion-text-field-border: 200ms;
   --motion-text-field-label: 100ms;
   --motion-text-field-placeholder: 350ms;
@@ -106,6 +112,7 @@
   --border-input-indicator: 2px;
   --border-link-focus: 3px;
   --border-message: 4px;
+  --border-tabs-indicator: 2px;
   --border-toast: 4px;
   --font-letter-spacing-body: -0.32px;
   --font-letter-spacing-detail: -0.14px;
@@ -185,6 +192,11 @@
   --size-stepper-36: 36px;
   --size-stepper-40: 40px;
   --size-stepper-minus-10: -10px;
+  --size-tabs-folder-min-width: 174px;
+  --size-tabs-folder-scroll-height: 50px;
+  --size-tabs-indicator: 2px;
+  --size-tabs-scroll: 48px;
+  --size-tabs-scroll-icon: 20px;
   --size-text-field-helper-icon: 16px;
   --size-text-field-icon: 20px;
   --size-text-field-label-float: 8px;
@@ -244,6 +256,8 @@
   --space-radio-button-label: 6px;
   --space-stepper-vertical-lg: 52px;
   --space-stepper-vertical-sm: 36px;
+  --space-tabs-focus-inset: 3px;
+  --space-tabs-navigation-block: 25px;
   --space-text-field-affix: 14px;
   --space-text-field-inside-bottom: 11px;
   --space-text-field-inside-bottom-lg: 15px;

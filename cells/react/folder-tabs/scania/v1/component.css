@@ -1,0 +1,63 @@
+.tl-folder-tabs {
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  outline: 0;
+}
+.tl-folder-tabs__wrapper {
+  position: relative;
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+.tl-folder-tabs__wrapper::-webkit-scrollbar {
+  display: none;
+}
+.tl-folder-tabs__tabs {
+  display: flex;
+}
+.tl-folder-tabs__scroll-left,
+.tl-folder-tabs__scroll-right {
+  position: sticky;
+  z-index: 1;
+  display: none;
+  width: 0;
+  height: var(--size-tabs-folder-scroll-height);
+  border: 0;
+  color: var(--color-icon-strong);
+  background-color: var(--color-tabs-scroll);
+  cursor: pointer;
+}
+.tl-folder-tabs__scroll-left {
+  left: 0;
+}
+.tl-folder-tabs__scroll-right {
+  right: 0;
+}
+.tl-folder-tabs__scroll-left:not(:disabled),
+.tl-folder-tabs__scroll-right:not(:disabled) {
+  display: block;
+  min-width: var(--size-tabs-scroll);
+}
+.tl-folder-tabs__scroll-left:focus,
+.tl-folder-tabs__scroll-right:focus {
+  outline: 0;
+}
+.tl-folder-tabs__scroll-left:focus-within::before,
+.tl-folder-tabs__scroll-right:focus-within::before {
+  content: '';
+  position: absolute;
+  inset: var(--space-tabs-focus-inset);
+  z-index: 1;
+  outline: var(--border-focus) solid var(--color-border-focus);
+  outline-offset: var(--border-focus-offset);
+  box-shadow: 0 0 0 var(--border-control) var(--color-border-focus-discrete);
+}
+.tl-folder-tabs__scroll-left svg,
+.tl-folder-tabs__scroll-right svg {
+  display: block;
+  width: var(--size-tabs-scroll-icon);
+  height: var(--size-tabs-scroll-icon);
+  margin: 0 auto;
+  fill: currentColor;
+}

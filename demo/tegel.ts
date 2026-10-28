@@ -11,6 +11,7 @@ import {
   NESTED_BLOCKS,
   SECTIONS,
   STEPS,
+  TABS,
   THUMBNAIL_SRC,
 } from './cases';
 
@@ -131,6 +132,15 @@ function compoundChildren(props: Record<string, unknown>): HTMLElement[] {
       child('tds-accordion-item', { header, expanded: Boolean(expanded) }, text),
     );
   }
+  if (props.tabs) {
+    return TABS.map(({ label, disabled }) =>
+      child(
+        `tds-${props.tabs}-tab`,
+        { disabled: Boolean(disabled) },
+        child('button', { role: 'tab' }, label),
+      ),
+    );
+  }
   if (props.actionLink) {
     return [child('div', { slot: 'actions' }, anchor('Read more', '#actions'))];
   }
@@ -173,13 +183,14 @@ function element(tag: string, { props }: DemoCase): HTMLElement {
     suffix,
     items,
     actionLink,
+    tabs,
     ...rest
   } = props;
   // Form controls take their label through a "label" slot; the textarea's label is a prop.
   const { label, ...attributes } = rest;
   const slotsLabel = LABEL_SLOT_TAGS.includes(tag);
   const el = Object.assign(document.createElement(tag), slotsLabel ? attributes : rest);
-  el.append(...compoundChildren({ crumbs, steps, top, start, end, items, actionLink }));
+  el.append(...compoundChildren({ crumbs, steps, top, start, end, items, actionLink, tabs }));
   if (icon) {
     el.append(slottedIcon());
   }

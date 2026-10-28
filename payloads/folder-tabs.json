@@ -1,0 +1,16 @@
+{
+  "component": "folder-tabs",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-folder-tabs at @scania/tegel@1.66.1: a row of folder-style tabs that keeps one tab selected, with scroll buttons when the row overflows.",
+    "properties": [
+      { "name": "defaultSelectedIndex", "type": "TEXT", "values": [] },
+      { "name": "selectedIndex", "type": "TEXT", "values": [] },
+      { "name": "tdsScrollLeftAriaLabel", "type": "TEXT", "values": [] },
+      { "name": "tdsScrollRightAriaLabel", "type": "TEXT", "values": [] },
+      { "name": "children", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": []
+  }
+}

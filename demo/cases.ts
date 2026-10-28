@@ -378,5 +378,40 @@ SECTIONS.push(
   },
 );
 
+// The tabs from Tegel's stories. `tabs: '<family>'` builds them as that family's tabs.
+export const TABS: { label: string; disabled?: boolean }[] = [
+  { label: 'First tab' },
+  { label: 'Second tab is much longer' },
+  { label: 'Third tab' },
+  { label: 'Fourth tab', disabled: true },
+];
+
+SECTIONS.push(
+  {
+    component: 'folder-tabs',
+    tag: 'tds-folder-tabs',
+    cases: [
+      { label: 'first tab selected', props: { tabs: 'folder' } },
+      { label: 'default selected index 1', props: { tabs: 'folder', defaultSelectedIndex: '1' } },
+    ],
+  },
+  {
+    component: 'inline-tabs',
+    tag: 'tds-inline-tabs',
+    cases: [
+      { label: 'left padding 32 (default)', props: { tabs: 'inline' } },
+      { label: 'left padding 0', props: { tabs: 'inline', leftPadding: '0' } },
+    ],
+  },
+  {
+    component: 'navigation-tabs',
+    tag: 'tds-navigation-tabs',
+    cases: [
+      { label: 'left padding 32 (default)', props: { tabs: 'navigation' } },
+      { label: 'left padding 0', props: { tabs: 'navigation', leftPadding: '0' } },
+    ],
+  },
+);
+
 // The same plus icon on both pages, so only the component differs.
 export const ICON_PATH = 'M9 3h2v6h6v2h-6v6H9v-6H3V9h6z';

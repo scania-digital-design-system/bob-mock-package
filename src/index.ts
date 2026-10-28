@@ -11,11 +11,17 @@ import CardCell from '../cells/react/card/scania/v1/component.jsx';
 import CheckboxCell from '../cells/react/checkbox/scania/v1/component.jsx';
 import ChipCell from '../cells/react/chip/scania/v1/component.jsx';
 import DividerCell from '../cells/react/divider/scania/v1/component.jsx';
+import FolderTabCell from '../cells/react/folder-tab/scania/v1/component.jsx';
+import FolderTabsCell from '../cells/react/folder-tabs/scania/v1/component.jsx';
 import FooterCell from '../cells/react/footer/scania/v1/component.jsx';
 import FooterGroupCell from '../cells/react/footer-group/scania/v1/component.jsx';
 import FooterItemCell from '../cells/react/footer-item/scania/v1/component.jsx';
+import InlineTabCell from '../cells/react/inline-tab/scania/v1/component.jsx';
+import InlineTabsCell from '../cells/react/inline-tabs/scania/v1/component.jsx';
 import LinkCell from '../cells/react/link/scania/v1/component.jsx';
 import MessageCell from '../cells/react/message/scania/v1/component.jsx';
+import NavigationTabCell from '../cells/react/navigation-tab/scania/v1/component.jsx';
+import NavigationTabsCell from '../cells/react/navigation-tabs/scania/v1/component.jsx';
 import RadioButtonCell from '../cells/react/radio-button/scania/v1/component.jsx';
 import SpinnerCell from '../cells/react/spinner/scania/v1/component.jsx';
 import StepCell from '../cells/react/step/scania/v1/component.jsx';
@@ -38,11 +44,17 @@ import type {
   CheckboxProps,
   ChipProps,
   DividerProps,
+  FolderTabProps,
+  FolderTabsProps,
   FooterGroupProps,
   FooterItemProps,
   FooterProps,
+  InlineTabProps,
+  InlineTabsProps,
   LinkProps,
   MessageProps,
+  NavigationTabProps,
+  NavigationTabsProps,
   RadioButtonProps,
   SpinnerProps,
   StepProps,
@@ -67,11 +79,17 @@ export type {
   CheckboxProps,
   ChipProps,
   DividerProps,
+  FolderTabProps,
+  FolderTabsProps,
   FooterGroupProps,
   FooterItemProps,
   FooterProps,
+  InlineTabProps,
+  InlineTabsProps,
   LinkProps,
   MessageProps,
+  NavigationTabProps,
+  NavigationTabsProps,
   RadioButtonProps,
   SpinnerProps,
   StepProps,
@@ -113,3 +131,9 @@ export const AccordionItem: FC<AccordionItemProps> = AccordionItemCell;
 export const Banner: FC<BannerProps> = BannerCell;
 export const Toast: FC<ToastProps> = ToastCell;
 export const TextField: FC<TextFieldProps> = TextFieldCell;
+export const FolderTabs: FC<FolderTabsProps> = FolderTabsCell;
+export const FolderTab: FC<FolderTabProps> = FolderTabCell;
+export const InlineTabs: FC<InlineTabsProps> = InlineTabsCell;
+export const InlineTab: FC<InlineTabProps> = InlineTabCell;
+export const NavigationTabs: FC<NavigationTabsProps> = NavigationTabsCell;
+export const NavigationTab: FC<NavigationTabProps> = NavigationTabCell;

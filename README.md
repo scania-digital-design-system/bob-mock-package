@@ -13,7 +13,8 @@ Scania brand, light mode only.
 - Content: `Badge`, `Block`, `Card`, `Divider`, `Link`, `Message`, `Spinner`, `Tag`
 - Actions: `Button`, `Chip`
 - Navigation: `Breadcrumbs` with `Breadcrumb`, `Stepper` with `Step`, `Footer` with
-  `FooterGroup` and `FooterItem`
+  `FooterGroup` and `FooterItem`, `FolderTabs` with `FolderTab`, `InlineTabs` with
+  `InlineTab`, `NavigationTabs` with `NavigationTab`
 - Forms: `Checkbox`, `RadioButton`, `TextField`, `Textarea`, `Toggle`
 - Disclosure and feedback: `Accordion` with `AccordionItem`, `Banner`, `Toast`
 

@@ -1,0 +1,77 @@
+.tl-navigation-tab {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+}
+.tl-navigation-tab:last-child {
+  margin-right: var(--space-element-32);
+}
+.tl-navigation-tab > * {
+  all: unset;
+  position: relative;
+  display: block;
+  padding: var(--space-tabs-navigation-block) var(--space-element-8);
+  border: 0;
+  background-color: var(--color-background-none);
+  color: var(--color-text-soft);
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: bold;
+  line-height: var(--font-line-height-headline-07);
+  letter-spacing: var(--font-letter-spacing-detail);
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color var(--motion-tabs-indicator) ease-in-out;
+}
+.tl-navigation-tab > :focus-visible::before {
+  content: '';
+  position: absolute;
+  inset: var(--space-tabs-focus-inset) 0;
+  z-index: 1;
+  outline: var(--border-focus) solid var(--color-border-focus);
+  outline-offset: var(--border-focus-offset);
+  box-shadow: 0 0 0 var(--border-control) var(--color-border-focus-discrete);
+}
+.tl-navigation-tab::after {
+  content: ' ';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 0;
+  height: var(--size-tabs-indicator);
+  margin: 0 auto;
+  background-color: var(--color-tabs-indicator-hover);
+}
+.tl-navigation-tab:not(:has([aria-selected='true']))::after {
+  transition: width var(--motion-tabs-indicator) ease-in-out;
+}
+.tl-navigation-tab--disabled-false:hover {
+  cursor: pointer;
+}
+.tl-navigation-tab--disabled-false:hover > * {
+  color: var(--color-text-strong);
+}
+.tl-navigation-tab--disabled-false:hover::after {
+  width: 100%;
+}
+.tl-navigation-tab:has([aria-selected='true']) > * {
+  color: var(--color-text-strong);
+}
+.tl-navigation-tab:has([aria-selected='true'])::after {
+  width: 100%;
+  background-color: var(--color-tabs-indicator);
+}
+.tl-navigation-tab--disabled-true > * {
+  opacity: var(--opacity-disabled);
+}
+.tl-navigation-tab--disabled-true::after {
+  content: none;
+}
+.tl-navigation-tab--disabled-true > :hover {
+  cursor: not-allowed;
+}
+.tl-navigation-tab--disabled-true > :focus-visible::before {
+  outline: none;
+}

@@ -33,6 +33,12 @@ export const COMPONENTS = [
   'banner',
   'toast',
   'text-field',
+  'folder-tabs',
+  'folder-tab',
+  'inline-tabs',
+  'inline-tab',
+  'navigation-tabs',
+  'navigation-tab',
 ] as const;
 
 export function cssSources(components: readonly string[]): string[] {

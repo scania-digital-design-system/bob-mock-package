@@ -42,10 +42,16 @@ Each `<component>.md` keeps the full detail. Prompt line numbers (L11, L12) refe
 | banner | PASS | Relaxed | 1 added, 2 methods dropped | 6 | 1 | 3 |
 | toast | PASS | Relaxed | 1 added, 2 methods dropped | 7 | 1 | 11 |
 | text-field | PASS | Relaxed | 2 added, 1 method dropped | 4 (plus the textarea's) | 2 | 19 |
+| folder-tabs | PASS | PASS | 1 added, 2 methods dropped | 15 (tabs) | 3 (tabs) | 14 (tabs) |
+| folder-tab | PASS | PASS | 1 added, 2 methods dropped | — | — | — |
+| inline-tabs | PASS | PASS | 1 added, 2 methods dropped | — | — | — |
+| inline-tab | PASS | PASS | 1 added, 1 method dropped | — | — | — |
+| navigation-tabs | PASS | PASS | 1 added, 2 methods dropped | — | — | — |
+| navigation-tab | PASS | PASS | 1 added, 1 method dropped | — | — | — |
 
 A family (a parent and its children) shares one findings file, so its departures and
-findings are counted once. The foundation set adds 31 tokens. The `tegel` set has 249
-names in total. BOB's stock set has 45.
+findings are counted once. The three tabs families share `tabs.md`. The foundation set
+adds 31 tokens. The `tegel` set has 263 names in total. BOB's stock set has 45.
 
 ## Findings about BOB
 
@@ -88,6 +94,10 @@ cells are out of reach.
   [Relaxations](#relaxations)).
 - **footer:** the mobile collapse needs state. A media query replaces Tegel's resize
   listener, and the open state needs the relaxation `react-hooks`.
+- **tabs:** the parent's selection reaches its children through the DOM. The parent sets
+  `aria-selected` from a callback ref and a click handler, and the children's styles
+  read it. No relaxation is needed, but the contract between the cells is recorded
+  nowhere. The three parents repeat the same script.
 
 ### 2. `className` takes only a bare prop name (L11)
 
@@ -180,6 +190,8 @@ Figma component properties.
 - **checkbox, radio-button, toggle, textarea:** element methods (`focusElement`,
   `toggleCheckbox`, `toggle`) are dropped. Exposing them needs a ref handle (imports) and
   a place in the contract.
+- **tabs:** `leftPadding` is a free number in Tegel that sets a custom property. With no
+  number type and no `style` attribute, it becomes a `VARIANT` with seven values.
 
 ## Conflicts and resolutions
 
@@ -232,6 +244,8 @@ Choose between a `return` branch and `:has()` like this:
 | Logic that runs once (`componentWillLoad`, one-way flags) | The cell renders from props only | Derive on every render. Do not copy the stale-state bug. | None. A behaviour departure to record. | badge, button `onlyIcon`, link disabled |
 | A generated id | No hooks for a stable id | Set ids only when the id prop is given. With no id prop, drop the id and what points at it. | No id by default. The message loses `aria-describedby`. | card `cardId`; message |
 | Viewport state (resize listener) | No hooks or listeners (L12) | Render both variants. A media query shows one. | Content is rendered twice; the hidden copy is `display: none`. | footer-group title and toggle |
+| A parent that sets state on its children (`setSelected`) | No context, refs or `cloneElement` (L12) | The parent sets an ARIA attribute on its children's elements, from a callback ref and a click handler. The child's stylesheet reads it with `:has([aria-…])`. | The contract between the cells is recorded nowhere. React does not own the attribute. | folder, inline and navigation tabs |
+| Overflow state (scroll buttons, `ResizeObserver`) | No hooks or effects (L12) | Measure in a callback ref and in `onScroll`. Set `disabled` on the buttons directly, and hide a disabled button with CSS. | A resize alone does not update the buttons. | folder, inline and navigation tabs |
 
 ### CSS and tokens
 
@@ -255,7 +269,8 @@ Choose between a `return` branch and `:has()` like this:
 | A variant axis | `DraftContract` needs an `answers` entry | Add the entry to the payload. | None. | every cell with a variant axis |
 | `modeVariant`, `animation` | — | Out of scope (ADR 0002 D8). | Dark mode and animation are absent. | button, card, block, message, footer |
 | A prop that only routes internal events | — | Accept it and ignore it. | None. | stepper `stepperId` |
-| A number prop | Surface types are `VARIANT`, `BOOLEAN`, `TEXT`, `INSTANCE_SWAP` | Declare it `TEXT`. Convert with `Number()` where the cell computes with it. | The prop type is `string`. | textarea `maxLength`, `cols`, `rows`; radio `tdsTabIndex` |
+| A number prop | Surface types are `VARIANT`, `BOOLEAN`, `TEXT`, `INSTANCE_SWAP` | Declare it `TEXT`. Convert with `Number()` where the cell computes with it. | The prop type is `string`. | textarea `maxLength`, `cols`, `rows`; radio `tdsTabIndex`; tabs indices |
+| A number prop that sets a style (`--padding-left`) | No `style` attribute; no number type | A `VARIANT` with a fixed list of values. Each value is a modifier with a token. | Other values are not possible. | inline and navigation tabs `leftPadding` |
 | An element method (`@Method`) | No ref handle (L12); no method in the contract | Drop it. List it as `dropped` in `tests/api-parity.test.ts`. | The method is lost. | checkbox, radio-button, toggle, textarea |
 | A DOM property that JSX cannot set (`indeterminate`) | No hooks (L12) | Set it in a callback ref: `ref={(el) => …}` needs no import. | Runs on every render. | checkbox |
 | A DOM call from a handler (focus, value) | No refs (L12) | Use `event.target` or `event.currentTarget` in the handler. | None. | text-field click-to-focus and clamping |

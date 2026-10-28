@@ -32,6 +32,10 @@
       "$type": "number",
       "$value": 4
     },
+    "tabs-indicator": {
+      "$type": "number",
+      "$value": 2
+    },
     "toast": {
       "$type": "number",
       "$value": 4
@@ -268,6 +272,28 @@
       "warning-subtle": {
         "$type": "color",
         "$value": "#eaad06"
+      }
+    },
+    "tabs": {
+      "indicator": {
+        "$type": "color",
+        "$value": "#2a6ecf"
+      },
+      "indicator-hover": {
+        "$type": "color",
+        "$value": "#1c222b"
+      },
+      "item": {
+        "$type": "color",
+        "$value": "#edeff3"
+      },
+      "item-hover": {
+        "$type": "color",
+        "$value": "#d1d7e0"
+      },
+      "scroll": {
+        "$type": "color",
+        "$value": "#d1d7e0"
       }
     },
     "tag": {
@@ -550,6 +576,12 @@
       "duration-lg": {
         "$type": "color",
         "$value": "2s"
+      }
+    },
+    "tabs": {
+      "indicator": {
+        "$type": "color",
+        "$value": "150ms"
       }
     },
     "text-field": {
@@ -882,6 +914,28 @@
         "$value": -10
       }
     },
+    "tabs": {
+      "folder-min-width": {
+        "$type": "number",
+        "$value": 174
+      },
+      "folder-scroll-height": {
+        "$type": "number",
+        "$value": 50
+      },
+      "indicator": {
+        "$type": "number",
+        "$value": 2
+      },
+      "scroll": {
+        "$type": "number",
+        "$value": 48
+      },
+      "scroll-icon": {
+        "$type": "number",
+        "$value": 20
+      }
+    },
     "text-field": {
       "helper-icon": {
         "$type": "number",
@@ -1144,6 +1198,16 @@
       "vertical-sm": {
         "$type": "number",
         "$value": 36
+      }
+    },
+    "tabs": {
+      "focus-inset": {
+        "$type": "number",
+        "$value": 3
+      },
+      "navigation-block": {
+        "$type": "number",
+        "$value": 25
       }
     },
     "text-field": {

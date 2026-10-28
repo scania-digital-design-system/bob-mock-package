@@ -21,7 +21,8 @@ Terms (cell, bootstrap, blessing, golden reference, ratchet) follow the backbone
 - Components: every Tegel 1.66.1 component folder, the 33 components plus the navigation
   pattern (`header`, `side-menu`) (ADR 0006 D1). Done: badge, button, link, spinner, card,
   divider, block, tag, message, breadcrumbs, stepper, footer, checkbox, radio-button,
-  toggle, chip, textarea, accordion, banner, toast, text-field.
+  toggle, chip, textarea, accordion, banner, toast, text-field, tabs (folder, inline,
+  navigation).
 - Light mode only; dark mode, `modeVariant` and `animation` are out (ADR 0002 D8).
 - Tegel is final; there is no design iteration. A difference between a cell and Tegel
   that BOB's conventions force is a **finding**, recorded in `docs/findings/<component>.md`.

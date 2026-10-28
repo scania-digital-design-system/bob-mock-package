@@ -47,6 +47,13 @@ const DEPARTURES: Record<string, { dropped?: string[]; added?: string[] }> = {
   banner: { added: ['actions'], dropped: ['hideBanner', 'showBanner'] },
   toast: { added: ['actions'], dropped: ['hideToast', 'showToast'] },
   'text-field': { added: ['prefix', 'suffix'], dropped: ['focusElement'] },
+  // The parent marks the selected tab in the DOM, so the tab's internal methods go too.
+  'folder-tabs': { added: ['children'], dropped: ['selectTab', 'reinitialize'] },
+  'folder-tab': { added: ['children'], dropped: ['setSelected', 'setTabWidth'] },
+  'inline-tabs': { added: ['children'], dropped: ['selectTab', 'reinitialize'] },
+  'inline-tab': { added: ['children'], dropped: ['setSelected'] },
+  'navigation-tabs': { added: ['children'], dropped: ['selectTab', 'reinitialize'] },
+  'navigation-tab': { added: ['children'], dropped: ['setSelected'] },
 };
 
 // Read by path: the package's "exports" map does not expose this file.

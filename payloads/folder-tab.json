@@ -1,0 +1,13 @@
+{
+  "component": "folder-tab",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-folder-tab at @scania/tegel@1.66.1: one folder tab around a tab button or link.",
+    "properties": [
+      { "name": "disabled", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "children", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": []
+  }
+}

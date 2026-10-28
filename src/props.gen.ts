@@ -377,3 +377,61 @@ export type TextFieldProps = {
   onTdsBlur?: (event: CustomEvent<FocusEvent>) => void;
   onTdsError?: (event: CustomEvent<{ originalValue: string; clampedValue: string; reason: 'min' | 'max' }>) => void;
 };
+
+export type FolderTabsProps = {
+  /** @default '0' */
+  defaultSelectedIndex?: string;
+  selectedIndex?: string;
+  /** @default 'Scroll left' */
+  tdsScrollLeftAriaLabel?: string;
+  /** @default 'Scroll right' */
+  tdsScrollRightAriaLabel?: string;
+  children?: ReactNode;
+  onTdsChange?: (event: CustomEvent<{ selectedTabIndex: number }>) => void;
+};
+
+export type FolderTabProps = {
+  /** @default false */
+  disabled?: boolean;
+  children?: ReactNode;
+};
+
+export type InlineTabsProps = {
+  /** @default '0' */
+  defaultSelectedIndex?: string;
+  selectedIndex?: string;
+  /** @default '32' */
+  leftPadding?: '0' | '8' | '16' | '24' | '32' | '40' | '48';
+  /** @default 'Scroll left' */
+  tdsScrollLeftAriaLabel?: string;
+  /** @default 'Scroll right' */
+  tdsScrollRightAriaLabel?: string;
+  children?: ReactNode;
+  onTdsChange?: (event: CustomEvent<{ selectedTabIndex: number }>) => void;
+};
+
+export type InlineTabProps = {
+  /** @default false */
+  disabled?: boolean;
+  children?: ReactNode;
+};
+
+export type NavigationTabsProps = {
+  /** @default '0' */
+  defaultSelectedIndex?: string;
+  selectedIndex?: string;
+  /** @default '32' */
+  leftPadding?: '0' | '8' | '16' | '24' | '32' | '40' | '48';
+  /** @default 'Scroll left' */
+  tdsScrollLeftAriaLabel?: string;
+  /** @default 'Scroll right' */
+  tdsScrollRightAriaLabel?: string;
+  children?: ReactNode;
+  onTdsChange?: (event: CustomEvent<{ selectedTabIndex: number }>) => void;
+};
+
+export type NavigationTabProps = {
+  /** @default false */
+  disabled?: boolean;
+  children?: ReactNode;
+};

@@ -60,6 +60,7 @@ name is in the generated `tegel` set.
 | Footer mobile toggle | 148 |
 | Checkbox, radio button, toggle, chip, textarea | 210 |
 | Accordion, banner, toast, text field | 249 |
+| Folder, inline and navigation tabs | 263 |
 
 ## Foundation set
 
@@ -406,3 +407,25 @@ Reused: `color/system/{info,success,danger-discrete}`, `color/danger`,
 `color/border/{subtle,strong,soft,defined}`, `radius/input`, `border/input`, the
 `detail-02`, `detail-03`, `detail-05`, `detail-07`, `headline-06` and `headline-07`
 tokens.
+
+### Folder, inline and navigation tabs
+
+Source: each family's `.scss` and `-vars.scss` in `packages/core/src/components/tabs/`, the
+Scania light block of `tokens/scss/component/tabs.scss`, and `tokens/scss/scania/primitive.scss`.
+The three families share the `tabs` names.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `color/tabs/item`, `color/tabs/item-hover` | `#edeff3`, `#d1d7e0` | `--component-tabs-background-item-primary-{default,hover}` = grey-100, grey-200 |
+| `color/tabs/scroll` | `#d1d7e0` | `--component-tabs-background-scroll-default` = grey-200 (folder scroll buttons) |
+| `color/tabs/indicator`, `color/tabs/indicator-hover` | `#2a6ecf`, `#1c222b` | `--component-tabs-border-item-{indicator-default,hover}` = blue-400, grey-850 |
+| `border/tabs-indicator`, `size/tabs/indicator` | 2, 2 | folder selected `border-top`, inline and navigation indicator height |
+| `size/tabs/scroll`, `size/tabs/scroll-icon` | 48, 20 | scroll button `min-width`, `tds-icon` size |
+| `size/tabs/folder-scroll-height`, `size/tabs/folder-min-width` | 50, 174 | folder scroll button height; `min-width: 142px` plus 2 × 16px padding (the cell is `border-box`) |
+| `space/tabs/focus-inset`, `space/tabs/navigation-block` | 3, 25 | focus ring `inset`, navigation tab vertical padding |
+| `motion/tabs/indicator` (carrier) | `150ms` | colour and indicator `transition` |
+
+Reused: `color/background/{base,layer-01,none}`, `color/border/{discrete,none}`,
+`color/icon/strong`, `color/text/{strong,soft}`, `opacity/disabled`, `border/control`,
+`space/element/{8,16,20,24,32,40,48}`, the focus ring tokens and the `headline-07` and
+detail tokens (Tegel's `title-01`).
