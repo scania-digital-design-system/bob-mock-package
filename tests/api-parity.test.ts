@@ -74,6 +74,19 @@ const DEPARTURES: Record<string, { dropped?: string[]; added?: string[] }> = {
     added: ['body', 'actions'],
     dropped: ['showModal', 'closeModal', 'isOpen', 'initializeModal', 'cleanupModal'],
   },
+  // CSS anchor positioning places the popover: Popper's modifiers and a free offset need
+  // a style, which a cell cannot set.
+  'popover-core': {
+    added: ['children'],
+    dropped: ['close', 'modifiers', 'offsetDistance', 'offsetSkidding'],
+  },
+  'popover-canvas': {
+    added: ['children'],
+    dropped: ['close', 'modifiers', 'offsetDistance', 'offsetSkidding'],
+  },
+  'popover-menu': { added: ['children'], dropped: ['close', 'offsetDistance', 'offsetSkidding'] },
+  'popover-menu-item': { added: ['children'] },
+  tooltip: { added: ['children'], dropped: ['offsetDistance', 'offsetSkidding'] },
 };
 
 // Read by path: the package's "exports" map does not expose this file.

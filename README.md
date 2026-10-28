@@ -10,7 +10,7 @@ This package is for testing BOB. It is not a product. Do not use it in productio
 
 Scania brand, light mode only.
 
-- Content: `Badge`, `Block`, `Card`, `Divider`, `Link`, `Message`, `Spinner`, `Tag`
+- Content: `Badge`, `Block`, `Card`, `Divider`, `Icon`, `Link`, `Message`, `Spinner`, `Tag`
 - Actions: `Button`, `Chip`
 - Navigation: `Breadcrumbs` with `Breadcrumb`, `Stepper` with `Step`, `Footer` with
   `FooterGroup` and `FooterItem`, `FolderTabs` with `FolderTab`, `InlineTabs` with
@@ -18,6 +18,7 @@ Scania brand, light mode only.
 - Forms: `Checkbox`, `Datetime`, `Dropdown` with `DropdownOption`, `RadioButton`, `Slider`,
   `TextField`, `Textarea`, `Toggle`
 - Disclosure and feedback: `Accordion` with `AccordionItem`, `Banner`, `Modal`, `Toast`
+- Overlays: `PopoverCore`, `PopoverCanvas`, `PopoverMenu` with `PopoverMenuItem`, `Tooltip`
 
 ## Install
 

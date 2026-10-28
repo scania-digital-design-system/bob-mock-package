@@ -75,6 +75,10 @@ export const OVERRIDES: Record<string, Record<string, string>> = {
     onTdsClose: '(event: CustomEvent<Event>) => void',
     onTdsOpen: '(event: CustomEvent<void>) => void',
   },
+  'popover-core': { referenceEl: 'HTMLElement | null' },
+  'popover-canvas': { referenceEl: 'HTMLElement | null' },
+  'popover-menu': { referenceEl: 'HTMLElement | null' },
+  tooltip: { referenceEl: 'HTMLElement | null' },
   'folder-tabs': { onTdsChange: '(event: CustomEvent<{ selectedTabIndex: number }>) => void' },
   'inline-tabs': { onTdsChange: '(event: CustomEvent<{ selectedTabIndex: number }>) => void' },
   'navigation-tabs': {

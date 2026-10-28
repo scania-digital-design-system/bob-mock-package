@@ -9,6 +9,7 @@ import {
   FOOTER_START,
   FOOTER_TOP,
   ICON_PATH,
+  MENU_ITEMS,
   NESTED_BLOCKS,
   SECTIONS,
   STEPS,
@@ -138,6 +139,11 @@ function compoundChildren(props: Record<string, unknown>): HTMLElement[] {
       child('tds-dropdown-option', { value, disabled: Boolean(disabled) }, label),
     );
   }
+  if (props.menuItems) {
+    return MENU_ITEMS.map(({ label, disabled }) =>
+      child('tds-popover-menu-item', { disabled: Boolean(disabled) }, anchor(label, '#menu')),
+    );
+  }
   if (props.tabs) {
     return TABS.map(({ label, disabled }) =>
       child(
@@ -191,6 +197,7 @@ function element(tag: string, { props }: DemoCase): HTMLElement {
     actionLink,
     tabs,
     options,
+    menuItems,
     ...rest
   } = props;
   // Form controls take their label through a "label" slot; the textarea's label is a prop.
@@ -208,6 +215,7 @@ function element(tag: string, { props }: DemoCase): HTMLElement {
       actionLink,
       tabs,
       options,
+      menuItems,
     }),
   );
   if (icon) {

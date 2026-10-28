@@ -1,0 +1,77 @@
+/* A native popover in the top layer, placed next to its reference with CSS anchor
+   positioning (as popover-core). */
+.tl-popover-menu {
+  box-sizing: border-box;
+  inset: auto;
+  margin: 0;
+  padding: var(--space-popover-menu-block) 0;
+  border: 0;
+  border-radius: var(--radius-popover);
+  overflow: hidden;
+  background-color: var(--color-background-layer-01);
+  box-shadow: 0 var(--size-shadow-2) var(--size-shadow-3) 0 var(--color-shadow-10);
+  color: var(--color-text-strong);
+  position-try-fallbacks: flip-block, flip-inline;
+}
+.tl-popover-menu--fluid-width-false {
+  width: var(--size-popover-menu-width);
+}
+.tl-popover-menu--fluid-width-true {
+  width: auto;
+}
+.tl-popover-menu__list > [role='separator'] {
+  padding: var(--space-popover-menu-block);
+}
+
+/* Placement (Popper's names) */
+.tl-popover-menu--auto,
+.tl-popover-menu--bottom {
+  position-area: bottom;
+  margin-top: var(--space-popover-offset);
+}
+.tl-popover-menu--auto-start,
+.tl-popover-menu--bottom-start {
+  position-area: bottom span-right;
+  margin-top: var(--space-popover-offset);
+}
+.tl-popover-menu--auto-end,
+.tl-popover-menu--bottom-end {
+  position-area: bottom span-left;
+  margin-top: var(--space-popover-offset);
+}
+.tl-popover-menu--top {
+  position-area: top;
+  margin-bottom: var(--space-popover-offset);
+}
+.tl-popover-menu--top-start {
+  position-area: top span-right;
+  margin-bottom: var(--space-popover-offset);
+}
+.tl-popover-menu--top-end {
+  position-area: top span-left;
+  margin-bottom: var(--space-popover-offset);
+}
+.tl-popover-menu--right {
+  position-area: right;
+  margin-left: var(--space-popover-offset);
+}
+.tl-popover-menu--right-start {
+  position-area: right span-bottom;
+  margin-left: var(--space-popover-offset);
+}
+.tl-popover-menu--right-end {
+  position-area: right span-top;
+  margin-left: var(--space-popover-offset);
+}
+.tl-popover-menu--left {
+  position-area: left;
+  margin-right: var(--space-popover-offset);
+}
+.tl-popover-menu--left-start {
+  position-area: left span-bottom;
+  margin-right: var(--space-popover-offset);
+}
+.tl-popover-menu--left-end {
+  position-area: left span-top;
+  margin-right: var(--space-popover-offset);
+}

@@ -53,10 +53,17 @@ Each `<component>.md` keeps the full detail. Prompt line numbers (L11, L12) refe
 | slider | PASS | PASS | 1 method dropped | 11 | 3 | 31 |
 | dropdown | PASS | Relaxed | 1 added, 7 methods dropped | 14 (family) | 3 (family) | 26 (family) |
 | dropdown-option | PASS | Relaxed | 1 added, 1 method and 2 events dropped | — | — | — |
+| icon | PASS | PASS | exact | 6 | 3 | 263 |
+| popover-core | PASS | PASS | 1 added, 1 method and 3 props dropped | 11 (popover) | 3 (popover) | 9 (popover) |
+| popover-canvas | PASS | PASS | 1 added, 1 method and 3 props dropped | — | — | — |
+| popover-menu | PASS | PASS | 1 added, 1 method and 2 props dropped | — | — | — |
+| popover-menu-item | PASS | PASS | 1 added | — | — | — |
+| tooltip | PASS | PASS | 1 added, 2 props dropped | 5 | 0 (popover's apply) | 3 |
 
 A family (a parent and its children) shares one findings file, so its departures and
-findings are counted once. The three tabs families share `tabs.md`. The foundation set
-adds 31 tokens. The `tegel` set has 342 names in total. BOB's stock set has 45.
+findings are counted once. The three tabs families share `tabs.md`; the four popover
+cells share `popover.md`. The foundation set adds 31 tokens. The `tegel` set has 617
+names in total, 263 of them icon paths. BOB's stock set has 45.
 
 ## Findings about BOB
 
@@ -141,6 +148,8 @@ A modifier class cannot come from logic.
 
 - **spinner, card:** durations and timings are carried as `COLOR`.
 - **footer:** the wordmark URL is carried as `COLOR`. BOB has no image or asset type.
+- **icon:** the 263 SVG paths are carried as `COLOR` (`path('…')`). BOB has no string
+  type, and no way to load a token only where a cell uses it.
 - **stepper:** Tegel's literal line geometry becomes 13 tokens named by value.
 - **card:** shadows are composed from `size` offsets and 8-digit hex `color` tokens.
 - **modal:** `85vh` is carried as `COLOR`, because a `FLOAT` token is always pixels.
@@ -256,7 +265,9 @@ Choose between a `return` branch and `:has()` like this:
 |---|---|---|---|---|
 | Mutable internal state | No hooks (L12) | Use a native element that holds state (`<details>`). The prop sets the initial state. | Different toggle area and name. A prop change after a user toggle is ignored. | card `expanded` |
 | Open state, focus trap and Escape (a modal) | No hooks or listeners (L12) | A native `<dialog>`: `showModal()` and `close()` from a callback ref and handlers; `cancel` for Escape. | Tab can reach the browser's controls. | modal |
-| A listener on an element outside the cell (`selector`, `referenceEl`) | No effects (L12) | Add it in a callback ref. Remove it when React calls that ref with `null`. | The listener is replaced on every render. | modal |
+| A listener on an element outside the cell (`selector`, `referenceEl`) | No effects (L12) | Add it in a callback ref. Remove it when React calls that ref with `null`. | The listener is replaced on every render. | modal, popovers, tooltip |
+| A floating element placed by script (Popper.js) | No `style` attribute; no imports (L12) | A native popover. `showPopover({ source })` sets the reference as anchor; a `position-area` rule per placement places it. | Needs anchor positioning; free offsets are dropped; `auto` opens below and flips. | popovers, tooltip |
+| A setting that applies once (`defaultShow`) | No hooks (L12) | Apply it on the first attach of the ref, and mark the element with a `data-` attribute. | React does not own the attribute. | popovers, tooltip |
 | Mutable state that no native element can hold | No hooks (L12) | Relaxation `react-hooks`: `useState`. Expose the state as an ARIA attribute (`aria-expanded`) or `hidden`, and style it with an attribute selector. | Breaks L12. Class closure does not see the state. | footer-group mobile toggle, accordion-item, banner, toast |
 | A mutable prop that a class shows (`state` after validation) | Bare prop name only (L11) | With `react-hooks`: rename the prop (`state: initialState`) and give the state variable the prop's name. It holds only the prop's declared values. | The checks cannot tell the variable from the prop. A later prop change is ignored. | datetime |
 | A cancelable event (`tdsToggle`, `tdsClose`) | No event emitter | Build a `CustomEvent` with `cancelable: true`, pass it to the callback, then change state only if `!event.defaultPrevented`. | Needs `react-hooks` for the state. | accordion-item, banner, toast |
@@ -280,6 +291,7 @@ Choose between a `return` branch and `:has()` like this:
 | A value with no token type (duration, opacity, shadow) | Only `COLOR`, `FLOAT` (px) and `STRING` (font family) | Carry it as `COLOR`. Compose a shadow from `size` and `color` tokens. | Wrong `$type` in `tokens.dtcg.json`. | spinner, card |
 | A font weight | No font-weight token | Use the keyword (`bold`). | Not a token. | badge |
 | A brand asset (a logo URL) | No image or URL type | Carry it as `COLOR`, in an `image/…` category. | Wrong `$type` in `tokens.dtcg.json`. | footer wordmark |
+| A value per name from an open set (icon paths) | Every value is a token; bare prop name only (L11) | One token per name (`icon/<name>/d`) and one modifier rule per name that reads it with the CSS `d` property. | 263 tokens and rules; every consumer loads every path. | icon |
 | Literal geometry with no meaning to name | Every value is a token | One token per value, named by the value (`size/stepper/13`). | Names carry no meaning. | stepper |
 | A breakpoint | CSS cannot read `var()` in a media query | Keep the literal in the media query. | Not a token; no check sees it. | footer |
 | A spacing token on `width` or `height` | `token-usage`: `space` only on padding, margin, gap, inset | A `size` token with the same value. | More tokens. | button icon |
@@ -296,6 +308,7 @@ Choose between a `return` branch and `:has()` like this:
 | A number prop | Surface types are `VARIANT`, `BOOLEAN`, `TEXT`, `INSTANCE_SWAP` | Declare it `TEXT`. Convert with `Number()` where the cell computes with it. | The prop type is `string`. | textarea `maxLength`, `cols`, `rows`; radio `tdsTabIndex`; tabs indices |
 | A number prop that sets a style (`--padding-left`) | No `style` attribute; no number type | A `VARIANT` with a fixed list of values. Each value is a modifier with a token. | Other values are not possible. | inline and navigation tabs `leftPadding` |
 | An element method (`@Method`) | No ref handle (L12); no method in the contract | Drop it. List it as `dropped` in `tests/api-parity.test.ts`. | The method is lost. | checkbox, radio-button, toggle, textarea |
+| A free number that moves an element (`offsetDistance`, `offsetSkidding`) or a library option (`modifiers`) | No `style` attribute; no number type | Drop it. The default becomes a token. | Other offsets are not possible. | popovers, tooltip |
 | A DOM property that JSX cannot set (`indeterminate`) | No hooks (L12) | Set it in a callback ref: `ref={(el) => …}` needs no import. | Runs on every render. | checkbox |
 | A DOM call from a handler (focus, value) | No refs (L12) | Use `event.target` or `event.currentTarget` in the handler. | None. | text-field click-to-focus and clamping |
 | A label tied to the input by a random id | No `useId` (L12) | Wrap the input and its text in one `<label>`. | The label element is the root. | checkbox, radio-button, toggle, chip |

@@ -1,0 +1,81 @@
+{
+  "component": "tooltip",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-tooltip at @scania/tegel@1.66.1: a short text in a dark box next to a reference element, shown on hover or click.",
+    "properties": [
+      {
+        "name": "text",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "selector",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "defaultShow",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "mouseOverTooltip",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "trigger",
+        "type": "VARIANT",
+        "values": ["click", "hover"]
+      },
+      {
+        "name": "show",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "placement",
+        "type": "VARIANT",
+        "values": [
+          "auto",
+          "auto-start",
+          "auto-end",
+          "top",
+          "top-start",
+          "top-end",
+          "bottom",
+          "bottom-start",
+          "bottom-end",
+          "right",
+          "right-start",
+          "right-end",
+          "left",
+          "left-start",
+          "left-end"
+        ]
+      },
+      {
+        "name": "tdsAriaDescribedby",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": [
+      {
+        "property": "trigger",
+        "disposition": "prop"
+      },
+      {
+        "property": "placement",
+        "disposition": "prop"
+      }
+    ]
+  }
+}

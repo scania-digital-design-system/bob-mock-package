@@ -1,0 +1,41 @@
+{
+  "component": "popover-core",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-popover-core at @scania/tegel@1.66.1: an unstyled popover that opens from a reference element by click or hover and sits next to it.",
+    "properties": [
+      { "name": "selector", "type": "TEXT", "values": [] },
+      { "name": "defaultShow", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "show", "type": "BOOLEAN", "values": ["true", "false"] },
+      {
+        "name": "placement",
+        "type": "VARIANT",
+        "values": [
+          "auto",
+          "auto-start",
+          "auto-end",
+          "top",
+          "top-start",
+          "top-end",
+          "bottom",
+          "bottom-start",
+          "bottom-end",
+          "right",
+          "right-start",
+          "right-end",
+          "left",
+          "left-start",
+          "left-end"
+        ]
+      },
+      { "name": "trigger", "type": "VARIANT", "values": ["click", "hover", "hover-popover"] },
+      { "name": "autoHide", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "children", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": [
+      { "property": "placement", "disposition": "prop" },
+      { "property": "trigger", "disposition": "prop" }
+    ]
+  }
+}

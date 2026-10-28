@@ -1,0 +1,1218 @@
+.tl-icon {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+}
+.tl-icon__path {
+  fill: currentColor;
+}
+.tl-icon--24v_battery .tl-icon__path {
+  d: var(--icon-24v_battery-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--24v_battery_inactive .tl-icon__path {
+  d: var(--icon-24v_battery_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--acceleration .tl-icon__path {
+  d: var(--icon-acceleration-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--acceleration_inactive .tl-icon__path {
+  d: var(--icon-acceleration_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--adblue .tl-icon__path {
+  d: var(--icon-adblue-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--adblue_inactive .tl-icon__path {
+  d: var(--icon-adblue_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--agent .tl-icon__path {
+  d: var(--icon-agent-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--arrow_diagonal .tl-icon__path {
+  d: var(--icon-arrow_diagonal-d);
+}
+.tl-icon--arrow_down .tl-icon__path {
+  d: var(--icon-arrow_down-d);
+}
+.tl-icon--arrow_left .tl-icon__path {
+  d: var(--icon-arrow_left-d);
+}
+.tl-icon--arrow_right .tl-icon__path {
+  d: var(--icon-arrow_right-d);
+}
+.tl-icon--arrow_up .tl-icon__path {
+  d: var(--icon-arrow_up-d);
+}
+.tl-icon--audio .tl-icon__path {
+  d: var(--icon-audio-d);
+}
+.tl-icon--audio_inactive .tl-icon__path {
+  d: var(--icon-audio_inactive-d);
+}
+.tl-icon--award .tl-icon__path {
+  d: var(--icon-award-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--back .tl-icon__path {
+  d: var(--icon-back-d);
+}
+.tl-icon--backward .tl-icon__path {
+  d: var(--icon-backward-d);
+}
+.tl-icon--backward_inactive .tl-icon__path {
+  d: var(--icon-backward_inactive-d);
+}
+.tl-icon--bento .tl-icon__path {
+  d: var(--icon-bento-d);
+}
+.tl-icon--bug .tl-icon__path {
+  d: var(--icon-bug-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--bug_inactive .tl-icon__path {
+  d: var(--icon-bug_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--burger .tl-icon__path {
+  d: var(--icon-burger-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--bus .tl-icon__path {
+  d: var(--icon-bus-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--bus_inactive .tl-icon__path {
+  d: var(--icon-bus_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--cab_door .tl-icon__path {
+  d: var(--icon-cab_door-d);
+}
+.tl-icon--calendar .tl-icon__path {
+  d: var(--icon-calendar-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--calendar_inactive .tl-icon__path {
+  d: var(--icon-calendar_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--camera .tl-icon__path {
+  d: var(--icon-camera-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--camera_inactive .tl-icon__path {
+  d: var(--icon-camera_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--card .tl-icon__path {
+  d: var(--icon-card-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--cart .tl-icon__path {
+  d: var(--icon-cart-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--charging_complete .tl-icon__path {
+  d: var(--icon-charging_complete-d);
+}
+.tl-icon--charging_failed .tl-icon__path {
+  d: var(--icon-charging_failed-d);
+}
+.tl-icon--charging_speed .tl-icon__path {
+  d: var(--icon-charging_speed-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--charging_speed_inactive .tl-icon__path {
+  d: var(--icon-charging_speed_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--charging_stopped .tl-icon__path {
+  d: var(--icon-charging_stopped-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--chevron_down .tl-icon__path {
+  d: var(--icon-chevron_down-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--chevron_left .tl-icon__path {
+  d: var(--icon-chevron_left-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--chevron_right .tl-icon__path {
+  d: var(--icon-chevron_right-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--chevron_up .tl-icon__path {
+  d: var(--icon-chevron_up-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--clock .tl-icon__path {
+  d: var(--icon-clock-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--clock_inactive .tl-icon__path {
+  d: var(--icon-clock_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--configurator .tl-icon__path {
+  d: var(--icon-configurator-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--contact .tl-icon__path {
+  d: var(--icon-contact-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--contact_inactive .tl-icon__path {
+  d: var(--icon-contact_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--cookie .tl-icon__path {
+  d: var(--icon-cookie-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--cookie_inactive .tl-icon__path {
+  d: var(--icon-cookie_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--coolant_level .tl-icon__path {
+  d: var(--icon-coolant_level-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--coolant_level_inactive .tl-icon__path {
+  d: var(--icon-coolant_level_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--copy .tl-icon__path {
+  d: var(--icon-copy-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--cross .tl-icon__path {
+  d: var(--icon-cross-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--cup .tl-icon__path {
+  d: var(--icon-cup-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--cup_inactive .tl-icon__path {
+  d: var(--icon-cup_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--dashboard .tl-icon__path {
+  d: var(--icon-dashboard-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--department .tl-icon__path {
+  d: var(--icon-department-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--department_inactive .tl-icon__path {
+  d: var(--icon-department_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--departure_scheduling .tl-icon__path {
+  d: var(--icon-departure_scheduling-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--departure_scheduling_inactive .tl-icon__path {
+  d: var(--icon-departure_scheduling_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--diamond .tl-icon__path {
+  d: var(--icon-diamond-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--diamond_inactive .tl-icon__path {
+  d: var(--icon-diamond_inactive-d);
+}
+.tl-icon--document .tl-icon__path {
+  d: var(--icon-document-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--document_check .tl-icon__path {
+  d: var(--icon-document_check-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--document_doc .tl-icon__path {
+  d: var(--icon-document_doc-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--document_eye .tl-icon__path {
+  d: var(--icon-document_eye-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--document_pdf .tl-icon__path {
+  d: var(--icon-document_pdf-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--document_plus .tl-icon__path {
+  d: var(--icon-document_plus-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--document_plus_inactive .tl-icon__path {
+  d: var(--icon-document_plus_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--document_ppt .tl-icon__path {
+  d: var(--icon-document_ppt-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--document_tool .tl-icon__path {
+  d: var(--icon-document_tool-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--document_wrong .tl-icon__path {
+  d: var(--icon-document_wrong-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--document_xls .tl-icon__path {
+  d: var(--icon-document_xls-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--dollar .tl-icon__path {
+  d: var(--icon-dollar-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--doner .tl-icon__path {
+  d: var(--icon-doner-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--double_kebab .tl-icon__path {
+  d: var(--icon-double_kebab-d);
+}
+.tl-icon--download .tl-icon__path {
+  d: var(--icon-download-d);
+}
+.tl-icon--driver .tl-icon__path {
+  d: var(--icon-driver-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--driving_licence .tl-icon__path {
+  d: var(--icon-driving_licence-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--driving_licence_inactive .tl-icon__path {
+  d: var(--icon-driving_licence_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--drop .tl-icon__path {
+  d: var(--icon-drop-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--drop_inactive .tl-icon__path {
+  d: var(--icon-drop_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--edit .tl-icon__path {
+  d: var(--icon-edit-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--edit_inactive .tl-icon__path {
+  d: var(--icon-edit_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--email .tl-icon__path {
+  d: var(--icon-email-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--email_open .tl-icon__path {
+  d: var(--icon-email_open-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--employee .tl-icon__path {
+  d: var(--icon-employee-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--engine .tl-icon__path {
+  d: var(--icon-engine-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--engine_inactive .tl-icon__path {
+  d: var(--icon-engine_inactive-d);
+}
+.tl-icon--environment .tl-icon__path {
+  d: var(--icon-environment-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--environment_inactive .tl-icon__path {
+  d: var(--icon-environment_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--error .tl-icon__path {
+  d: var(--icon-error-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--exit .tl-icon__path {
+  d: var(--icon-exit-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--expand .tl-icon__path {
+  d: var(--icon-expand-d);
+}
+.tl-icon--expand_inactive .tl-icon__path {
+  d: var(--icon-expand_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--export .tl-icon__path {
+  d: var(--icon-export-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--export_inactive .tl-icon__path {
+  d: var(--icon-export_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--eye .tl-icon__path {
+  d: var(--icon-eye-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--eye_inactive .tl-icon__path {
+  d: var(--icon-eye_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--face_dissatisfied .tl-icon__path {
+  d: var(--icon-face_dissatisfied-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--face_neutral .tl-icon__path {
+  d: var(--icon-face_neutral-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--face_satisfied .tl-icon__path {
+  d: var(--icon-face_satisfied-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--factory .tl-icon__path {
+  d: var(--icon-factory-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--factory_inactive .tl-icon__path {
+  d: var(--icon-factory_inactive-d);
+}
+.tl-icon--ferry .tl-icon__path {
+  d: var(--icon-ferry-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--ferry_inactive .tl-icon__path {
+  d: var(--icon-ferry_inactive-d);
+}
+.tl-icon--filters .tl-icon__path {
+  d: var(--icon-filters-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--filters_inactive .tl-icon__path {
+  d: var(--icon-filters_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--flash .tl-icon__path {
+  d: var(--icon-flash-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--flash_inactive .tl-icon__path {
+  d: var(--icon-flash_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--folder .tl-icon__path {
+  d: var(--icon-folder-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--forward .tl-icon__path {
+  d: var(--icon-forward-d);
+}
+.tl-icon--forward_inactive .tl-icon__path {
+  d: var(--icon-forward_inactive-d);
+}
+.tl-icon--fuel .tl-icon__path {
+  d: var(--icon-fuel-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--fuel_gauge .tl-icon__path {
+  d: var(--icon-fuel_gauge-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--fuel_gauge_inactive .tl-icon__path {
+  d: var(--icon-fuel_gauge_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--fuel_inactive .tl-icon__path {
+  d: var(--icon-fuel_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--gift .tl-icon__path {
+  d: var(--icon-gift-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--gift_inactive .tl-icon__path {
+  d: var(--icon-gift_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--global .tl-icon__path {
+  d: var(--icon-global-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--guided_tour .tl-icon__path {
+  d: var(--icon-guided_tour-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--guided_tour_inactive .tl-icon__path {
+  d: var(--icon-guided_tour_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--hatch_open .tl-icon__path {
+  d: var(--icon-hatch_open-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--hatch_open_1 .tl-icon__path {
+  d: var(--icon-hatch_open_1-d);
+}
+.tl-icon--hatch_open_2 .tl-icon__path {
+  d: var(--icon-hatch_open_2-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--hatch_open_inactive .tl-icon__path {
+  d: var(--icon-hatch_open_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--heart .tl-icon__path {
+  d: var(--icon-heart-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--heart_inactive .tl-icon__path {
+  d: var(--icon-heart_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--heating_inactive_screen .tl-icon__path {
+  d: var(--icon-heating_inactive_screen-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--history .tl-icon__path {
+  d: var(--icon-history-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--history_inactive .tl-icon__path {
+  d: var(--icon-history_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--home .tl-icon__path {
+  d: var(--icon-home-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--home_inactive .tl-icon__path {
+  d: var(--icon-home_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--idea .tl-icon__path {
+  d: var(--icon-idea-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--idea_inactive .tl-icon__path {
+  d: var(--icon-idea_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--image .tl-icon__path {
+  d: var(--icon-image-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--image_add .tl-icon__path {
+  d: var(--icon-image_add-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--image_inactive .tl-icon__path {
+  d: var(--icon-image_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--image_set .tl-icon__path {
+  d: var(--icon-image_set-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--info .tl-icon__path {
+  d: var(--icon-info-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--insights .tl-icon__path {
+  d: var(--icon-insights-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--kebab .tl-icon__path {
+  d: var(--icon-kebab-d);
+}
+.tl-icon--key .tl-icon__path {
+  d: var(--icon-key-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--key_inactive .tl-icon__path {
+  d: var(--icon-key_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--language .tl-icon__path {
+  d: var(--icon-language-d);
+}
+.tl-icon--layer .tl-icon__path {
+  d: var(--icon-layer-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--layer_inactive .tl-icon__path {
+  d: var(--icon-layer_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--line_chart .tl-icon__path {
+  d: var(--icon-line_chart-d);
+}
+.tl-icon--link .tl-icon__path {
+  d: var(--icon-link-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--link_broken .tl-icon__path {
+  d: var(--icon-link_broken-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--list .tl-icon__path {
+  d: var(--icon-list-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--list_inactive .tl-icon__path {
+  d: var(--icon-list_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--lock .tl-icon__path {
+  d: var(--icon-lock-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--manager .tl-icon__path {
+  d: var(--icon-manager-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--map_cursor .tl-icon__path {
+  d: var(--icon-map_cursor-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--map_cursor_inactive .tl-icon__path {
+  d: var(--icon-map_cursor_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--maximize_fullscreen .tl-icon__path {
+  d: var(--icon-maximize_fullscreen-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--meatballs .tl-icon__path {
+  d: var(--icon-meatballs-d);
+}
+.tl-icon--merge .tl-icon__path {
+  d: var(--icon-merge-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--merge_inactive .tl-icon__path {
+  d: var(--icon-merge_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--message .tl-icon__path {
+  d: var(--icon-message-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--message_ai .tl-icon__path {
+  d: var(--icon-message_ai-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--message_inactive .tl-icon__path {
+  d: var(--icon-message_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--microphone .tl-icon__path {
+  d: var(--icon-microphone-d);
+}
+.tl-icon--microphone_ai .tl-icon__path {
+  d: var(--icon-microphone_ai-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--microphone_inactive .tl-icon__path {
+  d: var(--icon-microphone_inactive-d);
+}
+.tl-icon--mileage .tl-icon__path {
+  d: var(--icon-mileage-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--mileage_inactive .tl-icon__path {
+  d: var(--icon-mileage_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--minimize_fullscreen .tl-icon__path {
+  d: var(--icon-minimize_fullscreen-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--minus .tl-icon__path {
+  d: var(--icon-minus-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--navigate .tl-icon__path {
+  d: var(--icon-navigate-d);
+}
+.tl-icon--navigate_inactive .tl-icon__path {
+  d: var(--icon-navigate_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--notification .tl-icon__path {
+  d: var(--icon-notification-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--notification_inactive .tl-icon__path {
+  d: var(--icon-notification_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--notification_snooze .tl-icon__path {
+  d: var(--icon-notification_snooze-d);
+}
+.tl-icon--oil_level .tl-icon__path {
+  d: var(--icon-oil_level-d);
+}
+.tl-icon--oil_level_inactive .tl-icon__path {
+  d: var(--icon-oil_level_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--paperclip .tl-icon__path {
+  d: var(--icon-paperclip-d);
+}
+.tl-icon--pause .tl-icon__path {
+  d: var(--icon-pause-d);
+}
+.tl-icon--pause_inactive .tl-icon__path {
+  d: var(--icon-pause_inactive-d);
+}
+.tl-icon--phone .tl-icon__path {
+  d: var(--icon-phone-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--phone_inactive .tl-icon__path {
+  d: var(--icon-phone_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--pie_chart .tl-icon__path {
+  d: var(--icon-pie_chart-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--pin .tl-icon__path {
+  d: var(--icon-pin-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--pin_inactive .tl-icon__path {
+  d: var(--icon-pin_inactive-d);
+}
+.tl-icon--placeholder .tl-icon__path {
+  d: var(--icon-placeholder-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--play .tl-icon__path {
+  d: var(--icon-play-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--play_inactive .tl-icon__path {
+  d: var(--icon-play_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--plus .tl-icon__path {
+  d: var(--icon-plus-d);
+}
+.tl-icon--powerplug .tl-icon__path {
+  d: var(--icon-powerplug-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--powerplug_inactive .tl-icon__path {
+  d: var(--icon-powerplug_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--print .tl-icon__path {
+  d: var(--icon-print-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--print_inactive .tl-icon__path {
+  d: var(--icon-print_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--privacy .tl-icon__path {
+  d: var(--icon-privacy-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--privacy_inactive .tl-icon__path {
+  d: var(--icon-privacy_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--profile .tl-icon__path {
+  d: var(--icon-profile-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--profile_inactive .tl-icon__path {
+  d: var(--icon-profile_inactive-d);
+}
+.tl-icon--prohibited .tl-icon__path {
+  d: var(--icon-prohibited-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--proportions .tl-icon__path {
+  d: var(--icon-proportions-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--proportions_inactive .tl-icon__path {
+  d: var(--icon-proportions_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--range .tl-icon__path {
+  d: var(--icon-range-d);
+}
+.tl-icon--range_inactive .tl-icon__path {
+  d: var(--icon-range_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--redirect .tl-icon__path {
+  d: var(--icon-redirect-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--refresh .tl-icon__path {
+  d: var(--icon-refresh-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--refresh_inactive .tl-icon__path {
+  d: var(--icon-refresh_inactive-d);
+}
+.tl-icon--reload .tl-icon__path {
+  d: var(--icon-reload-d);
+}
+.tl-icon--reload_inactive .tl-icon__path {
+  d: var(--icon-reload_inactive-d);
+}
+.tl-icon--repeat .tl-icon__path {
+  d: var(--icon-repeat-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--report .tl-icon__path {
+  d: var(--icon-report-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--report_inactive .tl-icon__path {
+  d: var(--icon-report_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--route .tl-icon__path {
+  d: var(--icon-route-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--route_inactive .tl-icon__path {
+  d: var(--icon-route_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--save .tl-icon__path {
+  d: var(--icon-save-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--save_inactive .tl-icon__path {
+  d: var(--icon-save_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--scissor .tl-icon__path {
+  d: var(--icon-scissor-d);
+}
+.tl-icon--search .tl-icon__path {
+  d: var(--icon-search-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--send .tl-icon__path {
+  d: var(--icon-send-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--send_inactive .tl-icon__path {
+  d: var(--icon-send_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--settings .tl-icon__path {
+  d: var(--icon-settings-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--share .tl-icon__path {
+  d: var(--icon-share-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--shuffle .tl-icon__path {
+  d: var(--icon-shuffle-d);
+}
+.tl-icon--skip_backwards .tl-icon__path {
+  d: var(--icon-skip_backwards-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--skip_forward .tl-icon__path {
+  d: var(--icon-skip_forward-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--smartphone .tl-icon__path {
+  d: var(--icon-smartphone-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--smartphone_inactive .tl-icon__path {
+  d: var(--icon-smartphone_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--sorting .tl-icon__path {
+  d: var(--icon-sorting-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--sparkle .tl-icon__path {
+  d: var(--icon-sparkle-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--speedometer .tl-icon__path {
+  d: var(--icon-speedometer-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--speedometer_inactive .tl-icon__path {
+  d: var(--icon-speedometer_inactive-d);
+}
+.tl-icon--split .tl-icon__path {
+  d: var(--icon-split-d);
+}
+.tl-icon--star .tl-icon__path {
+  d: var(--icon-star-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--support .tl-icon__path {
+  d: var(--icon-support-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--table .tl-icon__path {
+  d: var(--icon-table-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--target .tl-icon__path {
+  d: var(--icon-target-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--target_inactive .tl-icon__path {
+  d: var(--icon-target_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--temperature .tl-icon__path {
+  d: var(--icon-temperature-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--temperature_inactive .tl-icon__path {
+  d: var(--icon-temperature_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--text .tl-icon__path {
+  d: var(--icon-text-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--text_inactive .tl-icon__path {
+  d: var(--icon-text_inactive-d);
+}
+.tl-icon--thumbs_down .tl-icon__path {
+  d: var(--icon-thumbs_down-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--thumbs_up .tl-icon__path {
+  d: var(--icon-thumbs_up-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--tick .tl-icon__path {
+  d: var(--icon-tick-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--timer .tl-icon__path {
+  d: var(--icon-timer-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--tool .tl-icon__path {
+  d: var(--icon-tool-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--tool_inactive .tl-icon__path {
+  d: var(--icon-tool_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--trailer .tl-icon__path {
+  d: var(--icon-trailer-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--trailer_inactive .tl-icon__path {
+  d: var(--icon-trailer_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--trash .tl-icon__path {
+  d: var(--icon-trash-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--trash_inactive .tl-icon__path {
+  d: var(--icon-trash_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--truck .tl-icon__path {
+  d: var(--icon-truck-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--truck_inactive .tl-icon__path {
+  d: var(--icon-truck_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--undo .tl-icon__path {
+  d: var(--icon-undo-d);
+}
+.tl-icon--undo_inactive .tl-icon__path {
+  d: var(--icon-undo_inactive-d);
+}
+.tl-icon--unlock .tl-icon__path {
+  d: var(--icon-unlock-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--upload .tl-icon__path {
+  d: var(--icon-upload-d);
+}
+.tl-icon--video .tl-icon__path {
+  d: var(--icon-video-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--video_inactive .tl-icon__path {
+  d: var(--icon-video_inactive-d);
+}
+.tl-icon--wallet .tl-icon__path {
+  d: var(--icon-wallet-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--warning .tl-icon__path {
+  d: var(--icon-warning-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--weight .tl-icon__path {
+  d: var(--icon-weight-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--weight_inactive .tl-icon__path {
+  d: var(--icon-weight_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--wifi .tl-icon__path {
+  d: var(--icon-wifi-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--wifi_inactive .tl-icon__path {
+  d: var(--icon-wifi_inactive-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--windscreen_heating .tl-icon__path {
+  d: var(--icon-windscreen_heating-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-icon--windscreen_heating_inactive .tl-icon__path {
+  d: var(--icon-windscreen_heating_inactive-d);
+}

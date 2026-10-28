@@ -39,6 +39,12 @@ import '../cells/react/modal/scania/v1/component.css';
 import '../cells/react/slider/scania/v1/component.css';
 import '../cells/react/dropdown/scania/v1/component.css';
 import '../cells/react/dropdown-option/scania/v1/component.css';
+import '../cells/react/icon/scania/v1/component.css';
+import '../cells/react/popover-core/scania/v1/component.css';
+import '../cells/react/popover-canvas/scania/v1/component.css';
+import '../cells/react/popover-menu/scania/v1/component.css';
+import '../cells/react/popover-menu-item/scania/v1/component.css';
+import '../cells/react/tooltip/scania/v1/component.css';
 import Accordion from '../cells/react/accordion/scania/v1/component.jsx';
 import AccordionItem from '../cells/react/accordion-item/scania/v1/component.jsx';
 import Badge from '../cells/react/badge/scania/v1/component.jsx';
@@ -59,6 +65,7 @@ import FolderTabs from '../cells/react/folder-tabs/scania/v1/component.jsx';
 import Footer from '../cells/react/footer/scania/v1/component.jsx';
 import FooterGroup from '../cells/react/footer-group/scania/v1/component.jsx';
 import FooterItem from '../cells/react/footer-item/scania/v1/component.jsx';
+import Icon from '../cells/react/icon/scania/v1/component.jsx';
 import InlineTab from '../cells/react/inline-tab/scania/v1/component.jsx';
 import InlineTabs from '../cells/react/inline-tabs/scania/v1/component.jsx';
 import Link from '../cells/react/link/scania/v1/component.jsx';
@@ -66,6 +73,10 @@ import Message from '../cells/react/message/scania/v1/component.jsx';
 import Modal from '../cells/react/modal/scania/v1/component.jsx';
 import NavigationTab from '../cells/react/navigation-tab/scania/v1/component.jsx';
 import NavigationTabs from '../cells/react/navigation-tabs/scania/v1/component.jsx';
+import PopoverCanvas from '../cells/react/popover-canvas/scania/v1/component.jsx';
+import PopoverCore from '../cells/react/popover-core/scania/v1/component.jsx';
+import PopoverMenu from '../cells/react/popover-menu/scania/v1/component.jsx';
+import PopoverMenuItem from '../cells/react/popover-menu-item/scania/v1/component.jsx';
 import RadioButton from '../cells/react/radio-button/scania/v1/component.jsx';
 import Slider from '../cells/react/slider/scania/v1/component.jsx';
 import Spinner from '../cells/react/spinner/scania/v1/component.jsx';
@@ -76,6 +87,7 @@ import TextField from '../cells/react/text-field/scania/v1/component.jsx';
 import Textarea from '../cells/react/textarea/scania/v1/component.jsx';
 import Toast from '../cells/react/toast/scania/v1/component.jsx';
 import Toggle from '../cells/react/toggle/scania/v1/component.jsx';
+import Tooltip from '../cells/react/tooltip/scania/v1/component.jsx';
 import {
   ACCORDION,
   CRUMBS,
@@ -84,6 +96,7 @@ import {
   FOOTER_START,
   FOOTER_TOP,
   ICON_PATH,
+  MENU_ITEMS,
   NESTED_BLOCKS,
   SECTIONS,
   STEPS,
@@ -120,6 +133,11 @@ const COMPONENTS: Record<string, FC<Record<string, unknown>>> = {
   modal: Modal,
   slider: Slider,
   dropdown: Dropdown,
+  icon: Icon,
+  'popover-core': PopoverCore,
+  'popover-canvas': PopoverCanvas,
+  'popover-menu': PopoverMenu,
+  tooltip: Tooltip,
 };
 
 const TAB_CELLS: Record<string, FC<Record<string, unknown>>> = {
@@ -207,6 +225,12 @@ const dropdownOptions = DROPDOWN_OPTIONS.map(({ value, label, disabled }) => (
   </DropdownOption>
 ));
 
+const menuItems = MENU_ITEMS.map(({ label, disabled }) => (
+  <PopoverMenuItem key={label} disabled={disabled}>
+    <a href="#menu">{label}</a>
+  </PopoverMenuItem>
+));
+
 const actionLink = <a href="#actions">Read more</a>;
 
 // Turns the shared case flags into the nodes our cells take as props.
@@ -231,6 +255,8 @@ function nodeProps(props: Record<string, unknown>): Record<string, unknown> {
       accordionItems
     ) : props.options ? (
       dropdownOptions
+    ) : props.menuItems ? (
+      menuItems
     ) : typeof props.tabs === 'string' ? (
       tabs(props.tabs)
     ) : (

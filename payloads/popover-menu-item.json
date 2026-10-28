@@ -1,0 +1,21 @@
+{
+  "component": "popover-menu-item",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-popover-menu-item at @scania/tegel@1.66.1: one menu item that holds a link or a button.",
+    "properties": [
+      {
+        "name": "disabled",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

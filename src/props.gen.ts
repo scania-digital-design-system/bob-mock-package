@@ -584,3 +584,79 @@ export type DropdownOptionProps = {
   children?: ReactNode;
   onTdsSelect?: (event: CustomEvent<{ selected: boolean; value: string }>) => void;
 };
+
+export type IconProps = {
+  /** @default 'truck' */
+  name?: '24v_battery' | '24v_battery_inactive' | 'acceleration' | 'acceleration_inactive' | 'adblue' | 'adblue_inactive' | 'agent' | 'arrow_diagonal' | 'arrow_down' | 'arrow_left' | 'arrow_right' | 'arrow_up' | 'audio' | 'audio_inactive' | 'award' | 'back' | 'backward' | 'backward_inactive' | 'bento' | 'bug' | 'bug_inactive' | 'burger' | 'bus' | 'bus_inactive' | 'cab_door' | 'calendar' | 'calendar_inactive' | 'camera' | 'camera_inactive' | 'card' | 'cart' | 'charging_complete' | 'charging_failed' | 'charging_speed' | 'charging_speed_inactive' | 'charging_stopped' | 'chevron_down' | 'chevron_left' | 'chevron_right' | 'chevron_up' | 'clock' | 'clock_inactive' | 'configurator' | 'contact' | 'contact_inactive' | 'cookie' | 'cookie_inactive' | 'coolant_level' | 'coolant_level_inactive' | 'copy' | 'cross' | 'cup' | 'cup_inactive' | 'dashboard' | 'department' | 'department_inactive' | 'departure_scheduling' | 'departure_scheduling_inactive' | 'diamond' | 'diamond_inactive' | 'document' | 'document_check' | 'document_doc' | 'document_eye' | 'document_pdf' | 'document_plus' | 'document_plus_inactive' | 'document_ppt' | 'document_tool' | 'document_wrong' | 'document_xls' | 'dollar' | 'doner' | 'double_kebab' | 'download' | 'driver' | 'driving_licence' | 'driving_licence_inactive' | 'drop' | 'drop_inactive' | 'edit' | 'edit_inactive' | 'email' | 'email_open' | 'employee' | 'engine' | 'engine_inactive' | 'environment' | 'environment_inactive' | 'error' | 'exit' | 'expand' | 'expand_inactive' | 'export' | 'export_inactive' | 'eye' | 'eye_inactive' | 'face_dissatisfied' | 'face_neutral' | 'face_satisfied' | 'factory' | 'factory_inactive' | 'ferry' | 'ferry_inactive' | 'filters' | 'filters_inactive' | 'flash' | 'flash_inactive' | 'folder' | 'forward' | 'forward_inactive' | 'fuel' | 'fuel_gauge' | 'fuel_gauge_inactive' | 'fuel_inactive' | 'gift' | 'gift_inactive' | 'global' | 'guided_tour' | 'guided_tour_inactive' | 'hatch_open' | 'hatch_open_1' | 'hatch_open_2' | 'hatch_open_inactive' | 'heart' | 'heart_inactive' | 'heating_inactive_screen' | 'history' | 'history_inactive' | 'home' | 'home_inactive' | 'idea' | 'idea_inactive' | 'image' | 'image_add' | 'image_inactive' | 'image_set' | 'info' | 'insights' | 'kebab' | 'key' | 'key_inactive' | 'language' | 'layer' | 'layer_inactive' | 'line_chart' | 'link' | 'link_broken' | 'list' | 'list_inactive' | 'lock' | 'manager' | 'map_cursor' | 'map_cursor_inactive' | 'maximize_fullscreen' | 'meatballs' | 'merge' | 'merge_inactive' | 'message' | 'message_ai' | 'message_inactive' | 'microphone' | 'microphone_ai' | 'microphone_inactive' | 'mileage' | 'mileage_inactive' | 'minimize_fullscreen' | 'minus' | 'navigate' | 'navigate_inactive' | 'notification' | 'notification_inactive' | 'notification_snooze' | 'oil_level' | 'oil_level_inactive' | 'paperclip' | 'pause' | 'pause_inactive' | 'phone' | 'phone_inactive' | 'pie_chart' | 'pin' | 'pin_inactive' | 'placeholder' | 'play' | 'play_inactive' | 'plus' | 'powerplug' | 'powerplug_inactive' | 'print' | 'print_inactive' | 'privacy' | 'privacy_inactive' | 'profile' | 'profile_inactive' | 'prohibited' | 'proportions' | 'proportions_inactive' | 'range' | 'range_inactive' | 'redirect' | 'refresh' | 'refresh_inactive' | 'reload' | 'reload_inactive' | 'repeat' | 'report' | 'report_inactive' | 'route' | 'route_inactive' | 'save' | 'save_inactive' | 'scissor' | 'search' | 'send' | 'send_inactive' | 'settings' | 'share' | 'shuffle' | 'skip_backwards' | 'skip_forward' | 'smartphone' | 'smartphone_inactive' | 'sorting' | 'sparkle' | 'speedometer' | 'speedometer_inactive' | 'split' | 'star' | 'support' | 'table' | 'target' | 'target_inactive' | 'temperature' | 'temperature_inactive' | 'text' | 'text_inactive' | 'thumbs_down' | 'thumbs_up' | 'tick' | 'timer' | 'tool' | 'tool_inactive' | 'trailer' | 'trailer_inactive' | 'trash' | 'trash_inactive' | 'truck' | 'truck_inactive' | 'undo' | 'undo_inactive' | 'unlock' | 'upload' | 'video' | 'video_inactive' | 'wallet' | 'warning' | 'weight' | 'weight_inactive' | 'wifi' | 'wifi_inactive' | 'windscreen_heating' | 'windscreen_heating_inactive';
+  /** @default '16px' */
+  size?: string;
+  svgTitle?: string;
+  /** @default false */
+  tdsAriaHidden?: boolean;
+  svgDescription?: string;
+};
+
+export type PopoverCoreProps = {
+  selector?: string;
+  referenceEl?: HTMLElement | null;
+  /** @default false */
+  defaultShow?: boolean;
+  show?: boolean;
+  /** @default 'auto' */
+  placement?: 'auto' | 'auto-start' | 'auto-end' | 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'right' | 'right-start' | 'right-end' | 'left' | 'left-start' | 'left-end';
+  /** @default 'click' */
+  trigger?: 'click' | 'hover' | 'hover-popover';
+  /** @default true */
+  autoHide?: boolean;
+  children?: ReactNode;
+};
+
+export type PopoverCanvasProps = {
+  selector?: string;
+  referenceEl?: HTMLElement | null;
+  /** @default false */
+  defaultShow?: boolean;
+  show?: boolean;
+  /** @default 'auto' */
+  placement?: 'auto' | 'auto-start' | 'auto-end' | 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'right' | 'right-start' | 'right-end' | 'left' | 'left-start' | 'left-end';
+  /** @default 'dialog' */
+  tdsAlertDialog?: 'alertdialog' | 'dialog';
+  children?: ReactNode;
+};
+
+export type PopoverMenuProps = {
+  selector?: string;
+  referenceEl?: HTMLElement | null;
+  show?: boolean;
+  /** @default false */
+  defaultShow?: boolean;
+  /** @default 'auto' */
+  placement?: 'auto' | 'auto-start' | 'auto-end' | 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'right' | 'right-start' | 'right-end' | 'left' | 'left-start' | 'left-end';
+  /** @default false */
+  fluidWidth?: boolean;
+  children?: ReactNode;
+};
+
+export type PopoverMenuItemProps = {
+  /** @default false */
+  disabled?: boolean;
+  children?: ReactNode;
+};
+
+export type TooltipProps = {
+  /** @default '' */
+  text?: string;
+  selector?: string;
+  referenceEl?: HTMLElement | null;
+  /** @default false */
+  defaultShow?: boolean;
+  /** @default false */
+  mouseOverTooltip?: boolean;
+  /** @default 'hover' */
+  trigger?: 'click' | 'hover';
+  show?: boolean;
+  /** @default 'bottom' */
+  placement?: 'auto' | 'auto-start' | 'auto-end' | 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'right' | 'right-start' | 'right-end' | 'left' | 'left-start' | 'left-end';
+  tdsAriaDescribedby?: string;
+  children?: ReactNode;
+};

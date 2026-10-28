@@ -44,6 +44,12 @@ export const COMPONENTS = [
   'slider',
   'dropdown',
   'dropdown-option',
+  'icon',
+  'popover-core',
+  'popover-canvas',
+  'popover-menu',
+  'popover-menu-item',
+  'tooltip',
 ] as const;
 
 export function cssSources(components: readonly string[]): string[] {

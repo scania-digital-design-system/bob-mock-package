@@ -1,0 +1,66 @@
+/* A native popover in the top layer, placed next to its reference (the implicit anchor
+   that showPopover({ source }) sets) with CSS anchor positioning. */
+.tl-popover-core {
+  box-sizing: border-box;
+  inset: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: visible;
+  background-color: var(--color-background-none);
+  color: inherit;
+  position-try-fallbacks: flip-block, flip-inline;
+}
+
+/* Placement (Popper's names) */
+.tl-popover-core--auto,
+.tl-popover-core--bottom {
+  position-area: bottom;
+  margin-top: var(--space-popover-offset);
+}
+.tl-popover-core--auto-start,
+.tl-popover-core--bottom-start {
+  position-area: bottom span-right;
+  margin-top: var(--space-popover-offset);
+}
+.tl-popover-core--auto-end,
+.tl-popover-core--bottom-end {
+  position-area: bottom span-left;
+  margin-top: var(--space-popover-offset);
+}
+.tl-popover-core--top {
+  position-area: top;
+  margin-bottom: var(--space-popover-offset);
+}
+.tl-popover-core--top-start {
+  position-area: top span-right;
+  margin-bottom: var(--space-popover-offset);
+}
+.tl-popover-core--top-end {
+  position-area: top span-left;
+  margin-bottom: var(--space-popover-offset);
+}
+.tl-popover-core--right {
+  position-area: right;
+  margin-left: var(--space-popover-offset);
+}
+.tl-popover-core--right-start {
+  position-area: right span-bottom;
+  margin-left: var(--space-popover-offset);
+}
+.tl-popover-core--right-end {
+  position-area: right span-top;
+  margin-left: var(--space-popover-offset);
+}
+.tl-popover-core--left {
+  position-area: left;
+  margin-right: var(--space-popover-offset);
+}
+.tl-popover-core--left-start {
+  position-area: left span-bottom;
+  margin-right: var(--space-popover-offset);
+}
+.tl-popover-core--left-end {
+  position-area: left span-top;
+  margin-right: var(--space-popover-offset);
+}

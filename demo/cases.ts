@@ -535,5 +535,90 @@ SECTIONS.push({
   ],
 });
 
+SECTIONS.push({
+  component: 'icon',
+  tag: 'tds-icon',
+  cases: [
+    { label: 'truck, 16px (default)', props: {} },
+    { label: 'chevron_down, 32px', props: { name: 'chevron_down', size: '32px' } },
+    { label: 'warning, 48px (evenodd fill)', props: { name: 'warning', size: '48px' } },
+    {
+      label: 'settings, 24px, with a title',
+      props: { name: 'settings', size: '24px', svgTitle: 'Settings' },
+    },
+  ],
+});
+
+// `menuItems: true` builds the popover menu items on both pages.
+export const MENU_ITEMS: { label: string; disabled?: boolean }[] = [
+  { label: 'Edit' },
+  { label: 'Copy' },
+  { label: 'Delete', disabled: true },
+];
+
+// Each popover opens from the "Open" button its `selector` names.
+SECTIONS.push(
+  {
+    component: 'popover-core',
+    tag: 'tds-popover-core',
+    cases: [
+      { label: 'click, unstyled', props: { selector: '#core-click', children: 'Popover core' } },
+    ],
+  },
+  {
+    component: 'popover-canvas',
+    tag: 'tds-popover-canvas',
+    cases: [
+      { label: 'auto', props: { selector: '#canvas-auto', children: BODY } },
+      {
+        label: 'right-start',
+        props: { selector: '#canvas-right', placement: 'right-start', children: BODY },
+      },
+      {
+        label: 'shown (defaultShow), top',
+        props: { selector: '#canvas-top', placement: 'top', defaultShow: true, children: BODY },
+      },
+    ],
+  },
+  {
+    component: 'popover-menu',
+    tag: 'tds-popover-menu',
+    cases: [
+      {
+        label: '160px, bottom-start',
+        props: { selector: '#menu-fixed', placement: 'bottom-start', menuItems: true },
+      },
+      {
+        label: 'fluid width',
+        props: { selector: '#menu-fluid', fluidWidth: true, menuItems: true },
+      },
+    ],
+  },
+  {
+    component: 'tooltip',
+    tag: 'tds-tooltip',
+    cases: [
+      { label: 'hover, bottom', props: { selector: '#tooltip-hover', text: 'Tooltip text' } },
+      {
+        label: 'hover, bottom-start (square corner)',
+        props: {
+          selector: '#tooltip-start',
+          placement: 'bottom-start',
+          text: 'Tooltip text that wraps onto a second line',
+        },
+      },
+      {
+        label: 'click, right',
+        props: {
+          selector: '#tooltip-click',
+          trigger: 'click',
+          placement: 'right',
+          text: 'Tooltip text',
+        },
+      },
+    ],
+  },
+);
+
 // The same plus icon on both pages, so only the component differs.
 export const ICON_PATH = 'M9 3h2v6h6v2h-6v6H9v-6H3V9h6z';

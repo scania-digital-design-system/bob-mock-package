@@ -1,0 +1,62 @@
+{
+  "component": "popover-menu",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-popover-menu at @scania/tegel@1.66.1: a menu of items in a popover, opened by a click on a reference element.",
+    "properties": [
+      {
+        "name": "selector",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "show",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "defaultShow",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "placement",
+        "type": "VARIANT",
+        "values": [
+          "auto",
+          "auto-start",
+          "auto-end",
+          "top",
+          "top-start",
+          "top-end",
+          "bottom",
+          "bottom-start",
+          "bottom-end",
+          "right",
+          "right-start",
+          "right-end",
+          "left",
+          "left-start",
+          "left-end"
+        ]
+      },
+      {
+        "name": "fluidWidth",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": [
+      {
+        "property": "placement",
+        "disposition": "prop"
+      }
+    ]
+  }
+}

@@ -19,6 +19,7 @@ import FolderTabsCell from '../cells/react/folder-tabs/scania/v1/component.jsx';
 import FooterCell from '../cells/react/footer/scania/v1/component.jsx';
 import FooterGroupCell from '../cells/react/footer-group/scania/v1/component.jsx';
 import FooterItemCell from '../cells/react/footer-item/scania/v1/component.jsx';
+import IconCell from '../cells/react/icon/scania/v1/component.jsx';
 import InlineTabCell from '../cells/react/inline-tab/scania/v1/component.jsx';
 import InlineTabsCell from '../cells/react/inline-tabs/scania/v1/component.jsx';
 import LinkCell from '../cells/react/link/scania/v1/component.jsx';
@@ -26,6 +27,10 @@ import MessageCell from '../cells/react/message/scania/v1/component.jsx';
 import ModalCell from '../cells/react/modal/scania/v1/component.jsx';
 import NavigationTabCell from '../cells/react/navigation-tab/scania/v1/component.jsx';
 import NavigationTabsCell from '../cells/react/navigation-tabs/scania/v1/component.jsx';
+import PopoverCanvasCell from '../cells/react/popover-canvas/scania/v1/component.jsx';
+import PopoverCoreCell from '../cells/react/popover-core/scania/v1/component.jsx';
+import PopoverMenuCell from '../cells/react/popover-menu/scania/v1/component.jsx';
+import PopoverMenuItemCell from '../cells/react/popover-menu-item/scania/v1/component.jsx';
 import RadioButtonCell from '../cells/react/radio-button/scania/v1/component.jsx';
 import SliderCell from '../cells/react/slider/scania/v1/component.jsx';
 import SpinnerCell from '../cells/react/spinner/scania/v1/component.jsx';
@@ -36,6 +41,7 @@ import TextFieldCell from '../cells/react/text-field/scania/v1/component.jsx';
 import TextareaCell from '../cells/react/textarea/scania/v1/component.jsx';
 import ToastCell from '../cells/react/toast/scania/v1/component.jsx';
 import ToggleCell from '../cells/react/toggle/scania/v1/component.jsx';
+import TooltipCell from '../cells/react/tooltip/scania/v1/component.jsx';
 import type {
   AccordionItemProps,
   AccordionProps,
@@ -57,6 +63,7 @@ import type {
   FooterGroupProps,
   FooterItemProps,
   FooterProps,
+  IconProps,
   InlineTabProps,
   InlineTabsProps,
   LinkProps,
@@ -64,6 +71,10 @@ import type {
   ModalProps,
   NavigationTabProps,
   NavigationTabsProps,
+  PopoverCanvasProps,
+  PopoverCoreProps,
+  PopoverMenuItemProps,
+  PopoverMenuProps,
   RadioButtonProps,
   SliderProps,
   SpinnerProps,
@@ -74,6 +85,7 @@ import type {
   TextFieldProps,
   ToastProps,
   ToggleProps,
+  TooltipProps,
 } from './props.gen.js';
 
 export type {
@@ -97,6 +109,7 @@ export type {
   FooterGroupProps,
   FooterItemProps,
   FooterProps,
+  IconProps,
   InlineTabProps,
   InlineTabsProps,
   LinkProps,
@@ -104,6 +117,10 @@ export type {
   ModalProps,
   NavigationTabProps,
   NavigationTabsProps,
+  PopoverCanvasProps,
+  PopoverCoreProps,
+  PopoverMenuItemProps,
+  PopoverMenuProps,
   RadioButtonProps,
   SliderProps,
   SpinnerProps,
@@ -114,6 +131,7 @@ export type {
   TextFieldProps,
   ToastProps,
   ToggleProps,
+  TooltipProps,
 } from './props.gen.js';
 
 // One export per cell, named for its folder in cells/react/ (ADR 0005 D2), typed with
@@ -157,3 +175,9 @@ export const Modal: FC<ModalProps> = ModalCell;
 export const Slider: FC<SliderProps> = SliderCell;
 export const Dropdown: FC<DropdownProps> = DropdownCell;
 export const DropdownOption: FC<DropdownOptionProps> = DropdownOptionCell;
+export const Icon: FC<IconProps> = IconCell;
+export const PopoverCore: FC<PopoverCoreProps> = PopoverCoreCell;
+export const PopoverCanvas: FC<PopoverCanvasProps> = PopoverCanvasCell;
+export const PopoverMenu: FC<PopoverMenuProps> = PopoverMenuCell;
+export const PopoverMenuItem: FC<PopoverMenuItemProps> = PopoverMenuItemCell;
+export const Tooltip: FC<TooltipProps> = TooltipCell;

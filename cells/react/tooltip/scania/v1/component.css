@@ -1,0 +1,93 @@
+/* A native popover in the top layer, placed next to its reference with CSS anchor
+   positioning (as popover-core). */
+.tl-tooltip {
+  box-sizing: border-box;
+  inset: auto;
+  max-width: var(--size-tooltip-max-width);
+  margin: 0;
+  padding: var(--space-element-8);
+  border: 0;
+  border-radius: var(--radius-tooltip);
+  overflow: visible;
+  background-color: var(--color-tooltip-background);
+  color: var(--color-text-inverse-strong);
+  overflow-wrap: break-word;
+  white-space: normal;
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-caption);
+  font-weight: normal;
+  line-height: var(--font-line-height-detail-05);
+  letter-spacing: 0;
+  position-try-fallbacks: flip-block, flip-inline;
+}
+
+/* Placement (Popper's names) */
+.tl-tooltip--auto,
+.tl-tooltip--bottom {
+  position-area: bottom;
+  margin-top: var(--space-popover-offset);
+}
+.tl-tooltip--auto-start,
+.tl-tooltip--bottom-start {
+  position-area: bottom span-right;
+  margin-top: var(--space-popover-offset);
+}
+.tl-tooltip--auto-end,
+.tl-tooltip--bottom-end {
+  position-area: bottom span-left;
+  margin-top: var(--space-popover-offset);
+}
+.tl-tooltip--top {
+  position-area: top;
+  margin-bottom: var(--space-popover-offset);
+}
+.tl-tooltip--top-start {
+  position-area: top span-right;
+  margin-bottom: var(--space-popover-offset);
+}
+.tl-tooltip--top-end {
+  position-area: top span-left;
+  margin-bottom: var(--space-popover-offset);
+}
+.tl-tooltip--right {
+  position-area: right;
+  margin-left: var(--space-popover-offset);
+}
+.tl-tooltip--right-start {
+  position-area: right span-bottom;
+  margin-left: var(--space-popover-offset);
+}
+.tl-tooltip--right-end {
+  position-area: right span-top;
+  margin-left: var(--space-popover-offset);
+}
+.tl-tooltip--left {
+  position-area: left;
+  margin-right: var(--space-popover-offset);
+}
+.tl-tooltip--left-start {
+  position-area: left span-bottom;
+  margin-right: var(--space-popover-offset);
+}
+.tl-tooltip--left-end {
+  position-area: left span-top;
+  margin-right: var(--space-popover-offset);
+}
+
+/* The corner next to the reference is square (Tegel's tds-tooltip-<corner> classes) */
+.tl-tooltip--bottom-start,
+.tl-tooltip--right-start {
+  border-top-left-radius: 0;
+}
+.tl-tooltip--bottom-end,
+.tl-tooltip--left-start {
+  border-top-right-radius: 0;
+}
+.tl-tooltip--top-end,
+.tl-tooltip--left-end {
+  border-bottom-right-radius: 0;
+}
+.tl-tooltip--top-start,
+.tl-tooltip--right-end {
+  border-bottom-left-radius: 0;
+}

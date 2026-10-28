@@ -65,6 +65,8 @@ name is in the generated `tegel` set.
 | Modal | 285 |
 | Slider | 316 |
 | Dropdown | 342 |
+| Icon | 605 |
+| Popover core, canvas, menu, menu item; tooltip | 617 |
 
 ## Foundation set
 
@@ -524,3 +526,41 @@ Reused: `color/background/{layer-01,none}`, `color/border/{soft,strong,subtle,di
 `size/shadow/3`, `radius/input`, `border/input`, `opacity/disabled`, `motion/easing/scania`,
 `space/element/{2,4,8,12,16,20}`, the scrollbar tokens, the checkbox tokens, the focus ring
 tokens and the `detail-02`, `detail-05` and `detail-07` tokens.
+
+### Icon
+
+Source: the Scania block of `tokens/scss/component/icon.scss`, which `tds-icon` reads.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `icon/<name>/d` (263 carriers) | `path('M…')` | `--tds-icon-<name>-d` |
+
+Each path is a `COLOR` carrier: BOB has no string type. The category `icon` is
+unconstrained. Tegel's `--tds-icon-<name>-fill-rule` and `-clip-rule` are all `evenodd`;
+the stylesheet writes the keyword. The paths are about 280 KB of `tokens/scania.css`.
+
+### Popover and tooltip
+
+Source: `packages/core/src/components/popover-canvas/popover-canvas-vars.scss`,
+`popover-menu/popover-menu-vars.scss`, `popover-menu/popover-menu.scss`,
+`popover-menu/popover-menu-item/popover-menu-item.scss`, `tooltip/tooltip.scss` and
+`tooltip-vars.scss`, and the Scania light blocks of `tokens/scss/component/popover.scss`
+and `tooltip.scss`.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `color/popover/item-hover` | `#edeff3` | `--component-popover-background-link-primary-hover` = grey-100 (`-active` is the same) |
+| `radius/popover` | 4 | `--component-popover-border-radius-default` (canvas `border-radius: 4px`) |
+| `space/popover/offset` | 8 | Popper `offsetDistance` default |
+| `size/shadow/2` | 2 | menu `box-shadow: 0 2px 3px 0` |
+| `size/popover-menu/width` | 160 | menu `width: 160px` |
+| `space/popover-menu/block` | 6 | menu `padding: 6px 0`; divider `padding: 6px` |
+| `space/popover-menu/item` | 10 | item `padding: 10px 16px`, `gap: 10px` |
+| `motion/popover-menu/hover`, `motion/easing/easy` (carriers) | `150ms`, `cubic-bezier(0.33, 0, 0.67, 1)` | `--tds-motion-duration-fast-02`, `--tds-motion-easing-easy` |
+| `color/tooltip/background` | `#242c37` | `--component-tooltip-background-default` = `--color-background-inverse-layer-03` = grey-800 |
+| `radius/tooltip` | 4 | `--component-tooltip-border-radius-default` |
+| `size/tooltip/max-width` | 192 | `max-width: 192px` |
+
+Reused: `color/background/{layer-01,none}`, `color/text/{strong,inverse-strong}`,
+`color/shadow/{10,15}`, `size/shadow/{1,3,minus-1}`, `opacity/disabled`,
+`space/element/{4,8,16}`, the focus ring tokens, and the `body-01` and `detail-05` tokens.

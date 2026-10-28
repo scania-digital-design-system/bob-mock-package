@@ -1,0 +1,70 @@
+/* A native popover in the top layer, placed next to its reference with CSS anchor
+   positioning (as popover-core). */
+.tl-popover-canvas {
+  box-sizing: border-box;
+  inset: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-popover);
+  overflow: visible;
+  background-color: var(--color-background-layer-01);
+  box-shadow:
+    0 var(--size-shadow-3) var(--size-shadow-3) var(--color-shadow-15),
+    0 var(--size-shadow-minus-1) var(--size-shadow-1) var(--color-shadow-10);
+  color: var(--color-text-strong);
+  position-try-fallbacks: flip-block, flip-inline;
+}
+
+/* Placement (Popper's names) */
+.tl-popover-canvas--auto,
+.tl-popover-canvas--bottom {
+  position-area: bottom;
+  margin-top: var(--space-popover-offset);
+}
+.tl-popover-canvas--auto-start,
+.tl-popover-canvas--bottom-start {
+  position-area: bottom span-right;
+  margin-top: var(--space-popover-offset);
+}
+.tl-popover-canvas--auto-end,
+.tl-popover-canvas--bottom-end {
+  position-area: bottom span-left;
+  margin-top: var(--space-popover-offset);
+}
+.tl-popover-canvas--top {
+  position-area: top;
+  margin-bottom: var(--space-popover-offset);
+}
+.tl-popover-canvas--top-start {
+  position-area: top span-right;
+  margin-bottom: var(--space-popover-offset);
+}
+.tl-popover-canvas--top-end {
+  position-area: top span-left;
+  margin-bottom: var(--space-popover-offset);
+}
+.tl-popover-canvas--right {
+  position-area: right;
+  margin-left: var(--space-popover-offset);
+}
+.tl-popover-canvas--right-start {
+  position-area: right span-bottom;
+  margin-left: var(--space-popover-offset);
+}
+.tl-popover-canvas--right-end {
+  position-area: right span-top;
+  margin-left: var(--space-popover-offset);
+}
+.tl-popover-canvas--left {
+  position-area: left;
+  margin-right: var(--space-popover-offset);
+}
+.tl-popover-canvas--left-start {
+  position-area: left span-bottom;
+  margin-right: var(--space-popover-offset);
+}
+.tl-popover-canvas--left-end {
+  position-area: left span-top;
+  margin-right: var(--space-popover-offset);
+}
