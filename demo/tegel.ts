@@ -1,6 +1,17 @@
 import '@scania/tegel/dist/tegel/tegel.css';
 import { defineCustomElements } from '@scania/tegel/loader';
-import { type DemoCase, ICON_PATH, NESTED_BLOCKS, SECTIONS, THUMBNAIL_SRC } from './cases';
+import {
+  CRUMBS,
+  type DemoCase,
+  FOOTER_END,
+  FOOTER_START,
+  FOOTER_TOP,
+  ICON_PATH,
+  NESTED_BLOCKS,
+  SECTIONS,
+  STEPS,
+  THUMBNAIL_SRC,
+} from './cases';
 
 // The reference: Tegel's own web components, rendered with Tegel's CSS.
 
@@ -78,9 +89,80 @@ function nestedBlocks(level: number): HTMLElement {
   return block;
 }
 
+function child(tag: string, props: Record<string, unknown>, ...content: (Node | string)[]) {
+  const el = Object.assign(document.createElement(tag), props);
+  el.append(...content);
+  return el;
+}
+
+function anchor(text: string, href: string): HTMLAnchorElement {
+  return Object.assign(document.createElement('a'), { href, textContent: text });
+}
+
+// Tegel's footer groups go in a slotted wrapper; the title is a slotted heading.
+function footerSlot(slot: string, groups: { title?: string; label: string; items: string[] }[]) {
+  const wrapper = child('div', { slot });
+  for (const { title, label, items } of groups) {
+    const group = child('tds-footer-group', { tdsListAriaLabel: label });
+    if (title) {
+      group.append(child('h6', { slot: 'title' }, title));
+    }
+    group.append(...items.map((item) => child('tds-footer-item', {}, anchor(item, '#footer'))));
+    wrapper.append(group);
+  }
+  return wrapper;
+}
+
+// Children for the compound components, from the same data as our page.
+function compoundChildren(props: Record<string, unknown>): HTMLElement[] {
+  if (props.crumbs) {
+    return CRUMBS.map((name, i) =>
+      child('tds-breadcrumb', { current: i === CRUMBS.length - 1 }, anchor(name, '#breadcrumbs')),
+    );
+  }
+  if (props.steps) {
+    return STEPS.map(({ index, state, label }) =>
+      child('tds-step', { index, state }, child('span', { slot: 'label' }, label)),
+    );
+  }
+  const slots: HTMLElement[] = [];
+  if (props.top) {
+    slots.push(
+      footerSlot(
+        'top',
+        FOOTER_TOP.map((g) => ({ ...g, label: g.title })),
+      ),
+    );
+  }
+  if (props.start) {
+    slots.push(footerSlot('start', [{ label: 'Legal', items: FOOTER_START }]));
+  }
+  if (props.end) {
+    slots.push(footerSlot('end', [{ label: 'Social', items: FOOTER_END }]));
+  }
+  return slots;
+}
+
 function element(tag: string, { props }: DemoCase): HTMLElement {
-  const { icon, prefix, nested, href, target, children, thumbnail, body, actions, ...rest } = props;
+  const {
+    icon,
+    prefix,
+    nested,
+    href,
+    target,
+    children,
+    thumbnail,
+    body,
+    actions,
+    crumbs,
+    steps,
+    top,
+    start,
+    end,
+    ...rest
+  } = props;
   const el = Object.assign(document.createElement(tag), rest);
+  el.append(...compoundChildren({ crumbs, steps, top, start, end }));
   if (icon) {
     el.append(slottedIcon());
   }

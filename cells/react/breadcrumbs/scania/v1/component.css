@@ -1,0 +1,17 @@
+.tl-breadcrumbs {
+  box-sizing: border-box;
+  display: block;
+}
+.tl-breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: normal;
+  line-height: var(--font-line-height-detail-02);
+  letter-spacing: var(--font-letter-spacing-detail);
+  text-transform: none;
+}

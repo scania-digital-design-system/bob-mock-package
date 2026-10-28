@@ -27,6 +27,7 @@ func TestPublicAPISurface(t *testing.T) {
 		{"multi-line props", "function A({\n  header,\n  subheader,\n}) {}", []string{"header", "subheader"}, false},
 		{"no destructuring", "function A(props) {}", nil, true},
 		{"an export first", "export default function A({ size }) {}", nil, true},
+		{"a relaxed import first", "import { useState } from 'react';\n\nfunction A({ size }) {}", []string{"size"}, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

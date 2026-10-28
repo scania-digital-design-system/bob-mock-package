@@ -1,0 +1,36 @@
+{
+  "componentType": "step",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "index",
+    "state",
+    "tdsAriaCurrent",
+    "label"
+  ],
+  "rules": [
+    {
+      "id": "prop-index",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"index\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-state",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"state\" is a component prop: the caller selects one, accepting current | error | success | upcoming. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-tdsariacurrent",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"tdsAriaCurrent\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-label",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"label\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

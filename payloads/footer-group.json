@@ -1,0 +1,15 @@
+{
+  "component": "footer-group",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-footer-group at @scania/tegel@1.66.1: a titled list of footer items.",
+    "properties": [
+      { "name": "titleText", "type": "TEXT", "values": [] },
+      { "name": "tdsListAriaLabel", "type": "TEXT", "values": [] },
+      { "name": "title", "type": "INSTANCE_SWAP", "values": [] },
+      { "name": "children", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": []
+  }
+}

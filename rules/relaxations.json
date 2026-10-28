@@ -1,1 +1,5 @@
-{}
+{
+  "react/step/scania/v1": ["parent-modifier-selectors"],
+  "react/footer-group/scania/v1": ["parent-modifier-selectors", "react-hooks"],
+  "react/footer-item/scania/v1": ["parent-modifier-selectors"]
+}

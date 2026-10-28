@@ -71,6 +71,11 @@ describe('cellDefaults', () => {
     ],
     ['no defaults', 'function Badge({ value }) {', {}],
     ['a rest element', "function Badge({ size = 'sm', ...rest }) {", { size: "'sm'" }],
+    [
+      'a relaxed import first',
+      "import { useState } from 'react';\n\nfunction Tabs({ size = 'lg' }) {",
+      { size: "'lg'" },
+    ],
   ])('reads %s', (_name, jsx, want) => {
     expect(cellDefaults(jsx)).toEqual(want);
   });

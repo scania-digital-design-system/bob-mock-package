@@ -1,0 +1,6 @@
+{
+  "cellID": "stepper:scania:react:1",
+  "component": "stepper",
+  "brand": "scania",
+  "target": "react"
+}

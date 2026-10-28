@@ -56,6 +56,8 @@ name is in the generated `tegel` set.
 | Spinner | 66 |
 | Card | 80 |
 | Divider, block, tag, message | 112 |
+| Breadcrumbs, stepper, footer | 146 |
+| Footer mobile toggle | 148 |
 
 ## Foundation set
 
@@ -274,6 +276,63 @@ Reused: `color/background/layer-01`, `color/background/none` (minimal),
 `color/text/strong`, `color/system/info`, `color/danger`, `space/element/{2,4,8,16}`,
 `font/family/detail`, `font/size/detail`, `font/letter-spacing/detail` and
 `font/line-height/detail-{02,03}`.
+
+### Breadcrumbs
+
+Source: `packages/core/src/components/breadcrumbs/breadcrumb/breadcrumb.scss`,
+`breadcrumbs.scss`, and the Scania light block of `tokens/scss/component/breadcrumbs.scss`.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `size/breadcrumb/separator-width` | 4 | separator `width: 4px` |
+| `size/breadcrumb/separator-height` | 8 | separator `height: 8px` |
+
+Reused: `color/text/strong` (link, hover, separator), `color/text/soft` (current),
+`space/element/4`, the button's focus ring tokens, and the `detail-02` tokens.
+
+### Stepper
+
+Source: `packages/core/src/components/stepper/step/step.scss`, `stepper.scss`,
+`stepper-vars.scss`, and the Scania light block of `tokens/scss/component/stepper.scss`.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `color/stepper/strong` | `#2d3643` | grey-750: current background, upcoming border, connecting line |
+| `color/stepper/success` | `#008064` | green-400: success background and border |
+| `color/text/inverse-strong` | `#f6f7f9` | `--color-text-inverse-strong` (current index, success icon) |
+| `radius/stepper` | 9999 | `--component-stepper-border-radius-default` = unit-9999 |
+| `space/stepper/vertical-lg`, `vertical-sm` | 52, 36 | vertical list `gap` |
+| `size/stepper/{1,10,13,16,20,24,28,30,32,34,36,40}`, `size/stepper/minus-10` | the value | literal marker sizes, icon sizes and line positions in `step.scss` |
+
+Tegel writes the line geometry as literals, so the tokens are named by value. The
+`type-system-body-01` (lg) and `label-01` (sm) styles equal `detail-02` and `detail-05` in
+Scania, so the cell reuses those tokens.
+
+### Footer
+
+Source: `packages/core/src/components/footer/footer.scss`, `footer-vars.scss`,
+`footer-group/footer-group.scss`, `footer-item/footer-item.scss`, the Scania light block
+of `tokens/scss/component/footer.scss`, and `color-light.scss`.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `color/footer/main` | `#041e42` | `--component-footer-background-main-default` = blue-800 |
+| `color/footer/divider` | `#0f3263` | `--component-footer-border-divider-default` = blue-700 |
+| `color/footer/item-active` | `#e0e5eb` | `--component-footer-background-list-item-active` = grey-150 |
+| `color/text/inverse-soft` | `#c3d8f7b8` | `--color-text-inverse-soft` (copyright) |
+| `color/icon/inverse-strong` | `#f6f7f9` | `--color-icon-inverse-strong` (end part) |
+| `color/border/discrete` | `#303c612b` | `--color-border-discrete` (mobile item divider) |
+| `image/footer/wordmark` (carrier) | `url(https://cdn.digitaldesign.scania.com/…/scania-wordmark-white.svg)` | `--tds-background-image-scania-wordmark-white-svg` |
+| `size/footer/wordmark-width`, `wordmark-height` | 117, 20 | `.brand` size |
+| `space/element/{32,40,48}` | 32, 40, 48 | footer padding and gaps |
+| `space/footer/item-mobile` | 19 | mobile item `padding: 19px 40px`, toggle `padding: 19px 24px` |
+| `size/footer/chevron` | 20 | toggle `tds-icon size="20px"` |
+| `motion/footer/rotate` (carrier) | `200ms` | toggle icon `transition: transform 0.2s` |
+
+Reused: `color/background/layer-01` (top), `color/text/strong`,
+`color/text/inverse-base` (main links, Tegel's `base-white`), `border/control`,
+`space/element/{8,12,24}`, the focus ring tokens and the `detail-02` and `headline-07`
+tokens. The 992px breakpoint stays a literal: a media query cannot read `var()`.
 
 ## Not included
 

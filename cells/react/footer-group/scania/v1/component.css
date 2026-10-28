@@ -1,0 +1,93 @@
+.tl-footer-group {
+  box-sizing: border-box;
+  display: block;
+}
+.tl-footer-group__title,
+.tl-footer-group__toggle {
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: bold;
+  line-height: var(--font-line-height-headline-07);
+  letter-spacing: var(--font-letter-spacing-detail);
+}
+.tl-footer-group__title {
+  display: none;
+  padding-bottom: var(--space-element-8);
+  color: var(--color-text-strong);
+}
+.tl-footer-group__title > *,
+.tl-footer-group__toggle > :not(svg) {
+  margin: 0;
+  font: inherit;
+  letter-spacing: inherit;
+}
+.tl-footer__top .tl-footer-group__title {
+  display: block;
+}
+.tl-footer-group__toggle {
+  display: none;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-footer-item-mobile) var(--space-element-24);
+  border: none;
+  border-bottom: var(--border-control) solid var(--color-border-discrete);
+  background-color: var(--color-background-none);
+  color: var(--color-text-strong);
+  text-align: left;
+}
+.tl-footer-group__toggle:hover {
+  cursor: pointer;
+}
+.tl-footer-group__toggle:active {
+  background-color: var(--color-footer-item-active);
+}
+.tl-footer-group__toggle:focus-visible {
+  z-index: 1;
+  outline: var(--border-focus) solid var(--color-border-focus);
+  outline-offset: var(--border-focus-offset);
+  box-shadow: 0 0 0 var(--border-control) var(--color-border-focus-discrete);
+}
+.tl-footer-group__chevron {
+  flex-shrink: 0;
+  width: var(--size-footer-chevron);
+  height: var(--size-footer-chevron);
+  fill: currentColor;
+  transition: transform var(--motion-footer-rotate) ease-in-out;
+}
+.tl-footer-group__toggle[aria-expanded='true'] .tl-footer-group__chevron {
+  transform: rotateZ(180deg);
+}
+.tl-footer-group__list {
+  display: flex;
+  gap: var(--space-element-12);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tl-footer__start .tl-footer-group__list,
+.tl-footer__end .tl-footer-group__list {
+  gap: var(--space-element-24);
+}
+.tl-footer__top .tl-footer-group__list {
+  flex-direction: column;
+}
+
+@media all and (max-width: 992px) {
+  .tl-footer__top .tl-footer-group__title {
+    display: none;
+  }
+  .tl-footer__top .tl-footer-group__toggle {
+    display: flex;
+    align-items: center;
+  }
+  .tl-footer__top .tl-footer-group__toggle[aria-expanded='false'] + nav .tl-footer-group__list {
+    display: none;
+  }
+  .tl-footer__start .tl-footer-group__list {
+    flex-direction: column;
+    gap: var(--space-element-8);
+  }
+  .tl-footer__top .tl-footer-group__list {
+    gap: 0;
+  }
+}

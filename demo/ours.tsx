@@ -1,5 +1,6 @@
 import type { FC, ReactNode } from 'react';
 import { createRoot } from 'react-dom/client';
+import './fonts';
 import '../tokens/scania.css';
 import '../cells/react/badge/scania/v1/component.css';
 import '../cells/react/button/scania/v1/component.css';
@@ -10,16 +11,40 @@ import '../cells/react/divider/scania/v1/component.css';
 import '../cells/react/block/scania/v1/component.css';
 import '../cells/react/tag/scania/v1/component.css';
 import '../cells/react/message/scania/v1/component.css';
+import '../cells/react/breadcrumbs/scania/v1/component.css';
+import '../cells/react/breadcrumb/scania/v1/component.css';
+import '../cells/react/stepper/scania/v1/component.css';
+import '../cells/react/step/scania/v1/component.css';
+import '../cells/react/footer/scania/v1/component.css';
+import '../cells/react/footer-group/scania/v1/component.css';
+import '../cells/react/footer-item/scania/v1/component.css';
 import Badge from '../cells/react/badge/scania/v1/component.jsx';
 import Block from '../cells/react/block/scania/v1/component.jsx';
+import Breadcrumb from '../cells/react/breadcrumb/scania/v1/component.jsx';
+import Breadcrumbs from '../cells/react/breadcrumbs/scania/v1/component.jsx';
 import Button from '../cells/react/button/scania/v1/component.jsx';
 import Card from '../cells/react/card/scania/v1/component.jsx';
 import Divider from '../cells/react/divider/scania/v1/component.jsx';
+import Footer from '../cells/react/footer/scania/v1/component.jsx';
+import FooterGroup from '../cells/react/footer-group/scania/v1/component.jsx';
+import FooterItem from '../cells/react/footer-item/scania/v1/component.jsx';
 import Link from '../cells/react/link/scania/v1/component.jsx';
 import Message from '../cells/react/message/scania/v1/component.jsx';
 import Spinner from '../cells/react/spinner/scania/v1/component.jsx';
+import Step from '../cells/react/step/scania/v1/component.jsx';
+import Stepper from '../cells/react/stepper/scania/v1/component.jsx';
 import Tag from '../cells/react/tag/scania/v1/component.jsx';
-import { ICON_PATH, NESTED_BLOCKS, SECTIONS, THUMBNAIL_SRC } from './cases';
+import {
+  CRUMBS,
+  FOOTER_END,
+  FOOTER_START,
+  FOOTER_TOP,
+  ICON_PATH,
+  NESTED_BLOCKS,
+  SECTIONS,
+  STEPS,
+  THUMBNAIL_SRC,
+} from './cases';
 
 const COMPONENTS: Record<string, FC<Record<string, unknown>>> = {
   badge: Badge,
@@ -31,7 +56,32 @@ const COMPONENTS: Record<string, FC<Record<string, unknown>>> = {
   block: Block,
   tag: Tag,
   message: Message,
+  breadcrumbs: Breadcrumbs,
+  stepper: Stepper,
+  footer: Footer,
 };
+
+const crumbs = CRUMBS.map((name, i) => (
+  <Breadcrumb key={name} current={i === CRUMBS.length - 1}>
+    <a href="#breadcrumbs">{name}</a>
+  </Breadcrumb>
+));
+
+const steps = STEPS.map(({ index, state, label }) => (
+  <Step key={index} index={index} state={state} label={label} />
+));
+
+function footerGroup(label: string, items: string[], title?: string) {
+  return (
+    <FooterGroup key={label} tdsListAriaLabel={label} title={title && <h6>{title}</h6>}>
+      {items.map((item) => (
+        <FooterItem key={item}>
+          <a href="#footer">{item}</a>
+        </FooterItem>
+      ))}
+    </FooterGroup>
+  );
+}
 
 const icon = (
   <svg viewBox="0 0 20 20" width="100%" height="100%" aria-hidden="true">
@@ -72,7 +122,18 @@ function nodeProps(props: Record<string, unknown>): Record<string, unknown> {
     thumbnail: props.thumbnail ? thumbnail : undefined,
     actions: props.actions ? actions : undefined,
     prefix: props.prefix ? prefix : undefined,
-    children: props.nested ? <>Level 1{nestedBlocks(NESTED_BLOCKS - 1)}</> : props.children,
+    top: props.top ? FOOTER_TOP.map((g) => footerGroup(g.title, g.items, g.title)) : undefined,
+    start: props.start ? footerGroup('Legal', FOOTER_START) : undefined,
+    end: props.end ? footerGroup('Social', FOOTER_END) : undefined,
+    children: props.nested ? (
+      <>Level 1{nestedBlocks(NESTED_BLOCKS - 1)}</>
+    ) : props.crumbs ? (
+      crumbs
+    ) : props.steps ? (
+      steps
+    ) : (
+      props.children
+    ),
   };
 }
 

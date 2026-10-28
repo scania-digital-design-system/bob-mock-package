@@ -1,0 +1,22 @@
+{
+  "component": "stepper",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-stepper at @scania/tegel@1.66.1: a list of steps that sets their size, orientation and label position.",
+    "properties": [
+      { "name": "orientation", "type": "VARIANT", "values": ["horizontal", "vertical"] },
+      { "name": "labelPosition", "type": "VARIANT", "values": ["aside", "below"] },
+      { "name": "size", "type": "VARIANT", "values": ["sm", "lg"] },
+      { "name": "hideLabels", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "stepperId", "type": "TEXT", "values": [] },
+      { "name": "tdsAriaLabel", "type": "TEXT", "values": [] },
+      { "name": "children", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": [
+      { "property": "orientation", "disposition": "prop" },
+      { "property": "labelPosition", "disposition": "prop" },
+      { "property": "size", "disposition": "prop" }
+    ]
+  }
+}

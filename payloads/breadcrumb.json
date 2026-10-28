@@ -1,0 +1,13 @@
+{
+  "component": "breadcrumb",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-breadcrumb at @scania/tegel@1.66.1: one item in a breadcrumbs list, wrapping a link.",
+    "properties": [
+      { "name": "current", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "children", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": []
+  }
+}

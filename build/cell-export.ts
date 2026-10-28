@@ -6,7 +6,8 @@ import type { Plugin } from 'vite';
 // on disk keeps the delivered shape (ADR 0002 D7).
 
 const CELL_COMPONENT = /\/cells\/[^/]+\/[^/]+\/[^/]+\/v\d+\/component\.jsx$/;
-const COMPONENT_NAME = /^\s*function\s+([A-Z]\w*)\s*\(/;
+// The first line that starts with the function, after any relaxed imports (ADR 0006).
+const COMPONENT_NAME = /^function\s+([A-Z]\w*)\s*\(/m;
 
 export function isCellComponent(id: string): boolean {
   return CELL_COMPONENT.test(id.replaceAll('\\', '/'));

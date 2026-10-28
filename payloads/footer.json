@@ -1,0 +1,15 @@
+{
+  "component": "footer",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-footer at @scania/tegel@1.66.1: a page footer with a top part, start and end link groups, copyright and wordmark.",
+    "properties": [
+      { "name": "top", "type": "INSTANCE_SWAP", "values": [] },
+      { "name": "start", "type": "INSTANCE_SWAP", "values": [] },
+      { "name": "end", "type": "INSTANCE_SWAP", "values": [] },
+      { "name": "copyright", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": []
+  }
+}

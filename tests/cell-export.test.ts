@@ -31,6 +31,11 @@ describe('withDefaultExport', () => {
       '\nfunction Link({}) {}',
       '\nfunction Link({}) {}\nexport default Link;\n',
     ],
+    [
+      'handles a relaxed import before the function',
+      "import { useState } from 'react';\n\nfunction Tabs({}) {}",
+      "import { useState } from 'react';\n\nfunction Tabs({}) {}\nexport default Tabs;\n",
+    ],
   ])('%s', (_name, code, want) => {
     expect(withDefaultExport(code)).toBe(want);
   });

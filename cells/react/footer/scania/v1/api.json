@@ -1,0 +1,36 @@
+{
+  "componentType": "footer",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "top",
+    "start",
+    "end",
+    "copyright"
+  ],
+  "rules": [
+    {
+      "id": "prop-top",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"top\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-start",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"start\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-end",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"end\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-copyright",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"copyright\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

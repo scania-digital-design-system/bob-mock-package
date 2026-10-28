@@ -1,0 +1,90 @@
+.tl-footer {
+  box-sizing: border-box;
+  display: block;
+}
+.tl-footer__top {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: var(--space-element-40);
+  width: 100%;
+  padding: var(--space-element-40);
+  background-color: var(--color-background-layer-01);
+}
+.tl-footer__main {
+  padding: 0 var(--space-element-40);
+  background-color: var(--color-footer-main);
+}
+.tl-footer__main-top {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-element-40) 0;
+}
+.tl-footer__start,
+.tl-footer__end {
+  display: flex;
+  column-gap: var(--space-element-24);
+}
+.tl-footer__end {
+  margin-left: auto;
+  color: var(--color-icon-inverse-strong);
+}
+.tl-footer__main-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-element-40) 0;
+  border-top: var(--border-control) solid var(--color-footer-divider);
+}
+.tl-footer__copyright {
+  margin: 0;
+  color: var(--color-text-inverse-soft);
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: normal;
+  line-height: var(--font-line-height-detail-02);
+  letter-spacing: var(--font-letter-spacing-detail);
+  text-transform: none;
+}
+.tl-footer__brand {
+  width: var(--size-footer-wordmark-width);
+  height: var(--size-footer-wordmark-height);
+  background-image: var(--image-footer-wordmark);
+  background-repeat: no-repeat;
+  background-size: var(--size-footer-wordmark-width);
+  background-position: right;
+}
+.tl-footer__brand p {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: transparent;
+  visibility: hidden;
+}
+
+@media all and (max-width: 992px) {
+  .tl-footer__top {
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+  .tl-footer__main {
+    padding: 0 var(--space-element-24);
+  }
+  .tl-footer__main-top {
+    flex-direction: column;
+    row-gap: var(--space-element-48);
+    padding: var(--space-element-24) 0;
+  }
+  .tl-footer__end {
+    flex-direction: row;
+    gap: var(--space-element-8);
+    margin-left: unset;
+  }
+  .tl-footer__main-bottom {
+    flex-direction: column;
+    padding-bottom: var(--space-element-32);
+  }
+  .tl-footer__brand {
+    width: 100%;
+  }
+}

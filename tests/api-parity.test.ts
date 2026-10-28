@@ -2,7 +2,12 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { cellDirs, publicApiSurface } from './support/cells';
-import { tegelEvents, tegelInterfaceName, tegelProps } from './support/tegel-types';
+import {
+  tegelEvents,
+  tegelHasComponent,
+  tegelInterfaceName,
+  tegelProps,
+} from './support/tegel-types';
 
 // Each cell's public API (api.json) must equal Tegel's props and events for the same
 // component in @scania/tegel@1.66.1, apart from the departures listed here. Every entry
@@ -21,6 +26,13 @@ const DEPARTURES: Record<string, { dropped?: string[]; added?: string[] }> = {
   block: { added: ['children'] },
   tag: { added: ['prefix'] },
   message: { added: ['children'] },
+  breadcrumbs: { added: ['children'] },
+  breadcrumb: { added: ['children'] },
+  stepper: { added: ['children'] },
+  step: { added: ['label'] },
+  footer: { added: ['top', 'start', 'end', 'copyright'] },
+  'footer-group': { added: ['title', 'children'] },
+  'footer-item': { added: ['children'] },
 };
 
 // Read by path: the package's "exports" map does not expose this file.
@@ -57,6 +69,18 @@ declare namespace LocalJSX {
   ])('names %s %s', (component, want) => {
     expect(tegelInterfaceName(component)).toBe(want);
   });
+
+  it.each([
+    ['a component with props', 'TdsThing', true],
+    ['a component without props', 'TdsEmpty', true],
+    ['an unknown tag', 'TdsOther', false],
+  ])('finds %s', (_name, tag, want) => {
+    const withEmpty = fixture.replace(
+      'export namespace Components {',
+      'export namespace Components {\n    interface TdsEmpty {\n    }',
+    );
+    expect(tegelHasComponent(withEmpty, tag)).toBe(want);
+  });
 });
 
 describe('cells expose the Tegel API', () => {
@@ -67,8 +91,8 @@ describe('cells expose the Tegel API', () => {
   }
   it.each(cells)('$id', ({ dir, component }) => {
     const tag = tegelInterfaceName(component);
+    expect(tegelHasComponent(dts, tag), `${tag} not found in @scania/tegel`).toBe(true);
     const tegel = [...tegelProps(dts, tag), ...tegelEvents(dts, tag)];
-    expect(tegel, `${tag} not found in @scania/tegel`).not.toEqual([]);
     const { dropped = [], added = [] } = DEPARTURES[component] ?? {};
     const want = [
       ...tegel.filter((name) => !OUT_OF_SCOPE.includes(name) && !dropped.includes(name)),

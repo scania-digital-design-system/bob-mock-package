@@ -110,3 +110,55 @@ export type MessageProps = {
   tdsAriaLabel?: string;
   children?: ReactNode;
 };
+
+export type BreadcrumbsProps = {
+  tdsAriaLabel?: string;
+  children?: ReactNode;
+};
+
+export type BreadcrumbProps = {
+  /** @default false */
+  current?: boolean;
+  children?: ReactNode;
+};
+
+export type StepperProps = {
+  /** @default 'horizontal' */
+  orientation?: 'horizontal' | 'vertical';
+  /** @default 'below' */
+  labelPosition?: 'aside' | 'below';
+  /** @default 'lg' */
+  size?: 'sm' | 'lg';
+  /** @default false */
+  hideLabels?: boolean;
+  stepperId?: string;
+  /** @default 'Progress steps' */
+  tdsAriaLabel?: string;
+  children?: ReactNode;
+};
+
+export type StepProps = {
+  index?: string;
+  /** @default 'upcoming' */
+  state?: 'current' | 'error' | 'success' | 'upcoming';
+  tdsAriaCurrent?: string;
+  label?: ReactNode;
+};
+
+export type FooterProps = {
+  top?: ReactNode;
+  start?: ReactNode;
+  end?: ReactNode;
+  copyright?: ReactNode;
+};
+
+export type FooterGroupProps = {
+  titleText?: string;
+  tdsListAriaLabel?: string;
+  title?: ReactNode;
+  children?: ReactNode;
+};
+
+export type FooterItemProps = {
+  children?: ReactNode;
+};

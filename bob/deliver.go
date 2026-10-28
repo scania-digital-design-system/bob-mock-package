@@ -115,7 +115,9 @@ func servesCell(req contracts.PublishRequest, component, brand, target string) e
 	return nil
 }
 
-var componentSignature = regexp.MustCompile(`^function\s+\w+\(\s*\{`)
+// componentSignature matches the first line that starts the function, so a relaxed
+// import above it (ADR 0006) is allowed.
+var componentSignature = regexp.MustCompile(`(?m)^function\s+\w+\(\s*\{`)
 
 // publicAPISurface lists the props the component destructures, which is what the
 // bootstrap prompt asks the model to report ("every externally-visible prop/slot your

@@ -49,6 +49,10 @@
       }
     },
     "border": {
+      "discrete": {
+        "$type": "color",
+        "$value": "#303c612b"
+      },
       "focus": {
         "$type": "color",
         "$value": "#2a6ecf"
@@ -126,6 +130,26 @@
         "$value": "#7e90a9"
       }
     },
+    "footer": {
+      "divider": {
+        "$type": "color",
+        "$value": "#0f3263"
+      },
+      "item-active": {
+        "$type": "color",
+        "$value": "#e0e5eb"
+      },
+      "main": {
+        "$type": "color",
+        "$value": "#041e42"
+      }
+    },
+    "icon": {
+      "inverse-strong": {
+        "$type": "color",
+        "$value": "#f6f7f9"
+      }
+    },
     "link": {
       "default": {
         "$type": "color",
@@ -152,6 +176,16 @@
       "5": {
         "$type": "color",
         "$value": "#0000000d"
+      }
+    },
+    "stepper": {
+      "strong": {
+        "$type": "color",
+        "$value": "#2d3643"
+      },
+      "success": {
+        "$type": "color",
+        "$value": "#008064"
       }
     },
     "system": {
@@ -238,6 +272,14 @@
       "inverse-base": {
         "$type": "color",
         "$value": "#ffffff"
+      },
+      "inverse-soft": {
+        "$type": "color",
+        "$value": "#c3d8f7b8"
+      },
+      "inverse-strong": {
+        "$type": "color",
+        "$value": "#f6f7f9"
       },
       "soft": {
         "$type": "color",
@@ -331,6 +373,14 @@
       }
     }
   },
+  "image": {
+    "footer": {
+      "wordmark": {
+        "$type": "color",
+        "$value": "url(https://cdn.digitaldesign.scania.com/logotype/multibrand/scania/scania-wordmark-white.svg)"
+      }
+    }
+  },
   "motion": {
     "card": {
       "fade": {
@@ -340,6 +390,12 @@
       "rotate": {
         "$type": "color",
         "$value": "160ms"
+      }
+    },
+    "footer": {
+      "rotate": {
+        "$type": "color",
+        "$value": "200ms"
       }
     },
     "spinner": {
@@ -376,6 +432,10 @@
       "$type": "number",
       "$value": 4
     },
+    "stepper": {
+      "$type": "number",
+      "$value": 9999
+    },
     "tag": {
       "$type": "number",
       "$value": 4
@@ -390,6 +450,16 @@
       "sm": {
         "$type": "number",
         "$value": 8
+      }
+    },
+    "breadcrumb": {
+      "separator-height": {
+        "$type": "number",
+        "$value": 8
+      },
+      "separator-width": {
+        "$type": "number",
+        "$value": 4
       }
     },
     "button": {
@@ -435,6 +505,20 @@
     "divider": {
       "$type": "number",
       "$value": 1
+    },
+    "footer": {
+      "chevron": {
+        "$type": "number",
+        "$value": 20
+      },
+      "wordmark-height": {
+        "$type": "number",
+        "$value": 20
+      },
+      "wordmark-width": {
+        "$type": "number",
+        "$value": 117
+      }
     },
     "message": {
       "icon": {
@@ -489,6 +573,60 @@
         "$type": "number",
         "$value": 16
       }
+    },
+    "stepper": {
+      "1": {
+        "$type": "number",
+        "$value": 1
+      },
+      "10": {
+        "$type": "number",
+        "$value": 10
+      },
+      "13": {
+        "$type": "number",
+        "$value": 13
+      },
+      "16": {
+        "$type": "number",
+        "$value": 16
+      },
+      "20": {
+        "$type": "number",
+        "$value": 20
+      },
+      "24": {
+        "$type": "number",
+        "$value": 24
+      },
+      "28": {
+        "$type": "number",
+        "$value": 28
+      },
+      "30": {
+        "$type": "number",
+        "$value": 30
+      },
+      "32": {
+        "$type": "number",
+        "$value": 32
+      },
+      "34": {
+        "$type": "number",
+        "$value": 34
+      },
+      "36": {
+        "$type": "number",
+        "$value": 36
+      },
+      "40": {
+        "$type": "number",
+        "$value": 40
+      },
+      "minus-10": {
+        "$type": "number",
+        "$value": -10
+      }
     }
   },
   "space": {
@@ -539,13 +677,41 @@
         "$type": "number",
         "$value": 24
       },
+      "32": {
+        "$type": "number",
+        "$value": 32
+      },
       "4": {
         "$type": "number",
         "$value": 4
       },
+      "40": {
+        "$type": "number",
+        "$value": 40
+      },
+      "48": {
+        "$type": "number",
+        "$value": 48
+      },
       "8": {
         "$type": "number",
         "$value": 8
+      }
+    },
+    "footer": {
+      "item-mobile": {
+        "$type": "number",
+        "$value": 19
+      }
+    },
+    "stepper": {
+      "vertical-lg": {
+        "$type": "number",
+        "$value": 52
+      },
+      "vertical-sm": {
+        "$type": "number",
+        "$value": 36
       }
     }
   }

@@ -1,0 +1,57 @@
+{
+  "componentType": "stepper",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "orientation",
+    "labelPosition",
+    "size",
+    "hideLabels",
+    "stepperId",
+    "tdsAriaLabel",
+    "children"
+  ],
+  "rules": [
+    {
+      "id": "prop-orientation",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"orientation\" is a component prop: the caller selects one, accepting horizontal | vertical. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-labelposition",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"labelPosition\" is a component prop: the caller selects one, accepting aside | below. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-size",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"size\" is a component prop: the caller selects one, accepting sm | lg. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-hidelabels",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"hideLabels\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-stepperid",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"stepperId\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-tdsarialabel",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"tdsAriaLabel\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-children",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"children\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

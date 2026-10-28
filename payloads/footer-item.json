@@ -1,0 +1,10 @@
+{
+  "component": "footer-item",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-footer-item at @scania/tegel@1.66.1: one item in a footer group, wrapping a link or a button.",
+    "properties": [{ "name": "children", "type": "INSTANCE_SWAP", "values": [] }],
+    "answers": []
+  }
+}

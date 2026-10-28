@@ -197,6 +197,72 @@
       "name": "font/line-height/headline-07",
       "type": "FLOAT",
       "valuesByMode": { "scania": "16" }
-    }
+    },
+    {
+      "name": "size/breadcrumb/separator-width",
+      "type": "FLOAT",
+      "valuesByMode": { "scania": "4" }
+    },
+    {
+      "name": "size/breadcrumb/separator-height",
+      "type": "FLOAT",
+      "valuesByMode": { "scania": "8" }
+    },
+    { "name": "color/stepper/strong", "type": "COLOR", "valuesByMode": { "scania": "#2d3643" } },
+    { "name": "color/stepper/success", "type": "COLOR", "valuesByMode": { "scania": "#008064" } },
+    {
+      "name": "color/text/inverse-strong",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "#f6f7f9" }
+    },
+    { "name": "radius/stepper", "type": "FLOAT", "valuesByMode": { "scania": "9999" } },
+    { "name": "space/stepper/vertical-lg", "type": "FLOAT", "valuesByMode": { "scania": "52" } },
+    { "name": "space/stepper/vertical-sm", "type": "FLOAT", "valuesByMode": { "scania": "36" } },
+    { "name": "size/stepper/1", "type": "FLOAT", "valuesByMode": { "scania": "1" } },
+    { "name": "size/stepper/10", "type": "FLOAT", "valuesByMode": { "scania": "10" } },
+    { "name": "size/stepper/minus-10", "type": "FLOAT", "valuesByMode": { "scania": "-10" } },
+    { "name": "size/stepper/13", "type": "FLOAT", "valuesByMode": { "scania": "13" } },
+    { "name": "size/stepper/16", "type": "FLOAT", "valuesByMode": { "scania": "16" } },
+    { "name": "size/stepper/20", "type": "FLOAT", "valuesByMode": { "scania": "20" } },
+    { "name": "size/stepper/24", "type": "FLOAT", "valuesByMode": { "scania": "24" } },
+    { "name": "size/stepper/28", "type": "FLOAT", "valuesByMode": { "scania": "28" } },
+    { "name": "size/stepper/30", "type": "FLOAT", "valuesByMode": { "scania": "30" } },
+    { "name": "size/stepper/32", "type": "FLOAT", "valuesByMode": { "scania": "32" } },
+    { "name": "size/stepper/34", "type": "FLOAT", "valuesByMode": { "scania": "34" } },
+    { "name": "size/stepper/36", "type": "FLOAT", "valuesByMode": { "scania": "36" } },
+    { "name": "size/stepper/40", "type": "FLOAT", "valuesByMode": { "scania": "40" } },
+    { "name": "color/footer/main", "type": "COLOR", "valuesByMode": { "scania": "#041e42" } },
+    { "name": "color/footer/divider", "type": "COLOR", "valuesByMode": { "scania": "#0f3263" } },
+    {
+      "name": "color/footer/item-active",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "#e0e5eb" }
+    },
+    {
+      "name": "color/text/inverse-soft",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "#c3d8f7b8" }
+    },
+    {
+      "name": "color/icon/inverse-strong",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "#f6f7f9" }
+    },
+    { "name": "color/border/discrete", "type": "COLOR", "valuesByMode": { "scania": "#303c612b" } },
+    {
+      "name": "image/footer/wordmark",
+      "type": "COLOR",
+      "valuesByMode": {
+        "scania": "url(https://cdn.digitaldesign.scania.com/logotype/multibrand/scania/scania-wordmark-white.svg)"
+      }
+    },
+    { "name": "size/footer/wordmark-width", "type": "FLOAT", "valuesByMode": { "scania": "117" } },
+    { "name": "size/footer/wordmark-height", "type": "FLOAT", "valuesByMode": { "scania": "20" } },
+    { "name": "space/element/32", "type": "FLOAT", "valuesByMode": { "scania": "32" } },
+    { "name": "space/element/40", "type": "FLOAT", "valuesByMode": { "scania": "40" } },
+    { "name": "space/element/48", "type": "FLOAT", "valuesByMode": { "scania": "48" } },
+    { "name": "space/footer/item-mobile", "type": "FLOAT", "valuesByMode": { "scania": "19" } },
+    { "name": "size/footer/chevron", "type": "FLOAT", "valuesByMode": { "scania": "20" } },
+    { "name": "motion/footer/rotate", "type": "COLOR", "valuesByMode": { "scania": "200ms" } }
   ]
 }

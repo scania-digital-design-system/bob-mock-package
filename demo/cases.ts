@@ -170,7 +170,55 @@ export const SECTIONS: DemoSection[] = [
   },
 ];
 
+// Compound components: `crumbs`, `steps` and `top`/`start`/`end` ask each page to
+// build the children from the data below.
+SECTIONS.push(
+  {
+    component: 'breadcrumbs',
+    tag: 'tds-breadcrumbs',
+    cases: [
+      { label: 'three levels, last current', props: { tdsAriaLabel: 'Breadcrumb', crumbs: true } },
+    ],
+  },
+  {
+    component: 'stepper',
+    tag: 'tds-stepper',
+    cases: [
+      { label: 'horizontal lg (default)', props: { steps: true } },
+      { label: 'horizontal sm', props: { size: 'sm', steps: true } },
+      { label: 'labels aside', props: { labelPosition: 'aside', steps: true } },
+      { label: 'labels hidden', props: { hideLabels: true, steps: true } },
+      { label: 'vertical lg', props: { orientation: 'vertical', steps: true } },
+      { label: 'vertical sm', props: { orientation: 'vertical', size: 'sm', steps: true } },
+    ],
+  },
+  {
+    component: 'footer',
+    tag: 'tds-footer',
+    cases: [
+      { label: 'copyright only', props: {} },
+      { label: 'top, start and end', props: { top: true, start: true, end: true } },
+    ],
+  },
+);
+
 export const NESTED_BLOCKS = 4;
+
+export const CRUMBS = ['Home', 'Fleet', 'Truck 42'];
+
+export const STEPS = [
+  { index: '1', state: 'success', label: 'Details' },
+  { index: '2', state: 'error', label: 'Payment' },
+  { index: '3', state: 'current', label: 'Review' },
+  { index: '4', state: 'upcoming', label: 'Done' },
+];
+
+export const FOOTER_TOP = [
+  { title: 'Products', items: ['Trucks', 'Buses', 'Engines'] },
+  { title: 'Services', items: ['Financing', 'Insurance', 'Parts'] },
+];
+export const FOOTER_START = ['Cookies', 'Privacy', 'Legal'];
+export const FOOTER_END = ['LinkedIn', 'YouTube'];
 
 // The same plus icon on both pages, so only the component differs.
 export const ICON_PATH = 'M9 3h2v6h6v2h-6v6H9v-6H3V9h6z';

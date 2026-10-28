@@ -26,6 +26,11 @@ export function tegelInterfaceName(component: string): string {
     .join('')}`;
 }
 
+// A component can have no props (tds-footer-item), so presence is its own check.
+export function tegelHasComponent(dts: string, tag: string): boolean {
+  return interfaceBody(dts, 'export namespace Components {', tag) !== '';
+}
+
 export function tegelProps(dts: string, tag: string): string[] {
   return memberNames(interfaceBody(dts, 'export namespace Components {', tag));
 }

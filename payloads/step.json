@@ -1,0 +1,15 @@
+{
+  "component": "step",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-step at @scania/tegel@1.66.1: one step in a stepper, with an index or a state icon and a label.",
+    "properties": [
+      { "name": "index", "type": "TEXT", "values": [] },
+      { "name": "state", "type": "VARIANT", "values": ["current", "error", "success", "upcoming"] },
+      { "name": "tdsAriaCurrent", "type": "TEXT", "values": [] },
+      { "name": "label", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": [{ "property": "state", "disposition": "prop" }]
+  }
+}

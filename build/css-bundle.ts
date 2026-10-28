@@ -16,6 +16,13 @@ export const COMPONENTS = [
   'block',
   'tag',
   'message',
+  'breadcrumbs',
+  'breadcrumb',
+  'stepper',
+  'step',
+  'footer',
+  'footer-group',
+  'footer-item',
 ] as const;
 
 export function cssSources(components: readonly string[]): string[] {

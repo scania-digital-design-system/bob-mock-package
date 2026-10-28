@@ -1,0 +1,35 @@
+.tl-stepper {
+  box-sizing: border-box;
+  display: flex;
+  min-width: 100%;
+}
+.tl-stepper--horizontal {
+  flex-direction: row;
+}
+.tl-stepper--below {
+  justify-content: normal;
+}
+.tl-stepper--lg {
+  display: flex;
+}
+.tl-stepper--sm {
+  display: flex;
+}
+.tl-stepper--hide-labels-true {
+  display: flex;
+}
+.tl-stepper--hide-labels-false {
+  display: flex;
+}
+.tl-stepper--vertical {
+  flex-direction: column;
+  justify-content: unset;
+  gap: var(--space-stepper-vertical-lg);
+  height: 100%;
+}
+.tl-stepper--vertical.tl-stepper--sm {
+  gap: var(--space-stepper-vertical-sm);
+}
+.tl-stepper--horizontal.tl-stepper--aside {
+  justify-content: unset;
+}

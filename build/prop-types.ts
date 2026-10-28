@@ -54,7 +54,8 @@ export function propType(
   return override;
 }
 
-const PARAMETER = /^\s*function\s+\w+\s*\(\s*\{([^}]*)\}\s*\)/;
+// Found on the first line that starts with the function, after any relaxed imports.
+const PARAMETER = /^function\s+\w+\s*\(\s*\{([^}]*)\}\s*\)/m;
 
 // Prop name → default value as written in the cell, e.g. size → 'lg'.
 export function cellDefaults(jsx: string): Record<string, string> {

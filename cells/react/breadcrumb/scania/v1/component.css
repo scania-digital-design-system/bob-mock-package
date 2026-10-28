@@ -1,0 +1,41 @@
+.tl-breadcrumb {
+  box-sizing: border-box;
+}
+.tl-breadcrumb__item > * {
+  color: var(--color-text-strong);
+  text-decoration: none;
+}
+.tl-breadcrumb__item:hover > * {
+  color: var(--color-text-strong);
+  text-decoration: underline;
+}
+.tl-breadcrumb__item > *:focus-visible {
+  z-index: 1;
+  outline: var(--border-focus) solid var(--color-border-focus);
+  outline-offset: var(--border-focus-offset);
+  box-shadow: 0 0 0 var(--border-control) var(--color-border-focus-discrete);
+}
+.tl-breadcrumb__item::after {
+  content: '\203A';
+  display: inline-block;
+  width: var(--size-breadcrumb-separator-width);
+  height: var(--size-breadcrumb-separator-height);
+  margin-right: var(--space-element-4);
+  margin-left: var(--space-element-4);
+  color: var(--color-text-strong);
+}
+.tl-breadcrumb--current-false .tl-breadcrumb__item::after {
+  display: inline-block;
+}
+.tl-breadcrumb--current-true .tl-breadcrumb__item > * {
+  pointer-events: none;
+  cursor: default;
+  color: var(--color-text-soft);
+}
+.tl-breadcrumb--current-true .tl-breadcrumb__item:hover > * {
+  text-decoration: none;
+  cursor: not-allowed;
+}
+.tl-breadcrumb--current-true .tl-breadcrumb__item::after {
+  display: none;
+}
