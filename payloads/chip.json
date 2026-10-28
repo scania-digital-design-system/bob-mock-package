@@ -1,0 +1,25 @@
+{
+  "component": "chip",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-chip at @scania/tegel@1.66.1: a compact button, radio or checkbox with optional prefix and suffix.",
+    "properties": [
+      { "name": "type", "type": "VARIANT", "values": ["button", "radio", "checkbox"] },
+      { "name": "size", "type": "VARIANT", "values": ["sm", "lg"] },
+      { "name": "chipId", "type": "TEXT", "values": [] },
+      { "name": "checked", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "name", "type": "TEXT", "values": [] },
+      { "name": "value", "type": "TEXT", "values": [] },
+      { "name": "disabled", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "tdsAriaLabel", "type": "TEXT", "values": [] },
+      { "name": "prefix", "type": "INSTANCE_SWAP", "values": [] },
+      { "name": "label", "type": "INSTANCE_SWAP", "values": [] },
+      { "name": "suffix", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": [
+      { "property": "type", "disposition": "prop" },
+      { "property": "size", "disposition": "prop" }
+    ]
+  }
+}

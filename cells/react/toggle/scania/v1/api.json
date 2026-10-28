@@ -1,0 +1,72 @@
+{
+  "componentType": "toggle",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "checked",
+    "required",
+    "size",
+    "name",
+    "headline",
+    "disabled",
+    "toggleId",
+    "tdsAriaLabel",
+    "label",
+    "onTdsToggle"
+  ],
+  "rules": [
+    {
+      "id": "prop-checked",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"checked\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-required",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"required\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-size",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"size\" is a component prop: the caller selects one, accepting sm | lg. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-name",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"name\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-headline",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"headline\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-disabled",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"disabled\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-toggleid",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"toggleId\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-tdsarialabel",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"tdsAriaLabel\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-label",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"label\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

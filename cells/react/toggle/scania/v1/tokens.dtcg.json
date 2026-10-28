@@ -1,0 +1,1006 @@
+{
+  "border": {
+    "control": {
+      "$type": "number",
+      "$value": 1
+    },
+    "focus": {
+      "$type": "number",
+      "$value": 2
+    },
+    "focus-inset": {
+      "$type": "number",
+      "$value": -2
+    },
+    "focus-offset": {
+      "$type": "number",
+      "$value": 1
+    },
+    "input": {
+      "$type": "number",
+      "$value": 1
+    },
+    "input-indicator": {
+      "$type": "number",
+      "$value": 2
+    },
+    "link-focus": {
+      "$type": "number",
+      "$value": 3
+    },
+    "message": {
+      "$type": "number",
+      "$value": 4
+    }
+  },
+  "color": {
+    "background": {
+      "base": {
+        "$type": "color",
+        "$value": "#ffffff"
+      },
+      "layer-01": {
+        "$type": "color",
+        "$value": "#f6f7f9"
+      },
+      "layer-02": {
+        "$type": "color",
+        "$value": "#ffffff"
+      },
+      "layer-03": {
+        "$type": "color",
+        "$value": "#f6f7f9"
+      },
+      "none": {
+        "$type": "color",
+        "$value": "transparent"
+      }
+    },
+    "border": {
+      "defined": {
+        "$type": "color",
+        "$value": "#041530b8"
+      },
+      "discrete": {
+        "$type": "color",
+        "$value": "#303c612b"
+      },
+      "focus": {
+        "$type": "color",
+        "$value": "#2a6ecf"
+      },
+      "focus-discrete": {
+        "$type": "color",
+        "$value": "#ffffff"
+      },
+      "none": {
+        "$type": "color",
+        "$value": "transparent"
+      },
+      "soft": {
+        "$type": "color",
+        "$value": "#0a2850a3"
+      },
+      "strong": {
+        "$type": "color",
+        "$value": "#0e1013"
+      },
+      "subtle": {
+        "$type": "color",
+        "$value": "#07275880"
+      }
+    },
+    "button": {
+      "danger": {
+        "active": {
+          "$type": "color",
+          "$value": "#8a0012"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "#b20018"
+        }
+      },
+      "primary": {
+        "active": {
+          "$type": "color",
+          "$value": "#041e42"
+        },
+        "default": {
+          "$type": "color",
+          "$value": "#16417f"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "#0f3263"
+        }
+      }
+    },
+    "chip": {
+      "selected-hover": {
+        "$type": "color",
+        "$value": "#16417f"
+      },
+      "standard": {
+        "$type": "color",
+        "$value": "#e0e5eb"
+      },
+      "standard-hover": {
+        "$type": "color",
+        "$value": "#d1d7e0"
+      }
+    },
+    "danger": {
+      "$type": "color",
+      "$value": "#d1001b"
+    },
+    "divider": {
+      "defined": {
+        "$type": "color",
+        "$value": "#475467"
+      },
+      "discrete": {
+        "$type": "color",
+        "$value": "#d1d7e0"
+      },
+      "expressive": {
+        "$type": "color",
+        "$value": "#0f3263"
+      },
+      "soft": {
+        "$type": "color",
+        "$value": "#5f728c"
+      },
+      "subtle": {
+        "$type": "color",
+        "$value": "#7e90a9"
+      }
+    },
+    "footer": {
+      "divider": {
+        "$type": "color",
+        "$value": "#0f3263"
+      },
+      "item-active": {
+        "$type": "color",
+        "$value": "#e0e5eb"
+      },
+      "main": {
+        "$type": "color",
+        "$value": "#041e42"
+      }
+    },
+    "icon": {
+      "inverse-strong": {
+        "$type": "color",
+        "$value": "#f6f7f9"
+      },
+      "strong": {
+        "$type": "color",
+        "$value": "#0e1013"
+      },
+      "subtle": {
+        "$type": "color",
+        "$value": "#07275880"
+      }
+    },
+    "input": {
+      "selected": {
+        "$type": "color",
+        "$value": "#0e1013"
+      }
+    },
+    "link": {
+      "default": {
+        "$type": "color",
+        "$value": "#2a6ecf"
+      },
+      "visited": {
+        "$type": "color",
+        "$value": "#16417f"
+      }
+    },
+    "shadow": {
+      "1": {
+        "$type": "color",
+        "$value": "#00000003"
+      },
+      "15": {
+        "$type": "color",
+        "$value": "#00000026"
+      },
+      "20": {
+        "$type": "color",
+        "$value": "#00000033"
+      },
+      "5": {
+        "$type": "color",
+        "$value": "#0000000d"
+      }
+    },
+    "stepper": {
+      "strong": {
+        "$type": "color",
+        "$value": "#2d3643"
+      },
+      "success": {
+        "$type": "color",
+        "$value": "#008064"
+      }
+    },
+    "system": {
+      "danger-discrete": {
+        "$type": "color",
+        "$value": "#ffdfe3"
+      },
+      "info": {
+        "$type": "color",
+        "$value": "#2a6ecf"
+      },
+      "success": {
+        "$type": "color",
+        "$value": "#009e7e"
+      },
+      "warning": {
+        "$type": "color",
+        "$value": "#b87c14"
+      },
+      "warning-subtle": {
+        "$type": "color",
+        "$value": "#eaad06"
+      }
+    },
+    "tag": {
+      "error": {
+        "$type": "color",
+        "$value": "#ffb9b8"
+      },
+      "information": {
+        "$type": "color",
+        "$value": "#87afe8"
+      },
+      "neutral": {
+        "$type": "color",
+        "$value": "#e0e5eb"
+      },
+      "new": {
+        "$type": "color",
+        "$value": "#bacde8"
+      },
+      "on-error": {
+        "$type": "color",
+        "$value": "#6c0011"
+      },
+      "on-information": {
+        "$type": "color",
+        "$value": "#041e42"
+      },
+      "on-neutral": {
+        "$type": "color",
+        "$value": "#242c37"
+      },
+      "on-new": {
+        "$type": "color",
+        "$value": "#0f3263"
+      },
+      "on-success": {
+        "$type": "color",
+        "$value": "#0a382e"
+      },
+      "on-warning": {
+        "$type": "color",
+        "$value": "#6b3b10"
+      },
+      "success": {
+        "$type": "color",
+        "$value": "#9bd9c2"
+      },
+      "warning": {
+        "$type": "color",
+        "$value": "#f9eec3"
+      }
+    },
+    "text": {
+      "base": {
+        "$type": "color",
+        "$value": "#000000"
+      },
+      "defined": {
+        "$type": "color",
+        "$value": "#041530b8"
+      },
+      "disabled": {
+        "$type": "color",
+        "$value": "#3a517c59"
+      },
+      "inverse-base": {
+        "$type": "color",
+        "$value": "#ffffff"
+      },
+      "inverse-soft": {
+        "$type": "color",
+        "$value": "#c3d8f7b8"
+      },
+      "inverse-strong": {
+        "$type": "color",
+        "$value": "#f6f7f9"
+      },
+      "soft": {
+        "$type": "color",
+        "$value": "#0a2850a3"
+      },
+      "strong": {
+        "$type": "color",
+        "$value": "#0e1013"
+      }
+    },
+    "toggle": {
+      "off": {
+        "$type": "color",
+        "$value": "#7e90a9"
+      },
+      "off-active": {
+        "$type": "color",
+        "$value": "#4e5e75"
+      },
+      "off-hover": {
+        "$type": "color",
+        "$value": "#5f728c"
+      },
+      "on": {
+        "$type": "color",
+        "$value": "#009e7e"
+      },
+      "on-active": {
+        "$type": "color",
+        "$value": "#00664f"
+      },
+      "on-hover": {
+        "$type": "color",
+        "$value": "#008064"
+      }
+    }
+  },
+  "font": {
+    "family": {
+      "body": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Scania Sans', arial, 'Helvetica Neue'",
+          "fontSize": 0,
+          "fontWeight": 0
+        }
+      },
+      "detail": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Scania Sans Semi Condensed', arial, 'Helvetica Neue'",
+          "fontSize": 0,
+          "fontWeight": 0
+        }
+      },
+      "headline": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Scania Sans', arial, 'Helvetica Neue'",
+          "fontSize": 0,
+          "fontWeight": 0
+        }
+      }
+    },
+    "letter-spacing": {
+      "body": {
+        "$type": "number",
+        "$value": -0.32
+      },
+      "detail": {
+        "$type": "number",
+        "$value": -0.14
+      },
+      "detail-01": {
+        "$type": "number",
+        "$value": -0.16
+      },
+      "headline": {
+        "$type": "number",
+        "$value": -0.28
+      }
+    },
+    "line-height": {
+      "body-01": {
+        "$type": "number",
+        "$value": 24
+      },
+      "detail-02": {
+        "$type": "number",
+        "$value": 16
+      },
+      "detail-03": {
+        "$type": "number",
+        "$value": 20
+      },
+      "detail-05": {
+        "$type": "number",
+        "$value": 16
+      },
+      "detail-07": {
+        "$type": "number",
+        "$value": 8
+      },
+      "headline-06": {
+        "$type": "number",
+        "$value": 16
+      },
+      "headline-07": {
+        "$type": "number",
+        "$value": 16
+      }
+    },
+    "size": {
+      "body": {
+        "$type": "number",
+        "$value": 16
+      },
+      "caption": {
+        "$type": "number",
+        "$value": 12
+      },
+      "detail": {
+        "$type": "number",
+        "$value": 14
+      },
+      "detail-07": {
+        "$type": "number",
+        "$value": 10
+      }
+    }
+  },
+  "image": {
+    "checkbox": {
+      "check": {
+        "$type": "color",
+        "$value": "url(\"data:image/svg+xml;utf8,\u003csvg width='8' height='6' viewBox='0 0 8 6' fill='none' xmlns='http://www.w3.org/2000/svg'\u003e\u003cpath d='M1 2.33333L3.4 5C4.80589 3.4379 5.59411 2.5621 7 1' stroke='%23000' stroke-linecap='round' stroke-linejoin='round'/\u003e\u003c/svg\u003e\")"
+      },
+      "indeterminate": {
+        "$type": "color",
+        "$value": "url(\"data:image/svg+xml;utf8,\u003csvg width='8' height='2' viewBox='0 0 8 2' fill='none' xmlns='http://www.w3.org/2000/svg'\u003e\u003crect y='0.5' width='8' height='1' rx='0.5' fill='%23000'/\u003e\u003c/svg\u003e\")"
+      }
+    },
+    "footer": {
+      "wordmark": {
+        "$type": "color",
+        "$value": "url(https://cdn.digitaldesign.scania.com/logotype/multibrand/scania/scania-wordmark-white.svg)"
+      }
+    }
+  },
+  "motion": {
+    "card": {
+      "fade": {
+        "$type": "color",
+        "$value": "120ms"
+      },
+      "rotate": {
+        "$type": "color",
+        "$value": "160ms"
+      }
+    },
+    "easing": {
+      "scania": {
+        "$type": "color",
+        "$value": "cubic-bezier(0.4, 0, 0, 1)"
+      }
+    },
+    "footer": {
+      "rotate": {
+        "$type": "color",
+        "$value": "200ms"
+      }
+    },
+    "input": {
+      "indicator": {
+        "$type": "color",
+        "$value": "200ms"
+      }
+    },
+    "spinner": {
+      "duration": {
+        "$type": "color",
+        "$value": "1.8s"
+      },
+      "duration-lg": {
+        "$type": "color",
+        "$value": "2s"
+      }
+    },
+    "textarea": {
+      "border": {
+        "$type": "color",
+        "$value": "200ms"
+      },
+      "label": {
+        "$type": "color",
+        "$value": "100ms"
+      },
+      "placeholder": {
+        "$type": "color",
+        "$value": "350ms"
+      }
+    },
+    "toggle": {
+      "duration": {
+        "$type": "color",
+        "$value": "200ms"
+      }
+    }
+  },
+  "opacity": {
+    "disabled": {
+      "$type": "color",
+      "$value": "0.25"
+    },
+    "full": {
+      "$type": "color",
+      "$value": "1"
+    }
+  },
+  "radius": {
+    "badge": {
+      "$type": "number",
+      "$value": 12
+    },
+    "block": {
+      "$type": "number",
+      "$value": 4
+    },
+    "checkbox": {
+      "$type": "number",
+      "$value": 2
+    },
+    "chip": {
+      "$type": "number",
+      "$value": 24
+    },
+    "control": {
+      "$type": "number",
+      "$value": 4
+    },
+    "focus-medium": {
+      "$type": "number",
+      "$value": 3
+    },
+    "full": {
+      "$type": "number",
+      "$value": 9999
+    },
+    "input": {
+      "$type": "number",
+      "$value": 4
+    },
+    "message": {
+      "$type": "number",
+      "$value": 4
+    },
+    "stepper": {
+      "$type": "number",
+      "$value": 9999
+    },
+    "tag": {
+      "$type": "number",
+      "$value": 4
+    }
+  },
+  "size": {
+    "badge": {
+      "lg": {
+        "$type": "number",
+        "$value": 20
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 8
+      }
+    },
+    "breadcrumb": {
+      "separator-height": {
+        "$type": "number",
+        "$value": 8
+      },
+      "separator-width": {
+        "$type": "number",
+        "$value": 4
+      }
+    },
+    "button": {
+      "icon": {
+        "$type": "number",
+        "$value": 20
+      },
+      "icon-sm": {
+        "$type": "number",
+        "$value": 16
+      },
+      "lg": {
+        "$type": "number",
+        "$value": 56
+      },
+      "md": {
+        "$type": "number",
+        "$value": 48
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 40
+      },
+      "xs": {
+        "$type": "number",
+        "$value": 24
+      }
+    },
+    "card": {
+      "body-max": {
+        "$type": "number",
+        "$value": 336
+      },
+      "chevron": {
+        "$type": "number",
+        "$value": 16
+      },
+      "thumbnail": {
+        "$type": "number",
+        "$value": 36
+      }
+    },
+    "checkbox": {
+      "inset": {
+        "$type": "number",
+        "$value": 4
+      },
+      "width": {
+        "$type": "number",
+        "$value": 24
+      }
+    },
+    "chip": {
+      "label": {
+        "$type": "number",
+        "$value": 16
+      }
+    },
+    "divider": {
+      "$type": "number",
+      "$value": 1
+    },
+    "footer": {
+      "chevron": {
+        "$type": "number",
+        "$value": 20
+      },
+      "wordmark-height": {
+        "$type": "number",
+        "$value": 20
+      },
+      "wordmark-width": {
+        "$type": "number",
+        "$value": 117
+      }
+    },
+    "input": {
+      "height": {
+        "$type": "number",
+        "$value": 24
+      },
+      "indicator": {
+        "$type": "number",
+        "$value": 16
+      }
+    },
+    "message": {
+      "icon": {
+        "$type": "number",
+        "$value": 20
+      }
+    },
+    "radio-button": {
+      "dot": {
+        "$type": "number",
+        "$value": 6
+      },
+      "width": {
+        "$type": "number",
+        "$value": 20
+      }
+    },
+    "shadow": {
+      "1": {
+        "$type": "number",
+        "$value": 1
+      },
+      "3": {
+        "$type": "number",
+        "$value": 3
+      },
+      "minus-1": {
+        "$type": "number",
+        "$value": -1
+      }
+    },
+    "spinner": {
+      "lg": {
+        "$type": "number",
+        "$value": 84
+      },
+      "md": {
+        "$type": "number",
+        "$value": 52
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 24
+      },
+      "stroke-lg": {
+        "$type": "number",
+        "$value": 8
+      },
+      "stroke-md": {
+        "$type": "number",
+        "$value": 6
+      },
+      "stroke-sm": {
+        "$type": "number",
+        "$value": 4
+      },
+      "stroke-xs": {
+        "$type": "number",
+        "$value": 3
+      },
+      "xs": {
+        "$type": "number",
+        "$value": 16
+      }
+    },
+    "stepper": {
+      "1": {
+        "$type": "number",
+        "$value": 1
+      },
+      "10": {
+        "$type": "number",
+        "$value": 10
+      },
+      "13": {
+        "$type": "number",
+        "$value": 13
+      },
+      "16": {
+        "$type": "number",
+        "$value": 16
+      },
+      "20": {
+        "$type": "number",
+        "$value": 20
+      },
+      "24": {
+        "$type": "number",
+        "$value": 24
+      },
+      "28": {
+        "$type": "number",
+        "$value": 28
+      },
+      "30": {
+        "$type": "number",
+        "$value": 30
+      },
+      "32": {
+        "$type": "number",
+        "$value": 32
+      },
+      "34": {
+        "$type": "number",
+        "$value": 34
+      },
+      "36": {
+        "$type": "number",
+        "$value": 36
+      },
+      "40": {
+        "$type": "number",
+        "$value": 40
+      },
+      "minus-10": {
+        "$type": "number",
+        "$value": -10
+      }
+    },
+    "textarea": {
+      "icon": {
+        "$type": "number",
+        "$value": 16
+      },
+      "label-left": {
+        "$type": "number",
+        "$value": 16
+      },
+      "label-top": {
+        "$type": "number",
+        "$value": 20
+      },
+      "label-top-float": {
+        "$type": "number",
+        "$value": 8
+      },
+      "min-width": {
+        "$type": "number",
+        "$value": 208
+      },
+      "readonly-icon": {
+        "$type": "number",
+        "$value": 18
+      },
+      "resize": {
+        "$type": "number",
+        "$value": 12
+      },
+      "resizer-bottom": {
+        "$type": "number",
+        "$value": 2
+      },
+      "resizer-right": {
+        "$type": "number",
+        "$value": 1
+      }
+    },
+    "toggle": {
+      "knob": {
+        "$type": "number",
+        "$value": 16
+      },
+      "knob-inset": {
+        "$type": "number",
+        "$value": 4
+      },
+      "knob-on": {
+        "$type": "number",
+        "$value": 24
+      },
+      "sm-knob": {
+        "$type": "number",
+        "$value": 8
+      },
+      "sm-knob-on": {
+        "$type": "number",
+        "$value": 16
+      },
+      "sm-track-height": {
+        "$type": "number",
+        "$value": 16
+      },
+      "sm-track-width": {
+        "$type": "number",
+        "$value": 28
+      },
+      "track-height": {
+        "$type": "number",
+        "$value": 24
+      },
+      "track-width": {
+        "$type": "number",
+        "$value": 44
+      }
+    }
+  },
+  "space": {
+    "button": {
+      "icon-lg": {
+        "$type": "number",
+        "$value": 18
+      },
+      "icon-md": {
+        "$type": "number",
+        "$value": 14
+      },
+      "icon-sm": {
+        "$type": "number",
+        "$value": 10
+      },
+      "only-icon-lg": {
+        "$type": "number",
+        "$value": 17
+      },
+      "only-icon-md": {
+        "$type": "number",
+        "$value": 13
+      },
+      "only-icon-sm": {
+        "$type": "number",
+        "$value": 11
+      }
+    },
+    "chip": {
+      "edge-lg": {
+        "$type": "number",
+        "$value": 10
+      },
+      "gap-lg": {
+        "$type": "number",
+        "$value": 6
+      }
+    },
+    "element": {
+      "12": {
+        "$type": "number",
+        "$value": 12
+      },
+      "16": {
+        "$type": "number",
+        "$value": 16
+      },
+      "2": {
+        "$type": "number",
+        "$value": 2
+      },
+      "20": {
+        "$type": "number",
+        "$value": 20
+      },
+      "24": {
+        "$type": "number",
+        "$value": 24
+      },
+      "32": {
+        "$type": "number",
+        "$value": 32
+      },
+      "4": {
+        "$type": "number",
+        "$value": 4
+      },
+      "40": {
+        "$type": "number",
+        "$value": 40
+      },
+      "48": {
+        "$type": "number",
+        "$value": 48
+      },
+      "8": {
+        "$type": "number",
+        "$value": 8
+      }
+    },
+    "footer": {
+      "item-mobile": {
+        "$type": "number",
+        "$value": 19
+      }
+    },
+    "input": {
+      "offset": {
+        "$type": "number",
+        "$value": -4
+      }
+    },
+    "radio-button": {
+      "label": {
+        "$type": "number",
+        "$value": 6
+      }
+    },
+    "stepper": {
+      "vertical-lg": {
+        "$type": "number",
+        "$value": 52
+      },
+      "vertical-sm": {
+        "$type": "number",
+        "$value": 36
+      }
+    },
+    "textarea": {
+      "readonly": {
+        "$type": "number",
+        "$value": 54
+      }
+    }
+  }
+}

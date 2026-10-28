@@ -162,3 +162,112 @@ export type FooterGroupProps = {
 export type FooterItemProps = {
   children?: ReactNode;
 };
+
+export type CheckboxProps = {
+  name?: string;
+  checkboxId?: string;
+  /** @default false */
+  disabled?: boolean;
+  /** @default false */
+  required?: boolean;
+  /** @default false */
+  checked?: boolean;
+  /** @default false */
+  indeterminate?: boolean;
+  value?: string;
+  tdsAriaLabel?: string;
+  tdsAriaDescribedby?: string;
+  label?: ReactNode;
+  onTdsChange?: (event: CustomEvent<{ checkboxId: string; checked: boolean; indeterminate: boolean; value?: string }>) => void;
+  onTdsFocus?: (event: CustomEvent<FocusEvent>) => void;
+  onTdsBlur?: (event: CustomEvent<FocusEvent>) => void;
+};
+
+export type RadioButtonProps = {
+  name?: string;
+  value?: string;
+  radioId?: string;
+  /** @default false */
+  checked?: boolean;
+  /** @default false */
+  required?: boolean;
+  /** @default false */
+  disabled?: boolean;
+  tdsAriaLabel?: string;
+  tdsTabIndex?: string;
+  label?: ReactNode;
+  onTdsChange?: (event: CustomEvent<{ radioId: string; value: string | undefined }>) => void;
+};
+
+export type ToggleProps = {
+  /** @default false */
+  checked?: boolean;
+  /** @default false */
+  required?: boolean;
+  /** @default 'lg' */
+  size?: 'sm' | 'lg';
+  name?: string;
+  headline?: string;
+  /** @default false */
+  disabled?: boolean;
+  toggleId?: string;
+  tdsAriaLabel?: string;
+  label?: ReactNode;
+  onTdsToggle?: (event: CustomEvent<{ toggleId: string; checked: boolean }>) => void;
+};
+
+export type ChipProps = {
+  /** @default 'button' */
+  type?: 'button' | 'radio' | 'checkbox';
+  /** @default 'lg' */
+  size?: 'sm' | 'lg';
+  chipId?: string;
+  /** @default false */
+  checked?: boolean;
+  name?: string;
+  value?: string;
+  /** @default false */
+  disabled?: boolean;
+  tdsAriaLabel?: string;
+  prefix?: ReactNode;
+  label?: ReactNode;
+  suffix?: ReactNode;
+  onTdsChange?: (event: CustomEvent<{ chipId: string; value: string | undefined; checked?: boolean }>) => void;
+  onTdsClick?: (event: CustomEvent<{ chipId: string }>) => void;
+};
+
+export type TextareaProps = {
+  /** @default '' */
+  label?: string;
+  /** @default '' */
+  name?: string;
+  helper?: string;
+  cols?: string;
+  rows?: string;
+  /** @default 'no-label' */
+  labelPosition?: 'inside' | 'outside' | 'no-label';
+  /** @default '' */
+  placeholder?: string;
+  /** @default '' */
+  value?: string;
+  /** @default false */
+  disabled?: boolean;
+  /** @default false */
+  readOnly?: boolean;
+  /** @default false */
+  hideReadOnlyIcon?: boolean;
+  /** @default 'default' */
+  state?: 'error' | 'success' | 'default';
+  maxLength?: string;
+  /** @default false */
+  hideMaxLength?: boolean;
+  /** @default false */
+  autofocus?: boolean;
+  /** @default false */
+  noMinWidth?: boolean;
+  tdsAriaLabel?: string;
+  onTdsChange?: (event: CustomEvent<Event>) => void;
+  onTdsBlur?: (event: CustomEvent<FocusEvent>) => void;
+  onTdsInput?: (event: CustomEvent<InputEvent>) => void;
+  onTdsFocus?: (event: CustomEvent<FocusEvent>) => void;
+};

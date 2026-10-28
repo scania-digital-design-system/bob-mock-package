@@ -5,16 +5,21 @@ import BreadcrumbCell from '../cells/react/breadcrumb/scania/v1/component.jsx';
 import BreadcrumbsCell from '../cells/react/breadcrumbs/scania/v1/component.jsx';
 import ButtonCell from '../cells/react/button/scania/v1/component.jsx';
 import CardCell from '../cells/react/card/scania/v1/component.jsx';
+import CheckboxCell from '../cells/react/checkbox/scania/v1/component.jsx';
+import ChipCell from '../cells/react/chip/scania/v1/component.jsx';
 import DividerCell from '../cells/react/divider/scania/v1/component.jsx';
 import FooterCell from '../cells/react/footer/scania/v1/component.jsx';
 import FooterGroupCell from '../cells/react/footer-group/scania/v1/component.jsx';
 import FooterItemCell from '../cells/react/footer-item/scania/v1/component.jsx';
 import LinkCell from '../cells/react/link/scania/v1/component.jsx';
 import MessageCell from '../cells/react/message/scania/v1/component.jsx';
+import RadioButtonCell from '../cells/react/radio-button/scania/v1/component.jsx';
 import SpinnerCell from '../cells/react/spinner/scania/v1/component.jsx';
 import StepCell from '../cells/react/step/scania/v1/component.jsx';
 import StepperCell from '../cells/react/stepper/scania/v1/component.jsx';
 import TagCell from '../cells/react/tag/scania/v1/component.jsx';
+import TextareaCell from '../cells/react/textarea/scania/v1/component.jsx';
+import ToggleCell from '../cells/react/toggle/scania/v1/component.jsx';
 import type {
   BadgeProps,
   BlockProps,
@@ -22,16 +27,21 @@ import type {
   BreadcrumbsProps,
   ButtonProps,
   CardProps,
+  CheckboxProps,
+  ChipProps,
   DividerProps,
   FooterGroupProps,
   FooterItemProps,
   FooterProps,
   LinkProps,
   MessageProps,
+  RadioButtonProps,
   SpinnerProps,
   StepProps,
   StepperProps,
   TagProps,
+  TextareaProps,
+  ToggleProps,
 } from './props.gen.js';
 
 export type {
@@ -41,16 +51,21 @@ export type {
   BreadcrumbsProps,
   ButtonProps,
   CardProps,
+  CheckboxProps,
+  ChipProps,
   DividerProps,
   FooterGroupProps,
   FooterItemProps,
   FooterProps,
   LinkProps,
   MessageProps,
+  RadioButtonProps,
   SpinnerProps,
   StepProps,
   StepperProps,
   TagProps,
+  TextareaProps,
+  ToggleProps,
 } from './props.gen.js';
 
 // One export per cell, named for its folder in cells/react/ (ADR 0005 D2), typed with
@@ -73,3 +88,8 @@ export const Step: FC<StepProps> = StepCell;
 export const Footer: FC<FooterProps> = FooterCell;
 export const FooterGroup: FC<FooterGroupProps> = FooterGroupCell;
 export const FooterItem: FC<FooterItemProps> = FooterItemCell;
+export const Checkbox: FC<CheckboxProps> = CheckboxCell;
+export const RadioButton: FC<RadioButtonProps> = RadioButtonCell;
+export const Toggle: FC<ToggleProps> = ToggleCell;
+export const Chip: FC<ChipProps> = ChipCell;
+export const Textarea: FC<TextareaProps> = TextareaCell;

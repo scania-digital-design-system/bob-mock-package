@@ -23,6 +23,11 @@ export const COMPONENTS = [
   'footer',
   'footer-group',
   'footer-item',
+  'checkbox',
+  'radio-button',
+  'toggle',
+  'chip',
+  'textarea',
 ] as const;
 
 export function cssSources(components: readonly string[]): string[] {

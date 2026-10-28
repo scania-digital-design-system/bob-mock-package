@@ -69,10 +69,10 @@ function cardSlots(thumbnail: unknown, body: unknown, actions: unknown): HTMLEle
   return slots;
 }
 
-// Tegel's tag takes its prefix through the "prefix" slot, at 16px.
-function slottedPrefix(): SVGSVGElement {
+// Tegel's tag and chip take a 16px icon through their "prefix" (and chip "suffix") slot.
+function slottedPrefix(slot = 'prefix'): SVGSVGElement {
   const svg = slottedIcon();
-  svg.setAttribute('slot', 'prefix');
+  svg.setAttribute('slot', slot);
   svg.setAttribute('width', '16');
   svg.setAttribute('height', '16');
   svg.setAttribute('fill', 'currentColor');
@@ -143,6 +143,8 @@ function compoundChildren(props: Record<string, unknown>): HTMLElement[] {
   return slots;
 }
 
+const LABEL_SLOT_TAGS = ['tds-checkbox', 'tds-radio-button', 'tds-toggle', 'tds-chip'];
+
 function element(tag: string, { props }: DemoCase): HTMLElement {
   const {
     icon,
@@ -159,15 +161,25 @@ function element(tag: string, { props }: DemoCase): HTMLElement {
     top,
     start,
     end,
+    suffix,
     ...rest
   } = props;
-  const el = Object.assign(document.createElement(tag), rest);
+  // Form controls take their label through a "label" slot; the textarea's label is a prop.
+  const { label, ...attributes } = rest;
+  const slotsLabel = LABEL_SLOT_TAGS.includes(tag);
+  const el = Object.assign(document.createElement(tag), slotsLabel ? attributes : rest);
   el.append(...compoundChildren({ crumbs, steps, top, start, end }));
   if (icon) {
     el.append(slottedIcon());
   }
   if (prefix) {
     el.append(slottedPrefix());
+  }
+  if (slotsLabel && typeof label === 'string') {
+    el.append(child('span', { slot: 'label' }, label));
+  }
+  if (suffix) {
+    el.append(slottedPrefix('suffix'));
   }
   if (tag === 'tds-link') {
     el.append(slottedAnchor(href, target, children));

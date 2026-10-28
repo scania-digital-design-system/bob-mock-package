@@ -1,0 +1,20 @@
+{
+  "component": "radio-button",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-radio-button at @scania/tegel@1.66.1: a radio button with a label.",
+    "properties": [
+      { "name": "name", "type": "TEXT", "values": [] },
+      { "name": "value", "type": "TEXT", "values": [] },
+      { "name": "radioId", "type": "TEXT", "values": [] },
+      { "name": "checked", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "required", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "disabled", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "tdsAriaLabel", "type": "TEXT", "values": [] },
+      { "name": "tdsTabIndex", "type": "TEXT", "values": [] },
+      { "name": "label", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": []
+  }
+}

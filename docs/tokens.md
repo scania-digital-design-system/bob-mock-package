@@ -58,6 +58,7 @@ name is in the generated `tegel` set.
 | Divider, block, tag, message | 112 |
 | Breadcrumbs, stepper, footer | 146 |
 | Footer mobile toggle | 148 |
+| Checkbox, radio button, toggle, chip, textarea | 210 |
 
 ## Foundation set
 
@@ -333,6 +334,42 @@ Reused: `color/background/layer-01` (top), `color/text/strong`,
 `color/text/inverse-base` (main links, Tegel's `base-white`), `border/control`,
 `space/element/{8,12,24}`, the focus ring tokens and the `detail-02` and `headline-07`
 tokens. The 992px breakpoint stays a literal: a media query cannot read `var()`.
+
+### Form controls
+
+Source: each component's `.scss` and `-vars.scss` in `packages/core/src/components/`
+(`checkbox`, `radio-button`, `toggle`, `chip`, `textarea`), the Scania light blocks of
+`tokens/scss/component/{checkbox,radio-button,toggle,chip,textarea,-input}.scss`, and the
+`detail-01`, `detail-05` and `detail-07` type styles.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `color/input/selected` | `#0e1013` | checkbox and radio `background-selected` = grey-950 |
+| `border/input-indicator` | 2 | hover ring `box-shadow: 0 0 0 2px` |
+| `size/input/indicator`, `size/input/height` | 16, 24 | box and dot size, input height |
+| `space/input/offset` | -4 | `margin-left: -4px` |
+| `motion/input/indicator` (carrier) | `200ms` | ring `transition` |
+| `radius/focus-medium`, `radius/full` | 3, 9999 | `--component--focus-ring-radius-{medium,full}` |
+| `opacity/full` (carrier) | `1` | checked mark `opacity: 1` |
+| `size/checkbox/width`, `size/checkbox/inset`, `radius/checkbox` | 24, 4, 2 | checkbox input, mark position, radius |
+| `image/checkbox/check`, `image/checkbox/indeterminate` (carriers) | SVG data URLs | `--tds-checkbox-icon-mask*` |
+| `size/radio-button/width`, `size/radio-button/dot`, `space/radio-button/label` | 20, 6, 6 | radio input, dot, label padding |
+| `color/toggle/{off,off-hover,off-active}` | `#7e90a9`, `#5f728c`, `#4e5e75` | grey-350, -500, -600 |
+| `color/toggle/{on,on-hover,on-active}` | `#009e7e`, `#008064`, `#00664f` | green-300, -400, -500 |
+| `size/toggle/*` | 44, 24, 16, 4, 24 (lg); 28, 16, 8, 16 (sm) | track, knob, knob offsets |
+| `motion/toggle/duration`, `motion/easing/scania` (carriers) | `200ms`, `cubic-bezier(0.4, 0, 0, 1)` | `--tds-motion-duration-moderate-01`, `--tds-motion-easing-scania` |
+| `font/letter-spacing/detail-01` | -0.16 | `detail-01` (toggle label) |
+| `color/chip/{standard,standard-hover,selected-hover}` | `#e0e5eb`, `#d1d7e0`, `#16417f` | grey-150, grey-200, blue-600 |
+| `radius/chip`, `size/chip/label`, `space/chip/gap-lg`, `space/chip/edge-lg` | 24, 16, 6, 10 | chip radius, pill height, gap, prefix/suffix edge |
+| `color/border/defined`, `color/icon/subtle`, `color/icon/strong`, `color/text/disabled` | `#041530b8`, `#07275880`, `#0e1013`, `#3a517c59` | semantic colours used by the textarea |
+| `radius/input`, `border/input` | 4, 1 | `--component--input-border-radius-default`, bottom border width |
+| `size/textarea/*`, `space/textarea/readonly` | 12, 208, 2, 1, 18, 16, 20, 16, 8; 54 | resizer, minimum width, icon positions, label positions |
+| `font/size/detail-07`, `font/line-height/detail-07` | 10, 8 | `detail-07` (floating label) |
+| `motion/textarea/{border,placeholder,label}` (carriers) | `200ms`, `350ms`, `100ms` | the three transitions |
+
+Reused: `color/border/{strong,subtle,soft,none}`, `color/icon/inverse-strong`,
+`color/system/info`, `color/danger`, `color/text/{strong,soft,defined,inverse-strong,inverse-base}`,
+`opacity/disabled`, the focus ring tokens and the `detail-02` and `detail-05` tokens.
 
 ## Not included
 

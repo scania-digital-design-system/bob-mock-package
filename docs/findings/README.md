@@ -32,9 +32,14 @@ Each `<component>.md` keeps the full detail. Prompt line numbers (L11, L12) refe
 | footer | PASS | PASS | 4 added | 10 (family) | 6 (family) | 15 (family) |
 | footer-group | PASS | Relaxed | 2 added | — | — | — |
 | footer-item | PASS | Relaxed | 1 added | — | — | — |
+| checkbox | PASS | PASS | 1 added, 2 methods dropped | 7 | 4 | 15 |
+| radio-button | PASS | PASS | 1 added, 1 method dropped | 5 | 1 | 3 |
+| toggle | PASS | PASS | 1 added, 2 methods dropped | 6 | 1 | 18 |
+| chip | PASS | PASS | 3 added | 5 | 1 | 7 |
+| textarea | PASS | Relaxed | 1 method dropped | 7 | 4 | 20 |
 
 A family (a parent and its children) shares one findings file, so its departures and
-findings are counted once. The foundation set adds 31 tokens. The `tegel` set has 148
+findings are counted once. The foundation set adds 31 tokens. The `tegel` set has 210
 names in total. BOB's stock set has 45.
 
 ## Findings about BOB
@@ -58,6 +63,7 @@ takes names from Figma properties and variables, so these may not apply.
 | 7 | The drafted contract leaves metadata empty or wrong | Structural |
 | 8 | The gate does not see some states | Structural |
 | 9 | The resolve path gives a different button | Structural |
+| 10 | The surface has no number, event or method type | Structural (Figma properties have the same types) |
 
 ### 1. A cell imports nothing (L12)
 
@@ -156,6 +162,20 @@ BOB's registry has a React button template with `label`, `onClick` and inline st
 real publish of `button` resolves through it and never bootstraps. These cells show the
 bootstrap path only (ADR 0002 D2).
 
+### 10. The surface has no number, event or method type
+
+A surface property is `VARIANT`, `BOOLEAN`, `TEXT` or `INSTANCE_SWAP`, the same types as
+Figma component properties.
+
+- **textarea, radio-button:** `maxLength`, `cols`, `rows` and `tdsTabIndex` are numbers in
+  Tegel and `TEXT` here, so the generated prop types are `string`.
+- **button, card, checkbox, radio-button, toggle, chip, textarea:** every event comes from
+  the hand-written override map in `build/prop-types.ts`, because no property type
+  describes a callback.
+- **checkbox, radio-button, toggle, textarea:** element methods (`focusElement`,
+  `toggleCheckbox`, `toggle`) are dropped. Exposing them needs a ref handle (imports) and
+  a place in the contract.
+
 ## Conflicts and resolutions
 
 Each row is one kind of conflict. "Cost" is what the resolution gives up.
@@ -227,6 +247,12 @@ Choose between a `return` branch and `:has()` like this:
 | A variant axis | `DraftContract` needs an `answers` entry | Add the entry to the payload. | None. | every cell with a variant axis |
 | `modeVariant`, `animation` | — | Out of scope (ADR 0002 D8). | Dark mode and animation are absent. | button, card, block, message, footer |
 | A prop that only routes internal events | — | Accept it and ignore it. | None. | stepper `stepperId` |
+| A number prop | Surface types are `VARIANT`, `BOOLEAN`, `TEXT`, `INSTANCE_SWAP` | Declare it `TEXT`. Convert with `Number()` where the cell computes with it. | The prop type is `string`. | textarea `maxLength`, `cols`, `rows`; radio `tdsTabIndex` |
+| An element method (`@Method`) | No ref handle (L12); no method in the contract | Drop it. List it as `dropped` in `tests/api-parity.test.ts`. | The method is lost. | checkbox, radio-button, toggle, textarea |
+| A DOM property that JSX cannot set (`indeterminate`) | No hooks (L12) | Set it in a callback ref: `ref={(el) => …}` needs no import. | Runs on every render. | checkbox |
+| A label tied to the input by a random id | No `useId` (L12) | Wrap the input and its text in one `<label>`. | The label element is the root. | checkbox, radio-button, toggle, chip |
+| A UI state class (focused, has a value) | No hooks (L12); bare prop name only (L11) | A CSS state selector: `:focus-within`, `:not(:placeholder-shown)`. | `:placeholder-shown` needs a placeholder, so it falls back to a space. | textarea inside label |
+| A Tegel event mapped to React | — | A callback prop that receives a `CustomEvent` with Tegel's `detail`. | React's `onChange` fires on input, not on commit. | textarea `tdsChange` |
 
 ## Relaxations
 
@@ -260,8 +286,8 @@ no entry here.
 ### `react-hooks`
 
 - **Breaks:** `no-module` (L12: "no import and no export statement").
-- **Allows:** `import { useState } from 'react';` at the top of `component.jsx`. Add
-  another hook to this entry before a cell uses it.
+- **Allows:** `import { useState, useId } from 'react';` (or a subset) at the top of
+  `component.jsx`. Add another hook to this entry before a cell uses it.
 - **Why:** below 992px, Tegel's footer group turns its title into a toggle and keeps the
   open state. A native `<details>` was tried, as in the card: it hides its content in
   every viewport, and showing it again on desktop needs `::details-content`, which not
@@ -271,7 +297,12 @@ no entry here.
   The closed state is `aria-expanded="false"` on the toggle, and the stylesheet reads it
   with an attribute selector, because a state variable is not a declared property and
   cannot be a modifier class (L11; the gate's class closure would fail).
-- **Cells:** footer-group.
+- **Why (textarea):** the character counter shows the current length while the user
+  types, which no CSS can count (`useState`). The label's `htmlFor` and the helper's
+  `aria-describedby` need ids that are stable and unique on the page (`useId`); wrapping
+  the field in its `<label>` does not work, because the inside label is positioned over
+  the field and the helper is outside it.
+- **Cells:** footer-group (`useState`), textarea (`useState`, `useId`).
 - **Gate:** PASS. No gate check reads imports.
 - **Source:** structural. Every stateful Tegel component needs it.
 - **BOB change that removes it:** allow a fixed list of React hooks in the bootstrap
@@ -319,4 +350,5 @@ These are options to evaluate in the backbone. None is decided.
 | Let a cell style its classes under a declared parent cell's classes | Relaxation `parent-modifier-selectors` |
 | Let `space` tokens size icons, or document the `size` rule | Finding 5 |
 | Copy `role` and `aria-*` from the markup into `a11y.json` | Finding 7 |
+| Add number and callback property types, and a place for methods in the contract | Finding 10 |
 | Include attribute selectors in class closure | Finding 8 |

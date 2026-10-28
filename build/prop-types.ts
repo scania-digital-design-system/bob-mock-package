@@ -17,6 +17,27 @@ export type CellSource = {
 export const OVERRIDES: Record<string, Record<string, string>> = {
   button: { onClick: 'MouseEventHandler<HTMLButtonElement>' },
   card: { onTdsClick: '(event: CustomEvent<{ cardId: string }>) => void' },
+  checkbox: {
+    onTdsChange:
+      '(event: CustomEvent<{ checkboxId: string; checked: boolean; indeterminate: boolean; value?: string }>) => void',
+    onTdsFocus: '(event: CustomEvent<FocusEvent>) => void',
+    onTdsBlur: '(event: CustomEvent<FocusEvent>) => void',
+  },
+  'radio-button': {
+    onTdsChange: '(event: CustomEvent<{ radioId: string; value: string | undefined }>) => void',
+  },
+  toggle: { onTdsToggle: '(event: CustomEvent<{ toggleId: string; checked: boolean }>) => void' },
+  chip: {
+    onTdsChange:
+      '(event: CustomEvent<{ chipId: string; value: string | undefined; checked?: boolean }>) => void',
+    onTdsClick: '(event: CustomEvent<{ chipId: string }>) => void',
+  },
+  textarea: {
+    onTdsChange: '(event: CustomEvent<Event>) => void',
+    onTdsBlur: '(event: CustomEvent<FocusEvent>) => void',
+    onTdsInput: '(event: CustomEvent<InputEvent>) => void',
+    onTdsFocus: '(event: CustomEvent<FocusEvent>) => void',
+  },
 };
 
 const REACT_TYPES = ['MouseEventHandler', 'ReactNode'];

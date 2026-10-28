@@ -18,22 +18,32 @@ import '../cells/react/step/scania/v1/component.css';
 import '../cells/react/footer/scania/v1/component.css';
 import '../cells/react/footer-group/scania/v1/component.css';
 import '../cells/react/footer-item/scania/v1/component.css';
+import '../cells/react/checkbox/scania/v1/component.css';
+import '../cells/react/radio-button/scania/v1/component.css';
+import '../cells/react/toggle/scania/v1/component.css';
+import '../cells/react/chip/scania/v1/component.css';
+import '../cells/react/textarea/scania/v1/component.css';
 import Badge from '../cells/react/badge/scania/v1/component.jsx';
 import Block from '../cells/react/block/scania/v1/component.jsx';
 import Breadcrumb from '../cells/react/breadcrumb/scania/v1/component.jsx';
 import Breadcrumbs from '../cells/react/breadcrumbs/scania/v1/component.jsx';
 import Button from '../cells/react/button/scania/v1/component.jsx';
 import Card from '../cells/react/card/scania/v1/component.jsx';
+import Checkbox from '../cells/react/checkbox/scania/v1/component.jsx';
+import Chip from '../cells/react/chip/scania/v1/component.jsx';
 import Divider from '../cells/react/divider/scania/v1/component.jsx';
 import Footer from '../cells/react/footer/scania/v1/component.jsx';
 import FooterGroup from '../cells/react/footer-group/scania/v1/component.jsx';
 import FooterItem from '../cells/react/footer-item/scania/v1/component.jsx';
 import Link from '../cells/react/link/scania/v1/component.jsx';
 import Message from '../cells/react/message/scania/v1/component.jsx';
+import RadioButton from '../cells/react/radio-button/scania/v1/component.jsx';
 import Spinner from '../cells/react/spinner/scania/v1/component.jsx';
 import Step from '../cells/react/step/scania/v1/component.jsx';
 import Stepper from '../cells/react/stepper/scania/v1/component.jsx';
 import Tag from '../cells/react/tag/scania/v1/component.jsx';
+import Textarea from '../cells/react/textarea/scania/v1/component.jsx';
+import Toggle from '../cells/react/toggle/scania/v1/component.jsx';
 import {
   CRUMBS,
   FOOTER_END,
@@ -59,6 +69,11 @@ const COMPONENTS: Record<string, FC<Record<string, unknown>>> = {
   breadcrumbs: Breadcrumbs,
   stepper: Stepper,
   footer: Footer,
+  checkbox: Checkbox,
+  'radio-button': RadioButton,
+  toggle: Toggle,
+  chip: Chip,
+  textarea: Textarea,
 };
 
 const crumbs = CRUMBS.map((name, i) => (
@@ -122,6 +137,7 @@ function nodeProps(props: Record<string, unknown>): Record<string, unknown> {
     thumbnail: props.thumbnail ? thumbnail : undefined,
     actions: props.actions ? actions : undefined,
     prefix: props.prefix ? prefix : undefined,
+    suffix: props.suffix ? prefix : undefined,
     top: props.top ? FOOTER_TOP.map((g) => footerGroup(g.title, g.items, g.title)) : undefined,
     start: props.start ? footerGroup('Legal', FOOTER_START) : undefined,
     end: props.end ? footerGroup('Social', FOOTER_END) : undefined,

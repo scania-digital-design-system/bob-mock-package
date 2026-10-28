@@ -202,6 +202,78 @@ SECTIONS.push(
   },
 );
 
+// Form controls. `label` is a slot in Tegel (a prop for the textarea) and a prop here;
+// `prefix: true` and `suffix: true` ask each page for a 16px icon.
+SECTIONS.push(
+  {
+    component: 'checkbox',
+    tag: 'tds-checkbox',
+    cases: [
+      { label: 'unchecked', props: { label: 'Label' } },
+      { label: 'checked', props: { label: 'Label', checked: true } },
+      { label: 'indeterminate', props: { label: 'Label', indeterminate: true } },
+      { label: 'disabled', props: { label: 'Label', disabled: true } },
+      { label: 'disabled checked', props: { label: 'Label', disabled: true, checked: true } },
+    ],
+  },
+  {
+    component: 'radio-button',
+    tag: 'tds-radio-button',
+    cases: [
+      { label: 'unchecked', props: { label: 'Label', name: 'demo-a' } },
+      { label: 'checked', props: { label: 'Label', name: 'demo-b', checked: true } },
+      { label: 'disabled', props: { label: 'Label', name: 'demo-c', disabled: true } },
+    ],
+  },
+  {
+    component: 'toggle',
+    tag: 'tds-toggle',
+    cases: [
+      { label: 'lg off', props: { label: 'Label' } },
+      {
+        label: 'lg on, with headline',
+        props: { label: 'Label', headline: 'Headline', checked: true },
+      },
+      { label: 'sm on', props: { label: 'Label', size: 'sm', checked: true } },
+      { label: 'disabled', props: { label: 'Label', disabled: true } },
+    ],
+  },
+  {
+    component: 'chip',
+    tag: 'tds-chip',
+    cases: [
+      { label: 'lg button', props: { label: 'Label' } },
+      { label: 'sm button', props: { label: 'Label', size: 'sm' } },
+      { label: 'prefix', props: { label: 'Label', prefix: true } },
+      { label: 'suffix', props: { label: 'Label', suffix: true } },
+      { label: 'checkbox checked', props: { label: 'Label', type: 'checkbox', checked: true } },
+      { label: 'disabled', props: { label: 'Label', disabled: true } },
+    ],
+  },
+  {
+    component: 'textarea',
+    tag: 'tds-textarea',
+    cases: [
+      { label: 'no label', props: { placeholder: 'Placeholder' } },
+      {
+        label: 'label outside, helper',
+        props: { label: 'Label', labelPosition: 'outside', helper: 'Helper text' },
+      },
+      { label: 'label inside', props: { label: 'Label', labelPosition: 'inside' } },
+      {
+        label: 'counter',
+        props: { label: 'Label', labelPosition: 'outside', maxLength: 50, value: 'Some text' },
+      },
+      {
+        label: 'error',
+        props: { label: 'Label', labelPosition: 'outside', state: 'error', helper: 'Error text' },
+      },
+      { label: 'read-only', props: { label: 'Label', labelPosition: 'outside', readOnly: true } },
+      { label: 'disabled', props: { label: 'Label', labelPosition: 'outside', disabled: true } },
+    ],
+  },
+);
+
 export const NESTED_BLOCKS = 4;
 
 export const CRUMBS = ['Home', 'Fleet', 'Truck 42'];

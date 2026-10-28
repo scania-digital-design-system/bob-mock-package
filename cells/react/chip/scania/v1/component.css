@@ -1,0 +1,99 @@
+.tl-chip {
+  box-sizing: border-box;
+  display: inline-flex;
+}
+.tl-chip__input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.tl-chip__pill {
+  box-sizing: content-box;
+  display: inline-flex;
+  align-items: center;
+  height: var(--size-chip-label);
+  border: var(--border-control) solid var(--color-border-subtle);
+  border-radius: var(--radius-chip);
+  background-color: var(--color-chip-standard);
+  color: var(--color-text-strong);
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: normal;
+  line-height: var(--font-line-height-detail-02);
+  letter-spacing: var(--font-letter-spacing-detail);
+  white-space: nowrap;
+  cursor: pointer;
+}
+.tl-chip__pill:hover {
+  border-color: var(--color-border-subtle);
+  background-color: var(--color-chip-standard-hover);
+}
+.tl-chip__prefix,
+.tl-chip__label,
+.tl-chip__suffix {
+  display: inline-flex;
+  align-items: center;
+}
+.tl-chip__label {
+  padding-top: var(--space-element-2);
+}
+.tl-chip--lg .tl-chip__pill {
+  gap: var(--space-chip-gap-lg);
+  padding: var(--space-element-8) var(--space-element-16);
+}
+.tl-chip--sm .tl-chip__pill {
+  gap: var(--space-element-4);
+  padding: var(--space-element-4) var(--space-element-12);
+}
+.tl-chip--sm .tl-chip__pill:has(> .tl-chip__prefix) {
+  padding: var(--space-element-4) var(--space-element-12) var(--space-element-4)
+    var(--space-element-8);
+}
+.tl-chip--sm .tl-chip__pill:has(> .tl-chip__suffix) {
+  padding: var(--space-element-4) var(--space-element-8) var(--space-element-4)
+    var(--space-element-12);
+}
+.tl-chip--lg .tl-chip__pill:has(> .tl-chip__prefix) {
+  padding: var(--space-element-8) var(--space-element-16) var(--space-element-8)
+    var(--space-chip-edge-lg);
+}
+.tl-chip--lg .tl-chip__pill:has(> .tl-chip__suffix) {
+  padding: var(--space-element-8) var(--space-chip-edge-lg) var(--space-element-8)
+    var(--space-element-16);
+}
+.tl-chip--sm .tl-chip__pill:has(> .tl-chip__prefix):has(> .tl-chip__suffix) {
+  padding: var(--space-element-4) var(--space-element-8);
+}
+.tl-chip--lg .tl-chip__pill:has(> .tl-chip__prefix):has(> .tl-chip__suffix) {
+  padding: var(--space-element-8) var(--space-chip-edge-lg);
+}
+.tl-chip__input:focus-visible + .tl-chip__pill {
+  z-index: 1;
+  outline: var(--border-focus) solid var(--color-border-focus);
+  outline-offset: var(--border-focus-offset);
+  box-shadow: 0 0 0 var(--border-control) var(--color-border-focus-discrete);
+  border-color: var(--color-border-none);
+  background-color: var(--color-chip-standard-hover);
+}
+.tl-chip__input:checked + .tl-chip__pill {
+  border-color: var(--color-border-soft);
+  background-color: var(--color-system-info);
+  color: var(--color-text-inverse-strong);
+}
+.tl-chip__input:checked + .tl-chip__pill:hover {
+  border-color: var(--color-border-strong);
+  background-color: var(--color-chip-selected-hover);
+}
+.tl-chip--disabled-false .tl-chip__pill {
+  cursor: pointer;
+}
+.tl-chip--disabled-true {
+  opacity: var(--opacity-disabled);
+}
+.tl-chip--disabled-true .tl-chip__pill {
+  pointer-events: none;
+  cursor: default;
+}
+.tl-chip--disabled-true .tl-chip__input {
+  pointer-events: none;
+}

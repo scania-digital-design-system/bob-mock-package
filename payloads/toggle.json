@@ -1,0 +1,20 @@
+{
+  "component": "toggle",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-toggle at @scania/tegel@1.66.1: an on/off switch with an optional headline and label.",
+    "properties": [
+      { "name": "checked", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "required", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "size", "type": "VARIANT", "values": ["sm", "lg"] },
+      { "name": "name", "type": "TEXT", "values": [] },
+      { "name": "headline", "type": "TEXT", "values": [] },
+      { "name": "disabled", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "toggleId", "type": "TEXT", "values": [] },
+      { "name": "tdsAriaLabel", "type": "TEXT", "values": [] },
+      { "name": "label", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": [{ "property": "size", "disposition": "prop" }]
+  }
+}

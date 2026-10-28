@@ -1,0 +1,21 @@
+{
+  "component": "checkbox",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-checkbox at @scania/tegel@1.66.1: a checkbox with a label, checked and indeterminate states.",
+    "properties": [
+      { "name": "name", "type": "TEXT", "values": [] },
+      { "name": "checkboxId", "type": "TEXT", "values": [] },
+      { "name": "disabled", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "required", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "checked", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "indeterminate", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "value", "type": "TEXT", "values": [] },
+      { "name": "tdsAriaLabel", "type": "TEXT", "values": [] },
+      { "name": "tdsAriaDescribedby", "type": "TEXT", "values": [] },
+      { "name": "label", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": []
+  }
+}

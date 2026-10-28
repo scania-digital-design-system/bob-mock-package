@@ -33,6 +33,12 @@ const DEPARTURES: Record<string, { dropped?: string[]; added?: string[] }> = {
   footer: { added: ['top', 'start', 'end', 'copyright'] },
   'footer-group': { added: ['title', 'children'] },
   'footer-item': { added: ['children'] },
+  // Element methods (@Method) need a ref handle, which a cell cannot expose.
+  checkbox: { added: ['label'], dropped: ['focusElement', 'toggleCheckbox'] },
+  'radio-button': { added: ['label'], dropped: ['focusElement'] },
+  toggle: { added: ['label'], dropped: ['focusElement', 'toggle'] },
+  chip: { added: ['prefix', 'label', 'suffix'] },
+  textarea: { dropped: ['focusElement'] },
 };
 
 // Read by path: the package's "exports" map does not expose this file.
