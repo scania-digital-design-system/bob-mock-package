@@ -1,0 +1,31 @@
+{
+  "component": "table-body-row",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-table-body-row at @scania/tegel@1.66.1: a table body row, with a checkbox in a multiselect table, optionally clickable.",
+    "properties": [
+      {
+        "name": "selected",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "disabled",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "clickable",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

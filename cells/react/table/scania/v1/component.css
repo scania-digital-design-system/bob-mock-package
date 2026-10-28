@@ -1,0 +1,33 @@
+.tl-table {
+  box-sizing: border-box;
+  display: table;
+  border-collapse: collapse;
+  border-top-left-radius: var(--radius-table);
+  border-top-right-radius: var(--radius-table);
+  background-color: var(--color-table-header);
+}
+.tl-table--responsive-true {
+  width: 100%;
+}
+.tl-table--responsive-false {
+  width: auto;
+}
+
+/* Modifiers that only the child cells read (relaxation parent-modifier-selectors) */
+.tl-table--compact-design-true,
+.tl-table--compact-design-false,
+.tl-table--vertical-dividers-true,
+.tl-table--vertical-dividers-false,
+.tl-table--no-min-width-true,
+.tl-table--no-min-width-false,
+.tl-table--multiselect-true,
+.tl-table--multiselect-false,
+.tl-table--expandable-rows-true,
+.tl-table--expandable-rows-false,
+.tl-table--zebra-mode-rows-odd,
+.tl-table--zebra-mode-rows-even,
+.tl-table--zebra-mode-columns-odd,
+.tl-table--zebra-mode-columns-even,
+.tl-table--zebra-mode-none {
+  border-spacing: 0;
+}

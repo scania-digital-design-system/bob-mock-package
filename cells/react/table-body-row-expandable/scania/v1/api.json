@@ -1,0 +1,80 @@
+{
+  "componentType": "table-body-row-expandable",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "colSpan",
+    "rowId",
+    "expanded",
+    "overflow",
+    "autoCollapse",
+    "tdsAriaLabelExpandButton",
+    "selected",
+    "disabled",
+    "children",
+    "expandRow",
+    "onTdsChange",
+    "onTdsSelect"
+  ],
+  "rules": [
+    {
+      "id": "prop-colspan",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"colSpan\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-rowid",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"rowId\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-expanded",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"expanded\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-overflow",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"overflow\" is a component prop: the caller selects one, accepting auto | hidden | visible. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-autocollapse",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"autoCollapse\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-tdsarialabelexpandbutton",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"tdsAriaLabelExpandButton\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-selected",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"selected\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-disabled",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"disabled\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-children",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"children\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-expandrow",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"expandRow\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

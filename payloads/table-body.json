@@ -1,0 +1,16 @@
+{
+  "component": "table-body",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-table-body at @scania/tegel@1.66.1: the group of body rows of a table.",
+    "properties": [
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

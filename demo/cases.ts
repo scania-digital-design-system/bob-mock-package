@@ -620,5 +620,44 @@ SECTIONS.push(
   },
 );
 
+// `tableParts` builds the table's toolbar, header, rows and footer on both pages.
+export type TableParts = {
+  toolbar?: boolean;
+  footer?: boolean;
+  expandable?: boolean;
+  sortable?: boolean;
+};
+export const TABLE_COLUMNS = [
+  { key: 'truck', title: 'Truck type' },
+  { key: 'driver', title: 'Driver name' },
+  { key: 'country', title: 'Country' },
+];
+export const TABLE_ROWS = [
+  ['L-series', 'Sophia', 'Sweden'],
+  ['P-series', 'Liam', 'Netherlands'],
+  ['G-series', 'Emma', 'Spain'],
+];
+
+SECTIONS.push({
+  component: 'table',
+  tag: 'tds-table',
+  cases: [
+    { label: 'default', props: { tableParts: {} } },
+    {
+      label: 'compact, vertical dividers, responsive',
+      props: { compactDesign: true, verticalDividers: true, responsive: true, tableParts: {} },
+    },
+    { label: 'zebra rows (odd)', props: { zebraMode: 'rows-odd', tableParts: {} } },
+    { label: 'zebra columns (even)', props: { zebraMode: 'columns-even', tableParts: {} } },
+    { label: 'multiselect', props: { multiselect: true, tableParts: {} } },
+    { label: 'sortable columns', props: { tableParts: { sortable: true } } },
+    { label: 'expandable rows', props: { expandableRows: true, tableParts: { expandable: true } } },
+    {
+      label: 'toolbar with filter, pagination footer',
+      props: { tableParts: { toolbar: true, footer: true } },
+    },
+  ],
+});
+
 // The same plus icon on both pages, so only the component differs.
 export const ICON_PATH = 'M9 3h2v6h6v2h-6v6H9v-6H3V9h6z';

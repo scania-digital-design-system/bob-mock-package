@@ -1,0 +1,86 @@
+{
+  "componentType": "table-footer",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "pagination",
+    "paginationValue",
+    "paginationLabel",
+    "rowsperpage",
+    "rowsPerPageLabel",
+    "rowsPerPageValues",
+    "rowsPerPageDropdownOpenDirection",
+    "rowsPerPageDropdownAriaLabel",
+    "pages",
+    "cols",
+    "rowsPerPageValue",
+    "onTdsPagination"
+  ],
+  "rules": [
+    {
+      "id": "prop-pagination",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"pagination\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-paginationvalue",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"paginationValue\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-paginationlabel",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"paginationLabel\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-rowsperpage",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"rowsperpage\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-rowsperpagelabel",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"rowsPerPageLabel\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-rowsperpagevalues",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"rowsPerPageValues\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-rowsperpagedropdownopendirection",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"rowsPerPageDropdownOpenDirection\" is a component prop: the caller selects one, accepting up | down | auto. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-rowsperpagedropdownarialabel",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"rowsPerPageDropdownAriaLabel\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-pages",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"pages\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-cols",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"cols\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-rowsperpagevalue",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"rowsPerPageValue\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

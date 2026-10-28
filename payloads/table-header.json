@@ -1,0 +1,36 @@
+{
+  "component": "table-header",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-table-header at @scania/tegel@1.66.1: the header row of a table, with a select-all checkbox in a multiselect table.",
+    "properties": [
+      {
+        "name": "allSelected",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "selected",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "disabled",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "indeterminate",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

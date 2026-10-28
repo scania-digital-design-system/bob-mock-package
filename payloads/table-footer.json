@@ -1,0 +1,71 @@
+{
+  "component": "table-footer",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-table-footer at @scania/tegel@1.66.1: the footer row of a table with pagination and a rows-per-page selector.",
+    "properties": [
+      {
+        "name": "pagination",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "paginationValue",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "paginationLabel",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "rowsperpage",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "rowsPerPageLabel",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "rowsPerPageValues",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "rowsPerPageDropdownOpenDirection",
+        "type": "VARIANT",
+        "values": ["up", "down", "auto"]
+      },
+      {
+        "name": "rowsPerPageDropdownAriaLabel",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "pages",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "cols",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "rowsPerPageValue",
+        "type": "TEXT",
+        "values": []
+      }
+    ],
+    "answers": [
+      {
+        "property": "rowsPerPageDropdownOpenDirection",
+        "disposition": "prop"
+      }
+    ]
+  }
+}

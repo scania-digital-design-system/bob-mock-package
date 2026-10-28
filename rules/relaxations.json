@@ -9,5 +9,13 @@
   "react/text-field/scania/v1": ["react-hooks"],
   "react/datetime/scania/v1": ["react-hooks"],
   "react/dropdown/scania/v1": ["react-hooks"],
-  "react/dropdown-option/scania/v1": ["parent-modifier-selectors"]
+  "react/dropdown-option/scania/v1": ["parent-modifier-selectors"],
+  "react/table-header/scania/v1": ["parent-modifier-selectors"],
+  "react/header-cell/scania/v1": ["parent-modifier-selectors"],
+  "react/table-body-row/scania/v1": ["parent-modifier-selectors"],
+  "react/table-body-row-expandable/scania/v1": ["parent-modifier-selectors"],
+  "react/body-cell/scania/v1": ["parent-modifier-selectors"],
+  "react/table-body-input-wrapper/scania/v1": ["parent-modifier-selectors"],
+  "react/table-header-input-wrapper/scania/v1": ["parent-modifier-selectors"],
+  "react/table-toolbar/scania/v1": ["parent-modifier-selectors"]
 }

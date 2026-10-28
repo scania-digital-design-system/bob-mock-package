@@ -1,0 +1,64 @@
+.tl-table-header-input-wrapper {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+}
+
+/* The consumer's input (Tegel's ::slotted(input)) */
+.tl-table-header-input-wrapper > input {
+  box-sizing: border-box;
+  height: var(--size-table-row);
+  padding: 0 var(--space-element-16);
+  border: 0;
+  border-bottom: var(--border-focus) solid var(--color-border-none);
+  border-radius: 0;
+  background-color: var(--color-background-none);
+  color: var(--color-text-strong);
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: normal;
+  line-height: var(--font-line-height-detail-02);
+  letter-spacing: var(--font-letter-spacing-detail);
+}
+.tl-table-header-input-wrapper > input::placeholder {
+  color: var(--color-text-subtle);
+}
+.tl-table-header-input-wrapper > input:focus {
+  outline: var(--border-focus) solid var(--color-border-focus);
+  outline-offset: var(--border-focus-inset);
+  box-shadow: inset 0 var(--border-control) 0 var(--size-shadow-3) var(--color-border-focus-discrete);
+}
+.tl-table-header-input-wrapper--show-icon-true > input {
+  padding-left: var(--space-table-filter-input);
+}
+.tl-table-header-input-wrapper--show-icon-false > input {
+  padding-left: var(--space-element-16);
+}
+.tl-table-header-input-wrapper--compact-design-true > input {
+  height: var(--size-table-row-compact);
+}
+.tl-table-header-input-wrapper--compact-design-false > input {
+  height: var(--size-table-row);
+}
+
+/* Search icon */
+.tl-table-header-input-wrapper__icon {
+  position: absolute;
+  top: 50%;
+  inset-inline-start: var(--space-table-filter-icon);
+  width: var(--size-table-icon);
+  height: var(--size-table-icon);
+  fill: var(--color-icon-strong);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.tl-table-header-input-wrapper__search {
+  d: var(--icon-search-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+
+/* The table's modifier (relaxation parent-modifier-selectors) */
+.tl-table--compact-design-true .tl-table-header-input-wrapper > input {
+  height: var(--size-table-row-compact);
+}

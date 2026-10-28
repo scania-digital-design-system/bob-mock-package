@@ -67,6 +67,7 @@ name is in the generated `tegel` set.
 | Dropdown | 342 |
 | Icon | 605 |
 | Popover core, canvas, menu, menu item; tooltip | 617 |
+| Table family | 648 |
 
 ## Foundation set
 
@@ -564,3 +565,34 @@ and `tooltip.scss`.
 Reused: `color/background/{layer-01,none}`, `color/text/{strong,inverse-strong}`,
 `color/shadow/{10,15}`, `size/shadow/{1,3,minus-1}`, `opacity/disabled`,
 `space/element/{4,8,16}`, the focus ring tokens, and the `body-01` and `detail-05` tokens.
+
+### Table
+
+Source: `packages/core/src/components/table/` (`table-vars.scss` and each part's `.scss`),
+the Scania light block of `tokens/scss/component/table.scss`, and the `title-01` and
+`type-system-body-01` type styles.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `color/table/header` | `#e0e5eb` | `--component-table-background-{header,footer,cell-selected,cell-expanded}-default` = grey-150 |
+| `color/table/header-hover` | `#d1d7e0` | `--component-table-background-{header-hover,toolbar-default,cell-selected-hover}` = grey-200 |
+| `color/table/cell-hover` | `#edeff3` | `--component-table-background-cell-primary-hover` = grey-100 |
+| `color/text/subtle` | `#07275880` | `--color-text-subtle` = transparent-350 (placeholder) |
+| `radius/table` | 4 | `--component-table-border-radius-default` |
+| `size/table/row`, `size/table/row-compact`, `size/table/header-compact` | 48, 32, 33 | row heights (`--unit-48`, `--unit-32`; compact header `33px`) |
+| `size/table/min-width` | 192 | cell `min-width` |
+| `size/table/expand-control`, `size/table/expand-control-compact`, `size/table/expand-cell` | 46, 30, 1 | expand button; expanded cell `max-width: 1px` |
+| `size/table/toolbar`, `size/table/toolbar-compact` | 64, 56 | toolbar height |
+| `size/table/search`, `size/table/search-closed`, `size/table/search-open`, `size/table/search-input` | 48, 50, 250, 204 | search bar |
+| `size/table/field`, `size/table/field-width`, `size/table/navigation` | 40, 77, 160 | footer input, dropdown and buttons; search field height |
+| `size/table/icon`, `size/table/icon-lg` | 16, 20 | icons |
+| `space/table/expand-start` | 66 | expanded cell `padding-left` (`--unit-66`) |
+| `space/table/filter-icon`, `space/table/filter-input` | 15, 35 | header filter icon offset and input padding |
+| `space/table/10`, `space/table/search-icon`, `space/table/footer-text-top` | 10, 6, 1 | edit icon offset and page input margin; search button margin; footer text padding |
+| `motion/table/hover`, `motion/table/search` (carriers) | `200ms`, `250ms` | `transition` durations |
+
+Reused: `color/background/{layer-01,layer-02,base,none}`, `color/border/{discrete,soft,subtle,strong,none}`,
+`color/icon/{strong,inverse-strong}`, `color/input/selected`, `color/text/{strong,base,disabled}`,
+`radius/{input,control,checkbox,focus-medium}`, `border/{control,input,focus}`, `opacity/{disabled,full}`,
+`space/element/{8,16,24,40}`, `size/shadow/3`, the checkbox tokens, the focus ring tokens,
+the icon path tokens and the detail tokens (Tegel's `title-01` and `type-system-body-01`).

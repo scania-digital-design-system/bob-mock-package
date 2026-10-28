@@ -1,0 +1,75 @@
+{
+  "component": "table",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-table at @scania/tegel@1.66.1: a data table with optional dividers, compact rows, multiselect, expandable rows and zebra stripes.",
+    "properties": [
+      {
+        "name": "verticalDividers",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "compactDesign",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "noMinWidth",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "multiselect",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "expandableRows",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "responsive",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "zebraMode",
+        "type": "VARIANT",
+        "values": ["rows-odd", "rows-even", "columns-odd", "columns-even", "none"]
+      },
+      {
+        "name": "sortColumnKey",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "sortDirection",
+        "type": "VARIANT",
+        "values": ["asc", "desc"]
+      },
+      {
+        "name": "tableId",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": [
+      {
+        "property": "zebraMode",
+        "disposition": "prop"
+      },
+      {
+        "property": "sortDirection",
+        "disposition": "prop"
+      }
+    ]
+  }
+}

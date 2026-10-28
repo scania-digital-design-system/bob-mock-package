@@ -87,6 +87,20 @@ const DEPARTURES: Record<string, { dropped?: string[]; added?: string[] }> = {
   'popover-menu': { added: ['children'], dropped: ['close', 'offsetDistance', 'offsetSkidding'] },
   'popover-menu-item': { added: ['children'] },
   tooltip: { added: ['children'], dropped: ['offsetDistance', 'offsetSkidding'] },
+  // A free width needs a style; the selected rows are read by the events instead.
+  table: { added: ['children'], dropped: ['getSelectedRows', 'horizontalScrollWidth'] },
+  'table-toolbar': { added: ['start', 'end'] },
+  'table-header': { added: ['children'] },
+  'header-cell': { added: ['children'], dropped: ['customWidth'] },
+  'table-header-input-wrapper': { added: ['children'] },
+  'table-body': { added: ['children'] },
+  'table-body-row': { added: ['children'] },
+  'table-body-row-expandable': {
+    added: ['children', 'expandRow'],
+    dropped: ['expand', 'collapse'],
+  },
+  'body-cell': { added: ['children'] },
+  'table-body-input-wrapper': { added: ['children'] },
 };
 
 // Read by path: the package's "exports" map does not expose this file.

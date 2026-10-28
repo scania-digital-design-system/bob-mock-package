@@ -13,7 +13,10 @@ import {
   NESTED_BLOCKS,
   SECTIONS,
   STEPS,
+  TABLE_COLUMNS,
+  TABLE_ROWS,
   TABS,
+  type TableParts,
   THUMBNAIL_SRC,
 } from './cases';
 
@@ -139,6 +142,37 @@ function compoundChildren(props: Record<string, unknown>): HTMLElement[] {
       child('tds-dropdown-option', { value, disabled: Boolean(disabled) }, label),
     );
   }
+  if (props.tableParts) {
+    const { toolbar, footer, expandable, sortable } = props.tableParts as TableParts;
+    const rowTag = expandable ? 'tds-table-body-row-expandable' : 'tds-table-body-row';
+    const rows = TABLE_ROWS.map((row) =>
+      child(
+        rowTag,
+        {},
+        ...row.map((value, i) =>
+          child('tds-body-cell', { cellKey: TABLE_COLUMNS[i]?.key, cellValue: value }),
+        ),
+        ...(expandable ? [child('div', { slot: 'expand-row' }, 'Expanded row content')] : []),
+      ),
+    );
+    const header = TABLE_COLUMNS.map(({ key, title }) =>
+      child('tds-header-cell', { cellKey: key, cellValue: title, sortable: Boolean(sortable) }),
+    );
+    return [
+      ...(toolbar
+        ? [
+            child('tds-table-toolbar', {
+              tableTitle: 'Vehicles',
+              filter: true,
+              tdsSearchAriaLabel: 'Search',
+            }),
+          ]
+        : []),
+      child('tds-table-header', {}, ...header),
+      child('tds-table-body', {}, ...rows),
+      ...(footer ? [child('tds-table-footer', { pagination: true, pages: 4 })] : []),
+    ];
+  }
   if (props.menuItems) {
     return MENU_ITEMS.map(({ label, disabled }) =>
       child('tds-popover-menu-item', { disabled: Boolean(disabled) }, anchor(label, '#menu')),
@@ -198,6 +232,7 @@ function element(tag: string, { props }: DemoCase): HTMLElement {
     tabs,
     options,
     menuItems,
+    tableParts,
     ...rest
   } = props;
   // Form controls take their label through a "label" slot; the textarea's label is a prop.
@@ -216,6 +251,7 @@ function element(tag: string, { props }: DemoCase): HTMLElement {
       tabs,
       options,
       menuItems,
+      tableParts,
     }),
   );
   if (icon) {

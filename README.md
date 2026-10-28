@@ -19,6 +19,9 @@ Scania brand, light mode only.
   `TextField`, `Textarea`, `Toggle`
 - Disclosure and feedback: `Accordion` with `AccordionItem`, `Banner`, `Modal`, `Toast`
 - Overlays: `PopoverCore`, `PopoverCanvas`, `PopoverMenu` with `PopoverMenuItem`, `Tooltip`
+- Data: `Table` with `TableToolbar`, `TableHeader`, `HeaderCell`, `TableHeaderInputWrapper`,
+  `TableBody`, `TableBodyRow`, `TableBodyRowExpandable`, `BodyCell`, `TableBodyInputWrapper`,
+  `TableFooter`
 
 ## Install
 

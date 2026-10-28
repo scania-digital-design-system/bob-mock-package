@@ -1,0 +1,61 @@
+{
+  "component": "header-cell",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-header-cell at @scania/tegel@1.66.1: a table header cell, optionally a sort button.",
+    "properties": [
+      {
+        "name": "cellKey",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "cellValue",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "sortable",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "textAlign",
+        "type": "VARIANT",
+        "values": ["left", "start", "right", "end", "center"]
+      },
+      {
+        "name": "disablePadding",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "tdsAriaLabelSortButton",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "colSpan",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "rowSpan",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": [
+      {
+        "property": "textAlign",
+        "disposition": "prop"
+      }
+    ]
+  }
+}

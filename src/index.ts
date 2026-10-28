@@ -4,6 +4,7 @@ import AccordionItemCell from '../cells/react/accordion-item/scania/v1/component
 import BadgeCell from '../cells/react/badge/scania/v1/component.jsx';
 import BannerCell from '../cells/react/banner/scania/v1/component.jsx';
 import BlockCell from '../cells/react/block/scania/v1/component.jsx';
+import BodyCellCell from '../cells/react/body-cell/scania/v1/component.jsx';
 import BreadcrumbCell from '../cells/react/breadcrumb/scania/v1/component.jsx';
 import BreadcrumbsCell from '../cells/react/breadcrumbs/scania/v1/component.jsx';
 import ButtonCell from '../cells/react/button/scania/v1/component.jsx';
@@ -19,6 +20,7 @@ import FolderTabsCell from '../cells/react/folder-tabs/scania/v1/component.jsx';
 import FooterCell from '../cells/react/footer/scania/v1/component.jsx';
 import FooterGroupCell from '../cells/react/footer-group/scania/v1/component.jsx';
 import FooterItemCell from '../cells/react/footer-item/scania/v1/component.jsx';
+import HeaderCellCell from '../cells/react/header-cell/scania/v1/component.jsx';
 import IconCell from '../cells/react/icon/scania/v1/component.jsx';
 import InlineTabCell from '../cells/react/inline-tab/scania/v1/component.jsx';
 import InlineTabsCell from '../cells/react/inline-tabs/scania/v1/component.jsx';
@@ -36,6 +38,15 @@ import SliderCell from '../cells/react/slider/scania/v1/component.jsx';
 import SpinnerCell from '../cells/react/spinner/scania/v1/component.jsx';
 import StepCell from '../cells/react/step/scania/v1/component.jsx';
 import StepperCell from '../cells/react/stepper/scania/v1/component.jsx';
+import TableCell from '../cells/react/table/scania/v1/component.jsx';
+import TableBodyCell from '../cells/react/table-body/scania/v1/component.jsx';
+import TableBodyInputWrapperCell from '../cells/react/table-body-input-wrapper/scania/v1/component.jsx';
+import TableBodyRowCell from '../cells/react/table-body-row/scania/v1/component.jsx';
+import TableBodyRowExpandableCell from '../cells/react/table-body-row-expandable/scania/v1/component.jsx';
+import TableFooterCell from '../cells/react/table-footer/scania/v1/component.jsx';
+import TableHeaderCell from '../cells/react/table-header/scania/v1/component.jsx';
+import TableHeaderInputWrapperCell from '../cells/react/table-header-input-wrapper/scania/v1/component.jsx';
+import TableToolbarCell from '../cells/react/table-toolbar/scania/v1/component.jsx';
 import TagCell from '../cells/react/tag/scania/v1/component.jsx';
 import TextFieldCell from '../cells/react/text-field/scania/v1/component.jsx';
 import TextareaCell from '../cells/react/textarea/scania/v1/component.jsx';
@@ -48,6 +59,7 @@ import type {
   BadgeProps,
   BannerProps,
   BlockProps,
+  BodyCellProps,
   BreadcrumbProps,
   BreadcrumbsProps,
   ButtonProps,
@@ -63,6 +75,7 @@ import type {
   FooterGroupProps,
   FooterItemProps,
   FooterProps,
+  HeaderCellProps,
   IconProps,
   InlineTabProps,
   InlineTabsProps,
@@ -80,6 +93,15 @@ import type {
   SpinnerProps,
   StepProps,
   StepperProps,
+  TableBodyInputWrapperProps,
+  TableBodyProps,
+  TableBodyRowExpandableProps,
+  TableBodyRowProps,
+  TableFooterProps,
+  TableHeaderInputWrapperProps,
+  TableHeaderProps,
+  TableProps,
+  TableToolbarProps,
   TagProps,
   TextareaProps,
   TextFieldProps,
@@ -94,6 +116,7 @@ export type {
   BadgeProps,
   BannerProps,
   BlockProps,
+  BodyCellProps,
   BreadcrumbProps,
   BreadcrumbsProps,
   ButtonProps,
@@ -109,6 +132,7 @@ export type {
   FooterGroupProps,
   FooterItemProps,
   FooterProps,
+  HeaderCellProps,
   IconProps,
   InlineTabProps,
   InlineTabsProps,
@@ -126,6 +150,15 @@ export type {
   SpinnerProps,
   StepProps,
   StepperProps,
+  TableBodyInputWrapperProps,
+  TableBodyProps,
+  TableBodyRowExpandableProps,
+  TableBodyRowProps,
+  TableFooterProps,
+  TableHeaderInputWrapperProps,
+  TableHeaderProps,
+  TableProps,
+  TableToolbarProps,
   TagProps,
   TextareaProps,
   TextFieldProps,
@@ -181,3 +214,15 @@ export const PopoverCanvas: FC<PopoverCanvasProps> = PopoverCanvasCell;
 export const PopoverMenu: FC<PopoverMenuProps> = PopoverMenuCell;
 export const PopoverMenuItem: FC<PopoverMenuItemProps> = PopoverMenuItemCell;
 export const Tooltip: FC<TooltipProps> = TooltipCell;
+export const Table: FC<TableProps> = TableCell;
+export const TableToolbar: FC<TableToolbarProps> = TableToolbarCell;
+export const TableHeader: FC<TableHeaderProps> = TableHeaderCell;
+export const HeaderCell: FC<HeaderCellProps> = HeaderCellCell;
+export const TableHeaderInputWrapper: FC<TableHeaderInputWrapperProps> =
+  TableHeaderInputWrapperCell;
+export const TableBody: FC<TableBodyProps> = TableBodyCell;
+export const TableBodyRow: FC<TableBodyRowProps> = TableBodyRowCell;
+export const TableBodyRowExpandable: FC<TableBodyRowExpandableProps> = TableBodyRowExpandableCell;
+export const BodyCell: FC<BodyCellProps> = BodyCellCell;
+export const TableBodyInputWrapper: FC<TableBodyInputWrapperProps> = TableBodyInputWrapperCell;
+export const TableFooter: FC<TableFooterProps> = TableFooterCell;

@@ -1,0 +1,60 @@
+{
+  "component": "body-cell",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-body-cell at @scania/tegel@1.66.1: a table body cell.",
+    "properties": [
+      {
+        "name": "cellValue",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "cellKey",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "disablePadding",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "textAlign",
+        "type": "VARIANT",
+        "values": ["left", "start", "right", "end", "center"]
+      },
+      {
+        "name": "verticalAlign",
+        "type": "VARIANT",
+        "values": ["top", "middle", "bottom"]
+      },
+      {
+        "name": "colSpan",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "rowSpan",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": [
+      {
+        "property": "textAlign",
+        "disposition": "prop"
+      },
+      {
+        "property": "verticalAlign",
+        "disposition": "prop"
+      }
+    ]
+  }
+}

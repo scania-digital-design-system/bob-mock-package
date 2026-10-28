@@ -81,6 +81,11 @@ describe('cellDefaults', () => {
       "function Datetime({ state: initialState = 'none' }) {",
       { state: "'none'" },
     ],
+    [
+      'braces and commas inside a string',
+      "function TableFooter({\n  label = 'of {pages} pages',\n  values = '10,25,50',\n}) {",
+      { label: "'of {pages} pages'", values: "'10,25,50'" },
+    ],
   ])('reads %s', (_name, jsx, want) => {
     expect(cellDefaults(jsx)).toEqual(want);
   });

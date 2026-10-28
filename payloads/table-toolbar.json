@@ -1,0 +1,36 @@
+{
+  "component": "table-toolbar",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-table-toolbar at @scania/tegel@1.66.1: the bar above a table with a title, a search field and actions.",
+    "properties": [
+      {
+        "name": "tableTitle",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "filter",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "tdsSearchAriaLabel",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "start",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      },
+      {
+        "name": "end",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

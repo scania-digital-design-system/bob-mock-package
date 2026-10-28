@@ -1,0 +1,149 @@
+.tl-table-footer {
+  box-sizing: border-box;
+  display: table-footer-group;
+  height: var(--size-table-row);
+}
+.tl-table-footer__row {
+  background-color: var(--color-table-header);
+  color: var(--color-text-strong);
+}
+.tl-table-footer__cell {
+  padding: 0 var(--space-element-16);
+}
+.tl-table-footer__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--size-table-row);
+}
+.tl-table-footer__row-selector,
+.tl-table-footer__page-selector,
+.tl-table-footer__rows-per-page {
+  display: flex;
+  align-items: center;
+}
+.tl-table-footer__rows-per-page {
+  margin-right: var(--space-element-16);
+}
+.tl-table-footer__rows-label,
+.tl-table-footer__text {
+  margin: 0;
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: normal;
+  line-height: var(--font-line-height-detail-02);
+  letter-spacing: var(--font-letter-spacing-detail);
+  text-transform: none;
+}
+.tl-table-footer__rows-label {
+  margin-right: var(--space-element-8);
+}
+.tl-table-footer__text {
+  padding: var(--space-table-footer-text-top) var(--space-element-8) 0 0;
+}
+
+/* Rows per page (a native select in the dropdown's sm size) and the page number */
+.tl-table-footer__rows-select,
+.tl-table-footer__page {
+  box-sizing: border-box;
+  width: var(--size-table-field-width);
+  height: var(--size-table-field);
+  margin: 0;
+  border: 0;
+  border-bottom: var(--border-input) solid var(--color-border-soft);
+  border-radius: var(--radius-input) var(--radius-input) 0 0;
+  background-color: var(--color-background-layer-02);
+  color: var(--color-text-strong);
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: normal;
+  line-height: var(--font-line-height-detail-02);
+  letter-spacing: var(--font-letter-spacing-detail);
+}
+.tl-table-footer__rows-select {
+  padding: 0 var(--space-element-8);
+  cursor: pointer;
+}
+.tl-table-footer__page {
+  margin-right: var(--space-table-10);
+  padding: 0 0 0 var(--space-element-16);
+  transition: background-color var(--motion-table-search) ease;
+}
+.tl-table-footer__rows-select:focus-visible,
+.tl-table-footer__page:focus-visible {
+  z-index: 1;
+  outline: var(--border-focus) solid var(--color-border-focus);
+  outline-offset: var(--border-focus-offset);
+  box-shadow: 0 0 0 var(--border-control) var(--color-border-focus-discrete);
+}
+.tl-table-footer__page:disabled {
+  opacity: var(--opacity-disabled);
+}
+
+/* Page buttons (ghost, sm, icon only) */
+.tl-table-footer__navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: var(--size-table-navigation);
+}
+.tl-table-footer__button {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-table-field);
+  height: var(--size-table-field);
+  padding: 0;
+  border: var(--border-control) solid var(--color-border-none);
+  border-radius: var(--radius-control);
+  background-color: var(--color-background-none);
+  color: var(--color-text-base);
+  cursor: pointer;
+}
+.tl-table-footer__button:hover:not(:disabled),
+.tl-table-footer__button:focus-visible {
+  border-color: var(--color-border-subtle);
+}
+.tl-table-footer__button:focus-visible {
+  outline: var(--border-focus) solid var(--color-border-focus);
+  outline-offset: var(--border-focus-offset);
+  box-shadow: 0 0 0 var(--border-control) var(--color-border-focus-discrete);
+}
+.tl-table-footer__button:disabled {
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+.tl-table-footer__back,
+.tl-table-footer__forward {
+  flex-shrink: 0;
+}
+.tl-table-footer__icon {
+  width: var(--size-table-icon);
+  height: var(--size-table-icon);
+  fill: currentColor;
+}
+.tl-table-footer__icon--lg {
+  width: var(--size-table-icon-lg);
+  height: var(--size-table-icon-lg);
+}
+.tl-table-footer__first {
+  d: var(--icon-skip_backwards-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-table-footer__previous {
+  d: var(--icon-chevron_left-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-table-footer__next {
+  d: var(--icon-chevron_right-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-table-footer__last {
+  d: var(--icon-skip_forward-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}

@@ -1,0 +1,21 @@
+{
+  "component": "table-body-input-wrapper",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-table-body-input-wrapper at @scania/tegel@1.66.1: an editable table cell input with an edit icon.",
+    "properties": [
+      {
+        "name": "showIcon",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

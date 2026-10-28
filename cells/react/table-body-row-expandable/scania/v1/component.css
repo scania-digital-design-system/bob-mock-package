@@ -1,0 +1,183 @@
+.tl-table-body-row-expandable {
+  box-sizing: border-box;
+  display: table-row;
+  border-bottom: var(--border-control) solid var(--color-border-discrete);
+  background-color: var(--color-background-layer-01);
+  color: var(--color-text-strong);
+  transition: background-color var(--motion-table-hover) ease;
+}
+.tl-table-body-row-expandable:hover {
+  background-color: var(--color-table-cell-hover);
+}
+.tl-table-body-row-expandable:has(.tl-table-body-row-expandable__checkbox:checked) {
+  background-color: var(--color-table-header);
+}
+.tl-table-body-row-expandable:has(.tl-table-body-row-expandable__checkbox:checked):hover {
+  background-color: var(--color-table-header-hover);
+}
+.tl-table-body-row-expandable:has([aria-expanded='true']) {
+  border-bottom: 0;
+  background-color: var(--color-table-header);
+}
+.tl-table-body-row-expandable--auto-collapse-true,
+.tl-table-body-row-expandable--auto-collapse-false {
+  vertical-align: inherit;
+}
+
+/* Multiselect checkbox (the checkbox cell's styles) */
+.tl-table-body-row-expandable__select {
+  width: var(--size-table-row);
+  min-width: var(--size-table-row);
+  padding: 0;
+}
+.tl-table-body-row-expandable__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: var(--size-table-row);
+  cursor: pointer;
+}
+.tl-table-body-row-expandable__checkbox {
+  position: relative;
+  flex-shrink: 0;
+  width: var(--size-checkbox-width);
+  height: var(--size-input-height);
+  margin: 0;
+  border: 0;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+.tl-table-body-row-expandable__checkbox::before,
+.tl-table-body-row-expandable__checkbox::after {
+  content: '';
+  position: absolute;
+  top: var(--size-checkbox-inset);
+  left: var(--size-checkbox-inset);
+  box-sizing: border-box;
+  width: var(--size-input-indicator);
+  height: var(--size-input-indicator);
+}
+.tl-table-body-row-expandable__checkbox::before {
+  border: var(--border-control) solid var(--color-border-strong);
+  border-radius: var(--radius-checkbox);
+  background-color: var(--color-background-none);
+}
+.tl-table-body-row-expandable__checkbox::after {
+  z-index: 1;
+  opacity: 0;
+  background-color: var(--color-icon-inverse-strong);
+  mask: var(--image-checkbox-check) no-repeat center;
+  -webkit-mask: var(--image-checkbox-check) no-repeat center;
+}
+.tl-table-body-row-expandable__checkbox:focus-visible::before {
+  z-index: 1;
+  outline: var(--border-focus) solid var(--color-border-focus);
+  outline-offset: var(--border-focus-offset);
+  box-shadow: 0 0 0 var(--border-control) var(--color-border-focus-discrete);
+  border-radius: var(--radius-focus-medium);
+}
+.tl-table-body-row-expandable__checkbox:checked::before {
+  border-color: var(--color-border-none);
+  background-color: var(--color-input-selected);
+}
+.tl-table-body-row-expandable__checkbox:checked::after {
+  opacity: var(--opacity-full);
+}
+.tl-table-body-row-expandable__checkbox:disabled {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+}
+
+/* Expand control */
+.tl-table-body-row-expandable__control-cell {
+  width: var(--size-table-row);
+  padding: 0;
+}
+.tl-table-body-row-expandable__control {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-table-expand-control);
+  height: var(--size-table-expand-control);
+  padding: 0;
+  cursor: pointer;
+}
+.tl-table-body-row-expandable__control:focus {
+  z-index: 1;
+  outline: var(--border-focus) solid var(--color-border-focus);
+  outline-offset: var(--border-focus-offset);
+  box-shadow: 0 0 0 var(--border-control) var(--color-border-focus-discrete);
+}
+.tl-table-body-row-expandable__icon {
+  width: var(--size-table-icon);
+  height: var(--size-table-icon);
+  fill: var(--color-icon-strong);
+  transform: rotate(0);
+  transition: transform var(--motion-table-hover) ease;
+}
+.tl-table-body-row-expandable__chevron {
+  d: var(--icon-chevron_down-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-table-body-row-expandable__control[aria-expanded='true'] .tl-table-body-row-expandable__icon {
+  transform: rotate(180deg);
+}
+
+/* Expanded row */
+.tl-table-body-row-expandable__expand {
+  display: none;
+  background-color: var(--color-table-header);
+  transition: background-color var(--motion-table-hover) ease;
+}
+.tl-table-body-row-expandable:has([aria-expanded='true']) + .tl-table-body-row-expandable__expand {
+  display: table-row;
+  border-bottom: var(--border-control) solid var(--color-border-discrete);
+}
+.tl-table-body-row-expandable__cell {
+  max-width: var(--size-table-expand-cell);
+  padding: var(--space-element-16) var(--space-element-16) var(--space-element-16)
+    var(--space-table-expand-start);
+  color: var(--color-text-strong);
+}
+.tl-table-body-row-expandable__content {
+  overflow: auto;
+}
+.tl-table-body-row-expandable--overflow-auto .tl-table-body-row-expandable__cell,
+.tl-table-body-row-expandable--overflow-auto .tl-table-body-row-expandable__content {
+  overflow: auto;
+}
+.tl-table-body-row-expandable--overflow-hidden .tl-table-body-row-expandable__cell,
+.tl-table-body-row-expandable--overflow-hidden .tl-table-body-row-expandable__content {
+  overflow: hidden;
+}
+.tl-table-body-row-expandable--overflow-visible .tl-table-body-row-expandable__cell,
+.tl-table-body-row-expandable--overflow-visible .tl-table-body-row-expandable__content {
+  overflow: visible;
+}
+
+/* The table's modifiers (relaxation parent-modifier-selectors) */
+.tl-table--multiselect-false .tl-table-body-row-expandable__select {
+  display: none;
+}
+.tl-table--compact-design-true .tl-table-body-row-expandable__label {
+  height: var(--size-table-row-compact);
+}
+.tl-table--compact-design-true .tl-table-body-row-expandable__control {
+  height: var(--size-table-expand-control-compact);
+}
+.tl-table--compact-design-true .tl-table-body-row-expandable__cell {
+  padding: var(--space-element-8) var(--space-element-16) var(--space-element-8)
+    var(--space-table-expand-start);
+}
+.tl-table--vertical-dividers-true .tl-table-body-row-expandable__control-cell {
+  border-right: var(--border-control) solid var(--color-border-discrete);
+}
+.tl-table--vertical-dividers-true .tl-table-body-row-expandable__select {
+  border-right: var(--border-control) solid var(--color-border-discrete);
+  border-bottom: var(--border-control) solid var(--color-border-discrete);
+}

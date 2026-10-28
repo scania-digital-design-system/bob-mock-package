@@ -1,0 +1,85 @@
+{
+  "componentType": "table",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "verticalDividers",
+    "compactDesign",
+    "noMinWidth",
+    "multiselect",
+    "expandableRows",
+    "responsive",
+    "zebraMode",
+    "sortColumnKey",
+    "sortDirection",
+    "tableId",
+    "children"
+  ],
+  "rules": [
+    {
+      "id": "prop-verticaldividers",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"verticalDividers\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-compactdesign",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"compactDesign\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-nominwidth",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"noMinWidth\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-multiselect",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"multiselect\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-expandablerows",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"expandableRows\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-responsive",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"responsive\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-zebramode",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"zebraMode\" is a component prop: the caller selects one, accepting rows-odd | rows-even | columns-odd | columns-even | none. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-sortcolumnkey",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"sortColumnKey\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-sortdirection",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"sortDirection\" is a component prop: the caller selects one, accepting asc | desc. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-tableid",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"tableId\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-children",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"children\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

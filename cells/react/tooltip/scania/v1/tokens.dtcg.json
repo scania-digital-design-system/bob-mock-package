@@ -346,6 +346,20 @@
         "$value": "#eaad06"
       }
     },
+    "table": {
+      "cell-hover": {
+        "$type": "color",
+        "$value": "#edeff3"
+      },
+      "header": {
+        "$type": "color",
+        "$value": "#e0e5eb"
+      },
+      "header-hover": {
+        "$type": "color",
+        "$value": "#d1d7e0"
+      }
+    },
     "tabs": {
       "indicator": {
         "$type": "color",
@@ -450,6 +464,10 @@
       "strong": {
         "$type": "color",
         "$value": "#0e1013"
+      },
+      "subtle": {
+        "$type": "color",
+        "$value": "#07275880"
       }
     },
     "toast": {
@@ -2264,6 +2282,16 @@
         "$value": "2s"
       }
     },
+    "table": {
+      "hover": {
+        "$type": "color",
+        "$value": "200ms"
+      },
+      "search": {
+        "$type": "color",
+        "$value": "250ms"
+      }
+    },
     "tabs": {
       "indicator": {
         "$type": "color",
@@ -2385,6 +2413,10 @@
     "stepper": {
       "$type": "number",
       "$value": 9999
+    },
+    "table": {
+      "$type": "number",
+      "$value": 4
     },
     "tag": {
       "$type": "number",
@@ -2830,6 +2862,80 @@
         "$value": -10
       }
     },
+    "table": {
+      "expand-cell": {
+        "$type": "number",
+        "$value": 1
+      },
+      "expand-control": {
+        "$type": "number",
+        "$value": 46
+      },
+      "expand-control-compact": {
+        "$type": "number",
+        "$value": 30
+      },
+      "field": {
+        "$type": "number",
+        "$value": 40
+      },
+      "field-width": {
+        "$type": "number",
+        "$value": 77
+      },
+      "header-compact": {
+        "$type": "number",
+        "$value": 33
+      },
+      "icon": {
+        "$type": "number",
+        "$value": 16
+      },
+      "icon-lg": {
+        "$type": "number",
+        "$value": 20
+      },
+      "min-width": {
+        "$type": "number",
+        "$value": 192
+      },
+      "navigation": {
+        "$type": "number",
+        "$value": 160
+      },
+      "row": {
+        "$type": "number",
+        "$value": 48
+      },
+      "row-compact": {
+        "$type": "number",
+        "$value": 32
+      },
+      "search": {
+        "$type": "number",
+        "$value": 48
+      },
+      "search-closed": {
+        "$type": "number",
+        "$value": 50
+      },
+      "search-input": {
+        "$type": "number",
+        "$value": 204
+      },
+      "search-open": {
+        "$type": "number",
+        "$value": 250
+      },
+      "toolbar": {
+        "$type": "number",
+        "$value": 64
+      },
+      "toolbar-compact": {
+        "$type": "number",
+        "$value": 56
+      }
+    },
     "tabs": {
       "folder-min-width": {
         "$type": "number",
@@ -3182,6 +3288,32 @@
       "vertical-sm": {
         "$type": "number",
         "$value": 36
+      }
+    },
+    "table": {
+      "10": {
+        "$type": "number",
+        "$value": 10
+      },
+      "expand-start": {
+        "$type": "number",
+        "$value": 66
+      },
+      "filter-icon": {
+        "$type": "number",
+        "$value": 15
+      },
+      "filter-input": {
+        "$type": "number",
+        "$value": 35
+      },
+      "footer-text-top": {
+        "$type": "number",
+        "$value": 1
+      },
+      "search-icon": {
+        "$type": "number",
+        "$value": 6
       }
     },
     "tabs": {

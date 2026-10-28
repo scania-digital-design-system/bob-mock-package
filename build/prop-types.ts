@@ -79,6 +79,33 @@ export const OVERRIDES: Record<string, Record<string, string>> = {
   'popover-canvas': { referenceEl: 'HTMLElement | null' },
   'popover-menu': { referenceEl: 'HTMLElement | null' },
   tooltip: { referenceEl: 'HTMLElement | null' },
+  'table-header': {
+    onTdsSelectAll:
+      '(event: CustomEvent<{ tableId: string | undefined; checked: boolean; selectedRows: object[] | undefined }>) => void',
+  },
+  'header-cell': {
+    onTdsSort:
+      "(event: CustomEvent<{ tableId: string | undefined; columnKey: string | undefined; sortingDirection: 'asc' | 'desc' }>) => void",
+  },
+  'table-body-row': {
+    onTdsSelect:
+      '(event: CustomEvent<{ tableId: string | undefined; checked: boolean; selectedRows: object[] | undefined }>) => void',
+    onTdsClick:
+      '(event: CustomEvent<{ event: MouseEvent; tableId: string | undefined; rowIndex: number }>) => void',
+  },
+  'table-body-row-expandable': {
+    onTdsChange:
+      '(event: CustomEvent<{ rowId: string; isExpanded: boolean; tableId: string | undefined }>) => void',
+    onTdsSelect:
+      '(event: CustomEvent<{ tableId: string | undefined; checked: boolean; selectedRows: object[] | undefined }>) => void',
+  },
+  'table-toolbar': {
+    onTdsFilter: '(event: CustomEvent<{ tableId: string | undefined; query: string }>) => void',
+  },
+  'table-footer': {
+    onTdsPagination:
+      '(event: CustomEvent<{ tableId: string | undefined; paginationValue: number; rowsPerPage?: number }>) => void',
+  },
   'folder-tabs': { onTdsChange: '(event: CustomEvent<{ selectedTabIndex: number }>) => void' },
   'inline-tabs': { onTdsChange: '(event: CustomEvent<{ selectedTabIndex: number }>) => void' },
   'navigation-tabs': {
@@ -121,8 +148,12 @@ export function propType(
   return override;
 }
 
-// Found on the first line that starts with the function, after any relaxed imports.
-const PARAMETER = /^function\s+\w+\s*\(\s*\{([^}]*)\}\s*\)/m;
+// Found on the first line that starts with the function, after any relaxed imports. The
+// pattern ends at `}) {`, so a default may hold braces ('of {pages} pages').
+const PARAMETER = /^function\s+\w+\s*\(\s*\{([\s\S]*?)\}\s*\)\s*\{/m;
+
+// A comma outside single quotes: defaults may hold commas ('10,25,50').
+const ENTRY_SEPARATOR = /,(?=(?:[^']*'[^']*')*[^']*$)/;
 
 // Prop name → default value as written in the cell, e.g. size → 'lg'. A renamed prop
 // (`state: initialState = 'none'`) keeps its key, as the surface does.
@@ -133,7 +164,7 @@ export function cellDefaults(jsx: string): Record<string, string> {
   }
   return Object.fromEntries(
     pattern
-      .split(',')
+      .split(ENTRY_SEPARATOR)
       .map((entry) => entry.split('='))
       .filter((parts) => parts.length > 1)
       .map(([name = '', ...value]) => [name.split(':')[0]?.trim(), value.join('=').trim()]),

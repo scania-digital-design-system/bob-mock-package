@@ -59,10 +59,22 @@ Each `<component>.md` keeps the full detail. Prompt line numbers (L11, L12) refe
 | popover-menu | PASS | PASS | 1 added, 1 method and 2 props dropped | — | — | — |
 | popover-menu-item | PASS | PASS | 1 added | — | — | — |
 | tooltip | PASS | PASS | 1 added, 2 props dropped | 5 | 0 (popover's apply) | 3 |
+| table | PASS | PASS | 1 added, 1 method and 1 prop dropped | 17 (table) | 3 (table) | 31 (table) |
+| table-toolbar | PASS | Relaxed | 2 added | — | — | — |
+| table-header | PASS | Relaxed | 1 added | — | — | — |
+| header-cell | PASS | Relaxed | 1 added, 1 prop dropped | — | — | — |
+| table-header-input-wrapper | PASS | Relaxed | 1 added | — | — | — |
+| table-body | PASS | PASS | 1 added | — | — | — |
+| table-body-row | PASS | Relaxed | 1 added | — | — | — |
+| table-body-row-expandable | PASS | Relaxed | 2 added, 2 methods dropped | — | — | — |
+| body-cell | PASS | Relaxed | 1 added | — | — | — |
+| table-body-input-wrapper | PASS | Relaxed | 1 added | — | — | — |
+| table-footer | PASS | PASS | exact | — | — | — |
 
 A family (a parent and its children) shares one findings file, so its departures and
 findings are counted once. The three tabs families share `tabs.md`; the four popover
-cells share `popover.md`. The foundation set adds 31 tokens. The `tegel` set has 617
+cells share `popover.md`; the eleven table cells share `table.md`. The foundation set
+adds 31 tokens. The `tegel` set has 648
 names in total, 263 of them icon paths. BOB's stock set has 45.
 
 ## Findings about BOB
@@ -165,6 +177,9 @@ A modifier class cannot come from logic.
   category passes.
 - **modal:** `token-usage` does not list `scrollbar-color` as a colour property. The gate
   fails a colour token there, so the Firefox scrollbar colour is dropped.
+- **table:** a `space` token is allowed on `inset-inline-start` and `inset-inline-end`
+  but not on `left` and `right`. The input wrappers and the toolbar use the logical
+  properties.
 - **slider:** nor `border-image` or `accent-color`, the two CSS-only ways to colour a
   native range's fill. The cell draws the fill with a `<progress>` instead.
 
@@ -279,7 +294,9 @@ Choose between a `return` branch and `:has()` like this:
 | A generated id | No hooks for a stable id | Set ids only when the id prop is given. With no id prop, drop the id and what points at it. | No id by default. The message loses `aria-describedby`. | card `cardId`; message |
 | A geometry that follows a value (a fill width, a tooltip over the thumb) | No `style` attribute; every `var()` is a token | Use a native control that takes the value as an attribute (`<progress>` for a fill), and set it through the DOM. Otherwise drop it and show the value elsewhere. | The fill ends under the thumb, not at its centre; the tooltip does not move. | slider |
 | Viewport state (resize listener) | No hooks or listeners (L12) | Render both variants. A media query shows one. | Content is rendered twice; the hidden copy is `display: none`. | footer-group title and toggle |
-| A parent that sets state on its children (`setSelected`) | No context, refs or `cloneElement` (L12) | The parent sets an ARIA attribute on its children's elements, from a callback ref and a click handler. The child's stylesheet reads it with `:has([aria-…])`. | The contract between the cells is recorded nowhere. React does not own the attribute. | folder, inline and navigation tabs |
+| A parent that sets state on its children (`setSelected`) | No context, refs or `cloneElement` (L12) | The parent sets an ARIA attribute on its children's elements, from a callback ref and a click handler. The child's stylesheet reads it with `:has([aria-…])`. | The contract between the cells is recorded nowhere. React does not own the attribute. | folder, inline and navigation tabs; table (`aria-sort`, `data-text-align`, `data-hover`) |
+| A prop that both the consumer and the user change (`selected`) | No hooks (L12) | Apply the prop in a callback ref only when it differs from the last applied value, kept in a `data-` attribute. | React does not own the attribute. | table rows and header |
+| A child that adds columns by the parent's props (multiselect, expand) | No context (L12) | Render the column always. With `parent-modifier-selectors`, the parent's class hides it. Count columns from the header row in a ref. | Hidden cells in every row. | table |
 | Overflow state (scroll buttons, `ResizeObserver`) | No hooks or effects (L12) | Measure in a callback ref and in `onScroll`. Set `disabled` on the buttons directly, and hide a disabled button with CSS. | A resize alone does not update the buttons. | folder, inline and navigation tabs |
 
 ### CSS and tokens
@@ -338,7 +355,11 @@ no entry here.
   because neither check reads attribute selectors.
 - **Cells:** step, footer-group, footer-item, accordion-item (Tegel's
   `:host(:active)` on the accordion shades every item header), dropdown-option (the
-  dropdown's `multiselect` picks a button or a checkbox, and its size sets the padding).
+  dropdown's `multiselect` picks a button or a checkbox, and its size sets the padding),
+  table-toolbar, table-header, header-cell, table-header-input-wrapper, table-body-row,
+  table-body-row-expandable, body-cell and table-body-input-wrapper (the table's
+  `multiselect`, `expandableRows`, `compactDesign`, `verticalDividers`, `noMinWidth` and
+  `zebraMode`).
 - **Gate:** PASS. Class closure does not object to rules for classes the markup does not
   render.
 - **Source:** structural. Any compound component has the same problem, whatever its

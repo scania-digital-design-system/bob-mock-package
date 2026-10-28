@@ -50,6 +50,17 @@ export const COMPONENTS = [
   'popover-menu',
   'popover-menu-item',
   'tooltip',
+  'table',
+  'table-toolbar',
+  'table-header',
+  'header-cell',
+  'table-header-input-wrapper',
+  'table-body',
+  'table-body-row',
+  'table-body-row-expandable',
+  'body-cell',
+  'table-body-input-wrapper',
+  'table-footer',
 ] as const;
 
 export function cssSources(components: readonly string[]): string[] {

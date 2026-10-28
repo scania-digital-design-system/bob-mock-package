@@ -1,0 +1,44 @@
+{
+  "componentType": "table-header",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "allSelected",
+    "selected",
+    "disabled",
+    "indeterminate",
+    "children",
+    "onTdsSelectAll"
+  ],
+  "rules": [
+    {
+      "id": "prop-allselected",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"allSelected\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-selected",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"selected\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-disabled",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"disabled\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-indeterminate",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"indeterminate\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-children",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"children\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

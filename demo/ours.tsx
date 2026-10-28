@@ -45,11 +45,21 @@ import '../cells/react/popover-canvas/scania/v1/component.css';
 import '../cells/react/popover-menu/scania/v1/component.css';
 import '../cells/react/popover-menu-item/scania/v1/component.css';
 import '../cells/react/tooltip/scania/v1/component.css';
+import '../cells/react/table/scania/v1/component.css';
+import '../cells/react/table-toolbar/scania/v1/component.css';
+import '../cells/react/table-header/scania/v1/component.css';
+import '../cells/react/header-cell/scania/v1/component.css';
+import '../cells/react/table-body/scania/v1/component.css';
+import '../cells/react/table-body-row/scania/v1/component.css';
+import '../cells/react/table-body-row-expandable/scania/v1/component.css';
+import '../cells/react/body-cell/scania/v1/component.css';
+import '../cells/react/table-footer/scania/v1/component.css';
 import Accordion from '../cells/react/accordion/scania/v1/component.jsx';
 import AccordionItem from '../cells/react/accordion-item/scania/v1/component.jsx';
 import Badge from '../cells/react/badge/scania/v1/component.jsx';
 import Banner from '../cells/react/banner/scania/v1/component.jsx';
 import Block from '../cells/react/block/scania/v1/component.jsx';
+import BodyCell from '../cells/react/body-cell/scania/v1/component.jsx';
 import Breadcrumb from '../cells/react/breadcrumb/scania/v1/component.jsx';
 import Breadcrumbs from '../cells/react/breadcrumbs/scania/v1/component.jsx';
 import Button from '../cells/react/button/scania/v1/component.jsx';
@@ -65,6 +75,7 @@ import FolderTabs from '../cells/react/folder-tabs/scania/v1/component.jsx';
 import Footer from '../cells/react/footer/scania/v1/component.jsx';
 import FooterGroup from '../cells/react/footer-group/scania/v1/component.jsx';
 import FooterItem from '../cells/react/footer-item/scania/v1/component.jsx';
+import HeaderCell from '../cells/react/header-cell/scania/v1/component.jsx';
 import Icon from '../cells/react/icon/scania/v1/component.jsx';
 import InlineTab from '../cells/react/inline-tab/scania/v1/component.jsx';
 import InlineTabs from '../cells/react/inline-tabs/scania/v1/component.jsx';
@@ -82,6 +93,13 @@ import Slider from '../cells/react/slider/scania/v1/component.jsx';
 import Spinner from '../cells/react/spinner/scania/v1/component.jsx';
 import Step from '../cells/react/step/scania/v1/component.jsx';
 import Stepper from '../cells/react/stepper/scania/v1/component.jsx';
+import Table from '../cells/react/table/scania/v1/component.jsx';
+import TableBody from '../cells/react/table-body/scania/v1/component.jsx';
+import TableBodyRow from '../cells/react/table-body-row/scania/v1/component.jsx';
+import TableBodyRowExpandable from '../cells/react/table-body-row-expandable/scania/v1/component.jsx';
+import TableFooter from '../cells/react/table-footer/scania/v1/component.jsx';
+import TableHeader from '../cells/react/table-header/scania/v1/component.jsx';
+import TableToolbar from '../cells/react/table-toolbar/scania/v1/component.jsx';
 import Tag from '../cells/react/tag/scania/v1/component.jsx';
 import TextField from '../cells/react/text-field/scania/v1/component.jsx';
 import Textarea from '../cells/react/textarea/scania/v1/component.jsx';
@@ -100,7 +118,10 @@ import {
   NESTED_BLOCKS,
   SECTIONS,
   STEPS,
+  TABLE_COLUMNS,
+  TABLE_ROWS,
   TABS,
+  type TableParts,
   THUMBNAIL_SRC,
 } from './cases';
 
@@ -138,7 +159,32 @@ const COMPONENTS: Record<string, FC<Record<string, unknown>>> = {
   'popover-canvas': PopoverCanvas,
   'popover-menu': PopoverMenu,
   tooltip: Tooltip,
+  table: Table,
 };
+
+function tableChildren({ toolbar, footer, expandable, sortable }: TableParts) {
+  const Row = expandable ? TableBodyRowExpandable : TableBodyRow;
+  return [
+    toolbar && (
+      <TableToolbar key="toolbar" tableTitle="Vehicles" filter tdsSearchAriaLabel="Search" />
+    ),
+    <TableHeader key="header">
+      {TABLE_COLUMNS.map(({ key, title }) => (
+        <HeaderCell key={key} cellKey={key} cellValue={title} sortable={sortable} />
+      ))}
+    </TableHeader>,
+    <TableBody key="body">
+      {TABLE_ROWS.map((row) => (
+        <Row key={row[0]} expandRow={expandable ? 'Expanded row content' : undefined}>
+          {row.map((value, i) => (
+            <BodyCell key={value} cellKey={TABLE_COLUMNS[i]?.key} cellValue={value} />
+          ))}
+        </Row>
+      ))}
+    </TableBody>,
+    footer && <TableFooter key="footer" pagination pages="4" />,
+  ];
+}
 
 const TAB_CELLS: Record<string, FC<Record<string, unknown>>> = {
   folder: FolderTab,
@@ -257,6 +303,8 @@ function nodeProps(props: Record<string, unknown>): Record<string, unknown> {
       dropdownOptions
     ) : props.menuItems ? (
       menuItems
+    ) : props.tableParts ? (
+      tableChildren(props.tableParts as TableParts)
     ) : typeof props.tabs === 'string' ? (
       tabs(props.tabs)
     ) : (

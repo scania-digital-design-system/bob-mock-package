@@ -1,0 +1,4 @@
+.tl-table-body {
+  box-sizing: border-box;
+  display: table-row-group;
+}

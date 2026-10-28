@@ -1,0 +1,66 @@
+{
+  "component": "table-body-row-expandable",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-table-body-row-expandable at @scania/tegel@1.66.1: a table row with an expand button that shows a full-width row below it.",
+    "properties": [
+      {
+        "name": "colSpan",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "rowId",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "expanded",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "overflow",
+        "type": "VARIANT",
+        "values": ["auto", "hidden", "visible"]
+      },
+      {
+        "name": "autoCollapse",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "tdsAriaLabelExpandButton",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "selected",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "disabled",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      },
+      {
+        "name": "expandRow",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": [
+      {
+        "property": "overflow",
+        "disposition": "prop"
+      }
+    ]
+  }
+}

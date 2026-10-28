@@ -1,0 +1,72 @@
+{
+  "componentType": "header-cell",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "cellKey",
+    "cellValue",
+    "sortable",
+    "textAlign",
+    "disablePadding",
+    "tdsAriaLabelSortButton",
+    "colSpan",
+    "rowSpan",
+    "children",
+    "onTdsSort"
+  ],
+  "rules": [
+    {
+      "id": "prop-cellkey",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"cellKey\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-cellvalue",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"cellValue\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-sortable",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"sortable\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-textalign",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"textAlign\" is a component prop: the caller selects one, accepting left | start | right | end | center. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-disablepadding",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"disablePadding\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-tdsarialabelsortbutton",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"tdsAriaLabelSortButton\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-colspan",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"colSpan\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-rowspan",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"rowSpan\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-children",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"children\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

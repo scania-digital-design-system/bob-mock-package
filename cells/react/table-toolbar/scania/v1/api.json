@@ -1,0 +1,44 @@
+{
+  "componentType": "table-toolbar",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "tableTitle",
+    "filter",
+    "tdsSearchAriaLabel",
+    "start",
+    "end",
+    "onTdsFilter"
+  ],
+  "rules": [
+    {
+      "id": "prop-tabletitle",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"tableTitle\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-filter",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"filter\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-tdssearcharialabel",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"tdsSearchAriaLabel\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-start",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"start\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-end",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"end\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

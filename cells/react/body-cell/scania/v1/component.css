@@ -1,0 +1,77 @@
+/* The cell takes its row's background, so the row's hover, selection and zebra stripes
+   show through. */
+.tl-body-cell {
+  box-sizing: border-box;
+  min-width: var(--size-table-min-width);
+  background-color: inherit;
+  color: var(--color-text-strong);
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: normal;
+  line-height: var(--font-line-height-detail-02);
+  letter-spacing: var(--font-letter-spacing-detail);
+  text-transform: none;
+  transition: background-color var(--motion-table-hover) ease;
+}
+.tl-body-cell--top {
+  vertical-align: top;
+}
+.tl-body-cell--middle {
+  vertical-align: middle;
+}
+.tl-body-cell--bottom {
+  vertical-align: bottom;
+}
+.tl-body-cell--disable-padding-false {
+  padding: var(--space-element-16);
+}
+.tl-body-cell--disable-padding-true {
+  padding: 0;
+}
+
+/* The cell's textAlign, or its header cell's when it has none (data-text-align) */
+.tl-body-cell[data-text-align='left'] {
+  text-align: left;
+}
+.tl-body-cell[data-text-align='start'] {
+  text-align: start;
+}
+.tl-body-cell[data-text-align='right'] {
+  text-align: right;
+}
+.tl-body-cell[data-text-align='end'] {
+  text-align: end;
+}
+.tl-body-cell[data-text-align='center'] {
+  text-align: center;
+}
+
+/* The header cell with the same key is hovered (data-hover) */
+.tl-body-cell[data-hover] {
+  background-color: var(--color-table-cell-hover);
+}
+
+/* The table's modifiers (relaxation parent-modifier-selectors) */
+.tl-table--compact-design-true .tl-body-cell--disable-padding-false {
+  padding: var(--space-element-8) var(--space-element-16);
+}
+.tl-table--vertical-dividers-true .tl-body-cell {
+  border-right: var(--border-control) solid var(--color-border-discrete);
+  border-bottom: var(--border-control) solid var(--color-border-discrete);
+}
+.tl-table--vertical-dividers-true .tl-body-cell:last-child {
+  border-right: 0;
+}
+.tl-table--no-min-width-true .tl-body-cell {
+  min-width: 0;
+}
+.tl-table--zebra-mode-columns-odd .tl-body-cell:nth-child(odd of .tl-body-cell),
+.tl-table--zebra-mode-columns-even .tl-body-cell:nth-child(even of .tl-body-cell) {
+  background-color: var(--color-background-base);
+}
+.tl-table--zebra-mode-columns-odd :hover > .tl-body-cell,
+.tl-table--zebra-mode-columns-even :hover > .tl-body-cell,
+.tl-table--zebra-mode-columns-odd .tl-body-cell[data-hover],
+.tl-table--zebra-mode-columns-even .tl-body-cell[data-hover] {
+  background-color: var(--color-table-cell-hover);
+}

@@ -660,3 +660,153 @@ export type TooltipProps = {
   tdsAriaDescribedby?: string;
   children?: ReactNode;
 };
+
+export type TableProps = {
+  /** @default false */
+  verticalDividers?: boolean;
+  /** @default false */
+  compactDesign?: boolean;
+  /** @default false */
+  noMinWidth?: boolean;
+  /** @default false */
+  multiselect?: boolean;
+  /** @default false */
+  expandableRows?: boolean;
+  /** @default false */
+  responsive?: boolean;
+  /** @default 'none' */
+  zebraMode?: 'rows-odd' | 'rows-even' | 'columns-odd' | 'columns-even' | 'none';
+  sortColumnKey?: string;
+  sortDirection?: 'asc' | 'desc';
+  tableId?: string;
+  children?: ReactNode;
+};
+
+export type TableToolbarProps = {
+  /** @default '' */
+  tableTitle?: string;
+  /** @default false */
+  filter?: boolean;
+  /** @default '' */
+  tdsSearchAriaLabel?: string;
+  start?: ReactNode;
+  end?: ReactNode;
+  onTdsFilter?: (event: CustomEvent<{ tableId: string | undefined; query: string }>) => void;
+};
+
+export type TableHeaderProps = {
+  /** @default false */
+  allSelected?: boolean;
+  selected?: boolean;
+  /** @default false */
+  disabled?: boolean;
+  /** @default false */
+  indeterminate?: boolean;
+  children?: ReactNode;
+  onTdsSelectAll?: (event: CustomEvent<{ tableId: string | undefined; checked: boolean; selectedRows: object[] | undefined }>) => void;
+};
+
+export type HeaderCellProps = {
+  cellKey?: string;
+  cellValue?: string;
+  /** @default false */
+  sortable?: boolean;
+  /** @default 'left' */
+  textAlign?: 'left' | 'start' | 'right' | 'end' | 'center';
+  /** @default false */
+  disablePadding?: boolean;
+  /** @default '' */
+  tdsAriaLabelSortButton?: string;
+  colSpan?: string;
+  rowSpan?: string;
+  children?: ReactNode;
+  onTdsSort?: (event: CustomEvent<{ tableId: string | undefined; columnKey: string | undefined; sortingDirection: 'asc' | 'desc' }>) => void;
+};
+
+export type TableHeaderInputWrapperProps = {
+  /** @default true */
+  showIcon?: boolean;
+  /** @default false */
+  compactDesign?: boolean;
+  children?: ReactNode;
+};
+
+export type TableBodyProps = {
+  children?: ReactNode;
+};
+
+export type TableBodyRowProps = {
+  /** @default false */
+  selected?: boolean;
+  /** @default false */
+  disabled?: boolean;
+  /** @default false */
+  clickable?: boolean;
+  children?: ReactNode;
+  onTdsSelect?: (event: CustomEvent<{ tableId: string | undefined; checked: boolean; selectedRows: object[] | undefined }>) => void;
+  onTdsClick?: (event: CustomEvent<{ event: MouseEvent; tableId: string | undefined; rowIndex: number }>) => void;
+};
+
+export type TableBodyRowExpandableProps = {
+  colSpan?: string;
+  rowId?: string;
+  /** @default false */
+  expanded?: boolean;
+  /** @default 'auto' */
+  overflow?: 'auto' | 'hidden' | 'visible';
+  /** @default false */
+  autoCollapse?: boolean;
+  /** @default '' */
+  tdsAriaLabelExpandButton?: string;
+  /** @default false */
+  selected?: boolean;
+  /** @default false */
+  disabled?: boolean;
+  children?: ReactNode;
+  expandRow?: ReactNode;
+  onTdsChange?: (event: CustomEvent<{ rowId: string; isExpanded: boolean; tableId: string | undefined }>) => void;
+  onTdsSelect?: (event: CustomEvent<{ tableId: string | undefined; checked: boolean; selectedRows: object[] | undefined }>) => void;
+};
+
+export type BodyCellProps = {
+  cellValue?: string;
+  cellKey?: string;
+  /** @default false */
+  disablePadding?: boolean;
+  textAlign?: 'left' | 'start' | 'right' | 'end' | 'center';
+  /** @default 'top' */
+  verticalAlign?: 'top' | 'middle' | 'bottom';
+  colSpan?: string;
+  rowSpan?: string;
+  children?: ReactNode;
+};
+
+export type TableBodyInputWrapperProps = {
+  /** @default true */
+  showIcon?: boolean;
+  children?: ReactNode;
+};
+
+export type TableFooterProps = {
+  /** @default false */
+  pagination?: boolean;
+  /** @default '1' */
+  paginationValue?: string;
+  /** @default 'of {pages} pages' */
+  paginationLabel?: string;
+  /** @default true */
+  rowsperpage?: boolean;
+  /** @default 'Rows per page' */
+  rowsPerPageLabel?: string;
+  /** @default '10,25,50' */
+  rowsPerPageValues?: string;
+  /** @default 'auto' */
+  rowsPerPageDropdownOpenDirection?: 'up' | 'down' | 'auto';
+  /** @default 'Select rows per page' */
+  rowsPerPageDropdownAriaLabel?: string;
+  /** @default '0' */
+  pages?: string;
+  cols?: string;
+  rowsPerPageValue?: string;
+  onTdsPagination?: (event: CustomEvent<{ tableId: string | undefined; paginationValue: number; rowsPerPage?: number }>) => void;
+};

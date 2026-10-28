@@ -1,0 +1,26 @@
+{
+  "component": "table-header-input-wrapper",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-table-header-input-wrapper at @scania/tegel@1.66.1: a filter input in a table header cell with a search icon.",
+    "properties": [
+      {
+        "name": "showIcon",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "compactDesign",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

@@ -1,0 +1,151 @@
+.tl-header-cell {
+  box-sizing: border-box;
+  min-width: var(--size-table-min-width);
+  height: var(--size-table-row);
+  padding: 0;
+  overflow: hidden;
+  border-bottom: var(--border-control) solid var(--color-border-discrete);
+  background-color: var(--color-table-header);
+  color: var(--color-text-strong);
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: bold;
+  line-height: var(--font-line-height-detail-02);
+  letter-spacing: var(--font-letter-spacing-detail);
+  text-align: left;
+  vertical-align: middle;
+  transition: background-color var(--motion-table-hover) ease;
+}
+.tl-header-cell:hover {
+  background-color: var(--color-table-header-hover);
+}
+.tl-header-cell--sortable-true {
+  cursor: pointer;
+}
+.tl-header-cell--sortable-false {
+  cursor: default;
+}
+.tl-header-cell__text {
+  margin: 0;
+}
+.tl-header-cell--disable-padding-false .tl-header-cell__text {
+  padding: var(--space-element-8) var(--space-element-16);
+}
+.tl-header-cell--disable-padding-true {
+  height: auto;
+}
+.tl-header-cell--disable-padding-true .tl-header-cell__text {
+  padding: 0;
+}
+
+/* Sort button */
+.tl-header-cell__button {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: var(--space-element-8);
+  width: 100%;
+  height: 100%;
+  padding: 0 var(--space-element-16);
+  border: 0;
+  background-color: var(--color-background-none);
+  cursor: pointer;
+  transition: background-color var(--motion-table-hover) ease;
+}
+.tl-header-cell__button:focus {
+  outline: var(--border-focus) solid var(--color-border-focus);
+  outline-offset: var(--border-focus-inset);
+  box-shadow: inset 0 var(--border-control) 0 var(--size-shadow-3) var(--color-border-focus-discrete);
+}
+.tl-header-cell__button-text {
+  color: var(--color-text-strong);
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: bold;
+  line-height: var(--font-line-height-detail-02);
+  letter-spacing: var(--font-letter-spacing-detail);
+  text-align: left;
+}
+.tl-header-cell__icon {
+  flex: 0 0 var(--size-table-icon);
+  width: var(--size-table-icon);
+  height: var(--size-table-icon);
+  opacity: 0;
+  fill: var(--color-icon-strong);
+  transform-origin: center;
+  transition:
+    opacity var(--motion-table-hover) ease-in,
+    transform var(--motion-table-hover) ease;
+}
+.tl-header-cell__button:hover .tl-header-cell__icon,
+.tl-header-cell__button:focus .tl-header-cell__icon {
+  opacity: var(--opacity-full);
+}
+.tl-header-cell__sorting {
+  d: var(--icon-sorting-d);
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+.tl-header-cell__arrow {
+  d: var(--icon-arrow_down-d);
+}
+
+/* Sorted state: aria-sort, set by the cell on a click or by the table's sortColumnKey */
+.tl-header-cell[aria-sort='none'] .tl-header-cell__icon--sorted,
+.tl-header-cell:not([aria-sort='none']) .tl-header-cell__icon--unsorted {
+  display: none;
+}
+.tl-header-cell:not([aria-sort='none']) .tl-header-cell__icon {
+  opacity: var(--opacity-full);
+}
+.tl-header-cell[aria-sort='ascending'] .tl-header-cell__icon {
+  transform: rotate(180deg);
+}
+
+/* Text alignment */
+.tl-header-cell--left .tl-header-cell__text {
+  text-align: left;
+}
+.tl-header-cell--start .tl-header-cell__text {
+  text-align: start;
+}
+.tl-header-cell--right .tl-header-cell__text {
+  text-align: right;
+}
+.tl-header-cell--end .tl-header-cell__text {
+  text-align: end;
+}
+.tl-header-cell--center .tl-header-cell__text {
+  text-align: center;
+}
+.tl-header-cell--left .tl-header-cell__button {
+  justify-content: left;
+}
+.tl-header-cell--start .tl-header-cell__button {
+  justify-content: start;
+}
+.tl-header-cell--right .tl-header-cell__button {
+  justify-content: right;
+}
+.tl-header-cell--end .tl-header-cell__button {
+  justify-content: end;
+}
+.tl-header-cell--center .tl-header-cell__button {
+  justify-content: center;
+}
+
+/* The table's modifiers (relaxation parent-modifier-selectors) */
+.tl-table--compact-design-true .tl-header-cell {
+  height: var(--size-table-header-compact);
+}
+.tl-table--vertical-dividers-true .tl-header-cell {
+  border-right: var(--border-control) solid var(--color-border-discrete);
+}
+.tl-table--vertical-dividers-true .tl-header-cell:last-child {
+  border-right: 0;
+}
+.tl-table--no-min-width-true .tl-header-cell {
+  min-width: 0;
+}
