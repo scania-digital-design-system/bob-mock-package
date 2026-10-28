@@ -1,0 +1,22 @@
+{
+  "componentType": "block",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "componentTag",
+    "children"
+  ],
+  "rules": [
+    {
+      "id": "prop-componenttag",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"componentTag\" is a component prop: the caller selects one, accepting section | div | article | aside | header | footer | nav | main. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-children",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"children\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

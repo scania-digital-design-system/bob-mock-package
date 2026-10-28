@@ -44,7 +44,8 @@ an empty custom property (`--font-detail: ;`).
 
 BOB's stock `ruledata.v2.json` holds 45 names. The foundation set reuses 5 of them where
 the meaning is the same: `color/border/focus`, `color/danger`, `font/size/caption`,
-`radius/control`, `border/control`. Every other name is in the generated `tegel` set.
+`radius/control`, `border/control`. The block adds a sixth, `font/size/body`. Every other
+name is in the generated `tegel` set.
 
 | After | `tegel` set |
 |---|---|
@@ -54,6 +55,7 @@ the meaning is the same: `color/border/focus`, `color/danger`, `font/size/captio
 | Link | 56 |
 | Spinner | 66 |
 | Card | 80 |
+| Divider, block, tag, message | 112 |
 
 ## Foundation set
 
@@ -202,6 +204,76 @@ Reused: `color/background/base` (card background, Tegel's `base-white`),
 
 Shadows are composed from `size` and `color` tokens: BOB has no shadow type, and the
 gate's `color` category is allowed on `box-shadow`.
+
+### Divider
+
+Source: `packages/core/src/components/divider/divider.scss`, `divider-vars.scss`, and the
+Scania light block of `tokens/scss/component/divider.scss`.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `color/divider/subtle` | `#7e90a9` | `--component-divider-border-subtle-default` = grey-350 |
+| `color/divider/soft` | `#5f728c` | `--component-divider-border-soft-default` = grey-500 |
+| `color/divider/defined` | `#475467` | `--component-divider-border-defined-default` = grey-650 |
+| `color/divider/expressive` | `#0f3263` | `--component-divider-border-expressive-default` = blue-700 |
+| `size/divider` | 1 | `height: 1px` / `width: 1px` |
+
+Reused: `color/divider/discrete` (added with the card) and `color/border/strong` (Tegel's
+`strong` divider is `--color-border-strong`).
+
+### Block
+
+Source: `packages/core/src/components/block/block.scss`, `block-vars.scss`, the Scania
+light block of `tokens/scss/component/block.scss`, and the `body-01` type style.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `font/family/body.fontFamily` | `'Scania Sans', arial, 'Helvetica Neue'` | `--body-01-font-family` |
+| `font/size/body` (stock name) | 16 | `--body-01-font-size` |
+| `font/line-height/body-01` | 24 | `--body-01-line-height` |
+| `font/letter-spacing/body` | -0.32 | `--body-01-letter-spacing` |
+| `radius/block` | 4 | `--component-block-border-radius-default` = unit-4 |
+
+Reused: `color/background/layer-01` (primary and even), `color/background/layer-02`
+(odd), `color/text/strong`, `space/element/16`. The weight is the keyword `normal`.
+
+### Tag
+
+Source: `packages/core/src/components/tag/tag.scss`, `tag-vars.scss`, the Scania light
+block of `tokens/scss/component/tag.scss`, and the `detail-05` type style.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `color/tag/{error,new,information,neutral,success,warning}` | `#ffb9b8`, `#bacde8`, `#87afe8`, `#e0e5eb`, `#9bd9c2`, `#f9eec3` | `--component-tag-background-{error,featured,information,neutral,success,warning}-default` |
+| `color/tag/on-{error,new,information,neutral,success,warning}` | `#6c0011`, `#0f3263`, `#041e42`, `#242c37`, `#0a382e`, `#6b3b10` | `--component-tag-text-*-default` |
+| `radius/tag` | 4 | `--component-tag-border-radius-default` = unit-4 |
+| `font/line-height/detail-05` | 16 | `--detail-05-line-height` |
+
+Reused: `space/element/{2,4}`, `font/family/detail`, `font/size/caption` (detail-05's
+12px). The `--component-tag-icon-*` tokens alias the text tokens, so they are not added.
+
+### Message
+
+Source: `packages/core/src/components/message/message.scss`, `message-vars.scss`, the
+Scania light block of `tokens/scss/component/message.scss`, `color-light.scss`, and the
+`headline-07`, `detail-02` and `detail-03` type styles.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `color/system/success` | `#009e7e` | `--color-system-success-default` = green-300 |
+| `color/system/warning` | `#b87c14` | `--color-system-warning-default` = yellow-500 (icon) |
+| `color/system/warning-subtle` | `#eaad06` | `--color-system-warning-subtle` = yellow-400 (border) |
+| `color/system/danger-discrete` | `#ffdfe3` | `--color-system-danger-discrete` = red-50 (error background) |
+| `size/message/icon` | 20 | `tds-icon size="20px"` |
+| `border/message` | 4 | `--component-message-border-width-default` = unit-4 |
+| `radius/message` | 4 | `--component-message-border-radius-default` = unit-4 |
+| `space/element/24` | 24 | content `padding-right: 24px` |
+| `font/line-height/headline-07` | 16 | `--headline-07-line-height` |
+
+Reused: `color/background/layer-01`, `color/background/none` (minimal),
+`color/text/strong`, `color/system/info`, `color/danger`, `space/element/{2,4,8,16}`,
+`font/family/detail`, `font/size/detail`, `font/letter-spacing/detail` and
+`font/line-height/detail-{02,03}`.
 
 ## Not included
 

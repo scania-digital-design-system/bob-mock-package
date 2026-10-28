@@ -1,0 +1,36 @@
+{
+  "componentType": "tag",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "text",
+    "size",
+    "variant",
+    "prefix"
+  ],
+  "rules": [
+    {
+      "id": "prop-text",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"text\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-size",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"size\" is a component prop: the caller selects one, accepting lg | sm. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-variant",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"variant\" is a component prop: the caller selects one, accepting success | warning | new | neutral | information | error | Success | Warning | New | Neutral | Information | Error. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-prefix",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"prefix\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

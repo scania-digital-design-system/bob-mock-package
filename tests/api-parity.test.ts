@@ -18,6 +18,9 @@ const DEPARTURES: Record<string, { dropped?: string[]; added?: string[] }> = {
   link: { added: ['href', 'target', 'children'] },
   // Tegel's named slots become props.
   card: { added: ['thumbnail', 'bodyImage', 'body', 'actions'] },
+  block: { added: ['children'] },
+  tag: { added: ['prefix'] },
+  message: { added: ['children'] },
 };
 
 // Read by path: the package's "exports" map does not expose this file.

@@ -1,0 +1,31 @@
+.tl-divider {
+  box-sizing: border-box;
+  background-color: var(--color-divider-subtle);
+}
+.tl-divider--horizontal {
+  width: 100%;
+  height: var(--size-divider);
+}
+.tl-divider--vertical {
+  width: var(--size-divider);
+  height: 100%;
+}
+.tl-divider--discrete {
+  background-color: var(--color-divider-discrete);
+}
+.tl-divider--subtle {
+  background-color: var(--color-divider-subtle);
+}
+.tl-divider--soft {
+  background-color: var(--color-divider-soft);
+}
+.tl-divider--defined {
+  background-color: var(--color-divider-defined);
+}
+.tl-divider--strong {
+  background-color: var(--color-border-strong);
+}
+.tl-divider--expressive,
+.tl-divider--dark-blue {
+  background-color: var(--color-divider-expressive);
+}

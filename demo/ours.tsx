@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 import { createRoot } from 'react-dom/client';
 import '../tokens/scania.css';
 import '../cells/react/badge/scania/v1/component.css';
@@ -6,12 +6,20 @@ import '../cells/react/button/scania/v1/component.css';
 import '../cells/react/link/scania/v1/component.css';
 import '../cells/react/spinner/scania/v1/component.css';
 import '../cells/react/card/scania/v1/component.css';
+import '../cells/react/divider/scania/v1/component.css';
+import '../cells/react/block/scania/v1/component.css';
+import '../cells/react/tag/scania/v1/component.css';
+import '../cells/react/message/scania/v1/component.css';
 import Badge from '../cells/react/badge/scania/v1/component.jsx';
+import Block from '../cells/react/block/scania/v1/component.jsx';
 import Button from '../cells/react/button/scania/v1/component.jsx';
 import Card from '../cells/react/card/scania/v1/component.jsx';
+import Divider from '../cells/react/divider/scania/v1/component.jsx';
 import Link from '../cells/react/link/scania/v1/component.jsx';
+import Message from '../cells/react/message/scania/v1/component.jsx';
 import Spinner from '../cells/react/spinner/scania/v1/component.jsx';
-import { ICON_PATH, SECTIONS, THUMBNAIL_SRC } from './cases';
+import Tag from '../cells/react/tag/scania/v1/component.jsx';
+import { ICON_PATH, NESTED_BLOCKS, SECTIONS, THUMBNAIL_SRC } from './cases';
 
 const COMPONENTS: Record<string, FC<Record<string, unknown>>> = {
   badge: Badge,
@@ -19,6 +27,10 @@ const COMPONENTS: Record<string, FC<Record<string, unknown>>> = {
   link: Link,
   spinner: Spinner,
   card: Card,
+  divider: Divider,
+  block: Block,
+  tag: Tag,
+  message: Message,
 };
 
 const icon = (
@@ -26,6 +38,22 @@ const icon = (
     <path d={ICON_PATH} />
   </svg>
 );
+
+const prefix = (
+  <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
+    <path d={ICON_PATH} />
+  </svg>
+);
+
+// Blocks inside blocks, NESTED_BLOCKS deep, to show the alternating backgrounds.
+function nestedBlocks(depth: number): ReactNode {
+  return depth === 0 ? null : (
+    <Block>
+      Level {NESTED_BLOCKS - depth + 1}
+      {nestedBlocks(depth - 1)}
+    </Block>
+  );
+}
 
 const thumbnail = <img src={THUMBNAIL_SRC} alt="" width="100%" height="100%" />;
 
@@ -43,6 +71,8 @@ function nodeProps(props: Record<string, unknown>): Record<string, unknown> {
     icon: props.icon ? icon : undefined,
     thumbnail: props.thumbnail ? thumbnail : undefined,
     actions: props.actions ? actions : undefined,
+    prefix: props.prefix ? prefix : undefined,
+    children: props.nested ? <>Level 1{nestedBlocks(NESTED_BLOCKS - 1)}</> : props.children,
   };
 }
 

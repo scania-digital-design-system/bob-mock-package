@@ -1,0 +1,22 @@
+{
+  "componentType": "divider",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "orientation",
+    "variant"
+  ],
+  "rules": [
+    {
+      "id": "prop-orientation",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"orientation\" is a component prop: the caller selects one, accepting horizontal | vertical. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-variant",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"variant\" is a component prop: the caller selects one, accepting discrete | subtle | soft | defined | strong | expressive | dark-blue. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

@@ -1,12 +1,36 @@
 import type { FC } from 'react';
 import BadgeCell from '../cells/react/badge/scania/v1/component.jsx';
+import BlockCell from '../cells/react/block/scania/v1/component.jsx';
 import ButtonCell from '../cells/react/button/scania/v1/component.jsx';
 import CardCell from '../cells/react/card/scania/v1/component.jsx';
+import DividerCell from '../cells/react/divider/scania/v1/component.jsx';
 import LinkCell from '../cells/react/link/scania/v1/component.jsx';
+import MessageCell from '../cells/react/message/scania/v1/component.jsx';
 import SpinnerCell from '../cells/react/spinner/scania/v1/component.jsx';
-import type { BadgeProps, ButtonProps, CardProps, LinkProps, SpinnerProps } from './props.gen.js';
+import TagCell from '../cells/react/tag/scania/v1/component.jsx';
+import type {
+  BadgeProps,
+  BlockProps,
+  ButtonProps,
+  CardProps,
+  DividerProps,
+  LinkProps,
+  MessageProps,
+  SpinnerProps,
+  TagProps,
+} from './props.gen.js';
 
-export type { BadgeProps, ButtonProps, CardProps, LinkProps, SpinnerProps } from './props.gen.js';
+export type {
+  BadgeProps,
+  BlockProps,
+  ButtonProps,
+  CardProps,
+  DividerProps,
+  LinkProps,
+  MessageProps,
+  SpinnerProps,
+  TagProps,
+} from './props.gen.js';
 
 // One export per cell, named for its folder in cells/react/ (ADR 0005 D2), typed with
 // the props generated from its payload (D4). Declared as constants so dist/index.d.ts
@@ -17,3 +41,7 @@ export const Button: FC<ButtonProps> = ButtonCell;
 export const Link: FC<LinkProps> = LinkCell;
 export const Spinner: FC<SpinnerProps> = SpinnerCell;
 export const Card: FC<CardProps> = CardCell;
+export const Divider: FC<DividerProps> = DividerCell;
+export const Block: FC<BlockProps> = BlockCell;
+export const Tag: FC<TagProps> = TagCell;
+export const Message: FC<MessageProps> = MessageCell;

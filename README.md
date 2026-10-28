@@ -8,7 +8,8 @@ This package is for testing BOB. It is not a product. Do not use it in productio
 
 ## Components
 
-`Badge`, `Button`, `Link`, `Spinner` and `Card`. Scania brand, light mode only.
+`Badge`, `Block`, `Button`, `Card`, `Divider`, `Link`, `Message`, `Spinner` and `Tag`.
+Scania brand, light mode only.
 
 ## Install
 

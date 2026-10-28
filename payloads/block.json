@@ -1,0 +1,17 @@
+{
+  "component": "block",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-block at @scania/tegel@1.66.1: a padded container that alternates its background when nested.",
+    "properties": [
+      {
+        "name": "componentTag",
+        "type": "VARIANT",
+        "values": ["section", "div", "article", "aside", "header", "footer", "nav", "main"]
+      },
+      { "name": "children", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": [{ "property": "componentTag", "disposition": "prop" }]
+  }
+}

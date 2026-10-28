@@ -1,0 +1,35 @@
+{
+  "component": "tag",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-tag at @scania/tegel@1.66.1: a short status label with an optional prefix.",
+    "properties": [
+      { "name": "text", "type": "TEXT", "values": [] },
+      { "name": "size", "type": "VARIANT", "values": ["lg", "sm"] },
+      {
+        "name": "variant",
+        "type": "VARIANT",
+        "values": [
+          "success",
+          "warning",
+          "new",
+          "neutral",
+          "information",
+          "error",
+          "Success",
+          "Warning",
+          "New",
+          "Neutral",
+          "Information",
+          "Error"
+        ]
+      },
+      { "name": "prefix", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": [
+      { "property": "size", "disposition": "prop" },
+      { "property": "variant", "disposition": "prop" }
+    ]
+  }
+}

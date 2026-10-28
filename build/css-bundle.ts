@@ -5,8 +5,18 @@ import type { Plugin } from 'vite';
 // The package ships one stylesheet: the brand tokens, then every cell's component.css,
 // joined without changes so the shipped CSS is the CSS the gate checked (ADR 0005 D3).
 
-// Package order (ADR 0001 D7).
-export const COMPONENTS = ['badge', 'button', 'link', 'spinner', 'card'] as const;
+// Package order: build order (ADR 0001 D7, ADR 0006 D1).
+export const COMPONENTS = [
+  'badge',
+  'button',
+  'link',
+  'spinner',
+  'card',
+  'divider',
+  'block',
+  'tag',
+  'message',
+] as const;
 
 export function cssSources(components: readonly string[]): string[] {
   return [

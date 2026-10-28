@@ -1,0 +1,20 @@
+{
+  "component": "divider",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-divider at @scania/tegel@1.66.1: a horizontal or vertical separator line.",
+    "properties": [
+      { "name": "orientation", "type": "VARIANT", "values": ["horizontal", "vertical"] },
+      {
+        "name": "variant",
+        "type": "VARIANT",
+        "values": ["discrete", "subtle", "soft", "defined", "strong", "expressive", "dark-blue"]
+      }
+    ],
+    "answers": [
+      { "property": "orientation", "disposition": "prop" },
+      { "property": "variant", "disposition": "prop" }
+    ]
+  }
+}

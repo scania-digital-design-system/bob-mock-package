@@ -1,0 +1,56 @@
+.tl-tag {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-element-4);
+  border-radius: var(--radius-tag);
+  background-color: var(--color-tag-neutral);
+  color: var(--color-tag-on-neutral);
+}
+.tl-tag--lg {
+  padding: var(--space-element-4);
+}
+.tl-tag--sm {
+  padding: var(--space-element-2) var(--space-element-4);
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-caption);
+  font-weight: normal;
+  line-height: var(--font-line-height-detail-05);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.tl-tag--success,
+.tl-tag--Success {
+  background-color: var(--color-tag-success);
+  color: var(--color-tag-on-success);
+}
+.tl-tag--warning,
+.tl-tag--Warning {
+  background-color: var(--color-tag-warning);
+  color: var(--color-tag-on-warning);
+}
+.tl-tag--new,
+.tl-tag--New {
+  background-color: var(--color-tag-new);
+  color: var(--color-tag-on-new);
+}
+.tl-tag--neutral,
+.tl-tag--Neutral {
+  background-color: var(--color-tag-neutral);
+  color: var(--color-tag-on-neutral);
+}
+.tl-tag--information,
+.tl-tag--Information {
+  background-color: var(--color-tag-information);
+  color: var(--color-tag-on-information);
+}
+.tl-tag--error,
+.tl-tag--Error {
+  background-color: var(--color-tag-error);
+  color: var(--color-tag-on-error);
+}
+.tl-tag__content {
+  display: flex;
+  align-items: center;
+  gap: inherit;
+}

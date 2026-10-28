@@ -32,8 +32,12 @@ h2 {
 .case dd {
   margin: 0;
 }
-section[data-component="card"] .case dd {
+section[data-component="card"] .case dd,
+section[data-component="message"] .case dd {
   max-width: 360px;
+}
+section[data-component="divider"] .case dd {
+  height: 24px;
 }
 .actions {
   display: flex;

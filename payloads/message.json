@@ -1,0 +1,25 @@
+{
+  "component": "message",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-message at @scania/tegel@1.66.1: an inline status message with an icon, a header and an extended text.",
+    "properties": [
+      { "name": "header", "type": "TEXT", "values": [] },
+      {
+        "name": "variant",
+        "type": "VARIANT",
+        "values": ["information", "error", "warning", "success"]
+      },
+      { "name": "noIcon", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "minimal", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "tdsAlertDialog", "type": "VARIANT", "values": ["alertdialog", "dialog"] },
+      { "name": "tdsAriaLabel", "type": "TEXT", "values": [] },
+      { "name": "children", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": [
+      { "property": "variant", "disposition": "prop" },
+      { "property": "tdsAlertDialog", "disposition": "prop" }
+    ]
+  }
+}

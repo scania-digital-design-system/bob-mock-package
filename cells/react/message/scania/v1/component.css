@@ -1,0 +1,80 @@
+.tl-message {
+  box-sizing: border-box;
+  display: flex;
+  border-radius: var(--radius-message);
+  background-color: var(--color-background-layer-01);
+  color: var(--color-text-strong);
+}
+.tl-message--minimal-false {
+  padding: var(--space-element-16);
+  border-left-width: var(--border-message);
+  border-left-style: solid;
+}
+.tl-message--information {
+  border-left-color: var(--color-system-info);
+}
+.tl-message--success {
+  border-left-color: var(--color-system-success);
+}
+.tl-message--warning {
+  border-left-color: var(--color-system-warning-subtle);
+}
+.tl-message--error {
+  background-color: var(--color-system-danger-discrete);
+  border-left-color: var(--color-danger);
+}
+.tl-message--minimal-true {
+  padding: 0;
+  background-color: var(--color-background-none);
+}
+.tl-message__icon {
+  flex-shrink: 0;
+  width: var(--size-message-icon);
+  height: var(--size-message-icon);
+  margin-right: var(--space-element-16);
+}
+.tl-message--minimal-true .tl-message__icon {
+  margin-right: var(--space-element-8);
+}
+.tl-message--information .tl-message__icon {
+  fill: var(--color-system-info);
+}
+.tl-message--success .tl-message__icon {
+  fill: var(--color-system-success);
+}
+.tl-message--warning .tl-message__icon {
+  fill: var(--color-system-warning);
+}
+.tl-message--error .tl-message__icon {
+  fill: var(--color-danger);
+}
+.tl-message__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-element-4);
+  padding: var(--space-element-2) var(--space-element-24) var(--space-element-2) 0;
+  overflow-wrap: anywhere;
+}
+.tl-message__header {
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: bold;
+  line-height: var(--font-line-height-headline-07);
+  letter-spacing: var(--font-letter-spacing-detail);
+  text-transform: none;
+}
+.tl-message--minimal-true .tl-message__header {
+  font-weight: normal;
+  line-height: var(--font-line-height-detail-02);
+}
+.tl-message--minimal-true.tl-message--error .tl-message__header {
+  color: var(--color-danger);
+}
+.tl-message__extended {
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: normal;
+  line-height: var(--font-line-height-detail-03);
+  letter-spacing: var(--font-letter-spacing-detail);
+  text-transform: none;
+}

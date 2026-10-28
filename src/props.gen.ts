@@ -74,3 +74,39 @@ export type CardProps = {
   cardId?: string;
   onTdsClick?: (event: CustomEvent<{ cardId: string }>) => void;
 };
+
+export type DividerProps = {
+  /** @default 'horizontal' */
+  orientation?: 'horizontal' | 'vertical';
+  /** @default 'subtle' */
+  variant?: 'discrete' | 'subtle' | 'soft' | 'defined' | 'strong' | 'expressive' | 'dark-blue';
+};
+
+export type BlockProps = {
+  /** @default 'div' */
+  componentTag?: 'section' | 'div' | 'article' | 'aside' | 'header' | 'footer' | 'nav' | 'main';
+  children?: ReactNode;
+};
+
+export type TagProps = {
+  text?: string;
+  /** @default 'lg' */
+  size?: 'lg' | 'sm';
+  /** @default 'Neutral' */
+  variant?: 'success' | 'warning' | 'new' | 'neutral' | 'information' | 'error' | 'Success' | 'Warning' | 'New' | 'Neutral' | 'Information' | 'Error';
+  prefix?: ReactNode;
+};
+
+export type MessageProps = {
+  header?: string;
+  /** @default 'information' */
+  variant?: 'information' | 'error' | 'warning' | 'success';
+  /** @default false */
+  noIcon?: boolean;
+  /** @default false */
+  minimal?: boolean;
+  /** @default 'dialog' */
+  tdsAlertDialog?: 'alertdialog' | 'dialog';
+  tdsAriaLabel?: string;
+  children?: ReactNode;
+};

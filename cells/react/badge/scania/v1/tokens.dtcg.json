@@ -19,6 +19,10 @@
     "link-focus": {
       "$type": "number",
       "$value": 3
+    },
+    "message": {
+      "$type": "number",
+      "$value": 4
     }
   },
   "color": {
@@ -101,9 +105,25 @@
       "$value": "#d1001b"
     },
     "divider": {
+      "defined": {
+        "$type": "color",
+        "$value": "#475467"
+      },
       "discrete": {
         "$type": "color",
         "$value": "#d1d7e0"
+      },
+      "expressive": {
+        "$type": "color",
+        "$value": "#0f3263"
+      },
+      "soft": {
+        "$type": "color",
+        "$value": "#5f728c"
+      },
+      "subtle": {
+        "$type": "color",
+        "$value": "#7e90a9"
       }
     },
     "link": {
@@ -135,9 +155,75 @@
       }
     },
     "system": {
+      "danger-discrete": {
+        "$type": "color",
+        "$value": "#ffdfe3"
+      },
       "info": {
         "$type": "color",
         "$value": "#2a6ecf"
+      },
+      "success": {
+        "$type": "color",
+        "$value": "#009e7e"
+      },
+      "warning": {
+        "$type": "color",
+        "$value": "#b87c14"
+      },
+      "warning-subtle": {
+        "$type": "color",
+        "$value": "#eaad06"
+      }
+    },
+    "tag": {
+      "error": {
+        "$type": "color",
+        "$value": "#ffb9b8"
+      },
+      "information": {
+        "$type": "color",
+        "$value": "#87afe8"
+      },
+      "neutral": {
+        "$type": "color",
+        "$value": "#e0e5eb"
+      },
+      "new": {
+        "$type": "color",
+        "$value": "#bacde8"
+      },
+      "on-error": {
+        "$type": "color",
+        "$value": "#6c0011"
+      },
+      "on-information": {
+        "$type": "color",
+        "$value": "#041e42"
+      },
+      "on-neutral": {
+        "$type": "color",
+        "$value": "#242c37"
+      },
+      "on-new": {
+        "$type": "color",
+        "$value": "#0f3263"
+      },
+      "on-success": {
+        "$type": "color",
+        "$value": "#0a382e"
+      },
+      "on-warning": {
+        "$type": "color",
+        "$value": "#6b3b10"
+      },
+      "success": {
+        "$type": "color",
+        "$value": "#9bd9c2"
+      },
+      "warning": {
+        "$type": "color",
+        "$value": "#f9eec3"
       }
     },
     "text": {
@@ -165,6 +251,14 @@
   },
   "font": {
     "family": {
+      "body": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Scania Sans', arial, 'Helvetica Neue'",
+          "fontSize": 0,
+          "fontWeight": 0
+        }
+      },
       "detail": {
         "$type": "typography",
         "$value": {
@@ -183,6 +277,10 @@
       }
     },
     "letter-spacing": {
+      "body": {
+        "$type": "number",
+        "$value": -0.32
+      },
       "detail": {
         "$type": "number",
         "$value": -0.14
@@ -193,6 +291,10 @@
       }
     },
     "line-height": {
+      "body-01": {
+        "$type": "number",
+        "$value": 24
+      },
       "detail-02": {
         "$type": "number",
         "$value": 16
@@ -201,12 +303,24 @@
         "$type": "number",
         "$value": 20
       },
+      "detail-05": {
+        "$type": "number",
+        "$value": 16
+      },
       "headline-06": {
+        "$type": "number",
+        "$value": 16
+      },
+      "headline-07": {
         "$type": "number",
         "$value": 16
       }
     },
     "size": {
+      "body": {
+        "$type": "number",
+        "$value": 16
+      },
       "caption": {
         "$type": "number",
         "$value": 12
@@ -250,7 +364,19 @@
       "$type": "number",
       "$value": 12
     },
+    "block": {
+      "$type": "number",
+      "$value": 4
+    },
     "control": {
+      "$type": "number",
+      "$value": 4
+    },
+    "message": {
+      "$type": "number",
+      "$value": 4
+    },
+    "tag": {
       "$type": "number",
       "$value": 4
     }
@@ -304,6 +430,16 @@
       "thumbnail": {
         "$type": "number",
         "$value": 36
+      }
+    },
+    "divider": {
+      "$type": "number",
+      "$value": 1
+    },
+    "message": {
+      "icon": {
+        "$type": "number",
+        "$value": 20
       }
     },
     "shadow": {
@@ -398,6 +534,10 @@
       "20": {
         "$type": "number",
         "$value": 20
+      },
+      "24": {
+        "$type": "number",
+        "$value": 24
       },
       "4": {
         "$type": "number",

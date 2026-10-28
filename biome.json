@@ -2,7 +2,15 @@
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
   "files": {
-    "includes": ["**", "!**/cells", "!dist", "!**/*.md", "!tokens", "!rules/ruledata.json"]
+    "includes": [
+      "**",
+      "!**/cells",
+      "!dist",
+      "!**/*.md",
+      "!tokens",
+      "!rules/ruledata.json",
+      "!src/props.gen.ts"
+    ]
   },
   "formatter": { "indentStyle": "space", "indentWidth": 2, "lineWidth": 100 },
   "javascript": { "formatter": { "quoteStyle": "single" } },

@@ -117,7 +117,60 @@ export const SECTIONS: DemoSection[] = [
       },
     ],
   },
+  {
+    component: 'divider',
+    tag: 'tds-divider',
+    cases: [
+      { label: 'subtle (default)', props: {} },
+      { label: 'discrete', props: { variant: 'discrete' } },
+      { label: 'soft', props: { variant: 'soft' } },
+      { label: 'defined', props: { variant: 'defined' } },
+      { label: 'strong', props: { variant: 'strong' } },
+      { label: 'expressive', props: { variant: 'expressive' } },
+      { label: 'vertical', props: { orientation: 'vertical', variant: 'strong' } },
+    ],
+  },
+  {
+    // `nested: true` puts blocks inside the block, NESTED_BLOCKS deep.
+    component: 'block',
+    tag: 'tds-block',
+    cases: [
+      { label: 'default', props: { children: BODY } },
+      { label: 'as a section', props: { componentTag: 'section', children: BODY } },
+      { label: 'nested', props: { nested: true } },
+    ],
+  },
+  {
+    // `prefix: true` asks each page for its own 16px prefix icon.
+    component: 'tag',
+    tag: 'tds-tag',
+    cases: [
+      { label: 'Neutral lg (default)', props: { text: 'Label' } },
+      { label: 'sm', props: { text: 'Label', size: 'sm' } },
+      { label: 'success', props: { text: 'Label', variant: 'success' } },
+      { label: 'warning', props: { text: 'Label', variant: 'warning' } },
+      { label: 'new', props: { text: 'Label', variant: 'new' } },
+      { label: 'information', props: { text: 'Label', variant: 'information' } },
+      { label: 'error', props: { text: 'Label', variant: 'error' } },
+      { label: 'with prefix', props: { text: 'Label', variant: 'success', prefix: true } },
+    ],
+  },
+  {
+    component: 'message',
+    tag: 'tds-message',
+    cases: [
+      { label: 'information', props: { header: 'Information', children: BODY } },
+      { label: 'success', props: { header: 'Success', variant: 'success', children: BODY } },
+      { label: 'warning', props: { header: 'Warning', variant: 'warning', children: BODY } },
+      { label: 'error', props: { header: 'Error', variant: 'error', children: BODY } },
+      { label: 'no icon', props: { header: 'Information', noIcon: true, children: BODY } },
+      { label: 'minimal', props: { header: 'Information', minimal: true } },
+      { label: 'minimal error', props: { header: 'Error', variant: 'error', minimal: true } },
+    ],
+  },
 ];
+
+export const NESTED_BLOCKS = 4;
 
 // The same plus icon on both pages, so only the component differs.
 export const ICON_PATH = 'M9 3h2v6h6v2h-6v6H9v-6H3V9h6z';

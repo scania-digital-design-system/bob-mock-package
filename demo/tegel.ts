@@ -1,6 +1,6 @@
 import '@scania/tegel/dist/tegel/tegel.css';
 import { defineCustomElements } from '@scania/tegel/loader';
-import { type DemoCase, ICON_PATH, SECTIONS, THUMBNAIL_SRC } from './cases';
+import { type DemoCase, ICON_PATH, NESTED_BLOCKS, SECTIONS, THUMBNAIL_SRC } from './cases';
 
 // The reference: Tegel's own web components, rendered with Tegel's CSS.
 
@@ -58,14 +58,41 @@ function cardSlots(thumbnail: unknown, body: unknown, actions: unknown): HTMLEle
   return slots;
 }
 
+// Tegel's tag takes its prefix through the "prefix" slot, at 16px.
+function slottedPrefix(): SVGSVGElement {
+  const svg = slottedIcon();
+  svg.setAttribute('slot', 'prefix');
+  svg.setAttribute('width', '16');
+  svg.setAttribute('height', '16');
+  svg.setAttribute('fill', 'currentColor');
+  return svg;
+}
+
+// Blocks inside blocks, as the default slot, to show the alternating backgrounds.
+function nestedBlocks(level: number): HTMLElement {
+  const block = document.createElement('tds-block');
+  block.append(`Level ${level}`);
+  if (level < NESTED_BLOCKS) {
+    block.append(nestedBlocks(level + 1));
+  }
+  return block;
+}
+
 function element(tag: string, { props }: DemoCase): HTMLElement {
-  const { icon, href, target, children, thumbnail, body, actions, ...rest } = props;
+  const { icon, prefix, nested, href, target, children, thumbnail, body, actions, ...rest } = props;
   const el = Object.assign(document.createElement(tag), rest);
   if (icon) {
     el.append(slottedIcon());
   }
+  if (prefix) {
+    el.append(slottedPrefix());
+  }
   if (tag === 'tds-link') {
     el.append(slottedAnchor(href, target, children));
+  } else if (nested) {
+    el.append('Level 1', nestedBlocks(2));
+  } else if (typeof children === 'string') {
+    el.append(children);
   }
   if (tag === 'tds-card') {
     el.append(...cardSlots(thumbnail, body, actions));
