@@ -59,6 +59,7 @@ name is in the generated `tegel` set.
 | Breadcrumbs, stepper, footer | 146 |
 | Footer mobile toggle | 148 |
 | Checkbox, radio button, toggle, chip, textarea | 210 |
+| Accordion, banner, toast, text field | 249 |
 
 ## Foundation set
 
@@ -376,3 +377,32 @@ Reused: `color/border/{strong,subtle,soft,none}`, `color/icon/inverse-strong`,
 - Dark mode and TRATON values (ADR 0002 D8).
 - The Scania Sans web fonts. Tegel loads them from its own CSS; this package does not
   ship them, so text falls back to arial until a consumer loads the fonts.
+
+### Accordion, banner, toast, text field
+
+Source: each component's `.scss` and `-vars.scss` in `packages/core/src/components/`, the
+Scania light blocks of `tokens/scss/component/{accordion,banner,toast,-input}.scss`, and
+`color-light.scss`.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `color/accordion/active` | `#edeff3` | `--component-accordion-background-primary-active` = grey-100 |
+| `space/layout/64`, `space/accordion/expanded-bottom`, `space/accordion/hover-offset` | 64, 31, -1 | panel padding, expanded padding, hover margin |
+| `size/accordion/chevron`, `motion/accordion/rotate` (carrier) | 16, `150ms` | chevron size and turn |
+| `color/banner/neutral`, `color/banner/information` | `#e0e5eb`, `#bacde8` | grey-150, blue-100 backgrounds |
+| `size/banner/icon` | 20 | icon and close icon size |
+| `color/toast/background` | `#0e1013` | `--color-background-inverse-base` = grey-950 |
+| `color/toast/information`, `color/toast/warning` | `#4a89f3`, `#f1c21b` | blue-300, yellow-300 border and icon |
+| `size/toast/{width,content-max,icon}`, `border/toast`, `radius/toast` | 348, 250, 20, 4, 4 | `calc(352px - 4px)`, content width, icon, border, radius |
+| `space/toast/{icon,close-left,content-left}` | 14, 22, 10 | icon and close offsets, content padding |
+| `size/text-field/{lg,md,sm}` | 56, 48, 40 | container heights |
+| `size/text-field/{min-width,icon,helper-icon,readonly-icon}` | 208, 20, 16, 18 | minimum width and icon sizes and offset |
+| `size/text-field/label-*` | 16, 20, 16, 12, 8 | inside label left, top and floating top |
+| `space/text-field/{inside-bottom-lg,inside-bottom,affix,readonly}` | 15, 11, 14, 54 | inside-label padding, prefix and suffix margin, read-only padding |
+| `motion/text-field/{border,placeholder,label}` (carriers) | `200ms`, `350ms`, `100ms` | the three transitions |
+
+Reused: `color/system/{info,success,danger-discrete}`, `color/danger`,
+`color/icon/strong`, `color/text/{strong,defined,disabled,inverse-strong}`,
+`color/border/{subtle,strong,soft,defined}`, `radius/input`, `border/input`, the
+`detail-02`, `detail-03`, `detail-05`, `detail-07`, `headline-06` and `headline-07`
+tokens.

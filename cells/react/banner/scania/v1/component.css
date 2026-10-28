@@ -1,0 +1,92 @@
+.tl-banner {
+  box-sizing: border-box;
+  z-index: 400;
+  display: flex;
+  padding-left: var(--space-element-16);
+  background-color: var(--color-banner-neutral);
+}
+.tl-banner[hidden] {
+  display: none;
+  visibility: hidden;
+}
+.tl-banner--default {
+  background-color: var(--color-banner-neutral);
+}
+.tl-banner--information {
+  background-color: var(--color-banner-information);
+}
+.tl-banner--error {
+  background-color: var(--color-system-danger-discrete);
+}
+.tl-banner__icon {
+  padding-top: var(--space-element-16);
+  padding-right: var(--space-element-12);
+  color: var(--color-icon-strong);
+}
+.tl-banner--information .tl-banner__icon {
+  color: var(--color-system-info);
+}
+.tl-banner--error .tl-banner__icon {
+  color: var(--color-danger);
+}
+.tl-banner__icon svg,
+.tl-banner__close-icon {
+  display: block;
+  width: var(--size-banner-icon);
+  height: var(--size-banner-icon);
+  fill: currentColor;
+}
+.tl-banner__content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: var(--space-element-16) 0;
+  color: var(--color-text-strong);
+}
+.tl-banner__titles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-element-4);
+}
+.tl-banner__header {
+  font-family: var(--font-family-headline);
+  font-size: var(--font-size-detail);
+  font-weight: bold;
+  line-height: var(--font-line-height-headline-06);
+  letter-spacing: var(--font-letter-spacing-headline);
+}
+.tl-banner__subheader {
+  display: block;
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: normal;
+  line-height: var(--font-line-height-detail-02);
+  letter-spacing: var(--font-letter-spacing-detail);
+}
+.tl-banner__actions > * {
+  display: block;
+  width: fit-content;
+  padding-top: var(--space-element-12);
+}
+.tl-banner__close {
+  color: var(--color-icon-strong);
+}
+.tl-banner__close-button {
+  padding-top: var(--space-element-16);
+  padding-right: var(--space-element-16);
+  border: none;
+  background-color: var(--color-background-none);
+  color: var(--color-icon-strong);
+}
+.tl-banner__close-button:hover {
+  cursor: pointer;
+}
+.tl-banner__close-button:focus-visible {
+  outline: none;
+}
+.tl-banner__close-button:focus-visible .tl-banner__close-icon {
+  z-index: 1;
+  outline: var(--border-focus) solid var(--color-border-focus);
+  outline-offset: var(--border-focus-offset);
+  box-shadow: 0 0 0 var(--border-control) var(--color-border-focus-discrete);
+}

@@ -1,0 +1,22 @@
+{
+  "component": "banner",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-banner at @scania/tegel@1.66.1: a page-wide message with an icon, header, subheader, actions and a close button.",
+    "properties": [
+      { "name": "icon", "type": "TEXT", "values": [] },
+      { "name": "header", "type": "INSTANCE_SWAP", "values": [] },
+      { "name": "subheader", "type": "INSTANCE_SWAP", "values": [] },
+      { "name": "variant", "type": "VARIANT", "values": ["error", "information", "default"] },
+      { "name": "bannerId", "type": "TEXT", "values": [] },
+      { "name": "isHidden", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "roleType", "type": "VARIANT", "values": ["banner", "region", "alert"] },
+      { "name": "actions", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": [
+      { "property": "variant", "disposition": "prop" },
+      { "property": "roleType", "disposition": "prop" }
+    ]
+  }
+}

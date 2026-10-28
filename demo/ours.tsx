@@ -23,7 +23,15 @@ import '../cells/react/radio-button/scania/v1/component.css';
 import '../cells/react/toggle/scania/v1/component.css';
 import '../cells/react/chip/scania/v1/component.css';
 import '../cells/react/textarea/scania/v1/component.css';
+import '../cells/react/accordion/scania/v1/component.css';
+import '../cells/react/accordion-item/scania/v1/component.css';
+import '../cells/react/banner/scania/v1/component.css';
+import '../cells/react/toast/scania/v1/component.css';
+import '../cells/react/text-field/scania/v1/component.css';
+import Accordion from '../cells/react/accordion/scania/v1/component.jsx';
+import AccordionItem from '../cells/react/accordion-item/scania/v1/component.jsx';
 import Badge from '../cells/react/badge/scania/v1/component.jsx';
+import Banner from '../cells/react/banner/scania/v1/component.jsx';
 import Block from '../cells/react/block/scania/v1/component.jsx';
 import Breadcrumb from '../cells/react/breadcrumb/scania/v1/component.jsx';
 import Breadcrumbs from '../cells/react/breadcrumbs/scania/v1/component.jsx';
@@ -42,9 +50,12 @@ import Spinner from '../cells/react/spinner/scania/v1/component.jsx';
 import Step from '../cells/react/step/scania/v1/component.jsx';
 import Stepper from '../cells/react/stepper/scania/v1/component.jsx';
 import Tag from '../cells/react/tag/scania/v1/component.jsx';
+import TextField from '../cells/react/text-field/scania/v1/component.jsx';
 import Textarea from '../cells/react/textarea/scania/v1/component.jsx';
+import Toast from '../cells/react/toast/scania/v1/component.jsx';
 import Toggle from '../cells/react/toggle/scania/v1/component.jsx';
 import {
+  ACCORDION,
   CRUMBS,
   FOOTER_END,
   FOOTER_START,
@@ -74,6 +85,10 @@ const COMPONENTS: Record<string, FC<Record<string, unknown>>> = {
   toggle: Toggle,
   chip: Chip,
   textarea: Textarea,
+  accordion: Accordion,
+  banner: Banner,
+  toast: Toast,
+  'text-field': TextField,
 };
 
 const crumbs = CRUMBS.map((name, i) => (
@@ -129,13 +144,21 @@ const actions = (
   </div>
 );
 
+const accordionItems = ACCORDION.map(({ header, text, expanded }) => (
+  <AccordionItem key={header} header={header} expanded={expanded}>
+    {text}
+  </AccordionItem>
+));
+
+const actionLink = <a href="#actions">Read more</a>;
+
 // Turns the shared case flags into the nodes our cells take as props.
 function nodeProps(props: Record<string, unknown>): Record<string, unknown> {
   return {
     ...props,
     icon: props.icon ? icon : undefined,
     thumbnail: props.thumbnail ? thumbnail : undefined,
-    actions: props.actions ? actions : undefined,
+    actions: props.actions ? actions : props.actionLink ? actionLink : undefined,
     prefix: props.prefix ? prefix : undefined,
     suffix: props.suffix ? prefix : undefined,
     top: props.top ? FOOTER_TOP.map((g) => footerGroup(g.title, g.items, g.title)) : undefined,
@@ -147,6 +170,8 @@ function nodeProps(props: Record<string, unknown>): Record<string, unknown> {
       crumbs
     ) : props.steps ? (
       steps
+    ) : props.items ? (
+      accordionItems
     ) : (
       props.children
     ),

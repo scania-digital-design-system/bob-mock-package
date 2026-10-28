@@ -1,0 +1,21 @@
+{
+  "component": "accordion-item",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-accordion-item at @scania/tegel@1.66.1: a header button that expands and collapses its panel.",
+    "properties": [
+      { "name": "header", "type": "INSTANCE_SWAP", "values": [] },
+      { "name": "expandIconPosition", "type": "VARIANT", "values": ["start", "end"] },
+      { "name": "disabled", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "expanded", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "paddingReset", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "ariaLevelValue", "type": "VARIANT", "values": ["1", "2", "3", "4", "5", "6"] },
+      { "name": "children", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": [
+      { "property": "expandIconPosition", "disposition": "prop" },
+      { "property": "ariaLevelValue", "disposition": "prop" }
+    ]
+  }
+}

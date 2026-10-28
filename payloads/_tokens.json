@@ -358,6 +358,73 @@
     { "name": "size/textarea/label-left", "type": "FLOAT", "valuesByMode": { "scania": "16" } },
     { "name": "size/textarea/label-top-float", "type": "FLOAT", "valuesByMode": { "scania": "8" } },
     { "name": "size/textarea/icon", "type": "FLOAT", "valuesByMode": { "scania": "16" } },
-    { "name": "opacity/full", "type": "COLOR", "valuesByMode": { "scania": "1" } }
+    { "name": "opacity/full", "type": "COLOR", "valuesByMode": { "scania": "1" } },
+    { "name": "color/accordion/active", "type": "COLOR", "valuesByMode": { "scania": "#edeff3" } },
+    { "name": "space/layout/64", "type": "FLOAT", "valuesByMode": { "scania": "64" } },
+    {
+      "name": "space/accordion/expanded-bottom",
+      "type": "FLOAT",
+      "valuesByMode": { "scania": "31" }
+    },
+    { "name": "size/accordion/chevron", "type": "FLOAT", "valuesByMode": { "scania": "16" } },
+    { "name": "motion/accordion/rotate", "type": "COLOR", "valuesByMode": { "scania": "150ms" } },
+    { "name": "color/banner/neutral", "type": "COLOR", "valuesByMode": { "scania": "#e0e5eb" } },
+    {
+      "name": "color/banner/information",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "#bacde8" }
+    },
+    { "name": "size/banner/icon", "type": "FLOAT", "valuesByMode": { "scania": "20" } },
+    { "name": "color/toast/background", "type": "COLOR", "valuesByMode": { "scania": "#0e1013" } },
+    { "name": "color/toast/information", "type": "COLOR", "valuesByMode": { "scania": "#4a89f3" } },
+    { "name": "color/toast/warning", "type": "COLOR", "valuesByMode": { "scania": "#f1c21b" } },
+    { "name": "size/toast/width", "type": "FLOAT", "valuesByMode": { "scania": "348" } },
+    { "name": "size/toast/content-max", "type": "FLOAT", "valuesByMode": { "scania": "250" } },
+    { "name": "size/toast/icon", "type": "FLOAT", "valuesByMode": { "scania": "20" } },
+    { "name": "border/toast", "type": "FLOAT", "valuesByMode": { "scania": "4" } },
+    { "name": "radius/toast", "type": "FLOAT", "valuesByMode": { "scania": "4" } },
+    { "name": "space/toast/icon", "type": "FLOAT", "valuesByMode": { "scania": "14" } },
+    { "name": "space/toast/close-left", "type": "FLOAT", "valuesByMode": { "scania": "22" } },
+    { "name": "space/toast/content-left", "type": "FLOAT", "valuesByMode": { "scania": "10" } },
+    { "name": "size/text-field/lg", "type": "FLOAT", "valuesByMode": { "scania": "56" } },
+    { "name": "size/text-field/md", "type": "FLOAT", "valuesByMode": { "scania": "48" } },
+    { "name": "size/text-field/sm", "type": "FLOAT", "valuesByMode": { "scania": "40" } },
+    { "name": "size/text-field/min-width", "type": "FLOAT", "valuesByMode": { "scania": "208" } },
+    { "name": "size/text-field/icon", "type": "FLOAT", "valuesByMode": { "scania": "20" } },
+    { "name": "size/text-field/helper-icon", "type": "FLOAT", "valuesByMode": { "scania": "16" } },
+    {
+      "name": "size/text-field/readonly-icon",
+      "type": "FLOAT",
+      "valuesByMode": { "scania": "18" }
+    },
+    { "name": "size/text-field/label-left", "type": "FLOAT", "valuesByMode": { "scania": "16" } },
+    { "name": "size/text-field/label-top-lg", "type": "FLOAT", "valuesByMode": { "scania": "20" } },
+    { "name": "size/text-field/label-top", "type": "FLOAT", "valuesByMode": { "scania": "16" } },
+    {
+      "name": "size/text-field/label-float-lg",
+      "type": "FLOAT",
+      "valuesByMode": { "scania": "12" }
+    },
+    { "name": "size/text-field/label-float", "type": "FLOAT", "valuesByMode": { "scania": "8" } },
+    {
+      "name": "space/text-field/inside-bottom-lg",
+      "type": "FLOAT",
+      "valuesByMode": { "scania": "15" }
+    },
+    {
+      "name": "space/text-field/inside-bottom",
+      "type": "FLOAT",
+      "valuesByMode": { "scania": "11" }
+    },
+    { "name": "space/text-field/affix", "type": "FLOAT", "valuesByMode": { "scania": "14" } },
+    { "name": "space/text-field/readonly", "type": "FLOAT", "valuesByMode": { "scania": "54" } },
+    { "name": "motion/text-field/border", "type": "COLOR", "valuesByMode": { "scania": "200ms" } },
+    {
+      "name": "motion/text-field/placeholder",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "350ms" }
+    },
+    { "name": "motion/text-field/label", "type": "COLOR", "valuesByMode": { "scania": "100ms" } },
+    { "name": "space/accordion/hover-offset", "type": "FLOAT", "valuesByMode": { "scania": "-1" } }
   ]
 }

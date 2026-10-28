@@ -1,0 +1,29 @@
+{
+  "component": "toast",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-toast at @scania/tegel@1.66.1: a short notification with an icon, header, subheader, actions and a close button.",
+    "properties": [
+      { "name": "toastId", "type": "TEXT", "values": [] },
+      { "name": "header", "type": "INSTANCE_SWAP", "values": [] },
+      { "name": "subheader", "type": "INSTANCE_SWAP", "values": [] },
+      {
+        "name": "variant",
+        "type": "VARIANT",
+        "values": ["information", "error", "warning", "success"]
+      },
+      { "name": "isHidden", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "closable", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "toastRole", "type": "VARIANT", "values": ["alert", "log", "status"] },
+      { "name": "tdsCloseAriaLabel", "type": "TEXT", "values": [] },
+      { "name": "tdsAriaLive", "type": "VARIANT", "values": ["polite", "assertive"] },
+      { "name": "actions", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": [
+      { "property": "variant", "disposition": "prop" },
+      { "property": "toastRole", "disposition": "prop" },
+      { "property": "tdsAriaLive", "disposition": "prop" }
+    ]
+  }
+}

@@ -39,6 +39,14 @@ const DEPARTURES: Record<string, { dropped?: string[]; added?: string[] }> = {
   toggle: { added: ['label'], dropped: ['focusElement', 'toggle'] },
   chip: { added: ['prefix', 'label', 'suffix'] },
   textarea: { dropped: ['focusElement'] },
+  accordion: { added: ['children'] },
+  'accordion-item': {
+    added: ['children'],
+    dropped: ['toggleAccordionItem', 'expand', 'collapse', 'isExpanded'],
+  },
+  banner: { added: ['actions'], dropped: ['hideBanner', 'showBanner'] },
+  toast: { added: ['actions'], dropped: ['hideToast', 'showToast'] },
+  'text-field': { added: ['prefix', 'suffix'], dropped: ['focusElement'] },
 };
 
 // Read by path: the package's "exports" map does not expose this file.

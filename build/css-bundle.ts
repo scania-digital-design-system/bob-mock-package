@@ -28,6 +28,11 @@ export const COMPONENTS = [
   'toggle',
   'chip',
   'textarea',
+  'accordion',
+  'accordion-item',
+  'banner',
+  'toast',
+  'text-field',
 ] as const;
 
 export function cssSources(components: readonly string[]): string[] {

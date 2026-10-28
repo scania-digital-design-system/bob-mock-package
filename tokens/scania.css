@@ -1,9 +1,12 @@
 :root {
+  --color-accordion-active: #edeff3;
   --color-background-base: #ffffff;
   --color-background-layer-01: #f6f7f9;
   --color-background-layer-02: #ffffff;
   --color-background-layer-03: #f6f7f9;
   --color-background-none: transparent;
+  --color-banner-information: #bacde8;
+  --color-banner-neutral: #e0e5eb;
   --color-border-defined: #041530b8;
   --color-border-discrete: #303c612b;
   --color-border-focus: #2a6ecf;
@@ -66,6 +69,9 @@
   --color-text-inverse-strong: #f6f7f9;
   --color-text-soft: #0a2850a3;
   --color-text-strong: #0e1013;
+  --color-toast-background: #0e1013;
+  --color-toast-information: #4a89f3;
+  --color-toast-warning: #f1c21b;
   --color-toggle-off: #7e90a9;
   --color-toggle-off-active: #4e5e75;
   --color-toggle-off-hover: #5f728c;
@@ -75,6 +81,7 @@
   --image-checkbox-check: url("data:image/svg+xml;utf8,<svg width='8' height='6' viewBox='0 0 8 6' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 2.33333L3.4 5C4.80589 3.4379 5.59411 2.5621 7 1' stroke='%23000' stroke-linecap='round' stroke-linejoin='round'/></svg>");
   --image-checkbox-indeterminate: url("data:image/svg+xml;utf8,<svg width='8' height='2' viewBox='0 0 8 2' fill='none' xmlns='http://www.w3.org/2000/svg'><rect y='0.5' width='8' height='1' rx='0.5' fill='%23000'/></svg>");
   --image-footer-wordmark: url(https://cdn.digitaldesign.scania.com/logotype/multibrand/scania/scania-wordmark-white.svg);
+  --motion-accordion-rotate: 150ms;
   --motion-card-fade: 120ms;
   --motion-card-rotate: 160ms;
   --motion-easing-scania: cubic-bezier(0.4, 0, 0, 1);
@@ -82,6 +89,9 @@
   --motion-input-indicator: 200ms;
   --motion-spinner-duration: 1.8s;
   --motion-spinner-duration-lg: 2s;
+  --motion-text-field-border: 200ms;
+  --motion-text-field-label: 100ms;
+  --motion-text-field-placeholder: 350ms;
   --motion-textarea-border: 200ms;
   --motion-textarea-label: 100ms;
   --motion-textarea-placeholder: 350ms;
@@ -96,6 +106,7 @@
   --border-input-indicator: 2px;
   --border-link-focus: 3px;
   --border-message: 4px;
+  --border-toast: 4px;
   --font-letter-spacing-body: -0.32px;
   --font-letter-spacing-detail: -0.14px;
   --font-letter-spacing-detail-01: -0.16px;
@@ -122,8 +133,11 @@
   --radius-message: 4px;
   --radius-stepper: 9999px;
   --radius-tag: 4px;
+  --radius-toast: 4px;
+  --size-accordion-chevron: 16px;
   --size-badge-lg: 20px;
   --size-badge-sm: 8px;
+  --size-banner-icon: 20px;
   --size-breadcrumb-separator-height: 8px;
   --size-breadcrumb-separator-width: 4px;
   --size-button-icon: 20px;
@@ -171,6 +185,18 @@
   --size-stepper-36: 36px;
   --size-stepper-40: 40px;
   --size-stepper-minus-10: -10px;
+  --size-text-field-helper-icon: 16px;
+  --size-text-field-icon: 20px;
+  --size-text-field-label-float: 8px;
+  --size-text-field-label-float-lg: 12px;
+  --size-text-field-label-left: 16px;
+  --size-text-field-label-top: 16px;
+  --size-text-field-label-top-lg: 20px;
+  --size-text-field-lg: 56px;
+  --size-text-field-md: 48px;
+  --size-text-field-min-width: 208px;
+  --size-text-field-readonly-icon: 18px;
+  --size-text-field-sm: 40px;
   --size-textarea-icon: 16px;
   --size-textarea-label-left: 16px;
   --size-textarea-label-top: 20px;
@@ -180,6 +206,9 @@
   --size-textarea-resize: 12px;
   --size-textarea-resizer-bottom: 2px;
   --size-textarea-resizer-right: 1px;
+  --size-toast-content-max: 250px;
+  --size-toast-icon: 20px;
+  --size-toast-width: 348px;
   --size-toggle-knob: 16px;
   --size-toggle-knob-inset: 4px;
   --size-toggle-knob-on: 24px;
@@ -189,6 +218,8 @@
   --size-toggle-sm-track-width: 28px;
   --size-toggle-track-height: 24px;
   --size-toggle-track-width: 44px;
+  --space-accordion-expanded-bottom: 31px;
+  --space-accordion-hover-offset: -1px;
   --space-button-icon-lg: 18px;
   --space-button-icon-md: 14px;
   --space-button-icon-sm: 10px;
@@ -209,10 +240,18 @@
   --space-element-8: 8px;
   --space-footer-item-mobile: 19px;
   --space-input-offset: -4px;
+  --space-layout-64: 64px;
   --space-radio-button-label: 6px;
   --space-stepper-vertical-lg: 52px;
   --space-stepper-vertical-sm: 36px;
+  --space-text-field-affix: 14px;
+  --space-text-field-inside-bottom: 11px;
+  --space-text-field-inside-bottom-lg: 15px;
+  --space-text-field-readonly: 54px;
   --space-textarea-readonly: 54px;
+  --space-toast-close-left: 22px;
+  --space-toast-content-left: 10px;
+  --space-toast-icon: 14px;
   --font-family-body: 'Scania Sans', arial, 'Helvetica Neue';
   --font-family-detail: 'Scania Sans Semi Condensed', arial, 'Helvetica Neue';
   --font-family-headline: 'Scania Sans', arial, 'Helvetica Neue';

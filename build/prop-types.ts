@@ -32,6 +32,17 @@ export const OVERRIDES: Record<string, Record<string, string>> = {
       '(event: CustomEvent<{ chipId: string; value: string | undefined; checked?: boolean }>) => void',
     onTdsClick: '(event: CustomEvent<{ chipId: string }>) => void',
   },
+  'accordion-item': { onTdsToggle: '(event: CustomEvent<{ expanded: boolean }>) => void' },
+  banner: { onTdsClose: '(event: CustomEvent<{ bannerId: string }>) => void' },
+  toast: { onTdsClose: '(event: CustomEvent<{ toastId: string }>) => void' },
+  'text-field': {
+    onTdsChange: '(event: CustomEvent<Event>) => void',
+    onTdsInput: '(event: CustomEvent<InputEvent>) => void',
+    onTdsFocus: '(event: CustomEvent<FocusEvent>) => void',
+    onTdsBlur: '(event: CustomEvent<FocusEvent>) => void',
+    onTdsError:
+      "(event: CustomEvent<{ originalValue: string; clampedValue: string; reason: 'min' | 'max' }>) => void",
+  },
   textarea: {
     onTdsChange: '(event: CustomEvent<Event>) => void',
     onTdsBlur: '(event: CustomEvent<FocusEvent>) => void',

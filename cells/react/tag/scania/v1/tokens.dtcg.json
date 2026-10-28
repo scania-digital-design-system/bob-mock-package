@@ -31,9 +31,19 @@
     "message": {
       "$type": "number",
       "$value": 4
+    },
+    "toast": {
+      "$type": "number",
+      "$value": 4
     }
   },
   "color": {
+    "accordion": {
+      "active": {
+        "$type": "color",
+        "$value": "#edeff3"
+      }
+    },
     "background": {
       "base": {
         "$type": "color",
@@ -54,6 +64,16 @@
       "none": {
         "$type": "color",
         "$value": "transparent"
+      }
+    },
+    "banner": {
+      "information": {
+        "$type": "color",
+        "$value": "#bacde8"
+      },
+      "neutral": {
+        "$type": "color",
+        "$value": "#e0e5eb"
       }
     },
     "border": {
@@ -334,6 +354,20 @@
         "$value": "#0e1013"
       }
     },
+    "toast": {
+      "background": {
+        "$type": "color",
+        "$value": "#0e1013"
+      },
+      "information": {
+        "$type": "color",
+        "$value": "#4a89f3"
+      },
+      "warning": {
+        "$type": "color",
+        "$value": "#f1c21b"
+      }
+    },
     "toggle": {
       "off": {
         "$type": "color",
@@ -474,6 +508,12 @@
     }
   },
   "motion": {
+    "accordion": {
+      "rotate": {
+        "$type": "color",
+        "$value": "150ms"
+      }
+    },
     "card": {
       "fade": {
         "$type": "color",
@@ -510,6 +550,20 @@
       "duration-lg": {
         "$type": "color",
         "$value": "2s"
+      }
+    },
+    "text-field": {
+      "border": {
+        "$type": "color",
+        "$value": "200ms"
+      },
+      "label": {
+        "$type": "color",
+        "$value": "100ms"
+      },
+      "placeholder": {
+        "$type": "color",
+        "$value": "350ms"
       }
     },
     "textarea": {
@@ -587,9 +641,19 @@
     "tag": {
       "$type": "number",
       "$value": 4
+    },
+    "toast": {
+      "$type": "number",
+      "$value": 4
     }
   },
   "size": {
+    "accordion": {
+      "chevron": {
+        "$type": "number",
+        "$value": 16
+      }
+    },
     "badge": {
       "lg": {
         "$type": "number",
@@ -598,6 +662,12 @@
       "sm": {
         "$type": "number",
         "$value": 8
+      }
+    },
+    "banner": {
+      "icon": {
+        "$type": "number",
+        "$value": 20
       }
     },
     "breadcrumb": {
@@ -812,6 +882,56 @@
         "$value": -10
       }
     },
+    "text-field": {
+      "helper-icon": {
+        "$type": "number",
+        "$value": 16
+      },
+      "icon": {
+        "$type": "number",
+        "$value": 20
+      },
+      "label-float": {
+        "$type": "number",
+        "$value": 8
+      },
+      "label-float-lg": {
+        "$type": "number",
+        "$value": 12
+      },
+      "label-left": {
+        "$type": "number",
+        "$value": 16
+      },
+      "label-top": {
+        "$type": "number",
+        "$value": 16
+      },
+      "label-top-lg": {
+        "$type": "number",
+        "$value": 20
+      },
+      "lg": {
+        "$type": "number",
+        "$value": 56
+      },
+      "md": {
+        "$type": "number",
+        "$value": 48
+      },
+      "min-width": {
+        "$type": "number",
+        "$value": 208
+      },
+      "readonly-icon": {
+        "$type": "number",
+        "$value": 18
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 40
+      }
+    },
     "textarea": {
       "icon": {
         "$type": "number",
@@ -848,6 +968,20 @@
       "resizer-right": {
         "$type": "number",
         "$value": 1
+      }
+    },
+    "toast": {
+      "content-max": {
+        "$type": "number",
+        "$value": 250
+      },
+      "icon": {
+        "$type": "number",
+        "$value": 20
+      },
+      "width": {
+        "$type": "number",
+        "$value": 348
       }
     },
     "toggle": {
@@ -890,6 +1024,16 @@
     }
   },
   "space": {
+    "accordion": {
+      "expanded-bottom": {
+        "$type": "number",
+        "$value": 31
+      },
+      "hover-offset": {
+        "$type": "number",
+        "$value": -1
+      }
+    },
     "button": {
       "icon-lg": {
         "$type": "number",
@@ -980,6 +1124,12 @@
         "$value": -4
       }
     },
+    "layout": {
+      "64": {
+        "$type": "number",
+        "$value": 64
+      }
+    },
     "radio-button": {
       "label": {
         "$type": "number",
@@ -996,10 +1146,42 @@
         "$value": 36
       }
     },
+    "text-field": {
+      "affix": {
+        "$type": "number",
+        "$value": 14
+      },
+      "inside-bottom": {
+        "$type": "number",
+        "$value": 11
+      },
+      "inside-bottom-lg": {
+        "$type": "number",
+        "$value": 15
+      },
+      "readonly": {
+        "$type": "number",
+        "$value": 54
+      }
+    },
     "textarea": {
       "readonly": {
         "$type": "number",
         "$value": 54
+      }
+    },
+    "toast": {
+      "close-left": {
+        "$type": "number",
+        "$value": 22
+      },
+      "content-left": {
+        "$type": "number",
+        "$value": 10
+      },
+      "icon": {
+        "$type": "number",
+        "$value": 14
       }
     }
   }

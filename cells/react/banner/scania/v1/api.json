@@ -1,0 +1,65 @@
+{
+  "componentType": "banner",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "icon",
+    "header",
+    "subheader",
+    "variant",
+    "bannerId",
+    "isHidden",
+    "roleType",
+    "actions",
+    "onTdsClose"
+  ],
+  "rules": [
+    {
+      "id": "prop-icon",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"icon\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-header",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"header\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-subheader",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"subheader\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-variant",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"variant\" is a component prop: the caller selects one, accepting error | information | default. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-bannerid",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"bannerId\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-ishidden",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"isHidden\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-roletype",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"roleType\" is a component prop: the caller selects one, accepting banner | region | alert. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-actions",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"actions\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

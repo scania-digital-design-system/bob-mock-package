@@ -1,0 +1,45 @@
+{
+  "component": "text-field",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-text-field at @scania/tegel@1.66.1: a single-line input with label, helper, prefix, suffix, states and a character counter.",
+    "properties": [
+      {
+        "name": "type",
+        "type": "VARIANT",
+        "values": ["text", "password", "number", "email", "tel"]
+      },
+      { "name": "labelPosition", "type": "VARIANT", "values": ["inside", "outside", "no-label"] },
+      { "name": "label", "type": "TEXT", "values": [] },
+      { "name": "min", "type": "TEXT", "values": [] },
+      { "name": "max", "type": "TEXT", "values": [] },
+      { "name": "step", "type": "TEXT", "values": [] },
+      { "name": "helper", "type": "TEXT", "values": [] },
+      { "name": "placeholder", "type": "TEXT", "values": [] },
+      { "name": "value", "type": "TEXT", "values": [] },
+      { "name": "disabled", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "readOnly", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "hideReadOnlyIcon", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "size", "type": "VARIANT", "values": ["sm", "md", "lg"] },
+      { "name": "noMinWidth", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "name", "type": "TEXT", "values": [] },
+      { "name": "state", "type": "VARIANT", "values": ["error", "success", "default"] },
+      { "name": "maxLength", "type": "TEXT", "values": [] },
+      { "name": "hideMaxLength", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "autofocus", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "tdsAriaLabel", "type": "TEXT", "values": [] },
+      { "name": "required", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "autocomplete", "type": "TEXT", "values": [] },
+      { "name": "hideNumberArrows", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "prefix", "type": "INSTANCE_SWAP", "values": [] },
+      { "name": "suffix", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": [
+      { "property": "type", "disposition": "prop" },
+      { "property": "labelPosition", "disposition": "prop" },
+      { "property": "size", "disposition": "prop" },
+      { "property": "state", "disposition": "prop" }
+    ]
+  }
+}

@@ -2,5 +2,9 @@
   "react/step/scania/v1": ["parent-modifier-selectors"],
   "react/footer-group/scania/v1": ["parent-modifier-selectors", "react-hooks"],
   "react/footer-item/scania/v1": ["parent-modifier-selectors"],
-  "react/textarea/scania/v1": ["react-hooks"]
+  "react/textarea/scania/v1": ["react-hooks"],
+  "react/accordion-item/scania/v1": ["parent-modifier-selectors", "react-hooks"],
+  "react/banner/scania/v1": ["react-hooks"],
+  "react/toast/scania/v1": ["react-hooks"],
+  "react/text-field/scania/v1": ["react-hooks"]
 }

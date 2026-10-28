@@ -1,0 +1,58 @@
+{
+  "componentType": "accordion-item",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "header",
+    "expandIconPosition",
+    "disabled",
+    "expanded",
+    "paddingReset",
+    "ariaLevelValue",
+    "children",
+    "onTdsToggle"
+  ],
+  "rules": [
+    {
+      "id": "prop-header",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"header\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-expandiconposition",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"expandIconPosition\" is a component prop: the caller selects one, accepting start | end. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-disabled",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"disabled\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-expanded",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"expanded\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-paddingreset",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"paddingReset\" is a component prop: the caller selects one, accepting true | false. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-arialevelvalue",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"ariaLevelValue\" is a component prop: the caller selects one, accepting 1 | 2 | 3 | 4 | 5 | 6. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-children",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"children\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

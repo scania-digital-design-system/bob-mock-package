@@ -1,0 +1,11 @@
+.tl-accordion {
+  box-sizing: border-box;
+  display: block;
+  background-color: var(--color-background-none);
+}
+.tl-accordion--hide-last-border-false {
+  border-bottom: var(--border-control) solid var(--color-border-subtle);
+}
+.tl-accordion--hide-last-border-true {
+  border-bottom: none;
+}

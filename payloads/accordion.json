@@ -1,0 +1,13 @@
+{
+  "component": "accordion",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-accordion at @scania/tegel@1.66.1: a list of expandable accordion items.",
+    "properties": [
+      { "name": "hideLastBorder", "type": "BOOLEAN", "values": ["true", "false"] },
+      { "name": "children", "type": "INSTANCE_SWAP", "values": [] }
+    ],
+    "answers": []
+  }
+}

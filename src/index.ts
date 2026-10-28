@@ -1,5 +1,8 @@
 import type { FC } from 'react';
+import AccordionCell from '../cells/react/accordion/scania/v1/component.jsx';
+import AccordionItemCell from '../cells/react/accordion-item/scania/v1/component.jsx';
 import BadgeCell from '../cells/react/badge/scania/v1/component.jsx';
+import BannerCell from '../cells/react/banner/scania/v1/component.jsx';
 import BlockCell from '../cells/react/block/scania/v1/component.jsx';
 import BreadcrumbCell from '../cells/react/breadcrumb/scania/v1/component.jsx';
 import BreadcrumbsCell from '../cells/react/breadcrumbs/scania/v1/component.jsx';
@@ -18,10 +21,15 @@ import SpinnerCell from '../cells/react/spinner/scania/v1/component.jsx';
 import StepCell from '../cells/react/step/scania/v1/component.jsx';
 import StepperCell from '../cells/react/stepper/scania/v1/component.jsx';
 import TagCell from '../cells/react/tag/scania/v1/component.jsx';
+import TextFieldCell from '../cells/react/text-field/scania/v1/component.jsx';
 import TextareaCell from '../cells/react/textarea/scania/v1/component.jsx';
+import ToastCell from '../cells/react/toast/scania/v1/component.jsx';
 import ToggleCell from '../cells/react/toggle/scania/v1/component.jsx';
 import type {
+  AccordionItemProps,
+  AccordionProps,
   BadgeProps,
+  BannerProps,
   BlockProps,
   BreadcrumbProps,
   BreadcrumbsProps,
@@ -41,11 +49,16 @@ import type {
   StepperProps,
   TagProps,
   TextareaProps,
+  TextFieldProps,
+  ToastProps,
   ToggleProps,
 } from './props.gen.js';
 
 export type {
+  AccordionItemProps,
+  AccordionProps,
   BadgeProps,
+  BannerProps,
   BlockProps,
   BreadcrumbProps,
   BreadcrumbsProps,
@@ -65,6 +78,8 @@ export type {
   StepperProps,
   TagProps,
   TextareaProps,
+  TextFieldProps,
+  ToastProps,
   ToggleProps,
 } from './props.gen.js';
 
@@ -93,3 +108,8 @@ export const RadioButton: FC<RadioButtonProps> = RadioButtonCell;
 export const Toggle: FC<ToggleProps> = ToggleCell;
 export const Chip: FC<ChipProps> = ChipCell;
 export const Textarea: FC<TextareaProps> = TextareaCell;
+export const Accordion: FC<AccordionProps> = AccordionCell;
+export const AccordionItem: FC<AccordionItemProps> = AccordionItemCell;
+export const Banner: FC<BannerProps> = BannerCell;
+export const Toast: FC<ToastProps> = ToastCell;
+export const TextField: FC<TextFieldProps> = TextFieldCell;

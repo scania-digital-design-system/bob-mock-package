@@ -8,10 +8,14 @@ This package is for testing BOB. It is not a product. Do not use it in productio
 
 ## Components
 
-`Badge`, `Block`, `Breadcrumbs` and `Breadcrumb`, `Button`, `Card`, `Checkbox`, `Chip`,
-`Divider`, `Footer` with `FooterGroup` and `FooterItem`, `Link`, `Message`, `RadioButton`,
-`Spinner`, `Stepper` and `Step`, `Tag`, `Textarea` and `Toggle`. Scania brand, light mode
-only.
+Scania brand, light mode only.
+
+- Content: `Badge`, `Block`, `Card`, `Divider`, `Link`, `Message`, `Spinner`, `Tag`
+- Actions: `Button`, `Chip`
+- Navigation: `Breadcrumbs` with `Breadcrumb`, `Stepper` with `Step`, `Footer` with
+  `FooterGroup` and `FooterItem`
+- Forms: `Checkbox`, `RadioButton`, `TextField`, `Textarea`, `Toggle`
+- Disclosure and feedback: `Accordion` with `AccordionItem`, `Banner`, `Toast`
 
 ## Install
 

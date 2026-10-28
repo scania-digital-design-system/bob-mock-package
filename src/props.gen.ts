@@ -271,3 +271,109 @@ export type TextareaProps = {
   onTdsInput?: (event: CustomEvent<InputEvent>) => void;
   onTdsFocus?: (event: CustomEvent<FocusEvent>) => void;
 };
+
+export type AccordionProps = {
+  /** @default false */
+  hideLastBorder?: boolean;
+  children?: ReactNode;
+};
+
+export type AccordionItemProps = {
+  header?: ReactNode;
+  /** @default 'end' */
+  expandIconPosition?: 'start' | 'end';
+  /** @default false */
+  disabled?: boolean;
+  /** @default false */
+  expanded?: boolean;
+  /** @default false */
+  paddingReset?: boolean;
+  /** @default '6' */
+  ariaLevelValue?: '1' | '2' | '3' | '4' | '5' | '6';
+  children?: ReactNode;
+  onTdsToggle?: (event: CustomEvent<{ expanded: boolean }>) => void;
+};
+
+export type BannerProps = {
+  icon?: string;
+  header?: ReactNode;
+  subheader?: ReactNode;
+  /** @default 'default' */
+  variant?: 'error' | 'information' | 'default';
+  bannerId?: string;
+  /** @default false */
+  isHidden?: boolean;
+  /** @default 'banner' */
+  roleType?: 'banner' | 'region' | 'alert';
+  actions?: ReactNode;
+  onTdsClose?: (event: CustomEvent<{ bannerId: string }>) => void;
+};
+
+export type ToastProps = {
+  toastId?: string;
+  header?: ReactNode;
+  subheader?: ReactNode;
+  /** @default 'information' */
+  variant?: 'information' | 'error' | 'warning' | 'success';
+  /** @default false */
+  isHidden?: boolean;
+  /** @default true */
+  closable?: boolean;
+  /** @default 'alert' */
+  toastRole?: 'alert' | 'log' | 'status';
+  tdsCloseAriaLabel?: string;
+  /** @default 'polite' */
+  tdsAriaLive?: 'polite' | 'assertive';
+  actions?: ReactNode;
+  onTdsClose?: (event: CustomEvent<{ toastId: string }>) => void;
+};
+
+export type TextFieldProps = {
+  /** @default 'text' */
+  type?: 'text' | 'password' | 'number' | 'email' | 'tel';
+  /** @default 'no-label' */
+  labelPosition?: 'inside' | 'outside' | 'no-label';
+  /** @default '' */
+  label?: string;
+  min?: string;
+  max?: string;
+  step?: string;
+  helper?: string;
+  /** @default '' */
+  placeholder?: string;
+  /** @default '' */
+  value?: string;
+  /** @default false */
+  disabled?: boolean;
+  /** @default false */
+  readOnly?: boolean;
+  /** @default false */
+  hideReadOnlyIcon?: boolean;
+  /** @default 'lg' */
+  size?: 'sm' | 'md' | 'lg';
+  /** @default false */
+  noMinWidth?: boolean;
+  /** @default '' */
+  name?: string;
+  /** @default 'default' */
+  state?: 'error' | 'success' | 'default';
+  maxLength?: string;
+  /** @default false */
+  hideMaxLength?: boolean;
+  /** @default false */
+  autofocus?: boolean;
+  tdsAriaLabel?: string;
+  /** @default false */
+  required?: boolean;
+  /** @default 'off' */
+  autocomplete?: string;
+  /** @default false */
+  hideNumberArrows?: boolean;
+  prefix?: ReactNode;
+  suffix?: ReactNode;
+  onTdsChange?: (event: CustomEvent<Event>) => void;
+  onTdsInput?: (event: CustomEvent<InputEvent>) => void;
+  onTdsFocus?: (event: CustomEvent<FocusEvent>) => void;
+  onTdsBlur?: (event: CustomEvent<FocusEvent>) => void;
+  onTdsError?: (event: CustomEvent<{ originalValue: string; clampedValue: string; reason: 'min' | 'max' }>) => void;
+};

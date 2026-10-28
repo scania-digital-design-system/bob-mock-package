@@ -37,9 +37,14 @@ Each `<component>.md` keeps the full detail. Prompt line numbers (L11, L12) refe
 | toggle | PASS | PASS | 1 added, 2 methods dropped | 6 | 1 | 18 |
 | chip | PASS | PASS | 3 added | 5 | 1 | 7 |
 | textarea | PASS | Relaxed | 1 method dropped | 7 | 4 | 20 |
+| accordion | PASS | PASS | 1 added | 8 (family) | 2 (family) | 6 (family) |
+| accordion-item | PASS | Relaxed | 1 added, 4 methods dropped | — | — | — |
+| banner | PASS | Relaxed | 1 added, 2 methods dropped | 6 | 1 | 3 |
+| toast | PASS | Relaxed | 1 added, 2 methods dropped | 7 | 1 | 11 |
+| text-field | PASS | Relaxed | 2 added, 1 method dropped | 4 (plus the textarea's) | 2 | 19 |
 
 A family (a parent and its children) shares one findings file, so its departures and
-findings are counted once. The foundation set adds 31 tokens. The `tegel` set has 210
+findings are counted once. The foundation set adds 31 tokens. The `tegel` set has 249
 names in total. BOB's stock set has 45.
 
 ## Findings about BOB
@@ -218,7 +223,10 @@ Choose between a `return` branch and `:has()` like this:
 | Tegel has | BOB rule | Resolution | Cost | Where |
 |---|---|---|---|---|
 | Mutable internal state | No hooks (L12) | Use a native element that holds state (`<details>`). The prop sets the initial state. | Different toggle area and name. A prop change after a user toggle is ignored. | card `expanded` |
-| Mutable state that no native element can hold | No hooks (L12) | Relaxation `react-hooks`: `useState`. Expose the state as an ARIA attribute (`aria-expanded`) and style it with an attribute selector. | Breaks L12. Class closure does not see the state. | footer-group mobile toggle |
+| Mutable state that no native element can hold | No hooks (L12) | Relaxation `react-hooks`: `useState`. Expose the state as an ARIA attribute (`aria-expanded`) or `hidden`, and style it with an attribute selector. | Breaks L12. Class closure does not see the state. | footer-group mobile toggle, accordion-item, banner, toast |
+| A cancelable event (`tdsToggle`, `tdsClose`) | No event emitter | Build a `CustomEvent` with `cancelable: true`, pass it to the callback, then change state only if `!event.defaultPrevented`. | Needs `react-hooks` for the state. | accordion-item, banner, toast |
+| A slot and a prop with the same name (`header`) | — | One `ReactNode` prop takes both text and markup. | The prop type is wider than Tegel's `string`. | accordion-item, banner, toast |
+| An open set of named icons | No imports, so no icon set | Copy the few icons the component needs. Render nothing for other names. | Other icon names show no icon. | banner `icon` |
 | State with no native element | No hooks (L12) | Drop it. Record a departure. | Behaviour is lost. | button keyboard `.active` |
 | A custom event (`tdsClick`) | No event emitter | A callback prop that receives a real `CustomEvent` with the same `detail`. | The event does not bubble through the DOM. | card `onTdsClick` |
 | Logic that runs once (`componentWillLoad`, one-way flags) | The cell renders from props only | Derive on every render. Do not copy the stale-state bug. | None. A behaviour departure to record. | badge, button `onlyIcon`, link disabled |
@@ -250,6 +258,7 @@ Choose between a `return` branch and `:has()` like this:
 | A number prop | Surface types are `VARIANT`, `BOOLEAN`, `TEXT`, `INSTANCE_SWAP` | Declare it `TEXT`. Convert with `Number()` where the cell computes with it. | The prop type is `string`. | textarea `maxLength`, `cols`, `rows`; radio `tdsTabIndex` |
 | An element method (`@Method`) | No ref handle (L12); no method in the contract | Drop it. List it as `dropped` in `tests/api-parity.test.ts`. | The method is lost. | checkbox, radio-button, toggle, textarea |
 | A DOM property that JSX cannot set (`indeterminate`) | No hooks (L12) | Set it in a callback ref: `ref={(el) => …}` needs no import. | Runs on every render. | checkbox |
+| A DOM call from a handler (focus, value) | No refs (L12) | Use `event.target` or `event.currentTarget` in the handler. | None. | text-field click-to-focus and clamping |
 | A label tied to the input by a random id | No `useId` (L12) | Wrap the input and its text in one `<label>`. | The label element is the root. | checkbox, radio-button, toggle, chip |
 | A UI state class (focused, has a value) | No hooks (L12); bare prop name only (L11) | A CSS state selector: `:focus-within`, `:not(:placeholder-shown)`. | `:placeholder-shown` needs a placeholder, so it falls back to a space. | textarea inside label |
 | A Tegel event mapped to React | — | A callback prop that receives a `CustomEvent` with Tegel's `detail`. | React's `onChange` fires on input, not on commit. | textarea `tdsChange` |
@@ -275,7 +284,8 @@ no entry here.
   (L11). Props on each child were rejected: the API differs from Tegel and every child
   repeats the parent's props. Data attributes were rejected: they pass the checks only
   because neither check reads attribute selectors.
-- **Cells:** step, footer-group, footer-item.
+- **Cells:** step, footer-group, footer-item, accordion-item (Tegel's
+  `:host(:active)` on the accordion shades every item header).
 - **Gate:** PASS. Class closure does not object to rules for classes the markup does not
   render.
 - **Source:** structural. Any compound component has the same problem, whatever its
@@ -302,7 +312,14 @@ no entry here.
   `aria-describedby` need ids that are stable and unique on the page (`useId`); wrapping
   the field in its `<label>` does not work, because the inside label is positioned over
   the field and the helper is outside it.
-- **Cells:** footer-group (`useState`), textarea (`useState`, `useId`).
+- **Why (accordion item, banner, toast):** each keeps a state a click changes and that
+  a listener can veto: Tegel's `tdsToggle` and `tdsClose` are cancelable. The cell sends
+  a cancelable `CustomEvent` to the callback first and changes its state only when the
+  event is not prevented, as Tegel does. The accordion item also needs `useId` for
+  `aria-controls` and `aria-labelledby`.
+- **Why (text-field):** the same as the textarea: a live counter and stable ids.
+- **Cells:** footer-group, banner, toast (`useState`); textarea, text-field,
+  accordion-item (`useState`, `useId`).
 - **Gate:** PASS. No gate check reads imports.
 - **Source:** structural. Every stateful Tegel component needs it.
 - **BOB change that removes it:** allow a fixed list of React hooks in the bootstrap

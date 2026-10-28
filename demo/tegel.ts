@@ -1,6 +1,7 @@
 import '@scania/tegel/dist/tegel/tegel.css';
 import { defineCustomElements } from '@scania/tegel/loader';
 import {
+  ACCORDION,
   CRUMBS,
   type DemoCase,
   FOOTER_END,
@@ -125,6 +126,14 @@ function compoundChildren(props: Record<string, unknown>): HTMLElement[] {
       child('tds-step', { index, state }, child('span', { slot: 'label' }, label)),
     );
   }
+  if (props.items) {
+    return ACCORDION.map(({ header, text, expanded }) =>
+      child('tds-accordion-item', { header, expanded: Boolean(expanded) }, text),
+    );
+  }
+  if (props.actionLink) {
+    return [child('div', { slot: 'actions' }, anchor('Read more', '#actions'))];
+  }
   const slots: HTMLElement[] = [];
   if (props.top) {
     slots.push(
@@ -162,13 +171,15 @@ function element(tag: string, { props }: DemoCase): HTMLElement {
     start,
     end,
     suffix,
+    items,
+    actionLink,
     ...rest
   } = props;
   // Form controls take their label through a "label" slot; the textarea's label is a prop.
   const { label, ...attributes } = rest;
   const slotsLabel = LABEL_SLOT_TAGS.includes(tag);
   const el = Object.assign(document.createElement(tag), slotsLabel ? attributes : rest);
-  el.append(...compoundChildren({ crumbs, steps, top, start, end }));
+  el.append(...compoundChildren({ crumbs, steps, top, start, end, items, actionLink }));
   if (icon) {
     el.append(slottedIcon());
   }

@@ -292,5 +292,91 @@ export const FOOTER_TOP = [
 export const FOOTER_START = ['Cookies', 'Privacy', 'Legal'];
 export const FOOTER_END = ['LinkedIn', 'YouTube'];
 
+export const ACCORDION: { header: string; text: string; expanded?: boolean }[] = [
+  { header: 'First item', text: 'Panel text for the first item.', expanded: true },
+  { header: 'Second item', text: 'Panel text for the second item.' },
+  { header: 'Third item', text: 'Panel text for the third item.' },
+];
+
+// Stateful components. `items: true` builds accordion items; `actionLink: true` puts a
+// link in the "actions" slot. `prefix`/`suffix` reuse the 16px icon.
+SECTIONS.push(
+  {
+    component: 'accordion',
+    tag: 'tds-accordion',
+    cases: [
+      { label: 'three items, first expanded', props: { items: true } },
+      { label: 'no last border', props: { items: true, hideLastBorder: true } },
+    ],
+  },
+  {
+    component: 'banner',
+    tag: 'tds-banner',
+    cases: [
+      { label: 'default', props: { header: 'Header', subheader: 'Subheader' } },
+      {
+        label: 'information with action',
+        props: {
+          header: 'Header',
+          subheader: 'Subheader',
+          variant: 'information',
+          actionLink: true,
+        },
+      },
+      { label: 'error', props: { header: 'Header', variant: 'error' } },
+    ],
+  },
+  {
+    component: 'toast',
+    tag: 'tds-toast',
+    cases: [
+      {
+        label: 'information',
+        props: { header: 'Header', subheader: 'Subheader', tdsCloseAriaLabel: 'Close' },
+      },
+      {
+        label: 'success',
+        props: { header: 'Header', variant: 'success', tdsCloseAriaLabel: 'Close' },
+      },
+      {
+        label: 'warning with action',
+        props: {
+          header: 'Header',
+          variant: 'warning',
+          actionLink: true,
+          tdsCloseAriaLabel: 'Close',
+        },
+      },
+      {
+        label: 'error, not closable',
+        props: { header: 'Header', variant: 'error', closable: false },
+      },
+    ],
+  },
+  {
+    component: 'text-field',
+    tag: 'tds-text-field',
+    cases: [
+      { label: 'lg, no label', props: { placeholder: 'Placeholder' } },
+      { label: 'label inside', props: { label: 'Label', labelPosition: 'inside' } },
+      {
+        label: 'label outside, helper, counter',
+        props: { label: 'Label', labelPosition: 'outside', helper: 'Helper', maxLength: 20 },
+      },
+      { label: 'md with prefix', props: { size: 'md', placeholder: 'Placeholder', prefix: true } },
+      { label: 'sm with suffix', props: { size: 'sm', placeholder: 'Placeholder', suffix: true } },
+      {
+        label: 'error',
+        props: { label: 'Label', labelPosition: 'outside', state: 'error', helper: 'Error' },
+      },
+      {
+        label: 'read-only',
+        props: { label: 'Label', labelPosition: 'outside', readOnly: true, value: 'Value' },
+      },
+      { label: 'disabled', props: { label: 'Label', labelPosition: 'outside', disabled: true } },
+    ],
+  },
+);
+
 // The same plus icon on both pages, so only the component differs.
 export const ICON_PATH = 'M9 3h2v6h6v2h-6v6H9v-6H3V9h6z';
