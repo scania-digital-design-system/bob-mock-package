@@ -8,7 +8,14 @@ import {
   FOOTER_END,
   FOOTER_START,
   FOOTER_TOP,
+  HEADER_DROPDOWN,
+  HEADER_ITEMS,
+  HEADER_TITLE,
+  HEADER_USER,
+  type HeaderParts,
   ICON_PATH,
+  LAUNCHER_GRID,
+  LAUNCHER_LIST,
   MENU_ITEMS,
   NESTED_BLOCKS,
   SECTIONS,
@@ -176,6 +183,102 @@ function compoundChildren(props: Record<string, unknown>): HTMLElement[] {
       ...(footer ? [child('tds-table-footer', { pagination: true, pages: 4 })] : []),
     ];
   }
+  if (props.headerParts) {
+    const { hamburger, items, grid, user } = props.headerParts as HeaderParts;
+    const icon = (name: string, size: string, slot?: string) =>
+      child('tds-icon', { name, size, ...(slot ? { slot } : {}) });
+    const listItems = (labels: string[], selectFirst?: boolean) =>
+      labels.map((label, i) =>
+        child(
+          'tds-header-dropdown-list-item',
+          { selected: Boolean(selectFirst && i === 0) },
+          anchor(label, '#header'),
+        ),
+      );
+    const launcher = grid
+      ? [
+          child('tds-header-launcher-grid-title', {}, LAUNCHER_GRID.title),
+          child(
+            'tds-header-launcher-grid',
+            {},
+            ...LAUNCHER_GRID.items.map(({ label, icon: name }) =>
+              child(
+                'tds-header-launcher-grid-item',
+                {},
+                child('a', { href: '#header' }, icon(name, '32px'), label),
+              ),
+            ),
+          ),
+        ]
+      : [
+          child('tds-header-launcher-list-title', {}, LAUNCHER_LIST.title),
+          child(
+            'tds-header-launcher-list',
+            {},
+            ...LAUNCHER_LIST.items.map((label) =>
+              child('tds-header-launcher-list-item', {}, anchor(label, '#header')),
+            ),
+          ),
+        ];
+    const brand = child('a', { href: '#header' });
+    brand.setAttribute('aria-label', 'Scania website');
+    return [
+      ...(hamburger
+        ? [child('tds-header-hamburger', { tdsAriaLabel: 'Open application drawer' })]
+        : []),
+      child('tds-header-title', {}, HEADER_TITLE),
+      ...(items
+        ? [
+            ...HEADER_ITEMS.map((label, i) =>
+              child(
+                'tds-header-item',
+                { selected: i === 0 },
+                i === 0 ? child('button', {}, label) : anchor(label, '#header'),
+              ),
+            ),
+            child(
+              'tds-header-dropdown',
+              { label: HEADER_DROPDOWN.label },
+              child('tds-header-dropdown-list', {}, ...listItems(HEADER_DROPDOWN.items)),
+            ),
+            child(
+              'tds-header-item',
+              { slot: 'end' },
+              child('button', {}, icon('calendar', '20px')),
+            ),
+          ]
+        : []),
+      child(
+        'tds-header-launcher',
+        { slot: 'end', tdsAriaLabel: 'Example launcher menu' },
+        ...launcher,
+      ),
+      ...(user
+        ? [
+            child(
+              'tds-header-dropdown',
+              {
+                slot: 'end',
+                noDropdownIcon: true,
+                selected: true,
+                tdsAriaLabel: 'Example dropdown menu',
+              },
+              child('img', { slot: 'icon', src: THUMBNAIL_SRC, alt: 'User menu.' }),
+              child(
+                'tds-header-dropdown-list',
+                { size: 'lg' },
+                child('tds-header-dropdown-list-user', {
+                  header: HEADER_USER.header,
+                  subheader: HEADER_USER.subheader,
+                }),
+                ...listItems(HEADER_USER.items, true),
+              ),
+            ),
+          ]
+        : []),
+      child('tds-header-brand-symbol', { slot: 'end' }, brand),
+    ];
+  }
   if (props.sideMenuParts) {
     const { dropdownOpen, collapsible } = props.sideMenuParts as SideMenuParts;
     const icon = (name: string, slot?: string) =>
@@ -288,6 +391,7 @@ function element(tag: string, { props }: DemoCase): HTMLElement {
     menuItems,
     tableParts,
     sideMenuParts,
+    headerParts,
     ...rest
   } = props;
   // Form controls take their label through a "label" slot; the textarea's label is a prop.
@@ -308,6 +412,7 @@ function element(tag: string, { props }: DemoCase): HTMLElement {
       menuItems,
       tableParts,
       sideMenuParts,
+      headerParts,
     }),
   );
   if (icon) {

@@ -1,0 +1,31 @@
+{
+  "component": "header",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-header at @scania/tegel@1.66.1: the application bar at the top of the page.",
+    "properties": [
+      {
+        "name": "hamburger",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      },
+      {
+        "name": "title",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      },
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      },
+      {
+        "name": "end",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

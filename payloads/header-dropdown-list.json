@@ -1,0 +1,26 @@
+{
+  "component": "header-dropdown-list",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-header-dropdown-list at @scania/tegel@1.66.1: the list in a header dropdown menu.",
+    "properties": [
+      {
+        "name": "size",
+        "type": "VARIANT",
+        "values": ["md", "lg"]
+      },
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": [
+      {
+        "property": "size",
+        "disposition": "prop"
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "componentType": "header-launcher-grid",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "children"
+  ],
+  "rules": [
+    {
+      "id": "prop-children",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"children\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

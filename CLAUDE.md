@@ -23,7 +23,7 @@ Terms (cell, bootstrap, blessing, golden reference, ratchet) follow the backbone
   divider, block, tag, message, breadcrumbs, stepper, footer, checkbox, radio-button,
   toggle, chip, textarea, accordion, banner, toast, text-field, tabs (folder, inline,
   navigation), datetime, modal, slider, dropdown, icon, popover-core, popover-canvas,
-  popover-menu, tooltip, table, side-menu.
+  popover-menu, tooltip, table, side-menu, header.
 - Light mode only; dark mode, `modeVariant` and `animation` are out (ADR 0002 D8).
 - Tegel is final; there is no design iteration. A difference between a cell and Tegel
   that BOB's conventions force is a **finding**, recorded in `docs/findings/<component>.md`.

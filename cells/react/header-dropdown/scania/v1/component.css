@@ -1,0 +1,161 @@
+/* Below 992px the header shows only the hamburger, title, launcher and brand parts */
+.tl-header-dropdown {
+  box-sizing: border-box;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  min-width: var(--size-header-height);
+  height: var(--size-header-height);
+  margin: 0;
+  position: relative;
+  white-space: nowrap;
+}
+@media screen and (min-width: 992px) {
+  .tl-header-dropdown {
+    display: flex;
+  }
+}
+/* The first item after the hamburger and the title gets a divider on its left */
+.tl-header-dropdown:nth-child(3) {
+  border-left: var(--border-control) solid var(--color-header-divider);
+}
+.tl-header-dropdown--selected-false,
+.tl-header-dropdown--no-dropdown-icon-false {
+  box-sizing: border-box;
+}
+
+.tl-header-dropdown__button {
+  all: unset;
+  box-sizing: border-box;
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: bold;
+  line-height: var(--font-line-height-detail-02);
+  letter-spacing: var(--font-letter-spacing-detail);
+  color: var(--color-icon-inverse-strong);
+  background-color: var(--color-header-background);
+  border-right: var(--border-control) solid var(--color-header-divider);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  padding: 0 var(--space-element-24);
+  display: flex;
+  align-items: center;
+  gap: var(--space-element-8);
+}
+.tl-header-dropdown__button:hover {
+  background-color: var(--color-header-item-hover);
+}
+.tl-header-dropdown__button:active {
+  background-color: var(--color-header-item-active);
+}
+.tl-header-dropdown__button:focus-visible {
+  border: none;
+  margin-right: var(--border-control);
+  outline: var(--border-focus) solid var(--color-border-focus);
+  box-shadow: inset 0 0 0 var(--size-shadow-3) var(--color-border-focus-discrete);
+  outline-offset: var(--border-focus-inset);
+}
+.tl-header-dropdown--selected-true .tl-header-dropdown__button[aria-expanded='false'] {
+  box-shadow: inset 0 calc(-1 * var(--size-header-indicator)) 0 0 var(--color-header-indicator);
+}
+.tl-header-dropdown--selected-true .tl-header-dropdown__button[aria-expanded='false']:focus-visible {
+  box-shadow: inset 0 0 0 var(--size-shadow-3) var(--color-border-focus-discrete);
+}
+
+/* Open: the button looks active */
+.tl-header-dropdown__button[aria-expanded='true'] {
+  background-color: var(--color-background-base);
+  color: var(--color-text-strong);
+  border-color: var(--color-background-base);
+  box-shadow: inset 0 calc(-1 * var(--size-header-indicator)) 0 0 var(--color-header-indicator);
+}
+.tl-header-dropdown__button[aria-expanded='true']:hover {
+  background-color: var(--color-background-layer-01);
+}
+
+/* An icon alone, or an image, sits a little to the left (Tegel's global item classes) */
+.tl-header-dropdown__icon {
+  display: contents;
+}
+.tl-header-dropdown__icon > svg {
+  position: relative;
+  margin-left: var(--space-header-icon-offset);
+  inset-inline-start: var(--space-header-icon-shift);
+}
+.tl-header-dropdown__icon > img {
+  position: relative;
+  margin-left: var(--space-header-image-offset);
+  inset-inline-start: var(--space-header-image-shift);
+  width: var(--size-header-image);
+  height: var(--size-header-image);
+  border-radius: 50%;
+}
+
+.tl-header-dropdown__chevron {
+  flex-shrink: 0;
+  width: var(--size-header-chevron);
+  height: var(--size-header-chevron);
+  fill: currentColor;
+}
+.tl-header-dropdown--no-dropdown-icon-true .tl-header-dropdown__chevron {
+  display: none;
+}
+.tl-header-dropdown__chevron-path {
+  d: var(--icon-chevron_down-d);
+}
+.tl-header-dropdown__button[aria-expanded='true'] .tl-header-dropdown__chevron {
+  transform: rotate(180deg);
+}
+
+/* The menu: a native popover under the button, as wide as its list */
+.tl-header-dropdown__menu {
+  box-sizing: border-box;
+  inset: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  position-area: bottom span-right;
+  position-try-fallbacks: none;
+  max-height: 100%;
+  overflow-y: auto;
+  box-shadow:
+    0 var(--size-shadow-3) var(--size-shadow-3) var(--color-shadow-15),
+    0 var(--size-shadow-minus-1) var(--size-shadow-1) var(--color-shadow-1);
+  background-color: var(--color-background-base);
+  color: var(--color-text-strong);
+  white-space: normal;
+}
+@media all and (max-width: 384px) {
+  .tl-header-dropdown__menu {
+    position-area: bottom span-all;
+    width: 100%;
+  }
+}
+
+/* Scrollbar (Tegel's tds-scrollbar mixin) */
+.tl-header-dropdown__menu::-webkit-scrollbar {
+  width: var(--size-scrollbar-width);
+}
+.tl-header-dropdown__menu::-webkit-scrollbar-track {
+  background: var(--color-background-none);
+}
+.tl-header-dropdown__menu::-webkit-scrollbar-thumb {
+  border: var(--border-scrollbar-thumb) solid var(--color-border-none);
+  border-radius: var(--radius-scrollbar);
+  background: var(--color-border-subtle);
+  background-clip: padding-box;
+}
+.tl-header-dropdown__menu:hover::-webkit-scrollbar-thumb {
+  border: var(--border-scrollbar-thumb-hover) solid var(--color-border-none);
+}
+.tl-header-dropdown__menu::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+@supports not selector(::-webkit-scrollbar) {
+  .tl-header-dropdown__menu {
+    scrollbar-width: thin;
+  }
+}

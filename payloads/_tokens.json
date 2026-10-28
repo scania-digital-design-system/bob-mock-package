@@ -665,6 +665,55 @@
       "type": "COLOR",
       "valuesByMode": { "scania": "150ms" }
     },
+    { "name": "color/header/background", "type": "COLOR", "valuesByMode": { "scania": "#041e42" } },
+    { "name": "color/header/item-hover", "type": "COLOR", "valuesByMode": { "scania": "#0f3263" } },
+    {
+      "name": "color/header/item-active",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "#16417f" }
+    },
+    { "name": "color/header/divider", "type": "COLOR", "valuesByMode": { "scania": "#0f3263" } },
+    { "name": "color/header/indicator", "type": "COLOR", "valuesByMode": { "scania": "#2a6ecf" } },
+    {
+      "name": "color/header/item-selected",
+      "type": "COLOR",
+      "valuesByMode": { "scania": "#edeff3" }
+    },
+    {
+      "name": "image/header/symbol",
+      "type": "COLOR",
+      "valuesByMode": {
+        "scania": "url(https://cdn.digitaldesign.scania.com/logotype/multibrand/scania/scania-symbol.svg)"
+      }
+    },
+    {
+      "name": "font/family/headline-01.fontFamily",
+      "type": "STRING",
+      "valuesByMode": { "scania": "'Scania Sans Headline', arial, 'Helvetica Neue'" }
+    },
+    {
+      "name": "font/letter-spacing/detail-06",
+      "type": "FLOAT",
+      "valuesByMode": { "scania": "0.8" }
+    },
+    { "name": "radius/header/tile", "type": "FLOAT", "valuesByMode": { "scania": "4" } },
+    { "name": "size/header/height", "type": "FLOAT", "valuesByMode": { "scania": "64" } },
+    { "name": "size/header/list-item", "type": "FLOAT", "valuesByMode": { "scania": "48" } },
+    { "name": "size/header/list", "type": "FLOAT", "valuesByMode": { "scania": "190" } },
+    { "name": "size/header/list-lg", "type": "FLOAT", "valuesByMode": { "scania": "320" } },
+    { "name": "size/header/user", "type": "FLOAT", "valuesByMode": { "scania": "84" } },
+    { "name": "size/header/avatar", "type": "FLOAT", "valuesByMode": { "scania": "32" } },
+    { "name": "size/header/grid-item", "type": "FLOAT", "valuesByMode": { "scania": "96" } },
+    { "name": "size/header/brand", "type": "FLOAT", "valuesByMode": { "scania": "32" } },
+    { "name": "size/header/indicator", "type": "FLOAT", "valuesByMode": { "scania": "4" } },
+    { "name": "size/header/icon", "type": "FLOAT", "valuesByMode": { "scania": "20" } },
+    { "name": "size/header/chevron", "type": "FLOAT", "valuesByMode": { "scania": "16" } },
+    { "name": "size/header/image", "type": "FLOAT", "valuesByMode": { "scania": "34" } },
+    { "name": "space/header/icon-offset", "type": "FLOAT", "valuesByMode": { "scania": "-6" } },
+    { "name": "space/header/icon-shift", "type": "FLOAT", "valuesByMode": { "scania": "3" } },
+    { "name": "space/header/image-offset", "type": "FLOAT", "valuesByMode": { "scania": "-20" } },
+    { "name": "space/header/image-shift", "type": "FLOAT", "valuesByMode": { "scania": "10" } },
+    { "name": "motion/header/tile", "type": "COLOR", "valuesByMode": { "scania": "150ms" } },
     {
       "name": "icon/24v_battery/d",
       "type": "COLOR",

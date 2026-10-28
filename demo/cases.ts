@@ -701,5 +701,40 @@ SECTIONS.push({
   ],
 });
 
+// `headerParts` builds the header's parts on both pages, from Tegel's header and
+// navigation stories. Below 992px the header hides its items, dropdowns and brand symbol.
+export type HeaderParts = { hamburger?: boolean; items?: boolean; grid?: boolean; user?: boolean };
+export const HEADER_TITLE = 'My application';
+export const HEADER_ITEMS = ['About us', 'Truck types'];
+export const HEADER_DROPDOWN = { label: 'Wheel types', items: ['Hub-centric wheel', 'Rim wheel'] };
+export const LAUNCHER_LIST = { title: 'Cool apps', items: ['Trucklyfe', 'HaulHub', 'WheelWizz'] };
+export const LAUNCHER_GRID = {
+  title: 'Operations and Logistics',
+  items: [
+    { label: 'ScaniaCare', icon: 'star' },
+    { label: 'ScaniaInsight', icon: 'truck' },
+    { label: 'ScaniaConnect', icon: 'fuel_gauge' },
+    { label: 'ScaniaPlan', icon: 'star' },
+  ],
+};
+export const HEADER_USER = {
+  header: 'Name Nameson',
+  subheader: 'Company name',
+  items: ['My Instructions', 'Task List'],
+};
+
+SECTIONS.push({
+  component: 'header',
+  tag: 'tds-header',
+  cases: [
+    { label: 'title, launcher list, brand symbol', props: { headerParts: {} } },
+    {
+      label: 'hamburger, items, dropdown, launcher grid',
+      props: { headerParts: { hamburger: true, items: true, grid: true } },
+    },
+    { label: 'user menu', props: { headerParts: { hamburger: true, user: true } } },
+  ],
+});
+
 // The same plus icon on both pages, so only the component differs.
 export const ICON_PATH = 'M9 3h2v6h6v2h-6v6H9v-6H3V9h6z';

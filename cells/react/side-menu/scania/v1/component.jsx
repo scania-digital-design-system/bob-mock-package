@@ -17,6 +17,7 @@ function SideMenu({
         'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])',
       ),
     ].filter((element) => !element.checkVisibility || element.checkVisibility());
+  const hamburgers = () => [...document.querySelectorAll('.tl-header-hamburger__button')];
   return (
     <div
       ref={(menu) => {
@@ -28,14 +29,23 @@ function SideMenu({
         menu
           .querySelectorAll('.tl-side-menu-collapse-button__button')
           .forEach((button) => button.setAttribute('aria-expanded', expanded));
-        if (open && menu.dataset.open === 'true' && mobile() && !menu.contains(document.activeElement)) {
+        const isOpen = menu.dataset.open === 'true';
+        hamburgers().forEach((button) => button.setAttribute('aria-expanded', String(isOpen)));
+        if (open && isOpen && mobile() && !menu.contains(document.activeElement)) {
           const [first] = focusable(menu);
           if (first) first.focus();
+        }
+        if (!isOpen && mobile() && menu.contains(document.activeElement)) {
+          const [hamburger] = hamburgers();
+          if (hamburger) hamburger.focus();
         }
         const keydown = (event) => {
           if (menu.dataset.open !== 'true' || !mobile()) return;
           if (event.key === 'Escape') {
             menu.dataset.open = 'false';
+            const [hamburger] = hamburgers();
+            hamburgers().forEach((button) => button.setAttribute('aria-expanded', 'false'));
+            if (hamburger) hamburger.focus();
             return;
           }
           if (event.key !== 'Tab') return;

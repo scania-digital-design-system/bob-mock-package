@@ -1,0 +1,21 @@
+.tl-header-dropdown-list {
+  box-sizing: border-box;
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-radius: 0;
+  background-color: var(--color-background-base);
+}
+.tl-header-dropdown-list--md {
+  width: var(--size-header-list);
+}
+.tl-header-dropdown-list--lg {
+  width: var(--size-header-list-lg);
+}
+@media all and (max-width: 384px) {
+  .tl-header-dropdown-list--md,
+  .tl-header-dropdown-list--lg {
+    width: 100%;
+  }
+}

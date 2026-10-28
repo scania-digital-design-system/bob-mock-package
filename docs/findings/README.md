@@ -81,12 +81,31 @@ Each `<component>.md` keeps the full detail. Prompt line numbers (L11, L12) refe
 | side-menu-user | PASS | Relaxed | 1 added | — | — | — |
 | side-menu-user-image | PASS | PASS | 1 added | — | — | — |
 | side-menu-user-label | PASS | PASS | exact | — | — | — |
+| header | PASS | PASS | 4 added | 22 (header) | 3 (header) | 27 (header) |
+| core-header-item | PASS | PASS | 1 added | — | — | — |
+| header-item | PASS | PASS | 1 added | — | — | — |
+| header-hamburger | PASS | PASS | 1 added | — | — | — |
+| header-title | PASS | PASS | 1 added | — | — | — |
+| header-brand-symbol | PASS | PASS | 1 added | — | — | — |
+| header-dropdown | PASS | PASS | 2 added | — | — | — |
+| header-dropdown-list | PASS | PASS | 1 added | — | — | — |
+| header-dropdown-list-item | PASS | Relaxed | 1 added | — | — | — |
+| header-dropdown-list-user | PASS | PASS | 1 added | — | — | — |
+| header-launcher | PASS | PASS | 1 added | — | — | — |
+| header-launcher-button | PASS | PASS | exact | — | — | — |
+| header-launcher-grid | PASS | PASS | 1 added | — | — | — |
+| header-launcher-grid-item | PASS | PASS | 1 added | — | — | — |
+| header-launcher-grid-title | PASS | PASS | 1 added | — | — | — |
+| header-launcher-list | PASS | PASS | 1 added | — | — | — |
+| header-launcher-list-item | PASS | PASS | 1 added | — | — | — |
+| header-launcher-list-title | PASS | PASS | 1 added | — | — | — |
 
 A family (a parent and its children) shares one findings file, so its departures and
 findings are counted once. The three tabs families share `tabs.md`; the four popover
 cells share `popover.md`; the eleven table cells share `table.md`; the eleven side menu
-cells share `side-menu.md`. The foundation set adds 31 tokens. The `tegel` set has 671
-names in total, 263 of them icon paths. BOB's stock set has 45.
+cells share `side-menu.md`; the eighteen header cells share `header.md`. The foundation
+set adds 31 tokens. The `tegel` set has 698 names in total, 263 of them icon paths.
+BOB's stock set has 45.
 
 ## Findings about BOB
 
@@ -309,7 +328,8 @@ Choose between a `return` branch and `:has()` like this:
 | A prop that both the consumer and the user change (`selected`) | No hooks (L12) | Apply the prop in a callback ref only when it differs from the last applied value, kept in a `data-` attribute. | React does not own the attribute. | table rows and header |
 | A child that adds columns by the parent's props (multiselect, expand) | No context (L12) | Render the column always. With `parent-modifier-selectors`, the parent's class hides it. Count columns from the header row in a ref. | Hidden cells in every row. | table |
 | A parent state that one child changes and every child shows (`collapsed`) | No context (L12); a modifier reads only a prop (L11) | Render the prop as a `data-` attribute on the parent's root, so React applies a prop change. The child's click changes the attribute. The other children read it with `parent-modifier-selectors`. | React does not see the click. Neither check reads the attribute. | side menu |
-| A listener that consumers add to a host element (`onclick` on the overlay) | The destructured props are the whole API | Add an `onClick` prop. List it in `DEPARTURES`. | The API is wider than Tegel's. No other host attribute passes through. | side menu close button, overlay |
+| A listener that consumers add to a host element (`onclick` on the overlay) | The destructured props are the whole API | Add an `onClick` prop. List it in `DEPARTURES`. | The API is wider than Tegel's. No other host attribute passes through. | side menu close button, overlay; header hamburger |
+| A menu that opens from the cell's own button (Popper, document listeners) | No `style` attribute; no effects (L12) | A native `popover="auto"` after the button. Open it with `showPopover({ source })`; read the state on `pointerdown`; set `aria-expanded` from the popover's `toggle` event, in a callback ref. | Needs anchor positioning. The menu content stays in the DOM. | header dropdown, launcher |
 | Overflow state (scroll buttons, `ResizeObserver`) | No hooks or effects (L12) | Measure in a callback ref and in `onScroll`. Set `disabled` on the buttons directly, and hide a disabled button with CSS. | A resize alone does not update the buttons. | folder, inline and navigation tabs |
 
 ### CSS and tokens
@@ -374,8 +394,9 @@ no entry here.
   `multiselect`, `expandableRows`, `compactDesign`, `verticalDividers`, `noMinWidth` and
   `zebraMode`), side-menu-item, side-menu-dropdown, side-menu-dropdown-list,
   side-menu-dropdown-list-item and side-menu-collapse-button (the menu's collapsed state
-  and its `end` part; the list item also reads the dropdown's icon), and side-menu-user
-  (the item's hover and selected states).
+  and its `end` part; the list item also reads the dropdown's icon), side-menu-user
+  (the item's hover and selected states), and header-dropdown-list-item (the list's
+  `lg` size, which Tegel's list pushes to each item).
 - **Gate:** PASS. Class closure does not object to rules for classes the markup does not
   render.
 - **Source:** structural. Any compound component has the same problem, whatever its

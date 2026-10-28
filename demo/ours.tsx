@@ -65,6 +65,24 @@ import '../cells/react/side-menu-collapse-button/scania/v1/component.css';
 import '../cells/react/side-menu-user/scania/v1/component.css';
 import '../cells/react/side-menu-user-image/scania/v1/component.css';
 import '../cells/react/side-menu-user-label/scania/v1/component.css';
+import '../cells/react/header/scania/v1/component.css';
+import '../cells/react/core-header-item/scania/v1/component.css';
+import '../cells/react/header-item/scania/v1/component.css';
+import '../cells/react/header-hamburger/scania/v1/component.css';
+import '../cells/react/header-title/scania/v1/component.css';
+import '../cells/react/header-brand-symbol/scania/v1/component.css';
+import '../cells/react/header-dropdown/scania/v1/component.css';
+import '../cells/react/header-dropdown-list/scania/v1/component.css';
+import '../cells/react/header-dropdown-list-item/scania/v1/component.css';
+import '../cells/react/header-dropdown-list-user/scania/v1/component.css';
+import '../cells/react/header-launcher/scania/v1/component.css';
+import '../cells/react/header-launcher-button/scania/v1/component.css';
+import '../cells/react/header-launcher-grid/scania/v1/component.css';
+import '../cells/react/header-launcher-grid-item/scania/v1/component.css';
+import '../cells/react/header-launcher-grid-title/scania/v1/component.css';
+import '../cells/react/header-launcher-list/scania/v1/component.css';
+import '../cells/react/header-launcher-list-item/scania/v1/component.css';
+import '../cells/react/header-launcher-list-title/scania/v1/component.css';
 import Accordion from '../cells/react/accordion/scania/v1/component.jsx';
 import AccordionItem from '../cells/react/accordion-item/scania/v1/component.jsx';
 import Badge from '../cells/react/badge/scania/v1/component.jsx';
@@ -86,7 +104,23 @@ import FolderTabs from '../cells/react/folder-tabs/scania/v1/component.jsx';
 import Footer from '../cells/react/footer/scania/v1/component.jsx';
 import FooterGroup from '../cells/react/footer-group/scania/v1/component.jsx';
 import FooterItem from '../cells/react/footer-item/scania/v1/component.jsx';
+import Header from '../cells/react/header/scania/v1/component.jsx';
+import HeaderBrandSymbol from '../cells/react/header-brand-symbol/scania/v1/component.jsx';
 import HeaderCell from '../cells/react/header-cell/scania/v1/component.jsx';
+import HeaderDropdown from '../cells/react/header-dropdown/scania/v1/component.jsx';
+import HeaderDropdownList from '../cells/react/header-dropdown-list/scania/v1/component.jsx';
+import HeaderDropdownListItem from '../cells/react/header-dropdown-list-item/scania/v1/component.jsx';
+import HeaderDropdownListUser from '../cells/react/header-dropdown-list-user/scania/v1/component.jsx';
+import HeaderHamburger from '../cells/react/header-hamburger/scania/v1/component.jsx';
+import HeaderItem from '../cells/react/header-item/scania/v1/component.jsx';
+import HeaderLauncher from '../cells/react/header-launcher/scania/v1/component.jsx';
+import HeaderLauncherGrid from '../cells/react/header-launcher-grid/scania/v1/component.jsx';
+import HeaderLauncherGridItem from '../cells/react/header-launcher-grid-item/scania/v1/component.jsx';
+import HeaderLauncherGridTitle from '../cells/react/header-launcher-grid-title/scania/v1/component.jsx';
+import HeaderLauncherList from '../cells/react/header-launcher-list/scania/v1/component.jsx';
+import HeaderLauncherListItem from '../cells/react/header-launcher-list-item/scania/v1/component.jsx';
+import HeaderLauncherListTitle from '../cells/react/header-launcher-list-title/scania/v1/component.jsx';
+import HeaderTitle from '../cells/react/header-title/scania/v1/component.jsx';
 import Icon from '../cells/react/icon/scania/v1/component.jsx';
 import InlineTab from '../cells/react/inline-tab/scania/v1/component.jsx';
 import InlineTabs from '../cells/react/inline-tabs/scania/v1/component.jsx';
@@ -134,7 +168,14 @@ import {
   FOOTER_END,
   FOOTER_START,
   FOOTER_TOP,
+  HEADER_DROPDOWN,
+  HEADER_ITEMS,
+  HEADER_TITLE,
+  HEADER_USER,
+  type HeaderParts,
   ICON_PATH,
+  LAUNCHER_GRID,
+  LAUNCHER_LIST,
   MENU_ITEMS,
   NESTED_BLOCKS,
   SECTIONS,
@@ -185,7 +226,90 @@ const COMPONENTS: Record<string, FC<Record<string, unknown>>> = {
   tooltip: Tooltip,
   table: Table,
   'side-menu': SideMenu,
+  header: Header,
 };
+
+function headerSlots({ hamburger, items, grid, user }: HeaderParts) {
+  return {
+    hamburger: hamburger && <HeaderHamburger tdsAriaLabel="Open application drawer" />,
+    title: <HeaderTitle>{HEADER_TITLE}</HeaderTitle>,
+    children: items && [
+      ...HEADER_ITEMS.map((label, i) => (
+        <HeaderItem key={label} selected={i === 0}>
+          {i === 0 ? <button type="button">{label}</button> : <a href="#header">{label}</a>}
+        </HeaderItem>
+      )),
+      <HeaderDropdown key="dropdown" label={HEADER_DROPDOWN.label}>
+        <HeaderDropdownList>
+          {HEADER_DROPDOWN.items.map((item) => (
+            <HeaderDropdownListItem key={item}>
+              <a href="#header">{item}</a>
+            </HeaderDropdownListItem>
+          ))}
+        </HeaderDropdownList>
+      </HeaderDropdown>,
+    ],
+    end: [
+      items && (
+        <HeaderItem key="calendar">
+          <button type="button">
+            <Icon name="calendar" size="20px" svgTitle="Calendar" />
+          </button>
+        </HeaderItem>
+      ),
+      <HeaderLauncher key="launcher" tdsAriaLabel="Example launcher menu">
+        {grid ? (
+          <>
+            <HeaderLauncherGridTitle>{LAUNCHER_GRID.title}</HeaderLauncherGridTitle>
+            <HeaderLauncherGrid>
+              {LAUNCHER_GRID.items.map(({ label, icon }) => (
+                <HeaderLauncherGridItem key={label}>
+                  <a href="#header">
+                    <Icon name={icon} size="32px" />
+                    {label}
+                  </a>
+                </HeaderLauncherGridItem>
+              ))}
+            </HeaderLauncherGrid>
+          </>
+        ) : (
+          <>
+            <HeaderLauncherListTitle>{LAUNCHER_LIST.title}</HeaderLauncherListTitle>
+            <HeaderLauncherList>
+              {LAUNCHER_LIST.items.map((item) => (
+                <HeaderLauncherListItem key={item}>
+                  <a href="#header">{item}</a>
+                </HeaderLauncherListItem>
+              ))}
+            </HeaderLauncherList>
+          </>
+        )}
+      </HeaderLauncher>,
+      user && (
+        <HeaderDropdown
+          key="user"
+          noDropdownIcon
+          selected
+          tdsAriaLabel="Example dropdown menu"
+          icon={<img src={THUMBNAIL_SRC} alt="User menu." />}
+        >
+          <HeaderDropdownList size="lg">
+            <HeaderDropdownListUser header={HEADER_USER.header} subheader={HEADER_USER.subheader} />
+            {HEADER_USER.items.map((item, i) => (
+              <HeaderDropdownListItem key={item} selected={i === 0}>
+                <a href="#header">{item}</a>
+              </HeaderDropdownListItem>
+            ))}
+          </HeaderDropdownList>
+        </HeaderDropdown>
+      ),
+      <HeaderBrandSymbol key="brand">
+        {/* biome-ignore lint/a11y/useAnchorContent: as in Tegel, the symbol is a background and aria-label names the link */}
+        <a href="#header" aria-label="Scania website" />
+      </HeaderBrandSymbol>,
+    ],
+  };
+}
 
 function sideMenuSlots({ dropdownOpen, collapsible }: SideMenuParts) {
   return {
@@ -359,6 +483,10 @@ const actionLink = <a href="#actions">Read more</a>;
 
 // Turns the shared case flags into the nodes our cells take as props.
 function nodeProps(props: Record<string, unknown>): Record<string, unknown> {
+  if (props.headerParts) {
+    const { headerParts, ...rest } = props;
+    return { ...rest, ...headerSlots(headerParts as HeaderParts) };
+  }
   if (props.sideMenuParts) {
     const { sideMenuParts, ...rest } = props;
     return { ...rest, ...sideMenuSlots(sideMenuParts as SideMenuParts) };

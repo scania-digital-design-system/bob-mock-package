@@ -34,6 +34,12 @@
   --color-footer-divider: #0f3263;
   --color-footer-item-active: #e0e5eb;
   --color-footer-main: #041e42;
+  --color-header-background: #041e42;
+  --color-header-divider: #0f3263;
+  --color-header-indicator: #2a6ecf;
+  --color-header-item-active: #16417f;
+  --color-header-item-hover: #0f3263;
+  --color-header-item-selected: #edeff3;
   --color-icon-inverse-strong: #f6f7f9;
   --color-icon-strong: #0e1013;
   --color-icon-subtle: #07275880;
@@ -371,6 +377,7 @@
   --image-checkbox-check: url("data:image/svg+xml;utf8,<svg width='8' height='6' viewBox='0 0 8 6' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 2.33333L3.4 5C4.80589 3.4379 5.59411 2.5621 7 1' stroke='%23000' stroke-linecap='round' stroke-linejoin='round'/></svg>");
   --image-checkbox-indeterminate: url("data:image/svg+xml;utf8,<svg width='8' height='2' viewBox='0 0 8 2' fill='none' xmlns='http://www.w3.org/2000/svg'><rect y='0.5' width='8' height='1' rx='0.5' fill='%23000'/></svg>");
   --image-footer-wordmark: url(https://cdn.digitaldesign.scania.com/logotype/multibrand/scania/scania-wordmark-white.svg);
+  --image-header-symbol: url(https://cdn.digitaldesign.scania.com/logotype/multibrand/scania/scania-symbol.svg);
   --motion-accordion-rotate: 150ms;
   --motion-card-fade: 120ms;
   --motion-card-rotate: 160ms;
@@ -379,6 +386,7 @@
   --motion-easing-easy: cubic-bezier(0.33, 0, 0.67, 1);
   --motion-easing-scania: cubic-bezier(0.4, 0, 0, 1);
   --motion-footer-rotate: 200ms;
+  --motion-header-tile: 150ms;
   --motion-input-indicator: 200ms;
   --motion-popover-menu-hover: 150ms;
   --motion-side-menu-hover-delay: 150ms;
@@ -414,6 +422,7 @@
   --font-letter-spacing-body: -0.32px;
   --font-letter-spacing-detail: -0.14px;
   --font-letter-spacing-detail-01: -0.16px;
+  --font-letter-spacing-detail-06: 0.8px;
   --font-letter-spacing-headline: -0.28px;
   --font-line-height-body-01: 24px;
   --font-line-height-detail-02: 16px;
@@ -436,6 +445,7 @@
   --radius-dropdown: 4px;
   --radius-focus-medium: 3px;
   --radius-full: 9999px;
+  --radius-header-tile: 4px;
   --radius-input: 4px;
   --radius-message: 4px;
   --radius-modal: 4px;
@@ -496,6 +506,18 @@
   --size-footer-chevron: 20px;
   --size-footer-wordmark-height: 20px;
   --size-footer-wordmark-width: 117px;
+  --size-header-avatar: 32px;
+  --size-header-brand: 32px;
+  --size-header-chevron: 16px;
+  --size-header-grid-item: 96px;
+  --size-header-height: 64px;
+  --size-header-icon: 20px;
+  --size-header-image: 34px;
+  --size-header-indicator: 4px;
+  --size-header-list: 190px;
+  --size-header-list-item: 48px;
+  --size-header-list-lg: 320px;
+  --size-header-user: 84px;
   --size-input-height: 24px;
   --size-input-indicator: 16px;
   --size-message-icon: 20px;
@@ -641,6 +663,10 @@
   --space-element-48: 48px;
   --space-element-8: 8px;
   --space-footer-item-mobile: 19px;
+  --space-header-icon-offset: -6px;
+  --space-header-icon-shift: 3px;
+  --space-header-image-offset: -20px;
+  --space-header-image-shift: 10px;
   --space-input-offset: -4px;
   --space-layout-64: 64px;
   --space-popover-menu-block: 6px;
@@ -677,4 +703,5 @@
   --font-family-body: 'Scania Sans', arial, 'Helvetica Neue';
   --font-family-detail: 'Scania Sans Semi Condensed', arial, 'Helvetica Neue';
   --font-family-headline: 'Scania Sans', arial, 'Helvetica Neue';
+  --font-family-headline-01: 'Scania Sans Headline', arial, 'Helvetica Neue';
 }

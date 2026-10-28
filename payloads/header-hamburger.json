@@ -1,0 +1,16 @@
+{
+  "component": "header-hamburger",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-header-hamburger at @scania/tegel@1.66.1: the button that opens the side menu on mobile.",
+    "properties": [
+      {
+        "name": "tdsAriaLabel",
+        "type": "TEXT",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

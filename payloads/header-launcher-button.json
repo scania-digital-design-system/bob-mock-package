@@ -1,0 +1,21 @@
+{
+  "component": "header-launcher-button",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-header-launcher-button at @scania/tegel@1.66.1: the button of the application launcher.",
+    "properties": [
+      {
+        "name": "active",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "tdsAriaLabel",
+        "type": "TEXT",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

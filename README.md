@@ -17,7 +17,12 @@ Scania brand, light mode only.
   `InlineTab`, `NavigationTabs` with `NavigationTab`, `SideMenu` with `SideMenuItem`,
   `SideMenuDropdown`, `SideMenuDropdownList`, `SideMenuDropdownListItem`,
   `SideMenuCollapseButton`, `SideMenuCloseButton`, `SideMenuOverlay`, `SideMenuUser`,
-  `SideMenuUserImage`, `SideMenuUserLabel`
+  `SideMenuUserImage`, `SideMenuUserLabel`, `Header` with `HeaderItem`, `HeaderHamburger`,
+  `HeaderTitle`, `HeaderBrandSymbol`, `HeaderDropdown`, `HeaderDropdownList`,
+  `HeaderDropdownListItem`, `HeaderDropdownListUser`, `HeaderLauncher`,
+  `HeaderLauncherButton`, `HeaderLauncherGrid`, `HeaderLauncherGridItem`,
+  `HeaderLauncherGridTitle`, `HeaderLauncherList`, `HeaderLauncherListItem`,
+  `HeaderLauncherListTitle`, `CoreHeaderItem`
 - Forms: `Checkbox`, `Datetime`, `Dropdown` with `DropdownOption`, `RadioButton`, `Slider`,
   `TextField`, `Textarea`, `Toggle`
 - Disclosure and feedback: `Accordion` with `AccordionItem`, `Banner`, `Modal`, `Toast`

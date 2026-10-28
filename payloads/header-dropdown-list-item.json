@@ -1,0 +1,31 @@
+{
+  "component": "header-dropdown-list-item",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-header-dropdown-list-item at @scania/tegel@1.66.1: one item in a header dropdown list, around a button or a link.",
+    "properties": [
+      {
+        "name": "selected",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "size",
+        "type": "VARIANT",
+        "values": ["md", "lg"]
+      },
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": [
+      {
+        "property": "size",
+        "disposition": "prop"
+      }
+    ]
+  }
+}

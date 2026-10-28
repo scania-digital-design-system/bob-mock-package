@@ -1,0 +1,16 @@
+/* Tegel's launcher list is a large dropdown list */
+.tl-header-launcher-list {
+  box-sizing: border-box;
+  display: block;
+  width: var(--size-header-list-lg);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-radius: 0;
+  background-color: var(--color-background-base);
+}
+@media all and (max-width: 384px) {
+  .tl-header-launcher-list {
+    width: 100%;
+  }
+}

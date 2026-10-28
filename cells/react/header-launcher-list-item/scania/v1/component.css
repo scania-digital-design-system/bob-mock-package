@@ -1,0 +1,35 @@
+/* Tegel's launcher list item is a large dropdown list item with a line under it */
+.tl-header-launcher-list-item {
+  display: block;
+  box-sizing: border-box;
+  height: calc(var(--size-header-height) + var(--border-control));
+  width: 100%;
+  border-bottom: var(--border-control) solid var(--color-border-discrete);
+}
+.tl-header-launcher-list-item > a,
+.tl-header-launcher-list-item > button {
+  all: unset;
+  box-sizing: border-box;
+  border: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 var(--space-element-16);
+  width: 100%;
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: normal;
+  line-height: var(--font-line-height-detail-02);
+  letter-spacing: var(--font-letter-spacing-detail);
+  background-color: var(--color-background-base);
+  color: var(--color-text-strong);
+}
+.tl-header-launcher-list-item > a:hover {
+  background-color: var(--color-background-layer-01);
+  cursor: pointer;
+}
+.tl-header-launcher-list-item > a:focus-visible {
+  outline: var(--border-focus) solid var(--color-border-focus);
+  box-shadow: inset 0 0 0 var(--size-shadow-3) var(--color-border-focus-discrete);
+  outline-offset: var(--border-focus-inset);
+}

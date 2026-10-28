@@ -1,0 +1,43 @@
+{
+  "componentType": "header-dropdown-list-user",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "imgUrl",
+    "imgAlt",
+    "header",
+    "subheader",
+    "thumbnail"
+  ],
+  "rules": [
+    {
+      "id": "prop-imgurl",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"imgUrl\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-imgalt",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"imgAlt\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-header",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"header\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-subheader",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"subheader\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-thumbnail",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"thumbnail\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

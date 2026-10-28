@@ -1,0 +1,21 @@
+{
+  "component": "header-launcher",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-header-launcher at @scania/tegel@1.66.1: the header button that opens the application launcher menu.",
+    "properties": [
+      {
+        "name": "tdsAriaLabel",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

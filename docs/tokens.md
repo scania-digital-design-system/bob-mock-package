@@ -69,6 +69,7 @@ name is in the generated `tegel` set.
 | Popover core, canvas, menu, menu item; tooltip | 617 |
 | Table family | 648 |
 | Side menu family | 671 |
+| Header family | 698 |
 
 ## Foundation set
 
@@ -630,3 +631,44 @@ Reused: `color/background/{base,layer-01,none}`, `color/border/{discrete,subtle,
 `border/{control,focus,focus-offset,focus-inset}`, `space/element/{16,24,48}`, the scrollbar
 tokens, the icon path tokens, the detail tokens (Tegel's `title-01`) and the body tokens
 (`body-02`: `font/family/body`, `font/size/detail`, `font/line-height/detail-03`).
+
+### Header
+
+Source: `packages/core/src/components/header/` (`header-vars.scss` and each part's
+`.scss`), the Scania light block of `tokens/scss/component/header.scss`, and the
+`title-01`, `headline-06`, `headline-07`, `detail-02`, `detail-05` and `detail-06` type
+styles.
+
+| Payload name | Value | Tegel source |
+|---|---|---|
+| `color/header/background` | `#041e42` | `--component-header-background-main-standard-default` = blue-800 |
+| `color/header/item-hover`, `color/header/item-active` | `#0f3263`, `#16417f` | `--component-header-background-nav-item-link-{hover,active}` = blue-700, blue-600 |
+| `color/header/divider` | `#0f3263` | `--component-header-border-divider-default` = blue-700 |
+| `color/header/indicator` | `#2a6ecf` | `--component-header-border-{nav,menu}-item-indicator-default` = blue-400 |
+| `color/header/item-selected` | `#edeff3` | `--component-header-background-menu-item-current-default` = grey-100 |
+| `image/header/symbol` (carrier) | `url(…/scania-symbol.svg)` | `--tds-background-image-scania-symbol-svg` (the CDN copy) |
+| `font/family/headline-01.fontFamily` | `'Scania Sans Headline', arial, 'Helvetica Neue'` | `--tds-header-title-font-family` = `--headline-01-font-family` |
+| `font/letter-spacing/detail-06` | 0.8 | `--tds-detail-06-ls` (0.08em of 10px) |
+| `radius/header/tile` | 4 | launcher grid item `border-radius` |
+| `size/header/height` | 64 | `--tds-header-height` |
+| `size/header/list-item` | 48 | `--tds-header-list-item-md-height`; launcher title height |
+| `size/header/list`, `size/header/list-lg` | 190, 320 | dropdown list width, `md` and `lg` |
+| `size/header/user` | 84 | dropdown list user height |
+| `size/header/avatar` | 32 | `--component-header-size-avatar-default` |
+| `size/header/grid-item` | 96 | launcher grid item size |
+| `size/header/brand` | 32 | `--tds-header-brand-logo-size` |
+| `size/header/indicator` | 4 | the line under an active or selected item; the selected list item's left border |
+| `size/header/icon`, `size/header/chevron`, `size/header/image` | 20, 16, 34 | item icons; dropdown chevron; item image |
+| `space/header/icon-offset`, `space/header/icon-shift` | -6, 3 | `.__tds-header-item-icon` `margin-left` and `left` |
+| `space/header/image-offset`, `space/header/image-shift` | -20, 10 | `.__tds-header-item-image` `margin-left` and `left` |
+| `motion/header/tile` (carrier) | `150ms` | launcher grid item `transition` |
+
+Reused: `color/background/{base,layer-01,none}`, `color/border/{discrete,subtle,none,focus,focus-discrete}`,
+`color/icon/inverse-strong`, `color/text/{strong,soft}`, `color/shadow/{1,15}`,
+`size/shadow/{1,3,minus-1}`, `border/{control,focus,focus-offset,focus-inset}`,
+`space/element/{4,8,12,16,24,32}`, the scrollbar tokens, the icon path tokens, the detail
+tokens (`title-01`, `headline-07`, `detail-02`: `font/family/detail`, `font/size/detail`,
+`font/line-height/detail-02`, `font/letter-spacing/detail`), `font/size/caption` and
+`font/line-height/detail-05` (`detail-05`), `font/family/body` and `font/size/detail-07`
+(`detail-06`), and `font/line-height/headline-06` with `font/letter-spacing/headline`
+(the title).

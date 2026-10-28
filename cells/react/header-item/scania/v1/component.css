@@ -1,0 +1,101 @@
+/* Below 992px the header shows only the hamburger, title, launcher and brand parts */
+.tl-header-item {
+  box-sizing: border-box;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  min-width: var(--size-header-height);
+  height: var(--size-header-height);
+  margin: 0;
+  white-space: nowrap;
+  color: var(--color-icon-inverse-strong);
+}
+@media screen and (min-width: 992px) {
+  .tl-header-item {
+    display: flex;
+  }
+}
+/* The first item after the hamburger and the title gets a divider on its left */
+.tl-header-item:nth-child(3) {
+  border-left: var(--border-control) solid var(--color-header-divider);
+}
+.tl-header-item > a,
+.tl-header-item > button {
+  all: unset;
+  box-sizing: border-box;
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: bold;
+  line-height: var(--font-line-height-detail-02);
+  letter-spacing: var(--font-letter-spacing-detail);
+  color: var(--color-icon-inverse-strong);
+  background-color: var(--color-header-background);
+  border-right: var(--border-control) solid var(--color-header-divider);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  padding: 0 var(--space-element-24);
+  display: flex;
+  align-items: center;
+  gap: var(--space-element-8);
+}
+.tl-header-item > a:hover,
+.tl-header-item > button:hover {
+  background-color: var(--color-header-item-hover);
+}
+.tl-header-item > a:active,
+.tl-header-item > button:active {
+  background-color: var(--color-header-item-active);
+}
+.tl-header-item > a:focus-visible,
+.tl-header-item > button:focus-visible {
+  border: none;
+  margin-right: var(--border-control);
+  outline: var(--border-focus) solid var(--color-border-focus);
+  box-shadow: inset 0 0 0 var(--size-shadow-3) var(--color-border-focus-discrete);
+  outline-offset: var(--border-focus-inset);
+}
+
+/* Active: the button opens something that is open now */
+.tl-header-item--active-true > a,
+.tl-header-item--active-true > button {
+  background-color: var(--color-background-base);
+  color: var(--color-text-strong);
+  border-color: var(--color-background-base);
+  box-shadow: inset 0 calc(-1 * var(--size-header-indicator)) 0 0 var(--color-header-indicator);
+}
+.tl-header-item--active-true > a:hover,
+.tl-header-item--active-true > button:hover {
+  background-color: var(--color-background-layer-01);
+}
+.tl-header-item--active-false,
+.tl-header-item--selected-false {
+  box-sizing: border-box;
+}
+
+/* Selected: a line under the item */
+.tl-header-item--selected-true.tl-header-item--active-false > a,
+.tl-header-item--selected-true.tl-header-item--active-false > button {
+  box-shadow: inset 0 calc(-1 * var(--size-header-indicator)) 0 0 var(--color-header-indicator);
+}
+.tl-header-item--selected-true.tl-header-item--active-false > a:focus-visible,
+.tl-header-item--selected-true.tl-header-item--active-false > button:focus-visible {
+  box-shadow: inset 0 0 0 var(--size-shadow-3) var(--color-border-focus-discrete);
+}
+
+/* An icon alone, or an image, sits a little to the left (Tegel's global item classes) */
+.tl-header-item > a > svg:only-child,
+.tl-header-item > button > svg:only-child {
+  position: relative;
+  margin-left: var(--space-header-icon-offset);
+  inset-inline-start: var(--space-header-icon-shift);
+}
+.tl-header-item > a > img,
+.tl-header-item > button > img {
+  position: relative;
+  margin-left: var(--space-header-image-offset);
+  inset-inline-start: var(--space-header-image-shift);
+  width: var(--size-header-image);
+  height: var(--size-header-image);
+  border-radius: 50%;
+}

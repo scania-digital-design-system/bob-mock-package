@@ -44,14 +44,16 @@ Reference: Tegel `tds-side-menu` and its children at `@scania/tegel@1.66.1`
    listener to the host. Neither cell closes the menu itself, as in Tegel.
 7. **The close button's name is always "Close".** Tegel copies the host's ARIA attributes
    to the button and sets `aria-controls` to the menu's `id`. A cell has no host
-   attributes. Tegel also sets `aria-expanded="false"` on the header hamburger; the
-   header cells do not exist yet.
+   attributes. As in Tegel, a click sets `aria-expanded="false"` on the header
+   hamburger.
 8. **No host attributes on the menu.** Tegel sets `aria-expanded` on the host, and its
    story sets `id` and `aria-label` there. The root takes neither. Style the persistent
    menu's height and position through a parent element.
-9. **Focus.** On open, focus moves to the first focusable element when React commits;
-   Tegel waits 100 ms. On close, Tegel moves focus to the header hamburger; that is
-   dropped. The Tab trap moves from the focused element and skips hidden elements
+9. **Focus and the hamburger.** On open, focus moves to the first focusable element
+   when React commits; Tegel waits 100 ms. On close, focus moves to the header
+   hamburger, as in Tegel, when focus was in the menu. The menu also sets the
+   hamburger's `aria-expanded` from its open state; Tegel leaves that to the consumer.
+   The Tab trap moves from the focused element and skips hidden elements
    (`checkVisibility`); Tegel counts from a stored index.
 10. **An empty upper list is found with `:empty`.** Tegel checks the slot's assigned
     elements after load.

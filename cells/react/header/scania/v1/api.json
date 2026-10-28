@@ -1,0 +1,36 @@
+{
+  "componentType": "header",
+  "contractVersion": 1,
+  "publicApiSurface": [
+    "hamburger",
+    "title",
+    "children",
+    "end"
+  ],
+  "rules": [
+    {
+      "id": "prop-hamburger",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"hamburger\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-title",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"title\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-children",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"children\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    },
+    {
+      "id": "prop-end",
+      "level": "MUST",
+      "kind": "structure",
+      "text": "\"end\" is a component prop: the caller selects one. Realise it as your target's own input — a component API where the target has one, and a modifier class per value, which the consuming page selects, where the target carries only markup and a stylesheet."
+    }
+  ]
+}

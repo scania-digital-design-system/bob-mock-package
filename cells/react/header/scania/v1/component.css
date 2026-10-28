@@ -1,0 +1,29 @@
+.tl-header {
+  display: block;
+  height: var(--size-header-height);
+  background-color: var(--color-header-background);
+  width: 100%;
+  z-index: 300;
+}
+.tl-header__nav {
+  box-sizing: border-box;
+  background-color: var(--color-header-background);
+  width: 100%;
+  display: block;
+}
+.tl-header__list {
+  all: unset;
+  box-sizing: border-box;
+  height: var(--size-header-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tl-header__spacer {
+  all: unset;
+  box-sizing: border-box;
+  display: block;
+  flex-grow: 1;
+  height: var(--size-header-height);
+  border-right: var(--border-control) solid var(--color-header-divider);
+}

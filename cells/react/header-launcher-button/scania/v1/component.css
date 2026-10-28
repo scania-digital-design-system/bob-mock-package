@@ -1,0 +1,61 @@
+/* The launcher button shows in every viewport */
+.tl-header-launcher-button {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: var(--size-header-height);
+  height: var(--size-header-height);
+  margin: 0;
+}
+.tl-header-launcher-button--active-false {
+  box-sizing: border-box;
+}
+.tl-header-launcher-button__button {
+  all: unset;
+  box-sizing: border-box;
+  color: var(--color-icon-inverse-strong);
+  background-color: var(--color-header-background);
+  border-right: var(--border-control) solid var(--color-header-divider);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  padding: 0 var(--space-element-24);
+  display: flex;
+  align-items: center;
+  gap: var(--space-element-8);
+}
+.tl-header-launcher-button__button:hover {
+  background-color: var(--color-header-item-hover);
+}
+.tl-header-launcher-button__button:active {
+  background-color: var(--color-header-item-active);
+}
+.tl-header-launcher-button__button:focus-visible {
+  border: none;
+  margin-right: var(--border-control);
+  outline: var(--border-focus) solid var(--color-border-focus);
+  box-shadow: inset 0 0 0 var(--size-shadow-3) var(--color-border-focus-discrete);
+  outline-offset: var(--border-focus-inset);
+}
+.tl-header-launcher-button--active-true .tl-header-launcher-button__button {
+  background-color: var(--color-background-base);
+  color: var(--color-text-strong);
+  border-color: var(--color-background-base);
+  box-shadow: inset 0 calc(-1 * var(--size-header-indicator)) 0 0 var(--color-header-indicator);
+}
+.tl-header-launcher-button--active-true .tl-header-launcher-button__button:hover {
+  background-color: var(--color-background-layer-01);
+}
+.tl-header-launcher-button__icon {
+  flex-shrink: 0;
+  width: var(--size-header-icon);
+  height: var(--size-header-icon);
+  fill: currentColor;
+  position: relative;
+  margin-left: var(--space-header-icon-offset);
+  inset-inline-start: var(--space-header-icon-shift);
+}
+.tl-header-launcher-button__bento {
+  d: var(--icon-bento-d);
+}

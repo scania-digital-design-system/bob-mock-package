@@ -117,6 +117,7 @@ export const OVERRIDES: Record<string, Record<string, string>> = {
   },
   'side-menu-close-button': { onClick: 'MouseEventHandler<HTMLButtonElement>' },
   'side-menu-overlay': { onClick: 'MouseEventHandler<HTMLDivElement>' },
+  'header-hamburger': { onClick: 'MouseEventHandler<HTMLButtonElement>' },
 };
 
 const REACT_TYPES = ['MouseEventHandler', 'ReactNode'];

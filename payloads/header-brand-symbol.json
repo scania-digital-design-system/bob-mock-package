@@ -1,0 +1,16 @@
+{
+  "component": "header-brand-symbol",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-header-brand-symbol at @scania/tegel@1.66.1: the brand symbol at the end of the header, around a link.",
+    "properties": [
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

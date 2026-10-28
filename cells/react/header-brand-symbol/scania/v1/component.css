@@ -1,0 +1,44 @@
+/* Below 992px the header has no brand symbol */
+.tl-header-brand-symbol {
+  box-sizing: border-box;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  min-width: var(--size-header-height);
+  height: var(--size-header-height);
+  margin: 0;
+}
+@media (width >= 992px) {
+  .tl-header-brand-symbol {
+    display: flex;
+  }
+}
+.tl-header-brand-symbol > * {
+  all: unset;
+  box-sizing: border-box;
+  background-color: var(--color-header-background);
+  border-right: var(--border-control) solid var(--color-header-divider);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  padding: 0 var(--space-element-24);
+  display: flex;
+  align-items: center;
+  background-image: var(--image-header-symbol);
+  background-size: var(--size-header-brand) auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.tl-header-brand-symbol > :hover {
+  background-color: var(--color-header-item-hover);
+}
+.tl-header-brand-symbol > :active {
+  background-color: var(--color-header-item-active);
+}
+.tl-header-brand-symbol > :focus-visible {
+  border: none;
+  margin-right: var(--border-control);
+  outline: var(--border-focus) solid var(--color-border-focus);
+  box-shadow: inset 0 0 0 var(--size-shadow-3) var(--color-border-focus-discrete);
+  outline-offset: var(--border-focus-inset);
+}

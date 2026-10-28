@@ -1,0 +1,41 @@
+{
+  "component": "header-dropdown",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-header-dropdown at @scania/tegel@1.66.1: a header item that opens a menu.",
+    "properties": [
+      {
+        "name": "label",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      },
+      {
+        "name": "noDropdownIcon",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "selected",
+        "type": "BOOLEAN",
+        "values": ["true", "false"]
+      },
+      {
+        "name": "tdsAriaLabel",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      },
+      {
+        "name": "icon",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

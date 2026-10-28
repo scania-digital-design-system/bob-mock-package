@@ -1,0 +1,16 @@
+{
+  "component": "header-launcher-list",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-header-launcher-list at @scania/tegel@1.66.1: a list of applications in the launcher menu.",
+    "properties": [
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

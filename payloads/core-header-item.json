@@ -1,0 +1,16 @@
+{
+  "component": "core-header-item",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-core-header-item at @scania/tegel@1.66.1: the box that holds one header item.",
+    "properties": [
+      {
+        "name": "children",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

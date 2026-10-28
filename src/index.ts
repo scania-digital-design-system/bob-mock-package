@@ -11,6 +11,7 @@ import ButtonCell from '../cells/react/button/scania/v1/component.jsx';
 import CardCell from '../cells/react/card/scania/v1/component.jsx';
 import CheckboxCell from '../cells/react/checkbox/scania/v1/component.jsx';
 import ChipCell from '../cells/react/chip/scania/v1/component.jsx';
+import CoreHeaderItemCell from '../cells/react/core-header-item/scania/v1/component.jsx';
 import DatetimeCell from '../cells/react/datetime/scania/v1/component.jsx';
 import DividerCell from '../cells/react/divider/scania/v1/component.jsx';
 import DropdownCell from '../cells/react/dropdown/scania/v1/component.jsx';
@@ -20,7 +21,24 @@ import FolderTabsCell from '../cells/react/folder-tabs/scania/v1/component.jsx';
 import FooterCell from '../cells/react/footer/scania/v1/component.jsx';
 import FooterGroupCell from '../cells/react/footer-group/scania/v1/component.jsx';
 import FooterItemCell from '../cells/react/footer-item/scania/v1/component.jsx';
+import HeaderRootCell from '../cells/react/header/scania/v1/component.jsx';
+import HeaderBrandSymbolCell from '../cells/react/header-brand-symbol/scania/v1/component.jsx';
 import HeaderCellCell from '../cells/react/header-cell/scania/v1/component.jsx';
+import HeaderDropdownCell from '../cells/react/header-dropdown/scania/v1/component.jsx';
+import HeaderDropdownListCell from '../cells/react/header-dropdown-list/scania/v1/component.jsx';
+import HeaderDropdownListItemCell from '../cells/react/header-dropdown-list-item/scania/v1/component.jsx';
+import HeaderDropdownListUserCell from '../cells/react/header-dropdown-list-user/scania/v1/component.jsx';
+import HeaderHamburgerCell from '../cells/react/header-hamburger/scania/v1/component.jsx';
+import HeaderItemCell from '../cells/react/header-item/scania/v1/component.jsx';
+import HeaderLauncherCell from '../cells/react/header-launcher/scania/v1/component.jsx';
+import HeaderLauncherButtonCell from '../cells/react/header-launcher-button/scania/v1/component.jsx';
+import HeaderLauncherGridCell from '../cells/react/header-launcher-grid/scania/v1/component.jsx';
+import HeaderLauncherGridItemCell from '../cells/react/header-launcher-grid-item/scania/v1/component.jsx';
+import HeaderLauncherGridTitleCell from '../cells/react/header-launcher-grid-title/scania/v1/component.jsx';
+import HeaderLauncherListCell from '../cells/react/header-launcher-list/scania/v1/component.jsx';
+import HeaderLauncherListItemCell from '../cells/react/header-launcher-list-item/scania/v1/component.jsx';
+import HeaderLauncherListTitleCell from '../cells/react/header-launcher-list-title/scania/v1/component.jsx';
+import HeaderTitleCell from '../cells/react/header-title/scania/v1/component.jsx';
 import IconCell from '../cells/react/icon/scania/v1/component.jsx';
 import InlineTabCell from '../cells/react/inline-tab/scania/v1/component.jsx';
 import InlineTabsCell from '../cells/react/inline-tabs/scania/v1/component.jsx';
@@ -77,6 +95,7 @@ import type {
   CardProps,
   CheckboxProps,
   ChipProps,
+  CoreHeaderItemProps,
   DatetimeProps,
   DividerProps,
   DropdownOptionProps,
@@ -86,7 +105,24 @@ import type {
   FooterGroupProps,
   FooterItemProps,
   FooterProps,
+  HeaderBrandSymbolProps,
   HeaderCellProps,
+  HeaderDropdownListItemProps,
+  HeaderDropdownListProps,
+  HeaderDropdownListUserProps,
+  HeaderDropdownProps,
+  HeaderHamburgerProps,
+  HeaderItemProps,
+  HeaderLauncherButtonProps,
+  HeaderLauncherGridItemProps,
+  HeaderLauncherGridProps,
+  HeaderLauncherGridTitleProps,
+  HeaderLauncherListItemProps,
+  HeaderLauncherListProps,
+  HeaderLauncherListTitleProps,
+  HeaderLauncherProps,
+  HeaderProps,
+  HeaderTitleProps,
   IconProps,
   InlineTabProps,
   InlineTabsProps,
@@ -145,6 +181,7 @@ export type {
   CardProps,
   CheckboxProps,
   ChipProps,
+  CoreHeaderItemProps,
   DatetimeProps,
   DividerProps,
   DropdownOptionProps,
@@ -154,7 +191,24 @@ export type {
   FooterGroupProps,
   FooterItemProps,
   FooterProps,
+  HeaderBrandSymbolProps,
   HeaderCellProps,
+  HeaderDropdownListItemProps,
+  HeaderDropdownListProps,
+  HeaderDropdownListUserProps,
+  HeaderDropdownProps,
+  HeaderHamburgerProps,
+  HeaderItemProps,
+  HeaderLauncherButtonProps,
+  HeaderLauncherGridItemProps,
+  HeaderLauncherGridProps,
+  HeaderLauncherGridTitleProps,
+  HeaderLauncherListItemProps,
+  HeaderLauncherListProps,
+  HeaderLauncherListTitleProps,
+  HeaderLauncherProps,
+  HeaderProps,
+  HeaderTitleProps,
   IconProps,
   InlineTabProps,
   InlineTabsProps,
@@ -271,3 +325,24 @@ export const SideMenuCollapseButton: FC<SideMenuCollapseButtonProps> = SideMenuC
 export const SideMenuUser: FC<SideMenuUserProps> = SideMenuUserCell;
 export const SideMenuUserImage: FC<SideMenuUserImageProps> = SideMenuUserImageCell;
 export const SideMenuUserLabel: FC<SideMenuUserLabelProps> = SideMenuUserLabelCell;
+// The header's import is not HeaderCell: that is the table header cell's export.
+export const Header: FC<HeaderProps> = HeaderRootCell;
+export const CoreHeaderItem: FC<CoreHeaderItemProps> = CoreHeaderItemCell;
+export const HeaderItem: FC<HeaderItemProps> = HeaderItemCell;
+export const HeaderHamburger: FC<HeaderHamburgerProps> = HeaderHamburgerCell;
+export const HeaderTitle: FC<HeaderTitleProps> = HeaderTitleCell;
+export const HeaderBrandSymbol: FC<HeaderBrandSymbolProps> = HeaderBrandSymbolCell;
+export const HeaderDropdown: FC<HeaderDropdownProps> = HeaderDropdownCell;
+export const HeaderDropdownList: FC<HeaderDropdownListProps> = HeaderDropdownListCell;
+export const HeaderDropdownListItem: FC<HeaderDropdownListItemProps> = HeaderDropdownListItemCell;
+export const HeaderDropdownListUser: FC<HeaderDropdownListUserProps> = HeaderDropdownListUserCell;
+export const HeaderLauncher: FC<HeaderLauncherProps> = HeaderLauncherCell;
+export const HeaderLauncherButton: FC<HeaderLauncherButtonProps> = HeaderLauncherButtonCell;
+export const HeaderLauncherGrid: FC<HeaderLauncherGridProps> = HeaderLauncherGridCell;
+export const HeaderLauncherGridItem: FC<HeaderLauncherGridItemProps> = HeaderLauncherGridItemCell;
+export const HeaderLauncherGridTitle: FC<HeaderLauncherGridTitleProps> =
+  HeaderLauncherGridTitleCell;
+export const HeaderLauncherList: FC<HeaderLauncherListProps> = HeaderLauncherListCell;
+export const HeaderLauncherListItem: FC<HeaderLauncherListItemProps> = HeaderLauncherListItemCell;
+export const HeaderLauncherListTitle: FC<HeaderLauncherListTitleProps> =
+  HeaderLauncherListTitleCell;

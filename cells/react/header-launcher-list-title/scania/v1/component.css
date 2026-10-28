@@ -1,0 +1,17 @@
+.tl-header-launcher-list-title {
+  all: unset;
+  box-sizing: border-box;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-detail-07);
+  font-weight: bold;
+  line-height: var(--font-line-height-detail-02);
+  letter-spacing: var(--font-letter-spacing-detail-06);
+  color: var(--color-text-strong);
+  text-transform: uppercase;
+  height: var(--size-header-list-item);
+  padding: 0 var(--space-element-16);
+  display: flex;
+  align-items: center;
+  border-bottom: var(--border-control) solid var(--color-border-discrete);
+  margin: 0;
+}

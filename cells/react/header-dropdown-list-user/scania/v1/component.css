@@ -1,0 +1,39 @@
+.tl-header-dropdown-list-user {
+  background-color: var(--color-background-base);
+  display: flex;
+  height: var(--size-header-user);
+}
+.tl-header-dropdown-list-user__box {
+  box-sizing: border-box;
+  gap: var(--space-element-16);
+  width: 100%;
+  padding: 0 var(--space-element-16);
+  display: flex;
+  align-items: center;
+  border-bottom: var(--border-control) solid var(--color-border-discrete);
+}
+.tl-header-dropdown-list-user__image,
+.tl-header-dropdown-list-user__thumbnail > * {
+  width: var(--size-header-avatar);
+  border-radius: 100%;
+}
+.tl-header-dropdown-list-user__thumbnail {
+  display: contents;
+}
+.tl-header-dropdown-list-user__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-element-4);
+}
+.tl-header-dropdown-list-user__header,
+.tl-header-dropdown-list-user__subheader {
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: bold;
+  line-height: var(--font-line-height-detail-02);
+  letter-spacing: var(--font-letter-spacing-detail);
+  color: var(--color-text-strong);
+}
+.tl-header-dropdown-list-user__subheader {
+  color: var(--color-text-soft);
+}

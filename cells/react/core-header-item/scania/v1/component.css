@@ -1,0 +1,19 @@
+.tl-core-header-item {
+  box-sizing: border-box;
+  font-family: var(--font-family-detail);
+  font-size: var(--font-size-detail);
+  font-weight: bold;
+  line-height: var(--font-line-height-detail-02);
+  letter-spacing: var(--font-letter-spacing-detail);
+  color: var(--color-icon-inverse-strong);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: var(--size-header-height);
+  height: var(--size-header-height);
+  margin: 0;
+  white-space: nowrap;
+}
+.tl-core-header-item > svg {
+  font-size: var(--size-header-icon);
+}

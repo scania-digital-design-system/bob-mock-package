@@ -888,3 +888,103 @@ export type SideMenuUserLabelProps = {
   heading?: string;
   subheading?: string;
 };
+
+export type HeaderProps = {
+  hamburger?: ReactNode;
+  title?: ReactNode;
+  children?: ReactNode;
+  end?: ReactNode;
+};
+
+export type CoreHeaderItemProps = {
+  children?: ReactNode;
+};
+
+export type HeaderItemProps = {
+  /** @default false */
+  active?: boolean;
+  /** @default false */
+  selected?: boolean;
+  children?: ReactNode;
+};
+
+export type HeaderHamburgerProps = {
+  tdsAriaLabel?: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+};
+
+export type HeaderTitleProps = {
+  children?: ReactNode;
+};
+
+export type HeaderBrandSymbolProps = {
+  children?: ReactNode;
+};
+
+export type HeaderDropdownProps = {
+  label?: ReactNode;
+  /** @default false */
+  noDropdownIcon?: boolean;
+  /** @default false */
+  selected?: boolean;
+  tdsAriaLabel?: string;
+  children?: ReactNode;
+  icon?: ReactNode;
+};
+
+export type HeaderDropdownListProps = {
+  /** @default 'md' */
+  size?: 'md' | 'lg';
+  children?: ReactNode;
+};
+
+export type HeaderDropdownListItemProps = {
+  /** @default false */
+  selected?: boolean;
+  /** @default 'md' */
+  size?: 'md' | 'lg';
+  children?: ReactNode;
+};
+
+export type HeaderDropdownListUserProps = {
+  imgUrl?: string;
+  imgAlt?: string;
+  header?: ReactNode;
+  subheader?: ReactNode;
+  thumbnail?: ReactNode;
+};
+
+export type HeaderLauncherProps = {
+  tdsAriaLabel?: string;
+  children?: ReactNode;
+};
+
+export type HeaderLauncherButtonProps = {
+  /** @default false */
+  active?: boolean;
+  tdsAriaLabel?: string;
+};
+
+export type HeaderLauncherGridProps = {
+  children?: ReactNode;
+};
+
+export type HeaderLauncherGridItemProps = {
+  children?: ReactNode;
+};
+
+export type HeaderLauncherGridTitleProps = {
+  children?: ReactNode;
+};
+
+export type HeaderLauncherListProps = {
+  children?: ReactNode;
+};
+
+export type HeaderLauncherListItemProps = {
+  children?: ReactNode;
+};
+
+export type HeaderLauncherListTitleProps = {
+  children?: ReactNode;
+};

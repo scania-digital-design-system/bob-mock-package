@@ -212,6 +212,32 @@
         "$value": "#041e42"
       }
     },
+    "header": {
+      "background": {
+        "$type": "color",
+        "$value": "#041e42"
+      },
+      "divider": {
+        "$type": "color",
+        "$value": "#0f3263"
+      },
+      "indicator": {
+        "$type": "color",
+        "$value": "#2a6ecf"
+      },
+      "item-active": {
+        "$type": "color",
+        "$value": "#16417f"
+      },
+      "item-hover": {
+        "$type": "color",
+        "$value": "#0f3263"
+      },
+      "item-selected": {
+        "$type": "color",
+        "$value": "#edeff3"
+      }
+    },
     "icon": {
       "inverse-strong": {
         "$type": "color",
@@ -556,6 +582,14 @@
           "fontSize": 0,
           "fontWeight": 0
         }
+      },
+      "headline-01": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Scania Sans Headline', arial, 'Helvetica Neue'",
+          "fontSize": 0,
+          "fontWeight": 0
+        }
       }
     },
     "letter-spacing": {
@@ -570,6 +604,10 @@
       "detail-01": {
         "$type": "number",
         "$value": -0.16
+      },
+      "detail-06": {
+        "$type": "number",
+        "$value": 0.8
       },
       "headline": {
         "$type": "number",
@@ -2229,6 +2267,12 @@
         "$type": "color",
         "$value": "url(https://cdn.digitaldesign.scania.com/logotype/multibrand/scania/scania-wordmark-white.svg)"
       }
+    },
+    "header": {
+      "symbol": {
+        "$type": "color",
+        "$value": "url(https://cdn.digitaldesign.scania.com/logotype/multibrand/scania/scania-symbol.svg)"
+      }
     }
   },
   "motion": {
@@ -2272,6 +2316,12 @@
       "rotate": {
         "$type": "color",
         "$value": "200ms"
+      }
+    },
+    "header": {
+      "tile": {
+        "$type": "color",
+        "$value": "150ms"
       }
     },
     "input": {
@@ -2405,6 +2455,12 @@
     "full": {
       "$type": "number",
       "$value": 9999
+    },
+    "header": {
+      "tile": {
+        "$type": "number",
+        "$value": 4
+      }
     },
     "input": {
       "$type": "number",
@@ -2670,6 +2726,56 @@
       "wordmark-width": {
         "$type": "number",
         "$value": 117
+      }
+    },
+    "header": {
+      "avatar": {
+        "$type": "number",
+        "$value": 32
+      },
+      "brand": {
+        "$type": "number",
+        "$value": 32
+      },
+      "chevron": {
+        "$type": "number",
+        "$value": 16
+      },
+      "grid-item": {
+        "$type": "number",
+        "$value": 96
+      },
+      "height": {
+        "$type": "number",
+        "$value": 64
+      },
+      "icon": {
+        "$type": "number",
+        "$value": 20
+      },
+      "image": {
+        "$type": "number",
+        "$value": 34
+      },
+      "indicator": {
+        "$type": "number",
+        "$value": 4
+      },
+      "list": {
+        "$type": "number",
+        "$value": 190
+      },
+      "list-item": {
+        "$type": "number",
+        "$value": 48
+      },
+      "list-lg": {
+        "$type": "number",
+        "$value": 320
+      },
+      "user": {
+        "$type": "number",
+        "$value": 84
       }
     },
     "input": {
@@ -3306,6 +3412,24 @@
       "item-mobile": {
         "$type": "number",
         "$value": 19
+      }
+    },
+    "header": {
+      "icon-offset": {
+        "$type": "number",
+        "$value": -6
+      },
+      "icon-shift": {
+        "$type": "number",
+        "$value": 3
+      },
+      "image-offset": {
+        "$type": "number",
+        "$value": -20
+      },
+      "image-shift": {
+        "$type": "number",
+        "$value": 10
       }
     },
     "input": {

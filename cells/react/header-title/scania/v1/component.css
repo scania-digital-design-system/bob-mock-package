@@ -1,0 +1,25 @@
+.tl-header-title {
+  display: block;
+  min-width: 0;
+}
+.tl-header-title__heading {
+  font-family: var(--font-family-headline-01);
+  font-size: var(--font-size-detail);
+  font-weight: normal;
+  line-height: var(--font-line-height-headline-06);
+  letter-spacing: var(--font-letter-spacing-headline);
+  box-sizing: border-box;
+  margin: 0;
+  color: var(--color-icon-inverse-strong);
+  position: relative;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.tl-header-title__text {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 0 var(--space-element-32) 0 var(--space-element-24);
+}

@@ -1,0 +1,115 @@
+/* The launcher shows in every viewport */
+.tl-header-launcher {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: var(--size-header-height);
+  height: var(--size-header-height);
+  margin: 0;
+  position: relative;
+}
+.tl-header-launcher__button {
+  all: unset;
+  box-sizing: border-box;
+  color: var(--color-icon-inverse-strong);
+  background-color: var(--color-header-background);
+  border-right: var(--border-control) solid var(--color-header-divider);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  padding: 0 var(--space-element-24);
+  display: flex;
+  align-items: center;
+  gap: var(--space-element-8);
+}
+.tl-header-launcher__button:hover {
+  background-color: var(--color-header-item-hover);
+}
+.tl-header-launcher__button:active {
+  background-color: var(--color-header-item-active);
+}
+.tl-header-launcher__button:focus-visible {
+  border: none;
+  margin-right: var(--border-control);
+  outline: var(--border-focus) solid var(--color-border-focus);
+  box-shadow: inset 0 0 0 var(--size-shadow-3) var(--color-border-focus-discrete);
+  outline-offset: var(--border-focus-inset);
+}
+
+/* Open: the button looks active */
+.tl-header-launcher__button[aria-expanded='true'] {
+  background-color: var(--color-background-base);
+  color: var(--color-text-strong);
+  border-color: var(--color-background-base);
+  box-shadow: inset 0 calc(-1 * var(--size-header-indicator)) 0 0 var(--color-header-indicator);
+}
+.tl-header-launcher__button[aria-expanded='true']:hover {
+  background-color: var(--color-background-layer-01);
+}
+.tl-header-launcher__icon {
+  flex-shrink: 0;
+  width: var(--size-header-icon);
+  height: var(--size-header-icon);
+  fill: currentColor;
+  position: relative;
+  margin-left: var(--space-header-icon-offset);
+  inset-inline-start: var(--space-header-icon-shift);
+}
+.tl-header-launcher__bento {
+  d: var(--icon-bento-d);
+}
+
+/* The menu: a native popover under the button. A menu of lists fills the height below it */
+.tl-header-launcher__menu {
+  box-sizing: border-box;
+  inset: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  position-area: bottom span-right;
+  position-try-fallbacks: none;
+  max-height: 100%;
+  overflow-y: auto;
+  box-shadow:
+    0 var(--size-shadow-3) var(--size-shadow-3) var(--color-shadow-15),
+    0 var(--size-shadow-minus-1) var(--size-shadow-1) var(--color-shadow-1);
+  background-color: var(--color-background-base);
+  color: var(--color-text-strong);
+}
+.tl-header-launcher__menu:has(> ul) {
+  height: 100%;
+}
+@media all and (max-width: 384px) {
+  .tl-header-launcher__menu {
+    position-area: bottom span-all;
+    width: 100%;
+  }
+}
+
+/* Scrollbar (Tegel's tds-scrollbar mixin) */
+.tl-header-launcher__menu::-webkit-scrollbar {
+  width: var(--size-scrollbar-width);
+}
+.tl-header-launcher__menu::-webkit-scrollbar-track {
+  background: var(--color-background-none);
+}
+.tl-header-launcher__menu::-webkit-scrollbar-thumb {
+  border: var(--border-scrollbar-thumb) solid var(--color-border-none);
+  border-radius: var(--radius-scrollbar);
+  background: var(--color-border-subtle);
+  background-clip: padding-box;
+}
+.tl-header-launcher__menu:hover::-webkit-scrollbar-thumb {
+  border: var(--border-scrollbar-thumb-hover) solid var(--color-border-none);
+}
+.tl-header-launcher__menu::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+@supports not selector(::-webkit-scrollbar) {
+  .tl-header-launcher__menu {
+    scrollbar-width: thin;
+  }
+}

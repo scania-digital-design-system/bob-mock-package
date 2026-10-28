@@ -1,0 +1,36 @@
+{
+  "component": "header-dropdown-list-user",
+  "brands": ["scania"],
+  "targets": ["react"],
+  "surface": {
+    "description": "Tegel tds-header-dropdown-list-user at @scania/tegel@1.66.1: the user at the top of a header dropdown list.",
+    "properties": [
+      {
+        "name": "imgUrl",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "imgAlt",
+        "type": "TEXT",
+        "values": []
+      },
+      {
+        "name": "header",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      },
+      {
+        "name": "subheader",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      },
+      {
+        "name": "thumbnail",
+        "type": "INSTANCE_SWAP",
+        "values": []
+      }
+    ],
+    "answers": []
+  }
+}

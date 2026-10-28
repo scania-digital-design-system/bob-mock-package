@@ -113,6 +113,26 @@ const DEPARTURES: Record<string, { dropped?: string[]; added?: string[] }> = {
   'side-menu-overlay': { added: ['onClick'] },
   'side-menu-user': { added: ['icon'] },
   'side-menu-user-image': { added: ['children'] },
+  // Tegel's header slots become props. The hamburger takes the click listener that
+  // Tegel's consumers add to the host. The dropdown's label prop also takes the label slot,
+  // and the user's header and subheader also take their slots.
+  header: { added: ['hamburger', 'title', 'children', 'end'] },
+  'core-header-item': { added: ['children'] },
+  'header-item': { added: ['children'] },
+  'header-hamburger': { added: ['onClick'] },
+  'header-title': { added: ['children'] },
+  'header-brand-symbol': { added: ['children'] },
+  'header-dropdown': { added: ['children', 'icon'] },
+  'header-dropdown-list': { added: ['children'] },
+  'header-dropdown-list-item': { added: ['children'] },
+  'header-dropdown-list-user': { added: ['thumbnail'] },
+  'header-launcher': { added: ['children'] },
+  'header-launcher-grid': { added: ['children'] },
+  'header-launcher-grid-item': { added: ['children'] },
+  'header-launcher-grid-title': { added: ['children'] },
+  'header-launcher-list': { added: ['children'] },
+  'header-launcher-list-item': { added: ['children'] },
+  'header-launcher-list-title': { added: ['children'] },
 };
 
 // Read by path: the package's "exports" map does not expose this file.
